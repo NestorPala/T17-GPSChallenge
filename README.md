@@ -1,4 +1,4 @@
-![tp2](https://github.com/NestorPala/T17-GPSChallenge/actions/workflows/build.yml/badge.svg) [![codecov](https://codecov.io/gh/NestorPala/T17-GPSChallenge/branch/master/graph/badge.svg)](https://codecov.io/gh/fiuba/algo3_proyecto_base_tp2)
+![tp2](https://github.com/NestorPala/T17-GPSChallenge/actions/workflows/build.yml/badge.svg) [![codecov](https://codecov.io/gh/NestorPala/T17-GPSChallenge/branch/master/graph/badge.svg)](https://app.codecov.io/gh/NestorPala/T17-GPSChallenge)
 
 # TP2 Algoritmos 3: GPS Challenge
 
