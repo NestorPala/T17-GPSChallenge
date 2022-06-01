@@ -10,6 +10,7 @@ Trabajo Práctico número 2 de la materia Algoritmos y Programación III de FIUB
 * **Integrante 2** - [Matias Vallejos](https://github.com/MatiasTK)
 * **Integrante 3** - [integrante3](https://github.com/integrante3)
 * **Integrante 4** - [integrante4](https://github.com/integrante4)
+* **Integrante 5** - [integrante5](https://github.com/integrante5)
 
 Corrector: **Pablo Rodríguez Massuh**
 
