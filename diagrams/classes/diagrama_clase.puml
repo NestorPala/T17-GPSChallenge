@@ -1,0 +1,48 @@
+@startuml
+class GPSChallenge {
+    + CrearNuevaPartida(vehiculo : Vehiculo)
+    + MoverHaciaDerecha()
+}
+
+class Jugador {
+    + MoverHaciaDerecha()
+}
+
+interface Vehiculo {
+    + MoverHaciaDerecha()
+}
+
+class Moto {
+    + MoverHaciaDerecha()
+}
+
+class Movimiento {
+    + MoverHaciaDerecha(posicionVehiculo : Posicion)
+}
+
+class Posicion {
+    - x : int
+    - y : int
+    + crearNuevaPosicion(x: int, y: int) : Posicion
+}
+
+class Escenario {
+    + chequearPosicion(PosicionALaQueMeVoyAMover: Posicion)
+    + buscarChocable() : Posicion
+}
+
+class Puntaje {
+    + AumentarPuntaje(puntosAAumentar: int) : Puntaje
+    - Puntaje : int
+}
+
+GPSChallenge -> Jugador
+Jugador -> Vehiculo
+Vehiculo -> Movimiento
+Movimiento -> Posicion
+Movimiento -> Escenario
+Jugador --> Puntaje
+Vehiculo <|-- Moto
+Escenario ..> Posicion
+
+@enduml

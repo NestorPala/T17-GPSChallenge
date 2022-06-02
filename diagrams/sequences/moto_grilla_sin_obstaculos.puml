@@ -1,0 +1,20 @@
+@startuml
+title Una moto atraviesa la grilla sin obstáculos y la cantidad de movimientos es X
+Actor usuario
+"usuario" -> ":GPSChallenge": crearNuevaPartida(moto: Vehiculo)
+
+loop x veces
+"usuario" -> ":GPSChallenge": moverHaciaDerecha()
+":GPSChallenge" -> ":Jugador": moverHaciaDerecha()
+":Jugador" -> ":Vehiculo": moverHaciaDerecha()
+":Vehiculo" -> ":Movimiento": moverHaciaDerecha(posicionVehiculo: Posicion)
+":Movimiento" -> ":Posicion": crearNuevaPosicion(x,y)
+return posicionALaQueMeVoyAMover
+":Movimiento" -> ":Escenario": chequearPosicion(posicionALaQueMeVoyAMover: Posicion)
+":Escenario" -> ":Escenario": buscarChocable()
+":Escenario" --> ":Movimiento": PosicionALaQueMeVoyAMover
+":Movimiento" --> ":Vehiculo": nuevaPosicion
+":Jugador" -> ":Puntaje": AumentarPuntaje(1)
+return nuevoPuntaje
+end
+@enduml
