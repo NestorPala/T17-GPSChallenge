@@ -1,9 +1,6 @@
 package edu.fiuba.algo3.unitarios;
 
-import edu.fiuba.algo3.modelo.Escenario;
-import edu.fiuba.algo3.modelo.Jugador;
-import edu.fiuba.algo3.modelo.Movimiento;
-import edu.fiuba.algo3.modelo.Posicion;
+import edu.fiuba.algo3.modelo.*;
 import edu.fiuba.algo3.modelo.Vehiculos.Moto;
 import javafx.geometry.Pos;
 import org.junit.jupiter.api.Test;
@@ -13,7 +10,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class JugadorTest {
 
     @Test
-    public void puedoCambiarAlJugadorDePosicion(){
+    public void unJugadorInicializaCorrectamente(){
+
+    }
+
+    @Test
+    public void puedoCambiarAlJugadorDePosicion() throws EscenarioConLimitesInvalidosError {
         Jugador jugador = new Jugador(new Posicion(),new Moto());
         Escenario escenario = new Escenario(10,10);
 

@@ -4,6 +4,7 @@ import edu.fiuba.algo3.modelo.ElementosDelEscenario.ElementoDelEscenario;
 import edu.fiuba.algo3.modelo.ElementosDelEscenario.Pozo;
 import edu.fiuba.algo3.modelo.ElementosDelEscenario.Vacio;
 import edu.fiuba.algo3.modelo.Escenario;
+import edu.fiuba.algo3.modelo.EscenarioConLimitesInvalidosError;
 import edu.fiuba.algo3.modelo.Posicion;
 import org.junit.jupiter.api.Test;
 
@@ -13,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class EscenarioTest {
 
     @Test
-    public void puedoInicializarUnEscenarioConElementosVacios(){
+    public void puedoInicializarUnEscenarioConElementosVacios() throws EscenarioConLimitesInvalidosError {
         Escenario escenario = new Escenario(10,10);
         Posicion posicionRandom = new Posicion(9,9);
 

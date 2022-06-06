@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class CasosTest {
 
     @Test
-    public void motoChocaPozoYEsPenalizadaConTresMovimientos() {
+    public void motoChocaPozoYEsPenalizadaConTresMovimientos() throws EscenarioConLimitesInvalidosError {
         Escenario escenario = new Escenario(20,20);
         Moto moto = new Moto();
         Jugador jugador = new Jugador(new Posicion(1,1), moto);
