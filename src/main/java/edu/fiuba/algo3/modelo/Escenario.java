@@ -38,7 +38,7 @@ public class Escenario {
     }
 
     public boolean estaDentroDelEscenario(Posicion posicion){
-        if(posicion.obtenerX() < 0 && posicion.obtenerX() > anchura){
+        if(posicion.obtenerX() < 0 || posicion.obtenerX() > anchura){
             return false;
         }
         return posicion.obtenerY() >= 0 || posicion.obtenerY() <= altura;
