@@ -12,6 +12,7 @@ public class Jugador {
         this.posicion = posInicial;
         this.vehiculo = vehiculo;
         this.cantidadMovimientos = 0;
+        this.penalizaciones = 0;
     }
 
     public int totalPenalizaciones(){
@@ -31,8 +32,10 @@ public class Jugador {
 
         nuevaPosicion.moverseDesdePosicionInicial(movimiento);
 
-        this.penalizaciones += this.vehiculo.chocar(escenario.obtenerElementoEnEscenario(nuevaPosicion));
-        this.posicion = nuevaPosicion;
-        this.cantidadMovimientos++;
+        if(escenario.estaDentroDelEscenario(nuevaPosicion)){
+            this.penalizaciones += this.vehiculo.chocar(escenario.obtenerElementoEnEscenario(nuevaPosicion));
+            this.posicion = nuevaPosicion;
+            this.cantidadMovimientos++;
+        }
     }
 }
