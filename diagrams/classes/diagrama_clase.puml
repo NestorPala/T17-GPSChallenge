@@ -1,48 +1,91 @@
 @startuml
-class GPSChallenge {
-    + CrearNuevaPartida(vehiculo : Vehiculo)
-    + MoverHaciaDerecha()
-}
 
 class Jugador {
-    + MoverHaciaDerecha()
-}
-
-interface Vehiculo {
-    + MoverHaciaDerecha()
-}
-
-class Moto {
-    + MoverHaciaDerecha()
+    - penalizaciones : int
+    - vehiculo : Vehiculo
+    - posicion : Posicion
+    - cantidadMovimientos : int
+    + totalPenalizaciones() : int
+    + posicionDelJugador() : Posicion
+    + movimientosRealizados() : int
+    + moverse(Movimiento, Escenario)
 }
 
 class Movimiento {
-    + MoverHaciaDerecha(posicionVehiculo : Posicion)
+    - x : int
+    - y : int
+    + obtenerX() : int
+    + obtenerY() : int
+}
+
+class Escenario {
+    - altura : int
+    - anchura : int
+    - matriz : ElementoDelEscenario
+    + ponerUnElemento(ElementoDelEscenario,Posicion)
+    + obtenerElementoEnEscenario(Posicion) : ElementoDelEscenario
+    + estaDentroDelEscenario(Posicion) : Bool
 }
 
 class Posicion {
     - x : int
     - y : int
-    + crearNuevaPosicion(x: int, y: int) : Posicion
+    + obtenerX() : int
+    + obtenerY() : int
+    + moverseDesdePosicionInicial(Movimiento)
 }
 
-class Escenario {
-    + chequearPosicion(PosicionALaQueMeVoyAMover: Posicion)
-    + buscarChocable() : Posicion
+class Pozo {
+    +  obtenerPuntosDePenalizacion(Moto) : int
+    +  obtenerPuntosDePenalizacion(Auto) : int
+    +  obtenerPuntosDePenalizacion(Todoterreno) : int
 }
 
-class Puntaje {
-    + AumentarPuntaje(puntosAAumentar: int) : Puntaje
-    - Puntaje : int
+class Vacio {
+    +  obtenerPuntosDePenalizacion(Moto) : int
+    +  obtenerPuntosDePenalizacion(Auto) : int
+    +  obtenerPuntosDePenalizacion(Todoterreno) : int
 }
 
-GPSChallenge -> Jugador
+class Auto {
+    + chocar(ElementoDelEscenario) : int
+}
+
+class Moto {
+    + chocar(ElementoDelEscenario) : int
+}
+
+class Todoterreno {
+    - pozosEncontrados : int
+    + chocar(ElementoDelEscenario) : int
+}
+
+interface Vehiculo {
+    + chocar(ElementoDelEscenario) : int
+}
+
+interface ElementoDelEscenario {
+    + obtenerPuntosDePenalizacion(Moto) : int
+    + obtenerPuntosDePenalizacion(Auto) : int
+    + obtenerPuntosDePenalizacion(Todoterreno) : int
+}
+
 Jugador -> Vehiculo
-Vehiculo -> Movimiento
-Movimiento -> Posicion
-Movimiento -> Escenario
-Jugador --> Puntaje
+Movimiento <- Jugador
+
+Vehiculo <|-- Auto
 Vehiculo <|-- Moto
-Escenario ..> Posicion
+Vehiculo <|-- Todoterreno
+
+ElementoDelEscenario <|-- Pozo
+ElementoDelEscenario <|-- Vacio
+
+Jugador --> Posicion
+Jugador -> Escenario
+
+Escenario --> ElementoDelEscenario
+Escenario -> Posicion
+Movimiento <-- Posicion
+Vehiculo --> ElementoDelEscenario
 
 @enduml
