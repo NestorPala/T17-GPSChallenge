@@ -15,7 +15,7 @@ return posicionALaQueMeVoyAMover
 return puntosDePenalizacion
 "Todoterreno:Vehiculo" --> ":Jugador": 0
 "usuario" -> ":Jugador": movimientosRealizados()
-return 2
+return 1
 "usuario" -> ":Jugador": totalPenalizaciones()
 return 2
 
