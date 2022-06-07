@@ -1,0 +1,23 @@
+@startuml
+title Una moto choca con un pozo y es penalizado con 2 movimientos
+
+Actor usuario
+
+"usuario" -> ":Jugador": moverse(movimiento, escenario)
+":Jugador" -> ":Posicion": moverseDesdePosicionInicial(movimiento, escenario)
+":Posicion" -> ":Movimiento": obtenerX()
+":Posicion" -> ":Movimiento": obtenerY()
+return posicionALaQueMeVoyAMover
+":Posicion" --> ":Jugador": posicionALaQueMeVoyAMover
+":Jugador" -> ":Escenario": obtenerElementoEnEscenario(nuevaPosicion)
+":Escenario" --> ":Jugador": elementoDelEscenario
+":Jugador" -> ":Moto": chocar(elementoDelEscenario)
+":Moto" -> ":Piquete": obtenerPuntosDePenalizacion()
+return puntosDePenalizacion
+":Moto" --> ":Jugador": 2
+"usuario" -> ":Jugador": movimientosRealizados()
+return 2
+"usuario" -> ":Jugador": totalPenalizaciones()
+return 2
+
+@enduml
