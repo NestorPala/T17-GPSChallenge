@@ -1,5 +1,5 @@
 @startuml
-title Una 4x4 atraviesa la ciudad y se encuentra con un Pozo. No es penalizada.
+title Una 4x4 se encuentra con 3 pozos y es penalizado con 2 movimientos
 Actor usuario
 
 loop para 2 movimientos
