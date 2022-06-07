@@ -1,0 +1,22 @@
+@startuml
+title Una 4x4 atraviesa la ciudad y se encuentra con un Pozo. No es penalizada.
+Actor usuario
+
+"usuario" -> ":Jugador": moverse(movimiento, escenario)
+":Jugador" -> ":Posicion": moverseDesdePosicionInicial(movimiento, escenario)
+":Posicion" -> ":Movimiento": obtenerX()
+":Posicion" -> ":Movimiento": obtenerY()
+return posicionALaQueMeVoyAMover
+":Posicion" --> ":Jugador": posicionALaQueMeVoyAMover
+":Jugador" -> ":Escenario": obtenerElementoEnEscenario(nuevaPosicion)
+":Escenario" --> ":Jugador": elementoDelEscenario
+":Jugador" -> "Todoterreno:Vehiculo": chocar(elementoDelEscenario)
+"Todoterreno:Vehiculo" -> "Pozo:ElementoDelEscenario": obtenerPuntosDePenalizacion()
+return puntosDePenalizacion
+"Todoterreno:Vehiculo" --> ":Jugador": 0
+"usuario" -> ":Jugador": movimientosRealizados()
+return 2
+"usuario" -> ":Jugador": totalPenalizaciones()
+return 2
+
+@enduml
