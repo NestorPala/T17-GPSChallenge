@@ -2,8 +2,6 @@
 
 class Jugador {
     - penalizaciones : int
-    - vehiculo : Vehiculo
-    - posicion : Posicion
     - cantidadMovimientos : int
     + totalPenalizaciones() : int
     + posicionDelJugador() : Posicion
