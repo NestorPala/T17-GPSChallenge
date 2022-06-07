@@ -4,12 +4,12 @@ public class Posicion {
     private int x;
     private int y;
 
-    public Posicion(){
+    public Posicion() {
         this.x = 0;
         this.y = 0;
     }
 
-    public Posicion(int valorX, int valorY){
+    public Posicion(int valorX, int valorY) {
         this.x = valorX;
         this.y = valorY;
     }
@@ -25,15 +25,15 @@ public class Posicion {
         return y == posicion.y;
     }
 
-    public int obtenerX(){
+    public int obtenerX() {
         return x;
     }
 
-    public int obtenerY(){
+    public int obtenerY() {
         return y;
     }
 
-    public void moverseDesdePosicionInicial(Movimiento movimiento){
+    public void moverseDesdePosicionInicial(Movimiento movimiento) {
         this.x = x + movimiento.obtenerX();
         this.y = y + movimiento.obtenerY();
     }
