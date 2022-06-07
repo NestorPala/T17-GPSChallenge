@@ -71,7 +71,7 @@ interface ElementoDelEscenario {
 }
 
 Jugador -> Vehiculo
-Movimiento <- Jugador
+Movimiento <. Jugador
 
 Vehiculo <|-- Auto
 Vehiculo <|-- Moto
@@ -81,11 +81,11 @@ ElementoDelEscenario <|-- Pozo
 ElementoDelEscenario <|-- Vacio
 
 Jugador --> Posicion
-Jugador -> Escenario
+Jugador .> Escenario
 
 Escenario --> ElementoDelEscenario
-Escenario -> Posicion
-Movimiento <-- Posicion
+Escenario ..> Posicion
+Movimiento <.. Posicion
 Vehiculo ..> ElementoDelEscenario
 
 @enduml
