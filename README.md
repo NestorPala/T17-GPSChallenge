@@ -26,6 +26,8 @@ $ java -jar <archivo.jar>
 
 Aquellos que deseen colaborar con el proyecto pueden consultar la [guía de desarrollo](./docs/Desarrollo.md).
 
+[Enunciado (Temporal)](https://docs.google.com/document/d/1Xu0btDnuNElhbiPMilFlYDhMnu7PMRnFV2Yui9o5rY0/edit#heading=h.m1x5u3gsbjts).
+
 ## Licencia
 
 Este repositorio se encuentra bajo la Licencia MIT.
