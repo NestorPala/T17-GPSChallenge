@@ -11,6 +11,7 @@ public class Todoterreno implements Vehiculo{
 
     @Override
     public int chocar(ElementoDelEscenario elemento) {
+        this.pozosEncontrados += 1;
         if(this.pozosEncontrados >= 3){
             this.pozosEncontrados = 0;
             return elemento.obtenerPuntosDePenalizacion(this);

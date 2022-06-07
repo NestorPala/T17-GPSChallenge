@@ -33,11 +33,6 @@ public class Posicion {
         return y;
     }
 
-    public void cambiarPosicion(int nuevoX, int nuevoY){
-        this.x = nuevoX;
-        this.y = nuevoY;
-    }
-
     public void moverseDesdePosicionInicial(Movimiento movimiento){
         this.x = x + movimiento.obtenerX();
         this.y = y + movimiento.obtenerY();
