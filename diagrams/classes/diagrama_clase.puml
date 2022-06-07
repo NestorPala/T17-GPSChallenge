@@ -86,6 +86,6 @@ Jugador -> Escenario
 Escenario --> ElementoDelEscenario
 Escenario -> Posicion
 Movimiento <-- Posicion
-Vehiculo ..> ElementoDelEscenario
+Vehiculo --> ElementoDelEscenario
 
 @enduml
