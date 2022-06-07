@@ -41,6 +41,6 @@ public class Escenario {
         if (posicion.obtenerX() < 0 || posicion.obtenerX() > anchura) {
             return false;
         }
-        return posicion.obtenerY() >= 0 || posicion.obtenerY() <= altura;
+        return posicion.obtenerY() >= 0 && posicion.obtenerY() <= altura;
     }
 }

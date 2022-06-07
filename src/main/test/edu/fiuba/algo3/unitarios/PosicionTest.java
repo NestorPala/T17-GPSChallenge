@@ -12,8 +12,11 @@ public class PosicionTest {
         Posicion p1 = new Posicion(0, 0);
         Posicion p2 = new Posicion(5, 5);
         Posicion p3 = new Posicion();
+        Posicion p4 = new Posicion(5,0);
 
         assertNotEquals(p1, p2);
         assertEquals(p3, p1);
+        assertEquals(p1,p1);
+        assertNotEquals(p4,p2);
     }
 }

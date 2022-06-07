@@ -28,6 +28,10 @@ public class EscenarioTest {
         Escenario escenario = new Escenario(10, 10);
 
         assertFalse(escenario.estaDentroDelEscenario(new Posicion(11, 11)));
+        assertFalse(escenario.estaDentroDelEscenario(new Posicion(5,15)));
+        assertFalse(escenario.estaDentroDelEscenario(new Posicion(15,5)));
+        assertTrue(escenario.estaDentroDelEscenario(new Posicion(2,8)));
+        assertTrue(escenario.estaDentroDelEscenario(new Posicion(9,1)));
     }
 
     @Test
@@ -65,12 +69,5 @@ public class EscenarioTest {
         Escenario escenario = new Escenario(10, 10);
 
         assertNull(escenario.obtenerElementoEnEscenario(new Posicion(11, 11)));
-    }
-
-    @Test
-    public void puedoSaberSiUnaPosicionEstaDentroDelEscenario() throws EscenarioConLimitesInvalidosError {
-        Escenario escenario = new Escenario(10, 10);
-
-        assertFalse(escenario.estaDentroDelEscenario(new Posicion(11, 11)));
     }
 }
