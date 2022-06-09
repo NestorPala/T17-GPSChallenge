@@ -15,16 +15,8 @@ public class Jugador {
         this.penalizaciones = 0;
     }
 
-    public int totalPenalizaciones() {
-        return penalizaciones;
-    }
-
     public Posicion posicionDelJugador() {
         return this.posicion;
-    }
-
-    public int movimientosRealizados() {
-        return this.cantidadMovimientos;
     }
 
     public int puntajeTotal(){ return (this.cantidadMovimientos + this.penalizaciones);}

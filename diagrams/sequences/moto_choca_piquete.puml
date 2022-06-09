@@ -15,9 +15,7 @@ return posicionALaQueMeVoyAMover
 ":Moto" -> ":Piquete": obtenerPuntosDePenalizacion()
 return puntosDePenalizacion
 ":Moto" --> ":Jugador": 2
-"usuario" -> ":Jugador": movimientosRealizados()
-return 1
-"usuario" -> ":Jugador": totalPenalizaciones()
-return 2
+"usuario" -> ":Jugador": puntajeTotal()
+return 3
 
 @enduml

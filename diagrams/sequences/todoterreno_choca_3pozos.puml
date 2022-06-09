@@ -29,9 +29,7 @@ return posicionALaQueMeVoyAMover
 "Todoterreno:Vehiculo" -> "Pozo:ElementoDelEscenario": obtenerPuntosDePenalizacion()
 return puntosDePenalizacion
 "Todoterreno:Vehiculo" --> ":Jugador": 2
-"usuario" -> ":Jugador": movimientosRealizados()
-return 3
-"usuario" -> ":Jugador": totalPenalizaciones()
-return 2
+"usuario" -> ":Jugador": puntajeTotal()
+return 5
 
 @enduml
