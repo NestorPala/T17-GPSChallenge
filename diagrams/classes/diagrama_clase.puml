@@ -18,9 +18,9 @@ class Movimiento {
 class Escenario {
     - altura : int
     - anchura : int
-    - matriz : ElementoDelEscenario
-    + ponerUnElemento(ElementoDelEscenario,Posicion)
-    + obtenerElementoEnEscenario(Posicion) : ElementoDelEscenario
+    - matriz : Chocable
+    + ponerUnElemento(Chocable,Posicion)
+    + obtenerElementoEnEscenario(Posicion) : Chocable
     + estaDentroDelEscenario(Posicion) : Bool
 }
 
@@ -51,45 +51,45 @@ class Piquete {
 }
 
 class Auto {
-    + chocar(ElementoDelEscenario) : int
+    + chocar(Chocable) : int
 }
 
 class Moto {
-    + chocar(ElementoDelEscenario) : int
+    + chocar(Chocable) : int
 }
 
 class Todoterreno {
     - pozosEncontrados : int
-    + chocar(ElementoDelEscenario) : int
+    + chocar(Chocable) : int
 }
 
-interface Vehiculo {
-    + chocar(ElementoDelEscenario) : int
+interface IVehiculo {
+    + chocar(Chocable) : int
 }
 
-interface ElementoDelEscenario {
+interface Chocable {
     + obtenerPuntosDePenalizacion(Moto) : int
     + obtenerPuntosDePenalizacion(Auto) : int
     + obtenerPuntosDePenalizacion(Todoterreno) : int
 }
 
-Jugador -> Vehiculo
+Jugador -> IVehiculo
 Movimiento <. Jugador
 
-Vehiculo <|-- Auto
-Vehiculo <|-- Moto
-Vehiculo <|-- Todoterreno
+IVehiculo <|.. Auto
+IVehiculo <|.. Moto
+IVehiculo <|.. Todoterreno
 
-ElementoDelEscenario <|-- Pozo
-ElementoDelEscenario <|-- Vacio
-ElementoDelEscenario <|-- Piquete
+Chocable <|.. Pozo
+Chocable <|.. Vacio
+Chocable <|.. Piquete
 
 Jugador --> Posicion
 Jugador .> Escenario
 
-Escenario --> ElementoDelEscenario
+Escenario --> Chocable
 Escenario ..> Posicion
 Movimiento <.. Posicion
-Vehiculo ..> ElementoDelEscenario
+IVehiculo ..> Chocable
 
 @enduml

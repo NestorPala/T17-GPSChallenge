@@ -1,6 +1,6 @@
 # Cosas para arreglar
 
-- [ ] Corregir flecha herencia por interfaz
+- [x] Corregir flecha herencia por interfaz
 - [ ] Colocar a las interfaces nombres con sustantivos una I adelante (Ivehiculo)
 - [ ] No usar nunca instance of
 - [ ] Que no se vean numeros de los posibles (Relacionado con posicion y movimiento)
