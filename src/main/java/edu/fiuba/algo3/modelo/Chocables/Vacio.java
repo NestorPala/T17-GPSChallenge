@@ -1,13 +1,14 @@
-package edu.fiuba.algo3.modelo.ElementosDelEscenario;
+package edu.fiuba.algo3.modelo.Chocables;
 
 import edu.fiuba.algo3.modelo.Vehiculos.Auto;
 import edu.fiuba.algo3.modelo.Vehiculos.Moto;
 import edu.fiuba.algo3.modelo.Vehiculos.Todoterreno;
 
-public class Piquete implements ElementoDelEscenario {
+public class Vacio implements Chocables {
+
     @Override
     public int obtenerPuntosDePenalizacion(Moto moto) {
-        return 2;
+        return 0;
     }
 
     @Override

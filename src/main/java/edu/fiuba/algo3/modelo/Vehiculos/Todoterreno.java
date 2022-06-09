@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.modelo.Vehiculos;
 
-import edu.fiuba.algo3.modelo.ElementosDelEscenario.ElementoDelEscenario;
+import edu.fiuba.algo3.modelo.Chocables.Chocables;
 
 public class Todoterreno implements Vehiculo {
     private int pozosEncontrados;
@@ -10,7 +10,7 @@ public class Todoterreno implements Vehiculo {
     }
 
     @Override
-    public int chocar(ElementoDelEscenario elemento) {
+    public int chocar(Chocables elemento) {
         this.pozosEncontrados += 1;
         if (this.pozosEncontrados >= 3) {
             this.pozosEncontrados = 0;

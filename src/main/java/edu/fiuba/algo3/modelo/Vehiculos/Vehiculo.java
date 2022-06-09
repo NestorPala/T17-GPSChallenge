@@ -1,7 +1,7 @@
 package edu.fiuba.algo3.modelo.Vehiculos;
 
-import edu.fiuba.algo3.modelo.ElementosDelEscenario.ElementoDelEscenario;
+import edu.fiuba.algo3.modelo.Chocables.Chocables;
 
 public interface Vehiculo {
-    int chocar(ElementoDelEscenario elemento);
+    int chocar(Chocables elemento);
 }

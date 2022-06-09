@@ -1,12 +1,12 @@
 package edu.fiuba.algo3.modelo;
 
-import edu.fiuba.algo3.modelo.ElementosDelEscenario.ElementoDelEscenario;
-import edu.fiuba.algo3.modelo.ElementosDelEscenario.Vacio;
+import edu.fiuba.algo3.modelo.Chocables.Chocables;
+import edu.fiuba.algo3.modelo.Chocables.Vacio;
 
 public class Escenario {
     private final int altura;
     private final int anchura;
-    private final ElementoDelEscenario[][] matriz;
+    private final Chocables[][] matriz;
 
     public Escenario(int alturaInicial, int anchuraInicial) throws EscenarioConLimitesInvalidosError {
         if (alturaInicial < 0 || anchuraInicial < 0) {
@@ -15,7 +15,7 @@ public class Escenario {
 
         this.altura = alturaInicial;
         this.anchura = anchuraInicial;
-        this.matriz = new ElementoDelEscenario[anchuraInicial][alturaInicial];
+        this.matriz = new Chocables[anchuraInicial][alturaInicial];
 
         for (int i = 0; i < anchuraInicial; i++) {
             for (int j = 0; j < alturaInicial; j++) {
@@ -24,13 +24,13 @@ public class Escenario {
         }
     }
 
-    public void ponerUnElemento(ElementoDelEscenario elemento, Posicion posicion) {
+    public void ponerUnElemento(Chocables elemento, Posicion posicion) {
         if (estaDentroDelEscenario(posicion)) {
             matriz[posicion.obtenerX()][posicion.obtenerY()] = elemento;
         }
     }
 
-    public ElementoDelEscenario obtenerElementoEnEscenario(Posicion posicion) {
+    public Chocables obtenerElementoEnEscenario(Posicion posicion) {
         if (estaDentroDelEscenario(posicion)) {
             return matriz[posicion.obtenerX()][posicion.obtenerY()];
         }
