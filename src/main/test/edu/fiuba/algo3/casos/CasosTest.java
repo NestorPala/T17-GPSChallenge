@@ -20,10 +20,6 @@ public class CasosTest {
         Jugador jugador = new Jugador(new Posicion(1, 1), moto);
         Pozo pozo = new Pozo();
 
-        // El jugador inicia con 0 penalizaciones y 0 movimientos.
-        assertEquals(0, jugador.totalPenalizaciones());
-        assertEquals(0, jugador.movimientosRealizados());
-
         // Pongo el pozo
         escenario.ponerUnElemento(pozo, new Posicion(2, 1));
 
@@ -33,19 +29,8 @@ public class CasosTest {
         // Muevo al jugador a la nueva posicion
         jugador.moverse(new Movimiento(1, 0), escenario);
 
-        // Chequeo la nueva posicion del jugador
-        assertEquals(jugador.posicionDelJugador(), new Posicion(2, 1));
-
-        // Chequeo si se aumentaron la cantidad de penalizaciones
-        assertEquals(jugador.totalPenalizaciones(), 3);
-
-        // Chequeo si se aumentaron los movimientos
-        assertEquals(jugador.movimientosRealizados(), 1);
-
-        // Vuelvo a mover y pruebo si funciona sin chocar
-        jugador.moverse(new Movimiento(1, 0), escenario);
-        assertEquals(jugador.movimientosRealizados(), 2);
-        assertEquals(jugador.totalPenalizaciones(), 3);
+        // Chequeo que el jugador obtenga el puntaje correcto
+        assertEquals(jugador.puntajeTotal(), 4);
     }
 
     @Test
@@ -55,10 +40,6 @@ public class CasosTest {
         Jugador jugador = new Jugador(new Posicion(1, 1), auto);
         Pozo pozo = new Pozo();
 
-        // El jugador inicia con 0 penalizaciones y 0 movimientos.
-        assertEquals(0, jugador.totalPenalizaciones());
-        assertEquals(0, jugador.movimientosRealizados());
-
         // Pongo el pozo
         escenario.ponerUnElemento(pozo, new Posicion(2, 1));
 
@@ -68,19 +49,8 @@ public class CasosTest {
         // Muevo al jugador a la nueva posicion
         jugador.moverse(new Movimiento(1, 0), escenario);
 
-        // Chequeo la nueva posicion del jugador
-        assertEquals(jugador.posicionDelJugador(), new Posicion(2, 1));
-
-        // Chequeo si se aumentaron la cantidad de penalizaciones
-        assertEquals(jugador.totalPenalizaciones(), 3);
-
-        // Chequeo si se aumentaron los movimientos
-        assertEquals(jugador.movimientosRealizados(), 1);
-
-        // Vuelvo a mover y pruebo si funciona sin chocar
-        jugador.moverse(new Movimiento(1, 0), escenario);
-        assertEquals(jugador.movimientosRealizados(), 2);
-        assertEquals(jugador.totalPenalizaciones(), 3);
+        // Chequeo que el jugador obtenga el puntaje correcto
+        assertEquals(jugador.puntajeTotal(), 4);
     }
 
     @Test
@@ -90,10 +60,6 @@ public class CasosTest {
         Jugador jugador = new Jugador(new Posicion(1, 1), todoterreno);
         Pozo pozo = new Pozo();
 
-        // El jugador inicia con 0 penalizaciones y 0 movimientos.
-        assertEquals(0, jugador.totalPenalizaciones());
-        assertEquals(0, jugador.movimientosRealizados());
-
         // Pongo el pozo
         escenario.ponerUnElemento(pozo, new Posicion(2, 1));
 
@@ -103,19 +69,8 @@ public class CasosTest {
         // Muevo al jugador a la nueva posicion
         jugador.moverse(new Movimiento(1, 0), escenario);
 
-        // Chequeo la nueva posicion del jugador
-        assertEquals(jugador.posicionDelJugador(), new Posicion(2, 1));
-
-        // Chequeo si se mantienen la cantidad de penalizaciones
-        assertEquals(jugador.totalPenalizaciones(), 0);
-
-        // Chequeo si se aumentaron los movimientos
-        assertEquals(jugador.movimientosRealizados(), 1);
-
-        // Vuelvo a mover y pruebo si funciona sin chocar
-        jugador.moverse(new Movimiento(1, 0), escenario);
-        assertEquals(jugador.movimientosRealizados(), 2);
-        assertEquals(jugador.totalPenalizaciones(), 0);
+        // Chequeo que el jugador obtenga el puntaje correcto
+        assertEquals(jugador.puntajeTotal(), 1);
     }
 
     @Test
@@ -124,10 +79,6 @@ public class CasosTest {
         Moto moto = new Moto();
         Jugador jugador = new Jugador(new Posicion(1, 1), moto);
         Piquete piquete = new Piquete();
-
-        // El jugador inicia con 0 penalizaciones y 0 movimientos.
-        assertEquals(0, jugador.totalPenalizaciones());
-        assertEquals(0, jugador.movimientosRealizados());
 
         // Pongo el pozo
         escenario.ponerUnElemento(piquete, new Posicion(2, 1));
@@ -138,19 +89,8 @@ public class CasosTest {
         // Muevo al jugador a la nueva posicion
         jugador.moverse(new Movimiento(1, 0), escenario);
 
-        // Chequeo la nueva posicion del jugador
-        assertEquals(jugador.posicionDelJugador(), new Posicion(2, 1));
-
-        // Chequeo si se aumentaron la cantidad de penalizaciones
-        assertEquals(jugador.totalPenalizaciones(), 2);
-
-        // Chequeo si se aumentaron los movimientos
-        assertEquals(jugador.movimientosRealizados(), 1);
-
-        // Vuelvo a mover y pruebo si funciona sin chocar
-        jugador.moverse(new Movimiento(1, 0), escenario);
-        assertEquals(jugador.movimientosRealizados(), 2);
-        assertEquals(jugador.totalPenalizaciones(), 2);
+        // Chequeo que el jugador obtenga el puntaje correcto
+        assertEquals(jugador.puntajeTotal(), 3);
     }
 
     @Test
@@ -159,10 +99,6 @@ public class CasosTest {
         Todoterreno todoterreno = new Todoterreno();
         Jugador jugador = new Jugador(new Posicion(1, 1), todoterreno);
         Pozo pozo = new Pozo();
-
-        // El jugador inicia con 0 penalizaciones y 0 movimientos.
-        assertEquals(0, jugador.totalPenalizaciones());
-        assertEquals(0, jugador.movimientosRealizados());
 
         // Pongo los pozos
         escenario.ponerUnElemento(pozo, new Posicion(2, 1));
@@ -174,26 +110,12 @@ public class CasosTest {
         assertTrue(escenario.obtenerElementoEnEscenario(new Posicion(3, 1)) instanceof Pozo);
         assertTrue(escenario.obtenerElementoEnEscenario(new Posicion(4, 1)) instanceof Pozo);
 
-        // Muevo al jugador a la nueva posicion
+        //Muevo tres veces al jugador
         jugador.moverse(new Movimiento(1, 0), escenario);
-
-        // Chequeo la nueva posicion del jugador
-        assertEquals(jugador.posicionDelJugador(), new Posicion(2, 1));
-
-        // Chequeo si se aumentaron la cantidad de penalizaciones
-        assertEquals(jugador.totalPenalizaciones(), 0);
-
-        //Muevo dos veces al jugador
         jugador.moverse(new Movimiento(1, 0), escenario);
         jugador.moverse(new Movimiento(1, 0), escenario);
 
-        // Chequeo si se aumentaron los movimientos y las penalizaciones
-        assertEquals(jugador.movimientosRealizados(), 3);
-        assertEquals(jugador.totalPenalizaciones(), 2);
-
-        // Vuelvo a mover y pruebo si funciona sin chocar
-        jugador.moverse(new Movimiento(1, 0), escenario);
-        assertEquals(jugador.movimientosRealizados(), 4);
-        assertEquals(jugador.totalPenalizaciones(), 2);
+        // Chequeo que el jugador obtenga el puntaje correcto
+        assertEquals(jugador.puntajeTotal(), 5);
     }
 }

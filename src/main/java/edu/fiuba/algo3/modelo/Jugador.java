@@ -27,6 +27,8 @@ public class Jugador {
         return this.cantidadMovimientos;
     }
 
+    public int puntajeTotal(){ return (this.cantidadMovimientos + this.penalizaciones);}
+
     public void moverse(Movimiento movimiento, Escenario escenario) {
         Posicion nuevaPosicion = new Posicion(posicion.obtenerX(), posicion.obtenerY());
 
