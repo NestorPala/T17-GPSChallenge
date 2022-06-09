@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.unitarios;
 
 import edu.fiuba.algo3.modelo.Posicion;
+import edu.fiuba.algo3.modelo.Vehiculos.Auto;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -19,5 +20,6 @@ public class PosicionTest {
         assertEquals(p1,p1);
         assertNotEquals(p4,p2);
         assertNotEquals(p2, null);
+        assertNotEquals(p1, new Auto());
     }
 }
