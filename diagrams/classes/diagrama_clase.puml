@@ -44,6 +44,12 @@ class Vacio {
     +  obtenerPuntosDePenalizacion(Todoterreno) : int
 }
 
+class Piquete {
+    +  obtenerPuntosDePenalizacion(Moto) : int
+    +  obtenerPuntosDePenalizacion(Auto) : int
+    +  obtenerPuntosDePenalizacion(Todoterreno) : int
+}
+
 class Auto {
     + chocar(ElementoDelEscenario) : int
 }
@@ -76,6 +82,7 @@ Vehiculo <|-- Todoterreno
 
 ElementoDelEscenario <|-- Pozo
 ElementoDelEscenario <|-- Vacio
+ElementoDelEscenario <|-- Piquete
 
 Jugador --> Posicion
 Jugador .> Escenario
