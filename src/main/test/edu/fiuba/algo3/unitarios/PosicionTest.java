@@ -18,5 +18,6 @@ public class PosicionTest {
         assertEquals(p3, p1);
         assertEquals(p1,p1);
         assertNotEquals(p4,p2);
+        assertNotEquals(p2, null);
     }
 }

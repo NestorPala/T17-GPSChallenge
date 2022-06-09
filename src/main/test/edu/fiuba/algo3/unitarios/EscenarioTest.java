@@ -30,6 +30,8 @@ public class EscenarioTest {
         assertFalse(escenario.estaDentroDelEscenario(new Posicion(11, 11)));
         assertFalse(escenario.estaDentroDelEscenario(new Posicion(5,15)));
         assertFalse(escenario.estaDentroDelEscenario(new Posicion(15,5)));
+        assertFalse(escenario.estaDentroDelEscenario(new Posicion(-3,5)));
+        assertFalse(escenario.estaDentroDelEscenario(new Posicion(6,-5)));
         assertTrue(escenario.estaDentroDelEscenario(new Posicion(2,8)));
         assertTrue(escenario.estaDentroDelEscenario(new Posicion(9,1)));
     }
