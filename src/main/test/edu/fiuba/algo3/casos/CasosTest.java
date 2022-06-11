@@ -17,8 +17,9 @@ public class CasosTest {
 
 
 
+
     @Test
-    public void motoChocaPozoYEsPenalizadaConTresMovimientos() 
+    public void test01_motoChocaPozoYEsPenalizadaConTresMovimientos() 
     throws PosicionDelEscenarioInvalida 
     {
         Escenario escenario = new Escenario(20, 20);
@@ -35,33 +36,37 @@ public class CasosTest {
 
 
 
-    // Escenario escenario = new Escenario();
-    // Chocable pozo1 = new Pozo(); 
-    // Chocable pozo2 = new Pozo(); 
-    // Chocable piquete1 = new Piquete(); 
 
-    // Escenario.insertarChocables([pozo1, pozo2, piquete1])
-    // // posiciones: 2,3 - 6,5 - 0,4
+    // IDEAS PARA IMPLEMENTAR POSICION
 
-    // if vehiculo.choco(pozo1):
-    //     hacer algo
-    
-    // class vehiculo {
-    //     bool choco(chocable) {
-    //         this.posicion.equals(chocable.posicion())
-    //     }
-    // }
+        // Escenario escenario = new Escenario();
+        // Chocable pozo1 = new Pozo(); 
+        // Chocable pozo2 = new Pozo(); 
+        // Chocable piquete1 = new Piquete(); 
 
-    // for i in range(5):
-    //     escenario.insertarchocables(new Pozo())
-    
-    // for i in range(6):
-    //     escenario.insertarchocables(new Piquete())
+        // Escenario.insertarChocables([pozo1, pozo2, piquete1])
+        // // posiciones: 2,3 - 6,5 - 0,4
+
+        // if vehiculo.choco(pozo1):
+        //     hacer algo
+        
+        // class vehiculo {
+        //     bool choco(chocable) {
+        //         this.posicion.equals(chocable.posicion())
+        //     }
+        // }
+
+        // for i in range(5):
+        //     escenario.insertarchocables(new Pozo())
+        
+        // for i in range(6):
+        //     escenario.insertarchocables(new Piquete())
+
 
 
     
     @Test
-    public void autoChocaPozoYEsPenalizadoConTresMovimientos() 
+    public void test02_autoChocaPozoYEsPenalizadoConTresMovimientos() 
     throws PosicionDelEscenarioInvalida 
     {
         Escenario escenario = new Escenario(20, 20);
@@ -78,8 +83,9 @@ public class CasosTest {
 
 
 
+
     @Test
-    public void todoterrenoChocaPozoYNoEsPenalizado() 
+    public void test03_todoterrenoChocaPozoYNoEsPenalizado() 
     throws PosicionDelEscenarioInvalida 
     {
         Escenario escenario = new Escenario(20, 20);
@@ -96,8 +102,9 @@ public class CasosTest {
 
 
 
+
     @Test
-    public void motoChocaConPiqueteYEsPenalizadoConDosMovimientos() 
+    public void test04_motoChocaConPiqueteYEsPenalizadoConDosMovimientos() 
     throws PosicionDelEscenarioInvalida 
     {
         Escenario escenario = new Escenario(20, 20);
@@ -114,8 +121,9 @@ public class CasosTest {
 
 
 
+
     @Test
-    public void todoterrenoChocaConTresPozosYEsPenalizadoConDosMovimientos() 
+    public void test05_todoterrenoChocaConTresPozosYEsPenalizadoConDosMovimientos() 
     throws PosicionDelEscenarioInvalida 
     {
         Escenario escenario = new Escenario(20, 20);
@@ -138,4 +146,47 @@ public class CasosTest {
 
 
 
+
+    @Test
+    public void test06_UnVehiculoAtraviesaLaCiudadYEncuentraUnaSorpresaFavorable() 
+    {
+    }
+
+
+
+
+    @Test
+    public void test07_UnVehiculoAtraviesaLaCiudadYEncuentraUnaSorpresaDesfavorable() 
+    {
+    }
+
+
+
+
+    @Test
+    public void test08_UnVehiculoAtraviesaLaCiudadYEncuentraUnaSorpresaCambioDeVehiculo() 
+    {
+    }
+
+
+
+
+    // Idea: considerar sorpresa y obstaculo a la vez
+    @Test
+    public void test09_() 
+    {
+    }
+
+
+
+
+    // Idea: considerar chocable con probabilidad
+    @Test
+    public void test10_() 
+    {
+    }
+
+
+
+    
 }
