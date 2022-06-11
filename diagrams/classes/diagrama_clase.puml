@@ -3,24 +3,39 @@
 class Jugador {
     - penalizaciones : int
     - cantidadMovimientos : int
-    + puntajeObtenido() : int
+    + puntaje() : int
     + posicionDelJugador() : Posicion
-    + moverse(Movimiento, Escenario)
+    + moverse(IMovimiento, Escenario)
 }
 
-class Movimiento {
-    - x : int
-    - y : int
-    + obtenerX() : int
-    + obtenerY() : int
+interface IMovimiento {
+    + x() : int
+    + y() : int
+}
+
+class Derecha {
+    + x() : int
+    + y() : int
+}
+class Arriba {
+    + x() : int
+    + y() : int
+}
+class Abajo {
+    + x() : int
+    + y() : int
+}
+class Izquierda {
+    + x() : int
+    + y() : int
 }
 
 class Escenario {
     - altura : int
     - anchura : int
-    - matriz : Chocable
-    + ponerUnElemento(Chocable,Posicion)
-    + obtenerElementoEnEscenario(Posicion) : Chocable
+    - matriz : IChocable
+    + insertarChocable(IChocable,Posicion)
+    + obtenerChocableEnPosicion(Posicion) : IChocable
     + estaDentroDelEscenario(Posicion) : Bool
 }
 
@@ -29,7 +44,7 @@ class Posicion {
     - y : int
     + obtenerX() : int
     + obtenerY() : int
-    + moverseDesdePosicionInicial(Movimiento)
+    + moverseDesdePosicionInicial(IMovimiento)
 }
 
 class Pozo {
@@ -51,45 +66,50 @@ class Piquete {
 }
 
 class Auto {
-    + chocar(Chocable) : int
+    + chocar(IChocable) : int
 }
 
 class Moto {
-    + chocar(Chocable) : int
+    + chocar(IChocable) : int
 }
 
 class Todoterreno {
     - pozosEncontrados : int
-    + chocar(Chocable) : int
+    + chocar(IChocable) : int
 }
 
 interface IVehiculo {
-    + chocar(Chocable) : int
+    + chocar(IChocable) : int
 }
 
-interface Chocable {
+interface IChocable {
     + obtenerPuntosDePenalizacion(Moto) : int
     + obtenerPuntosDePenalizacion(Auto) : int
     + obtenerPuntosDePenalizacion(Todoterreno) : int
 }
 
 Jugador -> IVehiculo
-Movimiento <. Jugador
+IMovimiento <. Jugador
 
 IVehiculo <|.. Auto
 IVehiculo <|.. Moto
 IVehiculo <|.. Todoterreno
 
-Chocable <|.. Pozo
-Chocable <|.. Vacio
-Chocable <|.. Piquete
+IChocable <|.. Pozo
+IChocable <|.. Vacio
+IChocable <|.. Piquete
+
+IMovimiento <|.. Arriba
+IMovimiento <|.. Abajo
+IMovimiento <|.. Derecha
+IMovimiento <|.. Izquierda
 
 Jugador --> Posicion
 Jugador .> Escenario
 
-Escenario --> Chocable
+Escenario --> IChocable
 Escenario ..> Posicion
-Movimiento <.. Posicion
-IVehiculo ..> Chocable
+IMovimiento <.. Posicion
+IVehiculo ..> IChocable
 
 @enduml

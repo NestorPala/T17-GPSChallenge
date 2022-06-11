@@ -2,19 +2,19 @@
 title Un auto choca con un pozo y es penalizado con 3 movimientos
 Actor usuario
 
-"usuario" -> ":Jugador": moverse(movimiento, escenario)
-":Jugador" -> ":Posicion": moverseDesdePosicionInicial(movimiento, escenario)
-":Posicion" -> ":Movimiento": obtenerX()
-":Posicion" -> ":Movimiento": obtenerY()
+"usuario" -> ":Jugador": moverse(IMovimiento, escenario)
+":Jugador" -> ":Posicion": moverseDesdePosicionInicial(IMovimiento, escenario)
+":Posicion" -> ":IMovimiento": x()
+":Posicion" -> ":IMovimiento": y()
 return posicionALaQueMeVoyAMover
 ":Posicion" --> ":Jugador": posicionALaQueMeVoyAMover
-":Jugador" -> ":Escenario": obtenerElementoEnEscenario(nuevaPosicion)
-":Escenario" --> ":Jugador": elementoDelEscenario
-":Jugador" -> ":Auto": chocar(elementoDelEscenario)
+":Jugador" -> ":Escenario": obtenerChocableEnPosicion(nuevaPosicion)
+":Escenario" --> ":Jugador": IChocable
+":Jugador" -> ":Auto": chocar(IChocable)
 ":Auto" -> ":Pozo": obtenerPuntosDePenalizacion()
 return puntosDePenalizacion
 ":Auto" --> ":Jugador": 3
-"usuario" -> ":Jugador": puntajeTotal()
+"usuario" -> ":Jugador": puntaje()
 return 4
 
 @enduml

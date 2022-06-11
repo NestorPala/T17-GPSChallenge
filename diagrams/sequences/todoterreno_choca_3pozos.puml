@@ -3,33 +3,33 @@ title Una 4x4 se encuentra con 3 pozos y es penalizado con 2 movimientos
 Actor usuario
 
 loop para 2 movimientos
-"usuario" -> ":Jugador": moverse(movimiento, escenario)
-":Jugador" -> ":Posicion": moverseDesdePosicionInicial(movimiento, escenario)
-":Posicion" -> ":Movimiento": obtenerX()
-":Posicion" -> ":Movimiento": obtenerY()
+"usuario" -> ":Jugador": moverse(IMovimiento, escenario)
+":Jugador" -> ":Posicion": moverseDesdePosicionInicial(IMovimiento, escenario)
+":Posicion" -> ":IMovimiento": x()
+":Posicion" -> ":IMovimiento": y()
 return posicionALaQueMeVoyAMover
 ":Posicion" --> ":Jugador": posicionALaQueMeVoyAMover
-":Jugador" -> ":Escenario": obtenerElementoEnEscenario(nuevaPosicion)
-":Escenario" --> ":Jugador": elementoDelEscenario
-":Jugador" -> "Todoterreno:Vehiculo": chocar(elementoDelEscenario)
-"Todoterreno:Vehiculo" -> "Pozo:ElementoDelEscenario": obtenerPuntosDePenalizacion()
+":Jugador" -> ":Escenario": obtenerChocableEnPosicion(nuevaPosicion)
+":Escenario" --> ":Jugador": IChocable
+":Jugador" -> ":Vehiculo": chocar(IChocable)
+":Vehiculo" -> ":Pozo": obtenerPuntosDePenalizacion()
 return puntosDePenalizacion
-"Todoterreno:Vehiculo" --> ":Jugador": 0
+":Vehiculo" --> ":Jugador": 0
 end
 
-"usuario" -> ":Jugador": moverse(movimiento, escenario)
-":Jugador" -> ":Posicion": moverseDesdePosicionInicial(movimiento, escenario)
-":Posicion" -> ":Movimiento": obtenerX()
-":Posicion" -> ":Movimiento": obtenerY()
+"usuario" -> ":Jugador": moverse(IMovimiento, escenario)
+":Jugador" -> ":Posicion": moverseDesdePosicionInicial(IMovimiento, escenario)
+":Posicion" -> ":IMovimiento": x()
+":Posicion" -> ":IMovimiento": y()
 return posicionALaQueMeVoyAMover
 ":Posicion" --> ":Jugador": posicionALaQueMeVoyAMover
-":Jugador" -> ":Escenario": obtenerElementoEnEscenario(nuevaPosicion)
-":Escenario" --> ":Jugador": elementoDelEscenario
-":Jugador" -> "Todoterreno:Vehiculo": chocar(elementoDelEscenario)
-"Todoterreno:Vehiculo" -> "Pozo:ElementoDelEscenario": obtenerPuntosDePenalizacion()
+":Jugador" -> ":Escenario": obtenerChocableEnPosicion(nuevaPosicion)
+":Escenario" --> ":Jugador": IChocable
+":Jugador" -> ":Vehiculo": chocar(IChocable)
+":Vehiculo" -> ":Pozo": obtenerPuntosDePenalizacion()
 return puntosDePenalizacion
-"Todoterreno:Vehiculo" --> ":Jugador": 2
-"usuario" -> ":Jugador": puntajeTotal()
+":Vehiculo" --> ":Jugador": 2
+"usuario" -> ":Jugador": puntaje()
 return 5
 
 @enduml
