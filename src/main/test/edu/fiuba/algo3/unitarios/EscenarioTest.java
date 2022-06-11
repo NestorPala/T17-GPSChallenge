@@ -15,7 +15,7 @@ public class EscenarioTest {
 
 
     @Test
-    public void siIntentoCrearUnEscenarioConLimitesInvalidosMeTiraError() {
+    public void noSePuedeCrearUnEscenarioConUnTamanioInvalido() {
         Executable tarea1 = () -> new Escenario(-5, 5);
         assertThrows(PosicionDelEscenarioInvalida.class, tarea1);
 
@@ -27,8 +27,9 @@ public class EscenarioTest {
 
 
     // Para chequear si el jugador se sale del escenario
+    // Esto va en la clase jugador
     @Test
-    public void chequeoUnaPosicionDelEscenarioInvalidaMeDaFalse() 
+    public void noSePuedeRealizarUnMovimientoHaciaUnaPosicionInvalida() 
     throws PosicionDelEscenarioInvalida 
     {
         Escenario escenario = new Escenario(10, 10);
@@ -46,7 +47,7 @@ public class EscenarioTest {
 
 
     @Test
-    public void ponerUnElementoFueraDeLosLimitesNoHaceNada() 
+    public void noSePuedeColocarUnChocableFueraDeLosLimitesDelEscenario() 
     throws PosicionDelEscenarioInvalida 
     {
         Escenario escenario = new Escenario(10, 10);
@@ -58,15 +59,17 @@ public class EscenarioTest {
     
 
 
+    // "Obtener chocable en posicion" es un metodo 
+    // que se deberia usar de manera interna unicamente
 
-    @Test
-    public void siIntentoObtenerUnElementoEnUnaPosicionFueraDeLosLimitesReciboNull() 
-    throws PosicionDelEscenarioInvalida 
-    {
-        Escenario escenario = new Escenario(10, 10);
+    // @Test
+    // public void noSePuedeObtenerUnChocableDeUnLugarFueraDeLosLimitesDelEscenario() 
+    // throws PosicionDelEscenarioInvalida 
+    // {
+    //     Escenario escenario = new Escenario(10, 10);
 
-        assertNull(escenario.obtenerChocable(new Posicion(11, 11)));
-    }
+    //     assertNull(escenario.obtenerChocable(new Posicion(11, 11)));
+    // }
 
 
 
