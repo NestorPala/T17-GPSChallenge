@@ -5,6 +5,10 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class IMovimientoTest {
+
+
+
+
     @Test
     public void sePuedeCrearUnMovimientoCorrectamente() {
         // Movimiento movimiento = new Movimiento(3, 7);
@@ -13,6 +17,9 @@ public class IMovimientoTest {
         // assertEquals(movimiento.y(), 7);
     }
 
+
+
+
     @Test
     public void sePuedeCrearUnMovimientoSinParametrosCorrectamente(){
         // Movimiento movimiento = new Movimiento();
@@ -20,5 +27,8 @@ public class IMovimientoTest {
         // assertEquals(movimiento.x(), 0);
         // assertEquals(movimiento.y(), 0);
     }
+
+
+    
 
 }

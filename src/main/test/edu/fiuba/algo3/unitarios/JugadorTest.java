@@ -11,12 +11,18 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class JugadorTest {
 
+
+
+
     @Test
     public void unJugadorInicializaCorrectamente() {
         Jugador jugador = new Jugador(new Posicion(1, 1), new Moto());
 
         assertEquals(jugador.puntaje(), 0);
     }
+
+
+
 
     @Test
     public void puedoCambiarAlJugadorDePosicion() throws EscenarioConLimitesInvalidosError {
@@ -28,6 +34,9 @@ public class JugadorTest {
         assertEquals(jugador.posicionDelJugador(), new Posicion(0, 1));
     }
 
+
+
+
     @Test
     public void CambioAlJugadorAUnaPosicionInvalidaNoHaceNada() throws EscenarioConLimitesInvalidosError {
         Jugador jugador = new Jugador(new Posicion(), new Moto());
@@ -37,4 +46,7 @@ public class JugadorTest {
 
         assertEquals(jugador.posicionDelJugador(), new Posicion(0, 0));
     }
+
+
+    
 }
