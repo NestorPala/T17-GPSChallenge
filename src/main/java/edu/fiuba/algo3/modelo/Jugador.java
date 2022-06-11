@@ -1,14 +1,14 @@
 package edu.fiuba.algo3.modelo;
 
-import edu.fiuba.algo3.modelo.Vehiculos.Vehiculo;
+import edu.fiuba.algo3.modelo.Vehiculos.IVehiculo;
 
 public class Jugador {
     private int penalizaciones;
-    private final Vehiculo vehiculo;
+    private final IVehiculo vehiculo;
     private Posicion posicion;
     private int cantidadMovimientos;
 
-    public Jugador(Posicion posInicial, Vehiculo vehiculo) {
+    public Jugador(Posicion posInicial, IVehiculo vehiculo) {
         this.posicion = posInicial;
         this.vehiculo = vehiculo;
         this.cantidadMovimientos = 0;

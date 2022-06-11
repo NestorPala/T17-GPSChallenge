@@ -2,7 +2,7 @@ package edu.fiuba.algo3.modelo.Vehiculos;
 
 import edu.fiuba.algo3.modelo.Chocables.Chocables;
 
-public class Todoterreno implements Vehiculo {
+public class Todoterreno implements IVehiculo {
     private int pozosEncontrados;
 
     public Todoterreno() {

@@ -6,7 +6,7 @@ import edu.fiuba.algo3.modelo.*;
 import edu.fiuba.algo3.modelo.Vehiculos.Auto;
 import edu.fiuba.algo3.modelo.Vehiculos.Moto;
 import edu.fiuba.algo3.modelo.Vehiculos.Todoterreno;
-import edu.fiuba.algo3.modelo.Vehiculos.Vehiculo;
+import edu.fiuba.algo3.modelo.Vehiculos.IVehiculo;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -17,7 +17,7 @@ public class CasosTest {
     @Test
     public void motoChocaPozoYEsPenalizadaConTresMovimientos() throws EscenarioConLimitesInvalidosError {
         Escenario escenario = new Escenario(20, 20);
-        Vehiculo moto = new Moto();
+        IVehiculo moto = new Moto();
         Jugador jugador = new Jugador(new Posicion(1, 1), moto);
         Pozo pozo = new Pozo();
 
@@ -68,7 +68,7 @@ public class CasosTest {
     @Test
     public void motoChocaConPiqueteYEsPenalizadoConDosMovimientos() throws EscenarioConLimitesInvalidosError {
         Escenario escenario = new Escenario(20, 20);
-        Vehiculo moto = new Moto();
+        IVehiculo moto = new Moto();
         Jugador jugador = new Jugador(new Posicion(1, 1), moto);
         Piquete piquete = new Piquete();
 
