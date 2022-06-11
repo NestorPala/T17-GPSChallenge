@@ -1,5 +1,7 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.Movimiento.Movimiento;
+
 public class Posicion {
     private int x;
     private int y;
@@ -34,7 +36,7 @@ public class Posicion {
     }
 
     public void moverseDesdePosicionInicial(Movimiento movimiento) {
-        this.x = x + movimiento.obtenerX();
-        this.y = y + movimiento.obtenerY();
+        this.x = x + movimiento.x();
+        this.y = y + movimiento.y();
     }
 }

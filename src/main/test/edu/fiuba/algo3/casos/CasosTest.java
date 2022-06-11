@@ -3,6 +3,7 @@ package edu.fiuba.algo3.casos;
 import edu.fiuba.algo3.modelo.Chocables.Chocable;
 import edu.fiuba.algo3.modelo.Chocables.Piquete;
 import edu.fiuba.algo3.modelo.Chocables.Pozo;
+import edu.fiuba.algo3.modelo.Movimiento.Derecha;
 import edu.fiuba.algo3.modelo.*;
 import edu.fiuba.algo3.modelo.Vehiculos.Auto;
 import edu.fiuba.algo3.modelo.Vehiculos.Moto;
@@ -26,14 +27,12 @@ public class CasosTest {
         Jugador jugador = new Jugador(new Posicion(1, 1), moto);
         Chocable pozo = new Pozo();
 
-        // Pongo el pozo
         escenario.ponerUnElemento(pozo, new Posicion(2, 1));
 
-        // Muevo al jugador a la nueva posicion
-        jugador.moverse(new Movimiento(1, 0), escenario);
+        // jugador.moverse(new Movimiento(1, 0), escenario);
+        jugador.moverse(new Derecha(), escenario);
 
-        // Chequeo que el jugador obtenga el puntaje correcto
-        assertEquals(jugador.puntajeObtenido(), 4);
+        assertEquals(jugador.puntaje(), 4);
     }
 
 
@@ -47,14 +46,12 @@ public class CasosTest {
         Jugador jugador = new Jugador(new Posicion(1, 1), auto);
         Chocable pozo = new Pozo();
 
-        // Pongo el pozo
         escenario.ponerUnElemento(pozo, new Posicion(2, 1));
 
-        // Muevo al jugador a la nueva posicion
-        jugador.moverse(new Movimiento(1, 0), escenario);
+        // jugador.moverse(new Movimiento(1, 0), escenario);
+        jugador.moverse(new Derecha(), escenario);
 
-        // Chequeo que el jugador obtenga el puntaje correcto
-        assertEquals(jugador.puntajeObtenido(), 4);
+        assertEquals(jugador.puntaje(), 4);
     }
 
 
@@ -68,14 +65,12 @@ public class CasosTest {
         Jugador jugador = new Jugador(new Posicion(1, 1), todoterreno);
         Chocable pozo = new Pozo();
 
-        // Pongo el pozo
         escenario.ponerUnElemento(pozo, new Posicion(2, 1));
 
-        // Muevo al jugador a la nueva posicion
-        jugador.moverse(new Movimiento(1, 0), escenario);
+        // jugador.moverse(new Movimiento(1, 0), escenario);
+        jugador.moverse(new Derecha(), escenario);
 
-        // Chequeo que el jugador obtenga el puntaje correcto
-        assertEquals(jugador.puntajeObtenido(), 1);
+        assertEquals(jugador.puntaje(), 1);
     }
 
 
@@ -89,14 +84,12 @@ public class CasosTest {
         Jugador jugador = new Jugador(new Posicion(1, 1), moto);
         Chocable piquete = new Piquete();
 
-        // Pongo el pozo
         escenario.ponerUnElemento(piquete, new Posicion(2, 1));
 
-        // Muevo al jugador a la nueva posicion
-        jugador.moverse(new Movimiento(1, 0), escenario);
+        // jugador.moverse(new Movimiento(1, 0), escenario);
+        jugador.moverse(new Derecha(), escenario);
 
-        // Chequeo que el jugador obtenga el puntaje correcto
-        assertEquals(jugador.puntajeObtenido(), 3);
+        assertEquals(jugador.puntaje(), 3);
     }
 
 
@@ -116,12 +109,14 @@ public class CasosTest {
         escenario.ponerUnElemento(pozo, new Posicion(4, 1));
 
         //Muevo tres veces al jugador
-        jugador.moverse(new Movimiento(1, 0), escenario);
-        jugador.moverse(new Movimiento(1, 0), escenario);
-        jugador.moverse(new Movimiento(1, 0), escenario);
+        // jugador.moverse(new Movimiento(1, 0), escenario);
+        // jugador.moverse(new Movimiento(1, 0), escenario);
+        // jugador.moverse(new Movimiento(1, 0), escenario);
+        jugador.moverse(new Derecha(), escenario);
+        jugador.moverse(new Derecha(), escenario);
+        jugador.moverse(new Derecha(), escenario);
 
-        // Chequeo que el jugador obtenga el puntaje correcto
-        assertEquals(jugador.puntajeObtenido(), 5);
+        assertEquals(jugador.puntaje(), 5);
     }
 
 
