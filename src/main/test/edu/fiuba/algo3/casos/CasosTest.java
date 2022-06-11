@@ -29,7 +29,7 @@ public class CasosTest {
         jugador.moverse(new Movimiento(1, 0), escenario);
 
         // Chequeo que el jugador obtenga el puntaje correcto
-        assertEquals(jugador.puntajeTotal(), 4);
+        assertEquals(jugador.puntajeObtenido(), 4);
     }
 
     @Test
@@ -46,7 +46,7 @@ public class CasosTest {
         jugador.moverse(new Movimiento(1, 0), escenario);
 
         // Chequeo que el jugador obtenga el puntaje correcto
-        assertEquals(jugador.puntajeTotal(), 4);
+        assertEquals(jugador.puntajeObtenido(), 4);
     }
 
     @Test
@@ -63,7 +63,7 @@ public class CasosTest {
         jugador.moverse(new Movimiento(1, 0), escenario);
 
         // Chequeo que el jugador obtenga el puntaje correcto
-        assertEquals(jugador.puntajeTotal(), 1);
+        assertEquals(jugador.puntajeObtenido(), 1);
     }
 
     @Test
@@ -80,7 +80,7 @@ public class CasosTest {
         jugador.moverse(new Movimiento(1, 0), escenario);
 
         // Chequeo que el jugador obtenga el puntaje correcto
-        assertEquals(jugador.puntajeTotal(), 3);
+        assertEquals(jugador.puntajeObtenido(), 3);
     }
 
     @Test
@@ -101,6 +101,6 @@ public class CasosTest {
         jugador.moverse(new Movimiento(1, 0), escenario);
 
         // Chequeo que el jugador obtenga el puntaje correcto
-        assertEquals(jugador.puntajeTotal(), 5);
+        assertEquals(jugador.puntajeObtenido(), 5);
     }
 }

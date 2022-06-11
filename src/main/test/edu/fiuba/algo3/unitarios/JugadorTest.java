@@ -12,7 +12,7 @@ public class JugadorTest {
     public void unJugadorInicializaCorrectamente() {
         Jugador jugador = new Jugador(new Posicion(1, 1), new Moto());
 
-        assertEquals(jugador.puntajeTotal(), 0);
+        assertEquals(jugador.puntajeObtenido(), 0);
     }
 
     @Test
