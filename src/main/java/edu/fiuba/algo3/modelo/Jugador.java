@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.modelo;
 
-import edu.fiuba.algo3.modelo.Movimiento.Movimiento;
+import edu.fiuba.algo3.modelo.Movimiento.IMovimiento;
 import edu.fiuba.algo3.modelo.Vehiculos.IVehiculo;
 
 public class Jugador {
@@ -22,10 +22,10 @@ public class Jugador {
 
     public int puntaje(){ return (this.cantidadMovimientos + this.penalizaciones);}
 
-    public void moverse(Movimiento movimiento, Escenario escenario) {
+    public void moverse(IMovimiento IMovimiento, Escenario escenario) {
         Posicion nuevaPosicion = new Posicion(posicion.x(), posicion.y());
 
-        nuevaPosicion.moverseDesdePosicionInicial(movimiento);
+        nuevaPosicion.moverseDesdePosicionInicial(IMovimiento);
 
         if (escenario.estaDentroDelEscenario(nuevaPosicion)) {
             this.penalizaciones += this.vehiculo.chocar(escenario.obtenerChocableEnPosicion(nuevaPosicion));

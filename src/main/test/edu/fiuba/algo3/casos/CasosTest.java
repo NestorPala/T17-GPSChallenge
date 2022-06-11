@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.casos;
 
-import edu.fiuba.algo3.modelo.Chocables.Chocable;
+import edu.fiuba.algo3.modelo.Chocables.IChocable;
 import edu.fiuba.algo3.modelo.Chocables.Piquete;
 import edu.fiuba.algo3.modelo.Chocables.Pozo;
 import edu.fiuba.algo3.modelo.Movimiento.Derecha;
@@ -25,7 +25,7 @@ public class CasosTest {
         Escenario escenario = new Escenario(20, 20);
         IVehiculo moto = new Moto();
         Jugador jugador = new Jugador(new Posicion(1, 1), moto);
-        Chocable pozo = new Pozo();
+        IChocable pozo = new Pozo();
 
         escenario.insertarChocable(pozo, new Posicion(2, 1));
 
@@ -44,7 +44,7 @@ public class CasosTest {
         Escenario escenario = new Escenario(20, 20);
         IVehiculo auto = new Auto();
         Jugador jugador = new Jugador(new Posicion(1, 1), auto);
-        Chocable pozo = new Pozo();
+        IChocable pozo = new Pozo();
 
         escenario.insertarChocable(pozo, new Posicion(2, 1));
 
@@ -63,7 +63,7 @@ public class CasosTest {
         Escenario escenario = new Escenario(20, 20);
         IVehiculo todoterreno = new Todoterreno();
         Jugador jugador = new Jugador(new Posicion(1, 1), todoterreno);
-        Chocable pozo = new Pozo();
+        IChocable pozo = new Pozo();
 
         escenario.insertarChocable(pozo, new Posicion(2, 1));
 
@@ -82,7 +82,7 @@ public class CasosTest {
         Escenario escenario = new Escenario(20, 20);
         IVehiculo moto = new Moto();
         Jugador jugador = new Jugador(new Posicion(1, 1), moto);
-        Chocable piquete = new Piquete();
+        IChocable piquete = new Piquete();
 
         escenario.insertarChocable(piquete, new Posicion(2, 1));
 
@@ -101,7 +101,7 @@ public class CasosTest {
         Escenario escenario = new Escenario(20, 20);
         IVehiculo todoterreno = new Todoterreno();
         Jugador jugador = new Jugador(new Posicion(1, 1), todoterreno);
-        Chocable pozo = new Pozo();
+        IChocable pozo = new Pozo();
 
         // Pongo los pozos
         escenario.insertarChocable(pozo, new Posicion(2, 1));

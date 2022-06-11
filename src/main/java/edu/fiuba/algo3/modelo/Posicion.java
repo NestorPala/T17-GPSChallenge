@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.modelo;
 
-import edu.fiuba.algo3.modelo.Movimiento.Movimiento;
+import edu.fiuba.algo3.modelo.Movimiento.IMovimiento;
 
 public class Posicion {
     private int x;
@@ -43,8 +43,8 @@ public class Posicion {
         return y;
     }
 
-    public void moverseDesdePosicionInicial(Movimiento movimiento) {
-        this.x = x + movimiento.x();
-        this.y = y + movimiento.y();
+    public void moverseDesdePosicionInicial(IMovimiento IMovimiento) {
+        this.x = x + IMovimiento.x();
+        this.y = y + IMovimiento.y();
     }
 }

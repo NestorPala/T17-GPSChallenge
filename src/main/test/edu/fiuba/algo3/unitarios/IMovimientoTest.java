@@ -2,11 +2,9 @@ package edu.fiuba.algo3.unitarios;
 
 import org.junit.jupiter.api.Test;
 
-import edu.fiuba.algo3.modelo.Movimiento.Movimiento;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class MovimientoTest {
+public class IMovimientoTest {
     @Test
     public void sePuedeCrearUnMovimientoCorrectamente() {
         // Movimiento movimiento = new Movimiento(3, 7);

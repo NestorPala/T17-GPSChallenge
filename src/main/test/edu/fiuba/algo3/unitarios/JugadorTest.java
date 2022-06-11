@@ -1,7 +1,6 @@
 package edu.fiuba.algo3.unitarios;
 
 import edu.fiuba.algo3.modelo.*;
-import edu.fiuba.algo3.modelo.Movimiento.Movimiento;
 import edu.fiuba.algo3.modelo.Vehiculos.Moto;
 import org.junit.jupiter.api.Test;
 
