@@ -2,7 +2,7 @@ package edu.fiuba.algo3.unitarios;
 
 import edu.fiuba.algo3.modelo.Chocables.Pozo;
 import edu.fiuba.algo3.modelo.Escenario;
-import edu.fiuba.algo3.modelo.EscenarioConLimitesInvalidosError;
+import edu.fiuba.algo3.modelo.PosicionDelEscenarioInvalida;
 import edu.fiuba.algo3.modelo.Posicion;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;
@@ -17,10 +17,10 @@ public class EscenarioTest {
     @Test
     public void siIntentoCrearUnEscenarioConLimitesInvalidosMeTiraError() {
         Executable tarea1 = () -> new Escenario(-5, 5);
-        assertThrows(EscenarioConLimitesInvalidosError.class, tarea1);
+        assertThrows(PosicionDelEscenarioInvalida.class, tarea1);
 
         Executable tarea2 = () -> new Escenario(5, -5);
-        assertThrows(EscenarioConLimitesInvalidosError.class, tarea2);
+        assertThrows(PosicionDelEscenarioInvalida.class, tarea2);
     }
 
 
@@ -29,7 +29,7 @@ public class EscenarioTest {
     // Para chequear si el jugador se sale del escenario
     @Test
     public void chequeoUnaPosicionDelEscenarioInvalidaMeDaFalse() 
-    throws EscenarioConLimitesInvalidosError 
+    throws PosicionDelEscenarioInvalida 
     {
         Escenario escenario = new Escenario(10, 10);
 
@@ -47,7 +47,7 @@ public class EscenarioTest {
 
     @Test
     public void ponerUnElementoFueraDeLosLimitesNoHaceNada() 
-    throws EscenarioConLimitesInvalidosError 
+    throws PosicionDelEscenarioInvalida 
     {
         Escenario escenario = new Escenario(10, 10);
         Pozo pozo = new Pozo();
@@ -61,7 +61,7 @@ public class EscenarioTest {
 
     @Test
     public void puedoInicializarUnEscenarioConElementosVacios() 
-    throws EscenarioConLimitesInvalidosError 
+    throws PosicionDelEscenarioInvalida 
     {
         Escenario escenario = new Escenario(10, 10);
         // Posicion posicionRandom = new Posicion(9, 9);
@@ -76,7 +76,7 @@ public class EscenarioTest {
 
     @Test
     public void puedoObtenerElementosDelEscenarioCorrectamente() 
-    throws EscenarioConLimitesInvalidosError 
+    throws PosicionDelEscenarioInvalida 
     {
         Escenario escenario = new Escenario(10, 10);
         Pozo pozo = new Pozo();
@@ -91,7 +91,7 @@ public class EscenarioTest {
 
     @Test
     public void siIntentoObtenerUnElementoEnUnaPosicionFueraDeLosLimitesReciboNull() 
-    throws EscenarioConLimitesInvalidosError 
+    throws PosicionDelEscenarioInvalida 
     {
         Escenario escenario = new Escenario(10, 10);
 

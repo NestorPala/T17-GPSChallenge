@@ -9,10 +9,10 @@ public class Escenario {
     private final IChocable[][] chocables;
 
     public Escenario(int alturaInicial, int anchuraInicial) 
-    throws EscenarioConLimitesInvalidosError 
+    throws PosicionDelEscenarioInvalida 
     {
         if (alturaInicial < 0 || anchuraInicial < 0) {
-            throw new EscenarioConLimitesInvalidosError();
+            throw new PosicionDelEscenarioInvalida();
         }
 
         this.alto = alturaInicial;

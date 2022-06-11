@@ -19,7 +19,7 @@ public class CasosTest {
 
     @Test
     public void motoChocaPozoYEsPenalizadaConTresMovimientos() 
-    throws EscenarioConLimitesInvalidosError 
+    throws PosicionDelEscenarioInvalida 
     {
         Escenario escenario = new Escenario(20, 20);
         IVehiculo moto = new Moto();
@@ -62,7 +62,7 @@ public class CasosTest {
     
     @Test
     public void autoChocaPozoYEsPenalizadoConTresMovimientos() 
-    throws EscenarioConLimitesInvalidosError 
+    throws PosicionDelEscenarioInvalida 
     {
         Escenario escenario = new Escenario(20, 20);
         IVehiculo auto = new Auto();
@@ -80,7 +80,7 @@ public class CasosTest {
 
     @Test
     public void todoterrenoChocaPozoYNoEsPenalizado() 
-    throws EscenarioConLimitesInvalidosError 
+    throws PosicionDelEscenarioInvalida 
     {
         Escenario escenario = new Escenario(20, 20);
         IVehiculo todoterreno = new Todoterreno();
@@ -98,7 +98,7 @@ public class CasosTest {
 
     @Test
     public void motoChocaConPiqueteYEsPenalizadoConDosMovimientos() 
-    throws EscenarioConLimitesInvalidosError 
+    throws PosicionDelEscenarioInvalida 
     {
         Escenario escenario = new Escenario(20, 20);
         IVehiculo moto = new Moto();
@@ -116,7 +116,7 @@ public class CasosTest {
 
     @Test
     public void todoterrenoChocaConTresPozosYEsPenalizadoConDosMovimientos() 
-    throws EscenarioConLimitesInvalidosError 
+    throws PosicionDelEscenarioInvalida 
     {
         Escenario escenario = new Escenario(20, 20);
         IVehiculo todoterreno = new Todoterreno();
