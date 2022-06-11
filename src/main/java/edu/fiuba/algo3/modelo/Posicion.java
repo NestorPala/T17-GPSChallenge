@@ -16,8 +16,7 @@ public class Posicion {
         this.y = y;
     }
 
-    @Override
-    public boolean equals(Object otraPosicion) {
+    private boolean equals_(Posicion otraPosicion) {
         if (this == otraPosicion) {
             return true;
         }
@@ -26,13 +25,16 @@ public class Posicion {
             return false;
         }
 
-        Posicion posicion = (Posicion) otraPosicion;
-
-        if (x != posicion.x) {
+        if (this.x != otraPosicion.x) {
             return false;
         }
         
-        return y == posicion.y;
+        return this.y == otraPosicion.y;
+    }
+
+    @Override
+    public boolean equals(Object otraPosicion) {
+        return this.equals_((Posicion) otraPosicion);
     }
 
     public int x() {

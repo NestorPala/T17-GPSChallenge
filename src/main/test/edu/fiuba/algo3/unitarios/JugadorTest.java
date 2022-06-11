@@ -24,7 +24,9 @@ public class JugadorTest {
 
 
     @Test
-    public void puedoCambiarAlJugadorDePosicion() throws PosicionDelEscenarioInvalida {
+    public void puedoCambiarAlJugadorDePosicion() 
+    throws PosicionDelEscenarioInvalida 
+    {
         Jugador jugador = new Jugador(new Posicion(), new Moto());
         Escenario escenario = new Escenario(10, 10);
 
@@ -37,7 +39,9 @@ public class JugadorTest {
 
 
     @Test
-    public void CambioAlJugadorAUnaPosicionInvalidaNoHaceNada() throws PosicionDelEscenarioInvalida {
+    public void CambioAlJugadorAUnaPosicionInvalidaNoHaceNada() 
+    throws PosicionDelEscenarioInvalida 
+    {
         Jugador jugador = new Jugador(new Posicion(), new Moto());
         Escenario escenario = new Escenario(10, 10);
 

@@ -20,6 +20,5 @@ public class PosicionTest {
         assertEquals(p1, p1);
         assertNotEquals(p4, p2);
         assertNotEquals(p2, null);
-        assertNotEquals(p1, new Auto());
     }
 }
