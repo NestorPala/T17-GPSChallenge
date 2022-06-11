@@ -43,8 +43,8 @@ public class Posicion {
         return y;
     }
 
-    public void moverseDesdePosicionInicial(IMovimiento IMovimiento) {
-        this.x = x + IMovimiento.x();
-        this.y = y + IMovimiento.y();
+    public void moverseDesdePosicionInicial(IMovimiento movimiento) {
+        this.x = x + movimiento.x();
+        this.y = y + movimiento.y();
     }
 }

@@ -35,9 +35,9 @@ public class Escenario {
         return posY >= 0 && posY <= altura;
     }
 
-    public void insertarChocable(IChocable elemento, Posicion pos) {
+    public void insertarChocable(IChocable chocable, Posicion pos) {
         if (estaDentroDelEscenario(pos)) {
-            matriz[pos.x()][pos.y()] = elemento;
+            matriz[pos.x()][pos.y()] = chocable;
         }
     }
 

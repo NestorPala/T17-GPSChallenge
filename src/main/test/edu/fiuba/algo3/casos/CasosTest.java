@@ -29,7 +29,6 @@ public class CasosTest {
 
         escenario.insertarChocable(pozo, new Posicion(2, 1));
 
-        // jugador.moverse(new Movimiento(1, 0), escenario);
         jugador.moverse(new Derecha(), escenario);
 
         assertEquals(jugador.puntaje(), 4);
@@ -73,7 +72,6 @@ public class CasosTest {
 
         escenario.insertarChocable(pozo, new Posicion(2, 1));
 
-        // jugador.moverse(new Movimiento(1, 0), escenario);
         jugador.moverse(new Derecha(), escenario);
 
         assertEquals(jugador.puntaje(), 4);
@@ -92,7 +90,6 @@ public class CasosTest {
 
         escenario.insertarChocable(pozo, new Posicion(2, 1));
 
-        // jugador.moverse(new Movimiento(1, 0), escenario);
         jugador.moverse(new Derecha(), escenario);
 
         assertEquals(jugador.puntaje(), 1);
@@ -111,7 +108,6 @@ public class CasosTest {
 
         escenario.insertarChocable(piquete, new Posicion(2, 1));
 
-        // jugador.moverse(new Movimiento(1, 0), escenario);
         jugador.moverse(new Derecha(), escenario);
 
         assertEquals(jugador.puntaje(), 3);
@@ -133,10 +129,7 @@ public class CasosTest {
         escenario.insertarChocable(pozo, new Posicion(3, 1));
         escenario.insertarChocable(pozo, new Posicion(4, 1));
 
-        //Muevo tres veces al jugador
-        // jugador.moverse(new Movimiento(1, 0), escenario);
-        // jugador.moverse(new Movimiento(1, 0), escenario);
-        // jugador.moverse(new Movimiento(1, 0), escenario);
+        // Muevo tres veces al jugador
         jugador.moverse(new Derecha(), escenario);
         jugador.moverse(new Derecha(), escenario);
         jugador.moverse(new Derecha(), escenario);

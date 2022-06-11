@@ -4,7 +4,7 @@ public class Arriba implements IMovimiento {
 
     public Arriba() {};
 
-    public int x() { return 1;}
+    public int x() { return 0;}
 
-    public int y() { return 0;}
+    public int y() { return 1;}
 }
