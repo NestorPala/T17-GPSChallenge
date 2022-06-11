@@ -25,11 +25,11 @@ public class Posicion {
             return false;
         }
 
-        if (this.x != otraPosicion.x) {
+        if (this.x != otraPosicion.x || this.y != otraPosicion.y) {
             return false;
         }
         
-        return this.y == otraPosicion.y;
+        return true;
     }
 
     @Override
