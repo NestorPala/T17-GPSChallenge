@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.casos;
 
+import edu.fiuba.algo3.modelo.Chocables.Chocables;
 import edu.fiuba.algo3.modelo.Chocables.Piquete;
 import edu.fiuba.algo3.modelo.Chocables.Pozo;
 import edu.fiuba.algo3.modelo.*;
@@ -19,7 +20,7 @@ public class CasosTest {
         Escenario escenario = new Escenario(20, 20);
         IVehiculo moto = new Moto();
         Jugador jugador = new Jugador(new Posicion(1, 1), moto);
-        Pozo pozo = new Pozo();
+        Chocables pozo = new Pozo();
 
         // Pongo el pozo
         escenario.ponerUnElemento(pozo, new Posicion(2, 1));
@@ -34,9 +35,9 @@ public class CasosTest {
     @Test
     public void autoChocaPozoYEsPenalizadoConTresMovimientos() throws EscenarioConLimitesInvalidosError {
         Escenario escenario = new Escenario(20, 20);
-        Auto auto = new Auto();
+        IVehiculo auto = new Auto();
         Jugador jugador = new Jugador(new Posicion(1, 1), auto);
-        Pozo pozo = new Pozo();
+        Chocables pozo = new Pozo();
 
         // Pongo el pozo
         escenario.ponerUnElemento(pozo, new Posicion(2, 1));
@@ -51,9 +52,9 @@ public class CasosTest {
     @Test
     public void todoterrenoChocaPozoYNoEsPenalizado() throws EscenarioConLimitesInvalidosError {
         Escenario escenario = new Escenario(20, 20);
-        Todoterreno todoterreno = new Todoterreno();
+        IVehiculo todoterreno = new Todoterreno();
         Jugador jugador = new Jugador(new Posicion(1, 1), todoterreno);
-        Pozo pozo = new Pozo();
+        Chocables pozo = new Pozo();
 
         // Pongo el pozo
         escenario.ponerUnElemento(pozo, new Posicion(2, 1));
@@ -70,7 +71,7 @@ public class CasosTest {
         Escenario escenario = new Escenario(20, 20);
         IVehiculo moto = new Moto();
         Jugador jugador = new Jugador(new Posicion(1, 1), moto);
-        Piquete piquete = new Piquete();
+        Chocables piquete = new Piquete();
 
         // Pongo el pozo
         escenario.ponerUnElemento(piquete, new Posicion(2, 1));
@@ -85,9 +86,9 @@ public class CasosTest {
     @Test
     public void todoterrenoChocaConTresPozosYEsPenalizadoConDosMovimientos() throws EscenarioConLimitesInvalidosError {
         Escenario escenario = new Escenario(20, 20);
-        Todoterreno todoterreno = new Todoterreno();
+        IVehiculo todoterreno = new Todoterreno();
         Jugador jugador = new Jugador(new Posicion(1, 1), todoterreno);
-        Pozo pozo = new Pozo();
+        Chocables pozo = new Pozo();
 
         // Pongo los pozos
         escenario.ponerUnElemento(pozo, new Posicion(2, 1));
