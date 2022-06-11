@@ -10,11 +10,11 @@ public class Todoterreno implements IVehiculo {
     }
 
     @Override
-    public int chocar(IChocable elemento) {
+    public int chocar(IChocable chocable) {
         this.pozosEncontrados += 1;
         if (this.pozosEncontrados >= 3) {
             this.pozosEncontrados = 0;
-            return elemento.obtenerPuntosDePenalizacion(this);
+            return chocable.obtenerPuntosDePenalizacion(this);
         }
 
         return 0;

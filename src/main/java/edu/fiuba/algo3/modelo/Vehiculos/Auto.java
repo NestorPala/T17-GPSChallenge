@@ -5,7 +5,7 @@ import edu.fiuba.algo3.modelo.Chocables.IChocable;
 public class Auto implements IVehiculo {
 
     @Override
-    public int chocar(IChocable elemento) {
-        return elemento.obtenerPuntosDePenalizacion(this);
+    public int chocar(IChocable chocable) {
+        return chocable.obtenerPuntosDePenalizacion(this);
     }
 }

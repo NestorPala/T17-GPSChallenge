@@ -11,22 +11,22 @@ public class Posicion {
         this.y = 0;
     }
 
-    public Posicion(int valorX, int valorY) {
-        this.x = valorX;
-        this.y = valorY;
+    public Posicion(int x, int y) {
+        this.x = x;
+        this.y = y;
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
+    public boolean equals(Object otraPosicion) {
+        if (this == otraPosicion) {
             return true;
         }
 
-        if (obj == null || getClass() != obj.getClass()) {
+        if (otraPosicion == null || getClass() != otraPosicion.getClass()) {
             return false;
         }
 
-        Posicion posicion = (Posicion) obj;
+        Posicion posicion = (Posicion) otraPosicion;
 
         if (x != posicion.x) {
             return false;
@@ -36,11 +36,11 @@ public class Posicion {
     }
 
     public int x() {
-        return x;
+        return this.x;
     }
 
     public int y() {
-        return y;
+        return this.y;
     }
 
     public void moverseDesdePosicionInicial(IMovimiento movimiento) {

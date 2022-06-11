@@ -3,9 +3,10 @@
 class Jugador {
     - penalizaciones : int
     - cantidadMovimientos : int
+    + Jugador(posInicial, vehiculo) 
     + puntaje() : int
-    + posicionDelJugador() : Posicion
-    + moverse(IMovimiento, Escenario)
+    + posicion() : Posicion
+    + mover(movimiento, escenario)
 }
 
 interface IMovimiento {
@@ -31,61 +32,64 @@ class Izquierda {
 }
 
 class Escenario {
-    - altura : int
-    - anchura : int
-    - matriz : IChocable
-    + insertarChocable(IChocable,Posicion)
-    + obtenerChocableEnPosicion(Posicion) : IChocable
-    + estaDentroDelEscenario(Posicion) : Bool
+    - alto : int
+    - ancho : int
+    - chocables : IChocable
+    + Escenario(alturaInicial, anchuraInicial) 
+    + insertarChocable(chocable, posicion)
+    + obtenerChocable(posicion) : IChocable
+    + estaDentroDelEscenario(posicion) : Bool
 }
 
 class Posicion {
     - x : int
     - y : int
-    + obtenerX() : int
-    + obtenerY() : int
-    + moverseDesdePosicionInicial(IMovimiento)
+    + x() : int
+    + y() : int
+    + Posicion(x, y)
+    + equals(otraPosicion) : bool
+    + moverseDesdePosicionInicial(movimiento)
 }
 
 class Pozo {
-    +  obtenerPuntosDePenalizacion(Moto) : int
-    +  obtenerPuntosDePenalizacion(Auto) : int
-    +  obtenerPuntosDePenalizacion(Todoterreno) : int
+    +  obtenerPuntosDePenalizacion(moto) : int
+    +  obtenerPuntosDePenalizacion(auto) : int
+    +  obtenerPuntosDePenalizacion(todoterreno) : int
 }
 
 class Vacio {
-    +  obtenerPuntosDePenalizacion(Moto) : int
-    +  obtenerPuntosDePenalizacion(Auto) : int
-    +  obtenerPuntosDePenalizacion(Todoterreno) : int
+    +  obtenerPuntosDePenalizacion(moto) : int
+    +  obtenerPuntosDePenalizacion(auto) : int
+    +  obtenerPuntosDePenalizacion(todoterreno) : int
 }
 
-class Piquete {
-    +  obtenerPuntosDePenalizacion(Moto) : int
-    +  obtenerPuntosDePenalizacion(Auto) : int
-    +  obtenerPuntosDePenalizacion(Todoterreno) : int
+class Piquete { 
+    +  obtenerPuntosDePenalizacion(moto) : int
+    +  obtenerPuntosDePenalizacion(auto) : int
+    +  obtenerPuntosDePenalizacion(todoterreno) : int
 }
 
 class Auto {
-    + chocar(IChocable) : int
+    + chocar(chocable) : int
 }
 
 class Moto {
-    + chocar(IChocable) : int
+    + chocar(chocable) : int
 }
 
 class Todoterreno {
     - pozosEncontrados : int
-    + chocar(IChocable) : int
+    + chocar(chocable) : int
 }
 
 interface IVehiculo {
-    + chocar(IChocable) : int
+    + chocar(chocable) : int
 }
 
 interface IChocable {
-    + obtenerPuntosDePenalizacion(Moto) : int
-    + obtenerPuntosDePenalizacion(Auto) : int
-    + obtenerPuntosDePenalizacion(Todoterreno) : int
+    + obtenerPuntosDePenalizacion(moto) : int
+    + obtenerPuntosDePenalizacion(auto) : int
+    + obtenerPuntosDePenalizacion(todoterreno) : int
 }
 
 Jugador -> IVehiculo

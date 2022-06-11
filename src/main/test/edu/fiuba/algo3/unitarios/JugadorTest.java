@@ -1,7 +1,6 @@
 package edu.fiuba.algo3.unitarios;
 
 import edu.fiuba.algo3.modelo.*;
-import edu.fiuba.algo3.modelo.Movimiento.Abajo;
 import edu.fiuba.algo3.modelo.Movimiento.Arriba;
 import edu.fiuba.algo3.modelo.Movimiento.Izquierda;
 import edu.fiuba.algo3.modelo.Vehiculos.Moto;
@@ -29,9 +28,9 @@ public class JugadorTest {
         Jugador jugador = new Jugador(new Posicion(), new Moto());
         Escenario escenario = new Escenario(10, 10);
 
-        jugador.moverse(new Arriba(), escenario);
+        jugador.mover(new Arriba(), escenario);
 
-        assertEquals(jugador.posicionDelJugador(), new Posicion(0, 1));
+        assertEquals(jugador.posicion(), new Posicion(0, 1));
     }
 
 
@@ -42,11 +41,11 @@ public class JugadorTest {
         Jugador jugador = new Jugador(new Posicion(), new Moto());
         Escenario escenario = new Escenario(10, 10);
 
-        jugador.moverse(new Izquierda(), escenario);
+        jugador.mover(new Izquierda(), escenario);
 
-        assertEquals(jugador.posicionDelJugador(), new Posicion(0, 0));
+        assertEquals(jugador.posicion(), new Posicion(0, 0));
     }
 
 
-    
+
 }

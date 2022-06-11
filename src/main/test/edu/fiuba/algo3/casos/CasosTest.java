@@ -12,7 +12,6 @@ import edu.fiuba.algo3.modelo.Vehiculos.IVehiculo;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class CasosTest {
 
@@ -29,7 +28,7 @@ public class CasosTest {
 
         escenario.insertarChocable(pozo, new Posicion(2, 1));
 
-        jugador.moverse(new Derecha(), escenario);
+        jugador.mover(new Derecha(), escenario);
 
         assertEquals(jugador.puntaje(), 4);
     }
@@ -72,7 +71,7 @@ public class CasosTest {
 
         escenario.insertarChocable(pozo, new Posicion(2, 1));
 
-        jugador.moverse(new Derecha(), escenario);
+        jugador.mover(new Derecha(), escenario);
 
         assertEquals(jugador.puntaje(), 4);
     }
@@ -90,7 +89,7 @@ public class CasosTest {
 
         escenario.insertarChocable(pozo, new Posicion(2, 1));
 
-        jugador.moverse(new Derecha(), escenario);
+        jugador.mover(new Derecha(), escenario);
 
         assertEquals(jugador.puntaje(), 1);
     }
@@ -108,7 +107,7 @@ public class CasosTest {
 
         escenario.insertarChocable(piquete, new Posicion(2, 1));
 
-        jugador.moverse(new Derecha(), escenario);
+        jugador.mover(new Derecha(), escenario);
 
         assertEquals(jugador.puntaje(), 3);
     }
@@ -130,9 +129,9 @@ public class CasosTest {
         escenario.insertarChocable(pozo, new Posicion(4, 1));
 
         // Muevo tres veces al jugador
-        jugador.moverse(new Derecha(), escenario);
-        jugador.moverse(new Derecha(), escenario);
-        jugador.moverse(new Derecha(), escenario);
+        jugador.mover(new Derecha(), escenario);
+        jugador.mover(new Derecha(), escenario);
+        jugador.mover(new Derecha(), escenario);
 
         assertEquals(jugador.puntaje(), 5);
     }

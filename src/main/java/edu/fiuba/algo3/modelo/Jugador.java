@@ -16,7 +16,7 @@ public class Jugador {
         this.penalizaciones = 0;
     }
 
-    public Posicion posicionDelJugador() {
+    public Posicion posicion() {
         return this.posicion;
     }
 
@@ -24,7 +24,7 @@ public class Jugador {
         return this.cantidadMovimientos + this.penalizaciones;
     }
 
-    public void moverse(IMovimiento movimiento, Escenario escenario) {
+    public void mover(IMovimiento movimiento, Escenario escenario) {
         Posicion nuevaPosicion = new Posicion(posicion.x(), posicion.y());
 
         nuevaPosicion.moverseDesdePosicionInicial(movimiento);
@@ -32,7 +32,7 @@ public class Jugador {
         if (escenario.estaDentroDelEscenario(nuevaPosicion)) {
 
             this.penalizaciones += this.vehiculo.chocar(
-                escenario.obtenerChocableEnPosicion(nuevaPosicion));
+                escenario.obtenerChocable(nuevaPosicion));
 
             this.posicion = nuevaPosicion;
             this.cantidadMovimientos++;

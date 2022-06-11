@@ -1,7 +1,6 @@
 package edu.fiuba.algo3.unitarios;
 
 import edu.fiuba.algo3.modelo.Chocables.Pozo;
-import edu.fiuba.algo3.modelo.Chocables.Vacio;
 import edu.fiuba.algo3.modelo.Escenario;
 import edu.fiuba.algo3.modelo.EscenarioConLimitesInvalidosError;
 import edu.fiuba.algo3.modelo.Posicion;
@@ -54,7 +53,7 @@ public class EscenarioTest {
         Pozo pozo = new Pozo();
 
         escenario.insertarChocable(pozo, new Posicion(11, 11));
-        assertNull(escenario.obtenerChocableEnPosicion(new Posicion(11, 11)));
+        assertNull(escenario.obtenerChocable(new Posicion(11, 11)));
     }
 
 
@@ -96,7 +95,7 @@ public class EscenarioTest {
     {
         Escenario escenario = new Escenario(10, 10);
 
-        assertNull(escenario.obtenerChocableEnPosicion(new Posicion(11, 11)));
+        assertNull(escenario.obtenerChocable(new Posicion(11, 11)));
     }
 
 
