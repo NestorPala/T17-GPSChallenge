@@ -4,7 +4,7 @@ import edu.fiuba.algo3.modelo.Vehiculos.Auto;
 import edu.fiuba.algo3.modelo.Vehiculos.Moto;
 import edu.fiuba.algo3.modelo.Vehiculos.Todoterreno;
 
-public class Vacio implements Chocables {
+public class Vacio implements Chocable {
 
     @Override
     public int obtenerPuntosDePenalizacion(Moto moto) {

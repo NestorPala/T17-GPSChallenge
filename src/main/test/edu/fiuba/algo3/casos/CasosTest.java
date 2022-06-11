@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.casos;
 
-import edu.fiuba.algo3.modelo.Chocables.Chocables;
+import edu.fiuba.algo3.modelo.Chocables.Chocable;
 import edu.fiuba.algo3.modelo.Chocables.Piquete;
 import edu.fiuba.algo3.modelo.Chocables.Pozo;
 import edu.fiuba.algo3.modelo.*;
@@ -15,12 +15,16 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class CasosTest {
 
+
+
     @Test
-    public void motoChocaPozoYEsPenalizadaConTresMovimientos() throws EscenarioConLimitesInvalidosError {
+    public void motoChocaPozoYEsPenalizadaConTresMovimientos() 
+    throws EscenarioConLimitesInvalidosError 
+    {
         Escenario escenario = new Escenario(20, 20);
         IVehiculo moto = new Moto();
         Jugador jugador = new Jugador(new Posicion(1, 1), moto);
-        Chocables pozo = new Pozo();
+        Chocable pozo = new Pozo();
 
         // Pongo el pozo
         escenario.ponerUnElemento(pozo, new Posicion(2, 1));
@@ -32,12 +36,16 @@ public class CasosTest {
         assertEquals(jugador.puntajeObtenido(), 4);
     }
 
+
+
     @Test
-    public void autoChocaPozoYEsPenalizadoConTresMovimientos() throws EscenarioConLimitesInvalidosError {
+    public void autoChocaPozoYEsPenalizadoConTresMovimientos() 
+    throws EscenarioConLimitesInvalidosError 
+    {
         Escenario escenario = new Escenario(20, 20);
         IVehiculo auto = new Auto();
         Jugador jugador = new Jugador(new Posicion(1, 1), auto);
-        Chocables pozo = new Pozo();
+        Chocable pozo = new Pozo();
 
         // Pongo el pozo
         escenario.ponerUnElemento(pozo, new Posicion(2, 1));
@@ -49,12 +57,16 @@ public class CasosTest {
         assertEquals(jugador.puntajeObtenido(), 4);
     }
 
+
+
     @Test
-    public void todoterrenoChocaPozoYNoEsPenalizado() throws EscenarioConLimitesInvalidosError {
+    public void todoterrenoChocaPozoYNoEsPenalizado() 
+    throws EscenarioConLimitesInvalidosError 
+    {
         Escenario escenario = new Escenario(20, 20);
         IVehiculo todoterreno = new Todoterreno();
         Jugador jugador = new Jugador(new Posicion(1, 1), todoterreno);
-        Chocables pozo = new Pozo();
+        Chocable pozo = new Pozo();
 
         // Pongo el pozo
         escenario.ponerUnElemento(pozo, new Posicion(2, 1));
@@ -66,12 +78,16 @@ public class CasosTest {
         assertEquals(jugador.puntajeObtenido(), 1);
     }
 
+
+
     @Test
-    public void motoChocaConPiqueteYEsPenalizadoConDosMovimientos() throws EscenarioConLimitesInvalidosError {
+    public void motoChocaConPiqueteYEsPenalizadoConDosMovimientos() 
+    throws EscenarioConLimitesInvalidosError 
+    {
         Escenario escenario = new Escenario(20, 20);
         IVehiculo moto = new Moto();
         Jugador jugador = new Jugador(new Posicion(1, 1), moto);
-        Chocables piquete = new Piquete();
+        Chocable piquete = new Piquete();
 
         // Pongo el pozo
         escenario.ponerUnElemento(piquete, new Posicion(2, 1));
@@ -83,12 +99,16 @@ public class CasosTest {
         assertEquals(jugador.puntajeObtenido(), 3);
     }
 
+
+
     @Test
-    public void todoterrenoChocaConTresPozosYEsPenalizadoConDosMovimientos() throws EscenarioConLimitesInvalidosError {
+    public void todoterrenoChocaConTresPozosYEsPenalizadoConDosMovimientos() 
+    throws EscenarioConLimitesInvalidosError 
+    {
         Escenario escenario = new Escenario(20, 20);
         IVehiculo todoterreno = new Todoterreno();
         Jugador jugador = new Jugador(new Posicion(1, 1), todoterreno);
-        Chocables pozo = new Pozo();
+        Chocable pozo = new Pozo();
 
         // Pongo los pozos
         escenario.ponerUnElemento(pozo, new Posicion(2, 1));
@@ -103,4 +123,7 @@ public class CasosTest {
         // Chequeo que el jugador obtenga el puntaje correcto
         assertEquals(jugador.puntajeObtenido(), 5);
     }
+
+
+
 }
