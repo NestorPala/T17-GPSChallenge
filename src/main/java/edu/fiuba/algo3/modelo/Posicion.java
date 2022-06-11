@@ -17,21 +17,29 @@ public class Posicion {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
 
-        Posicion posicion = (Posicion) o;
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
 
-        if (x != posicion.x) return false;
+        Posicion posicion = (Posicion) obj;
+
+        if (x != posicion.x) {
+            return false;
+        }
+        
         return y == posicion.y;
     }
 
-    public int obtenerX() {
+    public int x() {
         return x;
     }
 
-    public int obtenerY() {
+    public int y() {
         return y;
     }
 

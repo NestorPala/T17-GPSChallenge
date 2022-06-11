@@ -23,12 +23,12 @@ public class Jugador {
     public int puntaje(){ return (this.cantidadMovimientos + this.penalizaciones);}
 
     public void moverse(Movimiento movimiento, Escenario escenario) {
-        Posicion nuevaPosicion = new Posicion(posicion.obtenerX(), posicion.obtenerY());
+        Posicion nuevaPosicion = new Posicion(posicion.x(), posicion.y());
 
         nuevaPosicion.moverseDesdePosicionInicial(movimiento);
 
         if (escenario.estaDentroDelEscenario(nuevaPosicion)) {
-            this.penalizaciones += this.vehiculo.chocar(escenario.obtenerElementoEnEscenario(nuevaPosicion));
+            this.penalizaciones += this.vehiculo.chocar(escenario.obtenerChocableEnPosicion(nuevaPosicion));
             this.posicion = nuevaPosicion;
             this.cantidadMovimientos++;
         }

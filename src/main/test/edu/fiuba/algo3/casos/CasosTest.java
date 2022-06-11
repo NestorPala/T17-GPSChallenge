@@ -27,7 +27,7 @@ public class CasosTest {
         Jugador jugador = new Jugador(new Posicion(1, 1), moto);
         Chocable pozo = new Pozo();
 
-        escenario.ponerUnElemento(pozo, new Posicion(2, 1));
+        escenario.insertarChocable(pozo, new Posicion(2, 1));
 
         // jugador.moverse(new Movimiento(1, 0), escenario);
         jugador.moverse(new Derecha(), escenario);
@@ -46,7 +46,7 @@ public class CasosTest {
         Jugador jugador = new Jugador(new Posicion(1, 1), auto);
         Chocable pozo = new Pozo();
 
-        escenario.ponerUnElemento(pozo, new Posicion(2, 1));
+        escenario.insertarChocable(pozo, new Posicion(2, 1));
 
         // jugador.moverse(new Movimiento(1, 0), escenario);
         jugador.moverse(new Derecha(), escenario);
@@ -65,7 +65,7 @@ public class CasosTest {
         Jugador jugador = new Jugador(new Posicion(1, 1), todoterreno);
         Chocable pozo = new Pozo();
 
-        escenario.ponerUnElemento(pozo, new Posicion(2, 1));
+        escenario.insertarChocable(pozo, new Posicion(2, 1));
 
         // jugador.moverse(new Movimiento(1, 0), escenario);
         jugador.moverse(new Derecha(), escenario);
@@ -84,7 +84,7 @@ public class CasosTest {
         Jugador jugador = new Jugador(new Posicion(1, 1), moto);
         Chocable piquete = new Piquete();
 
-        escenario.ponerUnElemento(piquete, new Posicion(2, 1));
+        escenario.insertarChocable(piquete, new Posicion(2, 1));
 
         // jugador.moverse(new Movimiento(1, 0), escenario);
         jugador.moverse(new Derecha(), escenario);
@@ -104,9 +104,9 @@ public class CasosTest {
         Chocable pozo = new Pozo();
 
         // Pongo los pozos
-        escenario.ponerUnElemento(pozo, new Posicion(2, 1));
-        escenario.ponerUnElemento(pozo, new Posicion(3, 1));
-        escenario.ponerUnElemento(pozo, new Posicion(4, 1));
+        escenario.insertarChocable(pozo, new Posicion(2, 1));
+        escenario.insertarChocable(pozo, new Posicion(3, 1));
+        escenario.insertarChocable(pozo, new Posicion(4, 1));
 
         //Muevo tres veces al jugador
         // jugador.moverse(new Movimiento(1, 0), escenario);

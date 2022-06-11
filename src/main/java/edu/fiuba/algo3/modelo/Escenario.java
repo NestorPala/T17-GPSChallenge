@@ -24,23 +24,27 @@ public class Escenario {
         }
     }
 
-    public void ponerUnElemento(Chocable elemento, Posicion posicion) {
-        if (estaDentroDelEscenario(posicion)) {
-            matriz[posicion.obtenerX()][posicion.obtenerY()] = elemento;
-        }
-    }
+    public boolean estaDentroDelEscenario(Posicion pos) {
+        int posX = pos.x();
+        int posY = pos.y();
 
-    public Chocable obtenerElementoEnEscenario(Posicion posicion) {
-        if (estaDentroDelEscenario(posicion)) {
-            return matriz[posicion.obtenerX()][posicion.obtenerY()];
-        }
-        return null;
-    }
-
-    public boolean estaDentroDelEscenario(Posicion posicion) {
-        if (posicion.obtenerX() < 0 || posicion.obtenerX() > anchura) {
+        if (posX < 0 || posX > anchura) {
             return false;
         }
-        return posicion.obtenerY() >= 0 && posicion.obtenerY() <= altura;
+
+        return posY >= 0 && posY <= altura;
+    }
+
+    public void insertarChocable(Chocable elemento, Posicion pos) {
+        if (estaDentroDelEscenario(pos)) {
+            matriz[pos.x()][pos.y()] = elemento;
+        }
+    }
+
+    public Chocable obtenerChocableEnPosicion(Posicion pos) {
+        if (estaDentroDelEscenario(pos)) {
+            return matriz[pos.x()][pos.y()];
+        }
+        return null;
     }
 }
