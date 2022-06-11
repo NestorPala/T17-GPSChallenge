@@ -3,7 +3,7 @@
 class Jugador {
     - penalizaciones : int
     - cantidadMovimientos : int
-    + puntajeTotal() : int
+    + puntajeObtenido() : int
     + posicionDelJugador() : Posicion
     + moverse(Movimiento, Escenario)
 }

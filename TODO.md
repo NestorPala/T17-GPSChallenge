@@ -7,5 +7,5 @@
 - [ ] Buscar como arreglar excepciones
 - [ ] Agregar detalles de implementacion
 - [ ] Cambiar la clase movimiento para que no maneje coordenadas
-- [ ] Renombrar el metodo puntaje para que no sea puntajeTotal
+- [x] Renombrar el metodo puntaje para que no sea puntajeTotal
 - [x] Cambiar elementosdelescenario por chocables
