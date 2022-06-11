@@ -62,4 +62,73 @@ public class JugadorTest {
 
 
 
+    
+    @Test
+    public void noSePuedeCrearUnJugadorConPosicionInicialInvalida()
+    {
+
+    }
+
+
+
+
+    @Test
+    public void noSePuedeCrearUnJugadorConUnVehiculoInicialInvalido()
+    {
+
+    }
+
+
+
+
+    @Test
+    public void laPuntuacionInicialDelJugadorEsCeroPuntos()
+    {
+
+    }
+
+
+
+
+    @Test
+    public void alPasarPorUnaCuadraSinObstaculosLaCantidadDePuntosEsCorrecta()
+    {
+
+    }
+
+
+
+
+    @Test
+    public void alPasarPorUnaCuadraConObstaculosLaCantidadDePuntosEsCorrecta()
+    {
+
+    }
+
+
+
+
+    @Test
+    public void alPasarDeVueltaPorElMismoObstaculoLaCantidadDePuntosEsCorrecta()
+    {
+
+    }
+
+
+
+
+    @Test
+    public void alPasarDeVueltaPorLaMismaSorpresaLaCantidadDePuntosEsCorrecta()
+    {
+
+    }
+
+
+
+
+    @Test
+    public void cuandoElJugadorLlegaALaMetaLaCantidadDePuntosEsCorrecta()
+    {
+
+    }
 }
