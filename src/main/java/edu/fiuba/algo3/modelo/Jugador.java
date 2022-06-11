@@ -20,15 +20,20 @@ public class Jugador {
         return this.posicion;
     }
 
-    public int puntaje(){ return (this.cantidadMovimientos + this.penalizaciones);}
+    public int puntaje() { 
+        return this.cantidadMovimientos + this.penalizaciones;
+    }
 
-    public void moverse(IMovimiento IMovimiento, Escenario escenario) {
+    public void moverse(IMovimiento movimiento, Escenario escenario) {
         Posicion nuevaPosicion = new Posicion(posicion.x(), posicion.y());
 
-        nuevaPosicion.moverseDesdePosicionInicial(IMovimiento);
+        nuevaPosicion.moverseDesdePosicionInicial(movimiento);
 
         if (escenario.estaDentroDelEscenario(nuevaPosicion)) {
-            this.penalizaciones += this.vehiculo.chocar(escenario.obtenerChocableEnPosicion(nuevaPosicion));
+
+            this.penalizaciones += this.vehiculo.chocar(
+                escenario.obtenerChocableEnPosicion(nuevaPosicion));
+
             this.posicion = nuevaPosicion;
             this.cantidadMovimientos++;
         }
