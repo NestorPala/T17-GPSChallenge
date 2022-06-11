@@ -26,26 +26,6 @@ public class EscenarioTest {
 
 
 
-    // Para chequear si el jugador se sale del escenario
-    // Esto va en la clase jugador
-    @Test
-    public void noSePuedeRealizarUnMovimientoHaciaUnaPosicionInvalida() 
-    throws PosicionDelEscenarioInvalida 
-    {
-        Escenario escenario = new Escenario(10, 10);
-
-        assertFalse(escenario.estaDentroDelEscenario(new Posicion(11, 11)));
-        assertFalse(escenario.estaDentroDelEscenario(new Posicion(5,15)));
-        assertFalse(escenario.estaDentroDelEscenario(new Posicion(15,5)));
-        assertFalse(escenario.estaDentroDelEscenario(new Posicion(-3,5)));
-        assertFalse(escenario.estaDentroDelEscenario(new Posicion(6,-5)));
-        assertTrue(escenario.estaDentroDelEscenario(new Posicion(2,8)));
-        assertTrue(escenario.estaDentroDelEscenario(new Posicion(9,1)));
-    }
-
-
-
-
     @Test
     public void noSePuedeColocarUnChocableFueraDeLosLimitesDelEscenario() 
     throws PosicionDelEscenarioInvalida 
@@ -57,6 +37,7 @@ public class EscenarioTest {
         assertNull(escenario.obtenerChocable(new Posicion(11, 11)));
     }
     
+
 
 
     // "Obtener chocable en posicion" es un metodo 
@@ -71,6 +52,7 @@ public class EscenarioTest {
     //     assertNull(escenario.obtenerChocable(new Posicion(11, 11)));
     // }
 
+    
 
 
 }
