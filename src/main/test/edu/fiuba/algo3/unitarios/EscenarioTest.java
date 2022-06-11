@@ -55,37 +55,7 @@ public class EscenarioTest {
         escenario.insertarChocable(pozo, new Posicion(11, 11));
         assertNull(escenario.obtenerChocable(new Posicion(11, 11)));
     }
-
-
-
-
-    @Test
-    public void puedoInicializarUnEscenarioConElementosVacios() 
-    throws PosicionDelEscenarioInvalida 
-    {
-        Escenario escenario = new Escenario(10, 10);
-        // Posicion posicionRandom = new Posicion(9, 9);
-
-        escenario.insertarChocable(new Pozo(), new Posicion(8, 8));
-
-        // falta agregar assert
-    }
-
-
-
-
-    @Test
-    public void puedoObtenerElementosDelEscenarioCorrectamente() 
-    throws PosicionDelEscenarioInvalida 
-    {
-        Escenario escenario = new Escenario(10, 10);
-        Pozo pozo = new Pozo();
-
-        escenario.insertarChocable(pozo, new Posicion(5, 5));
-
-        // falta agregar assert
-    }
-
+    
 
 
 
