@@ -25,8 +25,7 @@ public class JugadorTest {
 
 
     @Test
-    public void aplicarUnMovimientoAlJugadorCambiaSuPosicion() 
-    throws PosicionDelEscenarioInvalida 
+    public void aplicarUnMovimientoAlJugadorCambiaSuPosicion()
     {
         Posicion posicionInicial = new Posicion();
         Vehiculo vehiculoInicial = new Moto();
@@ -43,8 +42,7 @@ public class JugadorTest {
 
     // Esta prueba en particular no deberia lanzar excepciones
     @Test
-    public void moverAlJugadorHaciaUnaPosicionInvalidaNoHaceNada() 
-    throws PosicionDelEscenarioInvalida 
+    public void moverAlJugadorHaciaUnaPosicionInvalidaNoHaceNada()
     {
         Posicion posicionInicial = new Posicion();
         Vehiculo vehiculoInicial = new Moto();

@@ -17,8 +17,7 @@ public class CasosTest {
 
 
     @Test
-    public void test01_motoChocaPozoYEsPenalizadaConTresMovimientos() 
-    throws PosicionDelEscenarioInvalida 
+    public void test01_motoChocaPozoYEsPenalizadaConTresMovimientos()
     {
         Escenario escenario = new Escenario(20, 20);
         Vehiculo moto = new Moto();
@@ -66,8 +65,7 @@ public class CasosTest {
 
     
     @Test
-    public void test02_autoChocaPozoYEsPenalizadoConTresMovimientos() 
-    throws PosicionDelEscenarioInvalida 
+    public void test02_autoChocaPozoYEsPenalizadoConTresMovimientos()
     {
         Escenario escenario = new Escenario(20, 20);
         Vehiculo auto = new Auto();
@@ -85,8 +83,7 @@ public class CasosTest {
 
 
     @Test
-    public void test03_todoterrenoChocaPozoYNoEsPenalizado() 
-    throws PosicionDelEscenarioInvalida 
+    public void test03_todoterrenoChocaPozoYNoEsPenalizado()
     {
         Escenario escenario = new Escenario(20, 20);
         Vehiculo todoterreno = new Todoterreno();
@@ -104,8 +101,7 @@ public class CasosTest {
 
 
     @Test
-    public void test04_motoChocaConPiqueteYEsPenalizadoConDosMovimientos() 
-    throws PosicionDelEscenarioInvalida 
+    public void test04_motoChocaConPiqueteYEsPenalizadoConDosMovimientos()
     {
         Escenario escenario = new Escenario(20, 20);
         Vehiculo moto = new Moto();
@@ -123,8 +119,7 @@ public class CasosTest {
 
 
     @Test
-    public void test05_todoterrenoChocaConTresPozosYEsPenalizadoConDosMovimientos() 
-    throws PosicionDelEscenarioInvalida 
+    public void test05_todoterrenoChocaConTresPozosYEsPenalizadoConDosMovimientos()
     {
         Escenario escenario = new Escenario(20, 20);
         Vehiculo todoterreno = new Todoterreno();
@@ -148,7 +143,7 @@ public class CasosTest {
 
 
     @Test
-    public void test06_UnVehiculoAtraviesaLaCiudadYEncuentraUnaSorpresaFavorable() throws PosicionDelEscenarioInvalida
+    public void test06_UnVehiculoAtraviesaLaCiudadYEncuentraUnaSorpresaFavorable()
     {
         Escenario escenario = new Escenario(20, 20);
         Vehiculo moto = new Moto();
@@ -166,7 +161,7 @@ public class CasosTest {
 
 
     @Test
-    public void test07_UnVehiculoAtraviesaLaCiudadYEncuentraUnaSorpresaDesfavorable() throws PosicionDelEscenarioInvalida
+    public void test07_UnVehiculoAtraviesaLaCiudadYEncuentraUnaSorpresaDesfavorable()
     {
         Escenario escenario = new Escenario(20, 20);
         Vehiculo moto = new Moto();
@@ -192,7 +187,6 @@ public class CasosTest {
 
     @Test
     public void test09_UnVehiculoSeEncuentraConUnControlPolicialYPuedeRecibirPenalizacion()
-    throws PosicionDelEscenarioInvalida
     {
         Escenario escenario = new Escenario(20, 20);
         Vehiculo moto = new Moto();
