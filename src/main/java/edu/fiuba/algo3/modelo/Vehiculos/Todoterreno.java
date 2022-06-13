@@ -1,8 +1,9 @@
 package edu.fiuba.algo3.modelo.Vehiculos;
 
-import edu.fiuba.algo3.modelo.Chocables.IChocable;
+import edu.fiuba.algo3.modelo.Chocables.Chocable;
+import edu.fiuba.algo3.modelo.Puntaje;
 
-public class Todoterreno implements IVehiculo {
+public class Todoterreno extends Vehiculo {
     private int pozosEncontrados;
 
     public Todoterreno() {
@@ -10,13 +11,12 @@ public class Todoterreno implements IVehiculo {
     }
 
     @Override
-    public int chocar(IChocable chocable) {
+    public void chocar(Chocable chocable, Puntaje puntaje) {
         this.pozosEncontrados += 1;
         if (this.pozosEncontrados >= 3) {
             this.pozosEncontrados = 0;
-            return chocable.obtenerPuntosDePenalizacion(this);
+            chocable.obtenerPuntosDePenalizacion(this, puntaje);
         }
-
-        return 0;
+        //return 0;
     }
 }

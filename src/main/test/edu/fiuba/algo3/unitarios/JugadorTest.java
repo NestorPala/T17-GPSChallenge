@@ -1,10 +1,7 @@
 package edu.fiuba.algo3.unitarios;
 
 import edu.fiuba.algo3.modelo.*;
-import edu.fiuba.algo3.modelo.Movimiento.Arriba;
-import edu.fiuba.algo3.modelo.Movimiento.IMovimiento;
-import edu.fiuba.algo3.modelo.Movimiento.Izquierda;
-import edu.fiuba.algo3.modelo.Vehiculos.IVehiculo;
+import edu.fiuba.algo3.modelo.Vehiculos.Vehiculo;
 import edu.fiuba.algo3.modelo.Vehiculos.Moto;
 import org.junit.jupiter.api.Test;
 
@@ -32,14 +29,14 @@ public class JugadorTest {
     throws PosicionDelEscenarioInvalida 
     {
         Posicion posicionInicial = new Posicion();
-        IVehiculo vehiculoInicial = new Moto();
+        Vehiculo vehiculoInicial = new Moto();
         Jugador jugador = new Jugador(posicionInicial, vehiculoInicial);
         Escenario escenario = new Escenario(10, 10);
-        IMovimiento movimiento = new Arriba();
 
-        jugador.mover(movimiento, escenario);
+        jugador.mover(Direccion.derecha(), escenario);
 
-        assertEquals(jugador.posicion(), new Posicion(0, 1));
+        //assertEquals(jugador.posicion(), new Posicion(0, 1));
+        assertEquals(new Posicion(1, 0), jugador.posicion());
     }
 
 
@@ -50,14 +47,14 @@ public class JugadorTest {
     throws PosicionDelEscenarioInvalida 
     {
         Posicion posicionInicial = new Posicion();
-        IVehiculo vehiculoInicial = new Moto();
+        Vehiculo vehiculoInicial = new Moto();
         Jugador jugador = new Jugador(posicionInicial, vehiculoInicial);
-        Escenario escenario = new Escenario(10, 10);
-        IMovimiento movimiento = new Izquierda();
-        
-        jugador.mover(movimiento, escenario);
+        //Escenario escenario = new Escenario(10, 10);
+        Escenario escenario = new Escenario(0, 0);
 
-        assertEquals(jugador.posicion(), posicionInicial);
+        jugador.mover(Direccion.derecha(), escenario);
+
+        assertEquals(posicionInicial, jugador.posicion());
     }
 
 

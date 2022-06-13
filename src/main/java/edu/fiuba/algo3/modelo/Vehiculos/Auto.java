@@ -1,11 +1,11 @@
 package edu.fiuba.algo3.modelo.Vehiculos;
 
-import edu.fiuba.algo3.modelo.Chocables.IChocable;
+import edu.fiuba.algo3.modelo.Chocables.Chocable;
+import edu.fiuba.algo3.modelo.Puntaje;
 
-public class Auto implements IVehiculo {
-
+public class Auto extends Vehiculo {
     @Override
-    public int chocar(IChocable chocable) {
-        return chocable.obtenerPuntosDePenalizacion(this);
+    public void chocar(Chocable chocable, Puntaje puntaje) {
+        chocable.obtenerPuntosDePenalizacion(this, puntaje);
     }
 }

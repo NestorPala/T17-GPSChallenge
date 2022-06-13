@@ -5,19 +5,19 @@ import edu.fiuba.algo3.modelo.Vehiculos.Moto;
 import edu.fiuba.algo3.modelo.Vehiculos.Todoterreno;
 import edu.fiuba.algo3.modelo.Puntaje;
 
-public class Pozo implements Chocable {
+public class SorpresaDesfavorable implements Chocable{
     @Override
     public void obtenerPuntosDePenalizacion(Moto moto, Puntaje puntaje) {
-        puntaje.sumarMovimientos(3);
+        puntaje.aplicarPorcentaje(25);
     }
 
     @Override
     public void obtenerPuntosDePenalizacion(Auto auto, Puntaje puntaje) {
-        puntaje.sumarMovimientos(3);
+        puntaje.aplicarPorcentaje(25);
     }
 
     @Override
     public void obtenerPuntosDePenalizacion(Todoterreno todoterreno, Puntaje puntaje) {
-        puntaje.sumarMovimientos(2);
+        puntaje.aplicarPorcentaje(25);
     }
 }

@@ -3,20 +3,21 @@ package edu.fiuba.algo3.modelo.Chocables;
 import edu.fiuba.algo3.modelo.Vehiculos.Auto;
 import edu.fiuba.algo3.modelo.Vehiculos.Moto;
 import edu.fiuba.algo3.modelo.Vehiculos.Todoterreno;
+import edu.fiuba.algo3.modelo.Puntaje;
 
-public class Piquete implements IChocable {
+public class Piquete implements Chocable {
     @Override
-    public int obtenerPuntosDePenalizacion(Moto moto) {
-        return 2;
+    public void obtenerPuntosDePenalizacion(Moto moto, Puntaje puntaje) {
+        puntaje.sumarMovimientos(2);
     }
 
     @Override
-    public int obtenerPuntosDePenalizacion(Auto auto) {
-        return 0;
+    public void obtenerPuntosDePenalizacion(Auto auto, Puntaje puntaje) {
+        puntaje.sumarMovimientos(0);
     }
 
     @Override
-    public int obtenerPuntosDePenalizacion(Todoterreno todoterreno) {
-        return 0;
+    public void obtenerPuntosDePenalizacion(Todoterreno todoterreno, Puntaje puntaje) {
+        puntaje.sumarMovimientos(0);
     }
 }

@@ -1,12 +1,12 @@
 package edu.fiuba.algo3.modelo;
 
-import edu.fiuba.algo3.modelo.Chocables.IChocable;
+import edu.fiuba.algo3.modelo.Chocables.Chocable;
 import edu.fiuba.algo3.modelo.Chocables.Vacio;
 
 public class Escenario {
     private final int alto;
     private final int ancho;
-    private final IChocable[][] chocables;
+    private final Chocable[][] chocables;
 
     public Escenario(int alturaInicial, int anchuraInicial) 
     throws PosicionDelEscenarioInvalida 
@@ -14,10 +14,9 @@ public class Escenario {
         if (alturaInicial < 0 || anchuraInicial < 0) {
             throw new PosicionDelEscenarioInvalida();
         }
-
         this.alto = alturaInicial;
         this.ancho = anchuraInicial;
-        this.chocables = new IChocable[anchuraInicial][alturaInicial];
+        this.chocables = new Chocable[anchuraInicial][alturaInicial];
 
         for (int i = 0; i < anchuraInicial; i++) {
             for (int j = 0; j < alturaInicial; j++) {
@@ -33,17 +32,16 @@ public class Escenario {
         if (posX < 0 || posX > ancho) {
             return false;
         }
-
         return posY >= 0 && posY <= alto;
     }
 
-    public void insertarChocable(IChocable chocable, Posicion posicion) {
+    public void insertarChocable(Chocable chocable, Posicion posicion) {
         if (estaDentroDelEscenario(posicion)) {
             chocables[posicion.x()][posicion.y()] = chocable;
         }
     }
 
-    public IChocable obtenerChocable(Posicion posicion) {
+    public Chocable obtenerChocable(Posicion posicion) {
         if (estaDentroDelEscenario(posicion)) {
             return chocables[posicion.x()][posicion.y()];
         }
