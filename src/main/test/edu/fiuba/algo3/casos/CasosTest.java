@@ -1,11 +1,7 @@
 package edu.fiuba.algo3.casos;
 
-import edu.fiuba.algo3.modelo.Chocables.Chocable;
-import edu.fiuba.algo3.modelo.Chocables.Piquete;
-import edu.fiuba.algo3.modelo.Chocables.Pozo;
+import edu.fiuba.algo3.modelo.Chocables.*;
 import edu.fiuba.algo3.modelo.*;
-import edu.fiuba.algo3.modelo.Chocables.SorpresaFavorable;
-import edu.fiuba.algo3.modelo.Chocables.SorpresaDesfavorable;
 import edu.fiuba.algo3.modelo.Vehiculos.Auto;
 import edu.fiuba.algo3.modelo.Vehiculos.Moto;
 import edu.fiuba.algo3.modelo.Vehiculos.Todoterreno;
@@ -13,6 +9,7 @@ import edu.fiuba.algo3.modelo.Vehiculos.Vehiculo;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class CasosTest {
 
@@ -172,7 +169,7 @@ public class CasosTest {
     public void test07_UnVehiculoAtraviesaLaCiudadYEncuentraUnaSorpresaDesfavorable() throws PosicionDelEscenarioInvalida
     {
         Escenario escenario = new Escenario(20, 20);
-        Vehiculo moto = new Auto();
+        Vehiculo moto = new Moto();
         Jugador jugador = new Jugador(new Posicion(1, 1), moto);
         Chocable sorpresaDesfavorable = new SorpresaDesfavorable();
 
@@ -193,17 +190,25 @@ public class CasosTest {
 
 
 
-
-    // Idea: considerar sorpresa y obstaculo a la vez
     @Test
-    public void test09_() 
+    public void test09_UnVehiculoSeEncuentraConUnControlPolicialYPuedeRecibirPenalizacion()
+    throws PosicionDelEscenarioInvalida
     {
+        Escenario escenario = new Escenario(20, 20);
+        Vehiculo moto = new Moto();
+        Jugador jugador = new Jugador(new Posicion(1, 1), moto);
+        Chocable controlPolicial = new ControlPolicial();
+
+        escenario.insertarChocable(controlPolicial, new Posicion(1, 2));
+
+        jugador.mover(Direccion.arriba(), escenario);
+
+        assertTrue((jugador.puntaje() == 1.0 || jugador.puntaje() == 4.0));
     }
 
 
 
-
-    // Idea: considerar chocable con probabilidad
+    // Idea: considerar sorpresa y obstaculo a la vez
     @Test
     public void test10_() 
     {
