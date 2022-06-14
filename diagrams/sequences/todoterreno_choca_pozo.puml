@@ -3,18 +3,20 @@ title Una 4x4 atraviesa la ciudad y se encuentra con un Pozo. No es penalizada.
 Actor usuario
 
 "usuario" -> ":Jugador": mover(direccion, escenario)
-":Jugador" -> ":Vehiculo": mover(direccion, posicion)
-":Vehiculo" -> ":Direccion": calcularNuevaPosicion(posicion)
+":Jugador" -> ":Todoterreno": mover(direccion, posicion)
+":Todoterreno" -> ":Direccion": calcularNuevaPosicion(posicion)
 ":Direccion" -> ":Posicion": sumarX(dirX)
 ":Direccion" -> ":Posicion": sumarY(dirY)
-":Posicion" --> ":Jugador": posicionALaQueMeVoyAMover
+":Direccion" --> ":Todoterreno": nuevaPosicion
+":Todoterreno" --> ":Jugador": nuevaPosicion
 ":Jugador" -> ":Puntaje": sumarMovimientos(1)
 ":Jugador" -> ":Escenario": obtenerChocable(nuevaPosicion)
-":Escenario" --> ":Jugador": chocable
-":Jugador" -> ":Vehiculo": chocar(chocable, puntaje)
-":Vehiculo" -> ":Chocable": aplicarPenalizacion(self, puntaje)
-":Chocable" -> ":Vehiculo" : sumarPozo()
-":Chocable" --> ":Jugador" : Vehiculo
+":Escenario" --> ":Jugador": unPozo
+":Jugador" -> ":Todoterreno": chocar(unPozo, puntaje)
+":Todoterreno" -> ":Pozo": aplicarPenalizacion(self, puntaje)
+":Pozo" -> ":Todoterreno" : sumarPozo()
+":Pozo" --> ":Todoterreno" : unTodoterreno
+":Todoterreno" --> ":Jugador" : unTodoterreno
 
 "usuario" -> ":Jugador": puntaje()
 ":Jugador" -> ":Puntaje": verMovimientos()
