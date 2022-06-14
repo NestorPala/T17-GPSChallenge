@@ -5,7 +5,7 @@ import edu.fiuba.algo3.modelo.Puntaje;
 
 public class Moto extends Vehiculo {
     @Override
-    public void chocar(Chocable chocable, Puntaje puntaje) {
-        chocable.obtenerPuntosDePenalizacion(this, puntaje);
+    public Vehiculo chocar(Chocable chocable, Puntaje puntaje) {
+        return chocable.aplicarPenalizacion(this, puntaje);
     }
 }

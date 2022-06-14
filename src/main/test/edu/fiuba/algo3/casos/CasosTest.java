@@ -179,6 +179,19 @@ public class CasosTest {
     @Test
     public void test08_UnVehiculoAtraviesaLaCiudadYEncuentraUnaSorpresaCambioDeVehiculo() 
     {
+        Escenario escenario = new Escenario(20, 20);
+        Vehiculo auto = new Auto();
+        Jugador jugador = new Jugador(auto);
+        Chocable sorpresaCambioVehiculo = new SorpresaCambioVehiculo();
+        Chocable pozo = new Pozo();
+
+        escenario.insertarChocable(sorpresaCambioVehiculo, new Posicion(1, 0));
+        escenario.insertarChocable(pozo, new Posicion(0, 0));
+
+        jugador.mover(Direccion.abajo(), escenario);
+        jugador.mover(Direccion.izquierda(), escenario);
+
+        assertEquals(2, jugador.puntaje());
     }
 
 

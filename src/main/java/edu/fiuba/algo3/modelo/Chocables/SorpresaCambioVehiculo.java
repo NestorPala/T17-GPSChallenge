@@ -6,22 +6,19 @@ import edu.fiuba.algo3.modelo.Vehiculos.Moto;
 import edu.fiuba.algo3.modelo.Vehiculos.Todoterreno;
 import edu.fiuba.algo3.modelo.Puntaje;
 
-public class SorpresaFavorable implements Chocable {
+public class SorpresaCambioVehiculo implements Chocable {
     @Override
     public Vehiculo aplicarPenalizacion(Moto moto, Puntaje puntaje) {
-        puntaje.aplicarPorcentaje(-20);
-        return moto;
+        return new Auto();
     }
 
     @Override
     public Vehiculo aplicarPenalizacion(Auto auto, Puntaje puntaje) {
-        puntaje.aplicarPorcentaje(-20);
-        return auto;
+        return new Todoterreno();
     }
 
     @Override
     public Vehiculo aplicarPenalizacion(Todoterreno todoterreno, Puntaje puntaje) {
-        puntaje.aplicarPorcentaje(-20);
-        return todoterreno;
+        return new Moto();
     }
 }

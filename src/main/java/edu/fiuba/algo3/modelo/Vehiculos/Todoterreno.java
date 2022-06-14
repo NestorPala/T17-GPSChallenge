@@ -11,12 +11,12 @@ public class Todoterreno extends Vehiculo {
     }
 
     @Override
-    public void chocar(Chocable chocable, Puntaje puntaje) {
+    public Vehiculo chocar(Chocable chocable, Puntaje puntaje) {
         this.pozosEncontrados += 1;
         if (this.pozosEncontrados >= 3) {
             this.pozosEncontrados = 0;
-            chocable.obtenerPuntosDePenalizacion(this, puntaje);
+            return chocable.aplicarPenalizacion(this, puntaje);
         }
-        //return 0;
+        return this;
     }
 }

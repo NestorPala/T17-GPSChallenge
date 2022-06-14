@@ -11,5 +11,5 @@ public abstract class Vehiculo {
         return nuevaPosicion;
     }
 
-    abstract public void chocar(Chocable chocable, Puntaje puntaje);
+    abstract public Vehiculo chocar(Chocable chocable, Puntaje puntaje);
 }

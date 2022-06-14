@@ -4,7 +4,7 @@ import edu.fiuba.algo3.modelo.Vehiculos.Vehiculo;
 import edu.fiuba.algo3.modelo.Chocables.Chocable;
 
 public class Jugador {
-    private final Vehiculo vehiculo;
+    private Vehiculo vehiculo;
     private Posicion posicion;
     private Puntaje puntaje;
 
@@ -33,6 +33,6 @@ public class Jugador {
     private void sumarPuntaje(Escenario escenario) {
         this.puntaje.sumarMovimientos(1);
         Chocable chocable = escenario.obtenerChocable(this.posicion);
-        this.vehiculo.chocar(chocable, this.puntaje);
+        this.vehiculo = this.vehiculo.chocar(chocable, this.puntaje);
     }
 }
