@@ -14,6 +14,15 @@ import static org.mockito.ArgumentMatchers.anyDouble;
 import static org.mockito.Mockito.*;
 
 public class ControlPolicialTest {
+
+    @Test
+    public void laPenalizacionSeObtieneDeManeraRandomCorrectamente(){
+        ControlPolicial control = new ControlPolicial();
+
+        assertTrue(control.esPenalizado(-1.0));
+        assertFalse(control.esPenalizado(2));
+    }
+
     @Test
     public void puedoObtenerLosPuntosDePenalizacionCorrectosPorCadaVehiculo(){
         ControlPolicial controlMock = mock(ControlPolicial.class);

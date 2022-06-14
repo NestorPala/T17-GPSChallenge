@@ -3,18 +3,20 @@ title Un auto choca con un pozo y es penalizado con 3 movimientos
 Actor usuario
 
 "usuario" -> ":Jugador": mover(direccion, escenario)
-":Jugador" -> ":Vehiculo": mover(direccion, posicion)
-":Vehiculo" -> ":Direccion": calcularNuevaPosicion(posicion)
+":Jugador" -> ":Auto": mover(direccion, posicion)
+":Auto" -> ":Direccion": calcularNuevaPosicion(posicion)
 ":Direccion" -> ":Posicion": sumarX(dirX)
 ":Direccion" -> ":Posicion": sumarY(dirY)
-":Posicion" --> ":Jugador": posicionALaQueMeVoyAMover
+":Direccion" --> ":Auto": nuevaPosicion
+":Auto" --> ":Jugador": nuevaPosicion
 ":Jugador" -> ":Puntaje": sumarMovimientos(1)
 ":Jugador" -> ":Escenario": obtenerChocable(nuevaPosicion)
-":Escenario" --> ":Jugador": chocable
-":Jugador" -> ":Vehiculo": chocar(chocable, puntaje)
-":Vehiculo" -> ":Chocable": aplicarPenalizacion(self, puntaje)
-":Chocable" -> ":Puntaje" : sumarMovimientos(3)
-":Chocable" --> ":Jugador" : Vehiculo
+":Escenario" --> ":Jugador": unPozo
+":Jugador" -> ":Auto": chocar(unPozo, puntaje)
+":Auto" -> ":Pozo": aplicarPenalizacion(self, puntaje)
+":Pozo" -> ":Puntaje" : sumarMovimientos(3)
+":Pozo" --> ":Auto" : unAuto
+":Auto" --> ":Jugador" : unAuto
 
 "usuario" -> ":Jugador": puntaje()
 ":Jugador" -> ":Puntaje": verMovimientos()
