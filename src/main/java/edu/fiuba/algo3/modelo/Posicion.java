@@ -45,11 +45,6 @@ public class Posicion {
         return this.y;
     }
 
-    /*public void moverseDesdePosicionInicial(IMovimiento movimiento) {
-        this.x = x + movimiento.x();
-        this.y = y + movimiento.y();
-    }*/
-
     public void sumarX(int x) {
         this.x += x;
     }

@@ -31,9 +31,8 @@ public class Jugador {
     }
 
     private void sumarPuntaje(Escenario escenario) {
-        Chocable chocable = escenario.obtenerChocable(this.posicion);
-        //this.puntaje.sumarMovimientos(this.vehiculo.chocar(chocable) + 1);
         this.puntaje.sumarMovimientos(1);
+        Chocable chocable = escenario.obtenerChocable(this.posicion);
         this.vehiculo.chocar(chocable, this.puntaje);
     }
 }

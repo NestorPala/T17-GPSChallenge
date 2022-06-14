@@ -26,8 +26,6 @@ public class CasosTest {
 
         escenario.insertarChocable(pozo, new Posicion(2, 1));
 
-        //jugador.mover(new Derecha(), escenario);
-        //jugador.mover(new Direccion(), escenario);
         jugador.mover(Direccion.derecha(), escenario);
 
         assertEquals(4, jugador.puntaje());
