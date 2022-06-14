@@ -1,0 +1,65 @@
+@startuml
+
+class Jugador {
+    - Vehiculo
+    + Jugador(vehiculo)
+    + puntaje() : double
+    + posicion() : Posicion
+    + mover(direccion, escenario)
+    + sumarPuntaje(escenario)
+}
+
+class Puntaje {
+    - movimientos : double
+    + verMovimientos() : double
+    + sumarMovimientos(cantMovimientos)
+    + aplicarPorcentaje(porcentaje)
+
+}
+
+class Direccion{
+    - dirX : int
+    - dirY : int
+    + Direccion(dirHorizontal, dirVertical)
+    + calcularNuevaPosicion(posicion) : Posicion
+    + direccionOpuesta(direccion) : Direccion
+    + Derecha() : Direccion
+    + Izquierda() : Direccion
+    + Arriba() : Direccion
+    + Abajo() : Direccion
+}
+
+class Escenario {
+    - Chocable
+    - alto : int
+    - ancho : int
+    - chocables : Chocable
+    + Escenario(alturaInicial, anchuraInicial) 
+    + insertarChocable(chocable, posicion)
+    + obtenerChocable(posicion) : Chocable
+    + estaDentroDelEscenario(posicion) : Bool
+}
+
+class Posicion {
+    - x : int
+    - y : int
+    + x() : int
+    + y() : int
+    + Posicion(x, y)
+    + equals(otraPosicion) : bool
+    + sumarX(x)
+    + sumarY(y)
+}
+
+Puntaje <- Jugador
+
+Posicion <-- Jugador
+Jugador .> Escenario
+
+Direccion .> Posicion
+Direccion <. Jugador
+
+Escenario ..> Posicion
+
+
+@enduml

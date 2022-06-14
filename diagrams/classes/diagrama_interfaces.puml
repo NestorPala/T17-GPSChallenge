@@ -1,0 +1,59 @@
+@startuml
+
+
+class Pozo {
+    +  aplicarPenalizacion(moto, puntaje) : Vehiculo
+    +  aplicarPenalizacion(auto, puntaje) : Vehiculo
+    +  aplicarPenalizacion(todoterreno, puntaje) : Vehiculo
+}
+
+class Vacio {
+    +  aplicarPenalizacion(moto, puntaje) : Vehiculo
+    +  aplicarPenalizacion(auto, puntaje) : Vehiculo
+    +  aplicarPenalizacion(todoterreno, puntaje) : Vehiculo
+}
+
+class Piquete { 
+    +  aplicarPenalizacion(moto, puntaje) : Vehiculo
+    +  aplicarPenalizacion(auto, puntaje) : Vehiculo
+    +  aplicarPenalizacion(todoterreno, puntaje) : Vehiculo
+}
+
+class Auto {
+    + chocar(chocable, puntaje) : Vehiculo
+}
+
+class Moto {
+    + chocar(chocable, puntaje) : Vehiculo
+}
+
+class Todoterreno {
+    - pozosEncontrados : int
+    + chocar(chocable, puntaje) : Vehiculo
+}
+
+abstract class Vehiculo {
+    + mover(direccion, posicion) : Posicion
+    + chocar(chocable, puntaje) : Vehiculo
+}
+
+interface Chocable {
+    + aplicarPenalizacion(moto, puntaje) : Vehiculo
+    + aplicarPenalizacion(auto, puntaje) : Vehiculo
+    + aplicarPenalizacion(todoterreno, puntaje) : Vehiculo
+}
+
+Chocable <|.. Pozo
+Chocable <|.. Vacio
+Chocable <|.. Piquete
+
+Vehiculo <|- Todoterreno
+Auto -|> Vehiculo
+Moto -|> Vehiculo
+
+Vehiculo .> Chocable
+
+
+
+
+@enduml
