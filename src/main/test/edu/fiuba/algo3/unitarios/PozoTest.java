@@ -24,6 +24,6 @@ public class PozoTest {
         assertEquals(puntaje.verMovimientos(),6);
 
         pozo.aplicarPenalizacion(new Todoterreno(), puntaje);
-        assertEquals(puntaje.verMovimientos(), 8);
+        assertEquals(puntaje.verMovimientos(), 6);
     }
 }
