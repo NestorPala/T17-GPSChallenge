@@ -11,9 +11,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class EscenarioTest {
 
-
-
-
     @Test
     public void noSePuedeCrearUnEscenarioConUnTamanioInvalido() {
         Executable tarea1 = () -> new Escenario(-5, 5);

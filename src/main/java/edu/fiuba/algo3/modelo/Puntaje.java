@@ -3,6 +3,10 @@ package edu.fiuba.algo3.modelo;
 public class Puntaje {
     private double movimientos;
 
+    public Puntaje() {
+        this.movimientos = 0;
+    }
+
     public double verMovimientos() {
         return this.movimientos;
     }
