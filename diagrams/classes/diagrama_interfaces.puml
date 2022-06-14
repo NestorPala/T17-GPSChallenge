@@ -47,8 +47,8 @@ Chocable <|.. Pozo
 Chocable <|.. Vacio
 Chocable <|.. Piquete
 
-Vehiculo <|- Todoterreno
-Auto -|> Vehiculo
+Vehiculo <|-- Todoterreno
+Auto --|> Vehiculo
 Moto -|> Vehiculo
 
 Vehiculo .> Chocable

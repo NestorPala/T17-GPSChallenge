@@ -6,7 +6,7 @@ class Jugador {
     + puntaje() : double
     + posicion() : Posicion
     + mover(direccion, escenario)
-    + sumarPuntaje(escenario)
+    + chocarObstaculos(escenario)
 }
 
 class Puntaje {
@@ -51,7 +51,7 @@ class Posicion {
     + sumarY(y)
 }
 
-Puntaje <- Jugador
+Puntaje <-- Jugador
 
 Posicion <-- Jugador
 Jugador .> Escenario
