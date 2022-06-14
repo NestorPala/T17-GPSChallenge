@@ -1,8 +1,8 @@
 package edu.fiuba.algo3.modelo;
 
 public class Direccion {
-    private int dirX;
-    private int dirY;
+    private final int dirX;
+    private final int dirY;
 
     public Direccion(int dirHorizontal, int dirVertical) {
         this.dirX = dirHorizontal;
@@ -29,11 +29,5 @@ public class Direccion {
         unaPosicion.sumarX(this.dirX);
         unaPosicion.sumarY(this.dirY);
         return unaPosicion;
-    }
-
-    public Direccion direccionOpuesta(Direccion unaDireccion) {
-        unaDireccion.dirX *= -1;
-        unaDireccion.dirY *= -1;
-        return unaDireccion;
     }
 }
