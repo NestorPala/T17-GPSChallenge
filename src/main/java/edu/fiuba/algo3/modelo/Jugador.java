@@ -24,11 +24,11 @@ public class Jugador {
 
     public void mover(Direccion unaDireccion, Escenario escenario) {
         Posicion nuevaPosicion = this.vehiculo.mover(unaDireccion, this.posicion);
+        this.puntaje.sumarMovimientos(1);
         if (escenario.estaDentroDelEscenario(nuevaPosicion)) {
             this.posicion = nuevaPosicion;
             chocarObstaculos(escenario);
         }
-        this.puntaje.sumarMovimientos(1);
     }
 
     private void chocarObstaculos(Escenario escenario) {
