@@ -26,12 +26,12 @@ public class Jugador {
         Posicion nuevaPosicion = this.vehiculo.mover(unaDireccion, this.posicion);
         if (escenario.estaDentroDelEscenario(nuevaPosicion)) {
             this.posicion = nuevaPosicion;
-            sumarPuntaje(escenario);
+            chocarObstaculos(escenario);
         }
+        this.puntaje.sumarMovimientos(1);
     }
 
-    private void sumarPuntaje(Escenario escenario) {
-        this.puntaje.sumarMovimientos(1);
+    private void chocarObstaculos(Escenario escenario) {
         Chocable chocable = escenario.obtenerChocable(this.posicion);
         this.vehiculo = this.vehiculo.chocar(chocable, this.puntaje);
     }
