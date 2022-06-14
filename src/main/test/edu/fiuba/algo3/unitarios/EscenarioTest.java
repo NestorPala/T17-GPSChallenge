@@ -20,9 +20,6 @@ public class EscenarioTest {
         assertThrows(TamañoDelEscenarioInvalido.class, tarea2);
     }
 
-
-
-
     @Test
     public void noSePuedeColocarUnChocableFueraDeLosLimitesDelEscenario() 
     throws TamañoDelEscenarioInvalido
@@ -33,23 +30,21 @@ public class EscenarioTest {
         escenario.insertarChocable(pozo, new Posicion(11, 11));
         assertNull(escenario.obtenerChocable(new Posicion(11, 11)));
     }
-    
 
+    @Test
+    public void noSePuedeObtenerUnChocableDeUnLugarFueraDeLosLimitesDelEscenario(){
+         Escenario escenario = new Escenario(10, 10);
 
+        assertNull(escenario.obtenerChocable(new Posicion(11, 11)));
+    }
 
-    // "Obtener chocable en posicion" es un metodo 
-    // que se deberia usar de manera interna unicamente
+    @Test
+    public void SiChequeoUnElementoFueraDelEscenarioObtengoUnaRespuestaCorrecta(){
+        Escenario escenario = new Escenario(10,10);
 
-    // @Test
-    // public void noSePuedeObtenerUnChocableDeUnLugarFueraDeLosLimitesDelEscenario() 
-    // throws PosicionDelEscenarioInvalida 
-    // {
-    //     Escenario escenario = new Escenario(10, 10);
-
-    //     assertNull(escenario.obtenerChocable(new Posicion(11, 11)));
-    // }
-
-    
-
-
+        assertFalse(escenario.estaDentroDelEscenario(new Posicion(11,5)));
+        assertFalse(escenario.estaDentroDelEscenario(new Posicion(-5,5)));
+        assertFalse(escenario.estaDentroDelEscenario(new Posicion(5, 11)));
+        assertFalse(escenario.estaDentroDelEscenario(new Posicion(5,-5)));
+    }
 }

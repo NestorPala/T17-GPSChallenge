@@ -174,8 +174,6 @@ public class CasosTest {
     }
 
 
-
-
     @Test
     public void test08_UnVehiculoAtraviesaLaCiudadYEncuentraUnaSorpresaCambioDeVehiculo() 
     {
