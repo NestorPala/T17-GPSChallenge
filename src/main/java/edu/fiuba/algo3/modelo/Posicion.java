@@ -16,25 +16,15 @@ public class Posicion {
         this.y = y;
     }
 
-    private boolean equals_(Posicion otraPosicion) {
-        if (this == otraPosicion) {
-            return true;
-        }
-
-        if (otraPosicion == null || getClass() != otraPosicion.getClass()) {
-            return false;
-        }
-
-        if (this.x != otraPosicion.x || this.y != otraPosicion.y) {
-            return false;
-        }
-        
-        return true;
-    }
-
     @Override
-    public boolean equals(Object otraPosicion) {
-        return this.equals_((Posicion) otraPosicion);
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Posicion posicion = (Posicion) o;
+
+        if (x != posicion.x) return false;
+        return y == posicion.y;
     }
 
     public int x() {
