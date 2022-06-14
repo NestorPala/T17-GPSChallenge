@@ -29,13 +29,13 @@ public class JugadorTest {
     {
         Posicion posicionInicial = new Posicion();
         Vehiculo vehiculoInicial = new Moto();
-        Jugador jugador = new Jugador(posicionInicial, vehiculoInicial);
+        Jugador jugador = new Jugador(vehiculoInicial);
         Escenario escenario = new Escenario(10, 10);
 
         jugador.mover(Direccion.derecha(), escenario);
 
         //assertEquals(jugador.posicion(), new Posicion(0, 1));
-        assertEquals(new Posicion(1, 0), jugador.posicion());
+        assertEquals(new Posicion(2, 1), jugador.posicion());
     }
 
 
@@ -44,9 +44,9 @@ public class JugadorTest {
     @Test
     public void moverAlJugadorHaciaUnaPosicionInvalidaNoHaceNada()
     {
-        Posicion posicionInicial = new Posicion();
+        Posicion posicionInicial = new Posicion(2,1);
         Vehiculo vehiculoInicial = new Moto();
-        Jugador jugador = new Jugador(posicionInicial, vehiculoInicial);
+        Jugador jugador = new Jugador(vehiculoInicial);
         //Escenario escenario = new Escenario(10, 10);
         Escenario escenario = new Escenario(0, 0);
 

@@ -8,8 +8,8 @@ public class Jugador {
     private Posicion posicion;
     private Puntaje puntaje;
 
-    public Jugador(Posicion posInicial, Vehiculo vehiculo) {
-        this.posicion = posInicial;
+    public Jugador(Vehiculo vehiculo) {
+        this.posicion = new Posicion(1,1);
         this.vehiculo = vehiculo;
         this.puntaje = new Puntaje();
     }

@@ -21,7 +21,7 @@ public class CasosTest {
     {
         Escenario escenario = new Escenario(20, 20);
         Vehiculo moto = new Moto();
-        Jugador jugador = new Jugador(new Posicion(1, 1), moto);
+        Jugador jugador = new Jugador(moto);
         Chocable pozo = new Pozo();
 
         escenario.insertarChocable(pozo, new Posicion(2, 1));
@@ -69,7 +69,7 @@ public class CasosTest {
     {
         Escenario escenario = new Escenario(20, 20);
         Vehiculo auto = new Auto();
-        Jugador jugador = new Jugador(new Posicion(1, 1), auto);
+        Jugador jugador = new Jugador(auto);
         Chocable pozo = new Pozo();
 
         escenario.insertarChocable(pozo, new Posicion(2, 1));
@@ -87,7 +87,7 @@ public class CasosTest {
     {
         Escenario escenario = new Escenario(20, 20);
         Vehiculo todoterreno = new Todoterreno();
-        Jugador jugador = new Jugador(new Posicion(1, 1), todoterreno);
+        Jugador jugador = new Jugador(todoterreno);
         Chocable pozo = new Pozo();
 
         escenario.insertarChocable(pozo, new Posicion(2, 1));
@@ -105,7 +105,7 @@ public class CasosTest {
     {
         Escenario escenario = new Escenario(20, 20);
         Vehiculo moto = new Moto();
-        Jugador jugador = new Jugador(new Posicion(1, 1), moto);
+        Jugador jugador = new Jugador(moto);
         Chocable piquete = new Piquete();
 
         escenario.insertarChocable(piquete, new Posicion(2, 1));
@@ -123,7 +123,7 @@ public class CasosTest {
     {
         Escenario escenario = new Escenario(20, 20);
         Vehiculo todoterreno = new Todoterreno();
-        Jugador jugador = new Jugador(new Posicion(1, 1), todoterreno);
+        Jugador jugador = new Jugador(todoterreno);
         Chocable pozo = new Pozo();
 
         // Pongo los pozos
@@ -147,7 +147,7 @@ public class CasosTest {
     {
         Escenario escenario = new Escenario(20, 20);
         Vehiculo moto = new Moto();
-        Jugador jugador = new Jugador(new Posicion(1, 1), moto);
+        Jugador jugador = new Jugador(moto);
         Chocable sorpresaFavorable = new SorpresaFavorable();
 
         escenario.insertarChocable(sorpresaFavorable, new Posicion(0, 1));
@@ -165,7 +165,7 @@ public class CasosTest {
     {
         Escenario escenario = new Escenario(20, 20);
         Vehiculo moto = new Moto();
-        Jugador jugador = new Jugador(new Posicion(1, 1), moto);
+        Jugador jugador = new Jugador(moto);
         Chocable sorpresaDesfavorable = new SorpresaDesfavorable();
 
         escenario.insertarChocable(sorpresaDesfavorable, new Posicion(1, 2));
@@ -190,7 +190,7 @@ public class CasosTest {
     {
         Escenario escenario = new Escenario(20, 20);
         Vehiculo moto = new Moto();
-        Jugador jugador = new Jugador(new Posicion(1, 1), moto);
+        Jugador jugador = new Jugador(moto);
         Chocable controlPolicial = new ControlPolicial();
 
         escenario.insertarChocable(controlPolicial, new Posicion(1, 2));
