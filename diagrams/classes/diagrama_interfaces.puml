@@ -19,6 +19,30 @@ class Piquete {
     +  aplicarPenalizacion(todoterreno, puntaje) : Vehiculo
 }
 
+class ControlPolicial {
+    +  aplicarPenalizacion(moto, puntaje) : Vehiculo
+    +  aplicarPenalizacion(auto, puntaje) : Vehiculo
+    +  aplicarPenalizacion(todoterreno, puntaje) : Vehiculo
+}
+
+class SorpresaFavorable {
+    +  aplicarPenalizacion(moto, puntaje) : Vehiculo
+    +  aplicarPenalizacion(auto, puntaje) : Vehiculo
+    +  aplicarPenalizacion(todoterreno, puntaje) : Vehiculo
+}
+
+class SorpresaDesfavorable {
+    +  aplicarPenalizacion(moto, puntaje) : Vehiculo
+    +  aplicarPenalizacion(auto, puntaje) : Vehiculo
+    +  aplicarPenalizacion(todoterreno, puntaje) : Vehiculo
+}
+
+class SorpresaCambioVehiculo {
+    +  aplicarPenalizacion(moto, puntaje) : Vehiculo
+    +  aplicarPenalizacion(auto, puntaje) : Vehiculo
+    +  aplicarPenalizacion(todoterreno, puntaje) : Vehiculo
+}
+
 class Auto {
     + chocar(chocable, puntaje) : Vehiculo
 }
@@ -44,8 +68,12 @@ interface Chocable {
 }
 
 Chocable <|.. Pozo
-Chocable <|.. Vacio
-Chocable <|.. Piquete
+Vacio ..|> Chocable
+Piquete ..|> Chocable
+SorpresaDesfavorable ..|> Chocable
+Chocable <|. SorpresaCambioVehiculo
+Chocable <|.. SorpresaFavorable
+Chocable <|.. ControlPolicial
 
 Vehiculo <|-- Todoterreno
 Auto --|> Vehiculo
