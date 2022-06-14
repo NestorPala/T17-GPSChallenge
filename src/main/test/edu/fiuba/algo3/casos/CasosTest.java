@@ -215,8 +215,21 @@ public class CasosTest {
 
     // Idea: considerar sorpresa y obstaculo a la vez
     @Test
-    public void test10_() 
+    public void test10_UnTodoterrenoChocaConUnaSorpresaCambioDeVehiculoYLuegoChocaConUnPiquete()
     {
+        Escenario escenario = new Escenario(25, 25);
+        Vehiculo todoterreno = new Todoterreno();
+        Jugador jugador = new Jugador(todoterreno);
+        Chocable sorpresaCambioVehiculo = new SorpresaCambioVehiculo();
+        Chocable piquete = new Piquete();
+
+        escenario.insertarChocable(sorpresaCambioVehiculo, new Posicion(1, 2));
+        escenario.insertarChocable(piquete, new Posicion(1, 3));
+
+        jugador.mover(Direccion.arriba(), escenario);
+        jugador.mover(Direccion.arriba(), escenario);
+
+        assertEquals(4, jugador.puntaje());
     }
 
 

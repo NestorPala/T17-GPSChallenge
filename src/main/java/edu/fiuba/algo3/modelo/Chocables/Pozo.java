@@ -21,7 +21,10 @@ public class Pozo implements Chocable {
 
     @Override
     public Vehiculo aplicarPenalizacion(Todoterreno todoterreno, Puntaje puntaje) {
-        puntaje.sumarMovimientos(2);
+        todoterreno.sumarPozo();
+        if (todoterreno.obtenerPozos() >= 3) {
+            puntaje.sumarMovimientos(2);
+        }
         return todoterreno;
     }
 }
