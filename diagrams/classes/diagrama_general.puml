@@ -23,10 +23,10 @@ class Direccion{
     + Direccion(dirHorizontal, dirVertical)
     + calcularNuevaPosicion(posicion) : Posicion
     + direccionOpuesta(direccion) : Direccion
-    + Derecha() : Direccion
-    + Izquierda() : Direccion
-    + Arriba() : Direccion
-    + Abajo() : Direccion
+    + derecha() : Direccion {static}
+    + izquierda() : Direccion {static}
+    + arriba() : Direccion {static}
+    + abajo() : Direccion {static}
 }
 
 class Escenario {
@@ -34,7 +34,7 @@ class Escenario {
     - alto : int
     - ancho : int
     - chocables : Chocable
-    + Escenario(alturaInicial, anchuraInicial) 
+    + Escenario(alturaInicial, anchuraInicial)
     + insertarChocable(chocable, posicion)
     + obtenerChocable(posicion) : Chocable
     + estaDentroDelEscenario(posicion) : Bool

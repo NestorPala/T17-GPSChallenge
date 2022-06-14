@@ -3,33 +3,39 @@ title Una 4x4 se encuentra con 3 pozos y es penalizado con 2 movimientos
 Actor usuario
 
 loop para 2 movimientos
-"usuario" -> ":Jugador": moverse(IMovimiento, escenario)
-":Jugador" -> ":Posicion": moverseDesdePosicionInicial(IMovimiento, escenario)
-":Posicion" -> ":IMovimiento": x()
-":Posicion" -> ":IMovimiento": y()
-return posicionALaQueMeVoyAMover
+"usuario" -> ":Jugador": mover(direccion, escenario)
+":Jugador" -> ":Vehiculo": mover(direccion, posicion)
+":Vehiculo" -> ":Direccion": calcularNuevaPosicion(posicion)
+":Direccion" -> ":Posicion": sumarX(dirX)
+":Direccion" -> ":Posicion": sumarY(dirY)
 ":Posicion" --> ":Jugador": posicionALaQueMeVoyAMover
-":Jugador" -> ":Escenario": obtenerChocableEnPosicion(nuevaPosicion)
-":Escenario" --> ":Jugador": IChocable
-":Jugador" -> ":Vehiculo": chocar(IChocable)
-":Vehiculo" -> ":Pozo": obtenerPuntosDePenalizacion()
-return puntosDePenalizacion
-":Vehiculo" --> ":Jugador": 0
+":Jugador" -> ":Puntaje": sumarMovimientos(1)
+":Jugador" -> ":Escenario": obtenerChocable(nuevaPosicion)
+":Escenario" --> ":Jugador": chocable
+":Jugador" -> ":Vehiculo": chocar(chocable, puntaje)
+":Vehiculo" -> ":Chocable": aplicarPenalizacion(self, puntaje)
+":Chocable" -> ":Vehiculo" : sumarPozo()
+":Chocable" --> ":Jugador" : Vehiculo
 end
 
-"usuario" -> ":Jugador": moverse(IMovimiento, escenario)
-":Jugador" -> ":Posicion": moverseDesdePosicionInicial(IMovimiento, escenario)
-":Posicion" -> ":IMovimiento": x()
-":Posicion" -> ":IMovimiento": y()
-return posicionALaQueMeVoyAMover
+"usuario" -> ":Jugador": mover(direccion, escenario)
+":Jugador" -> ":Vehiculo": mover(direccion, posicion)
+":Vehiculo" -> ":Direccion": calcularNuevaPosicion(posicion)
+":Direccion" -> ":Posicion": sumarX(dirX)
+":Direccion" -> ":Posicion": sumarY(dirY)
 ":Posicion" --> ":Jugador": posicionALaQueMeVoyAMover
-":Jugador" -> ":Escenario": obtenerChocableEnPosicion(nuevaPosicion)
-":Escenario" --> ":Jugador": IChocable
-":Jugador" -> ":Vehiculo": chocar(IChocable)
-":Vehiculo" -> ":Pozo": obtenerPuntosDePenalizacion()
-return puntosDePenalizacion
-":Vehiculo" --> ":Jugador": 2
+":Jugador" -> ":Puntaje": sumarMovimientos(1)
+":Jugador" -> ":Escenario": obtenerChocable(nuevaPosicion)
+":Escenario" --> ":Jugador": chocable
+":Jugador" -> ":Vehiculo": chocar(chocable, puntaje)
+":Vehiculo" -> ":Chocable": aplicarPenalizacion(self, puntaje)
+":Chocable" -> ":Vehiculo" : sumarPozo()
+":Chocable" -> ":Puntaje" : sumarMovimientos(2)
+":Chocable" --> ":Jugador" : Vehiculo
+
 "usuario" -> ":Jugador": puntaje()
+":Jugador" -> ":Puntaje": verMovimientos()
 return 5
+":Jugador" --> "usuario" : 5
 
 @enduml

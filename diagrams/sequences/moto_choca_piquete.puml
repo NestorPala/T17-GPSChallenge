@@ -3,19 +3,23 @@ title Una moto choca con un piquete y es penalizado con 2 movimientos
 
 Actor usuario
 
-"usuario" -> ":Jugador": moverse(IMovimiento, escenario)
-":Jugador" -> ":Posicion": moverseDesdePosicionInicial(IMovimiento, escenario)
-":Posicion" -> ":IMovimiento": x()
-":Posicion" -> ":IMovimiento": y()
-return posicionALaQueMeVoyAMover
+"usuario" -> ":Jugador": mover(direccion, escenario)
+":Jugador" -> ":Vehiculo": mover(direccion, posicion)
+":Vehiculo" -> ":Direccion": calcularNuevaPosicion(posicion)
+":Direccion" -> ":Posicion": sumarX(dirX)
+":Direccion" -> ":Posicion": sumarY(dirY)
 ":Posicion" --> ":Jugador": posicionALaQueMeVoyAMover
-":Jugador" -> ":Escenario": obtenerChocableEnPosicion(nuevaPosicion)
-":Escenario" --> ":Jugador": IChocable
-":Jugador" -> ":Moto": chocar(IChocable)
-":Moto" -> ":Piquete": obtenerPuntosDePenalizacion()
-return puntosDePenalizacion
-":Moto" --> ":Jugador": 2
+":Jugador" -> ":Puntaje": sumarMovimientos(1)
+":Jugador" -> ":Escenario": obtenerChocable(nuevaPosicion)
+":Escenario" --> ":Jugador": chocable
+":Jugador" -> ":Vehiculo": chocar(chocable, puntaje)
+":Vehiculo" -> ":Chocable": aplicarPenalizacion(self, puntaje)
+":Chocable" -> ":Puntaje" : sumarMovimientos(2)
+":Chocable" --> ":Jugador" : Vehiculo
+
 "usuario" -> ":Jugador": puntaje()
+":Jugador" -> ":Puntaje": verMovimientos()
 return 3
+":Jugador" --> "usuario" : 3
 
 @enduml
