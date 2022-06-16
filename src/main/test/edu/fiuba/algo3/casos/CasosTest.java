@@ -117,7 +117,6 @@ public class CasosTest {
     jugador.mover(Direccion.arriba(), escenario);
 
     assertEquals(1.25, jugador.puntaje());
-    assertEquals(moto, jugador.obtenerVehiculo());
   }
 
   @Test

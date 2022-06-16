@@ -59,6 +59,7 @@ class Todoterreno {
 abstract class Vehiculo {
     + mover(direccion, posicion) : Posicion
     + chocar(chocable, puntaje) : Vehiculo
+    + equals(otroVehiculo) : bool
 }
 
 interface Chocable {

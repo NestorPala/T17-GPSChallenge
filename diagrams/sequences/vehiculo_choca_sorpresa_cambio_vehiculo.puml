@@ -22,4 +22,6 @@ Actor usuario
 return 1
 ":Jugador" --> "usuario" : 1
 
+"usuario" -> ":Jugador": obtenerVehiculo()
+return Vehiculo
 @enduml
