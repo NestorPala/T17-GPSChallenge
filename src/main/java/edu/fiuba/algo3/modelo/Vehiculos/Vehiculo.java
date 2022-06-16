@@ -7,9 +7,13 @@ import edu.fiuba.algo3.modelo.Puntaje;
 
 public abstract class Vehiculo {
     public Posicion mover(Direccion unaDireccion, Posicion unaPosicion) {
-        Posicion nuevaPosicion = unaDireccion.calcularNuevaPosicion(unaPosicion);
-        return nuevaPosicion;
+        return unaDireccion.calcularNuevaPosicion(unaPosicion);
     }
 
     abstract public Vehiculo chocar(Chocable chocable, Puntaje puntaje);
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
 }

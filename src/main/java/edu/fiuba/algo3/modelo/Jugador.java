@@ -35,4 +35,8 @@ public class Jugador {
         Chocable chocable = escenario.obtenerChocable(this.posicion);
         this.vehiculo = this.vehiculo.chocar(chocable, this.puntaje);
     }
+
+    public Vehiculo obtenerVehiculo(){
+        return this.vehiculo;
+    }
 }
