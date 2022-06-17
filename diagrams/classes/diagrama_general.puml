@@ -5,8 +5,8 @@ class Jugador {
     + Jugador(vehiculo)
     + puntaje() : double
     + posicion() : Posicion
-    + mover(direccion, escenario)
-    + chocarObstaculos(escenario)
+    + mover(direccion)
+    - chocarObstaculos()
 }
 
 class Puntaje {

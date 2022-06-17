@@ -19,7 +19,7 @@ public class JugadorTest {
         Jugador jugador = new Jugador(vehiculoInicial);
         Escenario escenario = Escenario.getInstance(10, 10);
 
-        jugador.mover(Direccion.derecha(), escenario);
+        jugador.mover(Direccion.derecha());
 
         assertEquals(new Posicion(2, 1), jugador.posicion());
     }
@@ -36,7 +36,7 @@ public class JugadorTest {
         //Escenario escenario = Escenario.getInstance(10, 10);
         Escenario escenario = Escenario.getInstance(0, 0);
 
-        jugador.mover(Direccion.derecha(), escenario);
+        jugador.mover(Direccion.derecha());
 
         assertEquals(posicionInicial, jugador.posicion());
     }

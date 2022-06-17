@@ -22,16 +22,18 @@ public class Jugador {
         return this.puntaje.verMovimientos();
     }
 
-    public void mover(Direccion unaDireccion, Escenario escenario) {
+    public void mover(Direccion unaDireccion) {
         Posicion nuevaPosicion = this.vehiculo.mover(unaDireccion, this.posicion);
+        Escenario escenario = Escenario.getInstance(0, 0);
         this.puntaje.sumarMovimientos(1);
         if (escenario.estaDentroDelEscenario(nuevaPosicion)) {
             this.posicion = nuevaPosicion;
-            chocarObstaculos(escenario);
+            chocarObstaculos();
         }
     }
 
-    private void chocarObstaculos(Escenario escenario) {
+    private void chocarObstaculos() {
+        Escenario escenario = Escenario.getInstance(0, 0);
         Chocable chocable = escenario.obtenerChocable(this.posicion);
         this.vehiculo = this.vehiculo.chocar(chocable, this.puntaje);
     }
