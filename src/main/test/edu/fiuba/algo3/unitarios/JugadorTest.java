@@ -12,43 +12,29 @@ public class JugadorTest {
 
 
 
-    // @Test
-    // public void unJugadorInicializaCorrectamente() {
-    //     Posicion posicionInicial = new Posicion(1, 1);
-    //     IVehiculo vehiculoInicial = new Moto();
-    //     Jugador jugador = new Jugador(posicionInicial, vehiculoInicial);
-
-    //     assertEquals(jugador.puntaje(), 0);
-    // }
-
-
-
-
     @Test
     public void aplicarUnMovimientoAlJugadorCambiaSuPosicion()
     {
-        Posicion posicionInicial = new Posicion();
         Vehiculo vehiculoInicial = new Moto();
         Jugador jugador = new Jugador(vehiculoInicial);
-        Escenario escenario = new Escenario(10, 10);
+        Escenario escenario = Escenario.getInstance(10, 10);
 
         jugador.mover(Direccion.derecha(), escenario);
 
-        //assertEquals(jugador.posicion(), new Posicion(0, 1));
         assertEquals(new Posicion(2, 1), jugador.posicion());
     }
 
 
 
-    // Esta prueba en particular no deberia lanzar excepciones
+    
     @Test
     public void moverAlJugadorHaciaUnaPosicionInvalidaNoHaceNada()
     {
         Posicion posicionInicial = new Posicion(2,1);
         Vehiculo vehiculoInicial = new Moto();
         Jugador jugador = new Jugador(vehiculoInicial);
-        //Escenario escenario = new Escenario(10, 10);
-        Escenario escenario = new Escenario(0, 0);
+        //Escenario escenario = Escenario.getInstance(10, 10);
+        Escenario escenario = Escenario.getInstance(0, 0);
 
         jugador.mover(Direccion.derecha(), escenario);
 

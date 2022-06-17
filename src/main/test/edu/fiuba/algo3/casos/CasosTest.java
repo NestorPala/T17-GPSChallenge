@@ -19,7 +19,7 @@ public class CasosTest {
     @Test
     public void test01_motoChocaPozoYEsPenalizadaConTresMovimientos()
     {
-        Escenario escenario = new Escenario(20, 20);
+        Escenario escenario = Escenario.getInstance(20, 20);
         Vehiculo moto = new Moto();
         Jugador jugador = new Jugador(moto);
         Chocable pozo = new Pozo();
@@ -31,41 +31,13 @@ public class CasosTest {
         assertEquals(4, jugador.puntaje());
     }
 
-
-
-
-    // IDEAS PARA IMPLEMENTAR POSICION
-
-        // Escenario escenario = new Escenario();
-        // Chocable pozo1 = new Pozo(); 
-        // Chocable pozo2 = new Pozo(); 
-        // Chocable piquete1 = new Piquete(); 
-
-        // Escenario.insertarChocables([pozo1, pozo2, piquete1])
-        // // posiciones: 2,3 - 6,5 - 0,4
-
-        // if vehiculo.choco(pozo1):
-        //     hacer algo
-        
-        // class vehiculo {
-        //     bool choco(chocable) {
-        //         this.posicion.equals(chocable.posicion())
-        //     }
-        // }
-
-        // for i in range(5):
-        //     escenario.insertarchocables(new Pozo())
-        
-        // for i in range(6):
-        //     escenario.insertarchocables(new Piquete())
-
-
+    
 
     
     @Test
     public void test02_autoChocaPozoYEsPenalizadoConTresMovimientos()
     {
-        Escenario escenario = new Escenario(20, 20);
+        Escenario escenario = Escenario.getInstance(20, 20);
         Vehiculo auto = new Auto();
         Jugador jugador = new Jugador(auto);
         Chocable pozo = new Pozo();
@@ -83,7 +55,7 @@ public class CasosTest {
     @Test
     public void test03_todoterrenoChocaPozoYNoEsPenalizado()
     {
-        Escenario escenario = new Escenario(20, 20);
+        Escenario escenario = Escenario.getInstance(20, 20);
         Vehiculo todoterreno = new Todoterreno();
         Jugador jugador = new Jugador(todoterreno);
         Chocable pozo = new Pozo();
@@ -101,7 +73,7 @@ public class CasosTest {
     @Test
     public void test04_motoChocaConPiqueteYEsPenalizadoConDosMovimientos()
     {
-        Escenario escenario = new Escenario(20, 20);
+        Escenario escenario = Escenario.getInstance(20, 20);
         Vehiculo moto = new Moto();
         Jugador jugador = new Jugador(moto);
         Chocable piquete = new Piquete();
@@ -119,7 +91,7 @@ public class CasosTest {
     @Test
     public void test05_todoterrenoChocaConTresPozosYEsPenalizadoConDosMovimientos()
     {
-        Escenario escenario = new Escenario(20, 20);
+        Escenario escenario = Escenario.getInstance(20, 20);
         Vehiculo todoterreno = new Todoterreno();
         Jugador jugador = new Jugador(todoterreno);
         Chocable pozo = new Pozo();
@@ -143,7 +115,7 @@ public class CasosTest {
     @Test
     public void test06_UnVehiculoAtraviesaLaCiudadYEncuentraUnaSorpresaFavorable()
     {
-        Escenario escenario = new Escenario(20, 20);
+        Escenario escenario = Escenario.getInstance(20, 20);
         Vehiculo moto = new Moto();
         Jugador jugador = new Jugador(moto);
         Chocable sorpresaFavorable = new SorpresaFavorable();
@@ -161,7 +133,7 @@ public class CasosTest {
     @Test
     public void test07_UnVehiculoAtraviesaLaCiudadYEncuentraUnaSorpresaDesfavorable()
     {
-        Escenario escenario = new Escenario(20, 20);
+        Escenario escenario = Escenario.getInstance(20, 20);
         Vehiculo moto = new Moto();
         Jugador jugador = new Jugador(moto);
         Chocable sorpresaDesfavorable = new SorpresaDesfavorable();
@@ -177,7 +149,7 @@ public class CasosTest {
     @Test
     public void test08_UnVehiculoAtraviesaLaCiudadYEncuentraUnaSorpresaCambioDeVehiculo() 
     {
-        Escenario escenario = new Escenario(20, 20);
+        Escenario escenario = Escenario.getInstance(20, 20);
         Vehiculo auto = new Auto();
         Jugador jugador = new Jugador(auto);
         Chocable sorpresaCambioVehiculo = new SorpresaCambioVehiculo();
@@ -197,7 +169,7 @@ public class CasosTest {
     @Test
     public void test09_UnVehiculoSeEncuentraConUnControlPolicialYPuedeRecibirPenalizacion()
     {
-        Escenario escenario = new Escenario(20, 20);
+        Escenario escenario = Escenario.getInstance(20, 20);
         Vehiculo moto = new Moto();
         Jugador jugador = new Jugador(moto);
         Chocable controlPolicial = new ControlPolicial();
@@ -215,7 +187,7 @@ public class CasosTest {
     @Test
     public void test10_UnTodoterrenoChocaConUnaSorpresaCambioDeVehiculoYLuegoChocaConUnPiquete()
     {
-        Escenario escenario = new Escenario(25, 25);
+        Escenario escenario = Escenario.getInstance(25, 25);
         Vehiculo todoterreno = new Todoterreno();
         Jugador jugador = new Jugador(todoterreno);
         Chocable sorpresaCambioVehiculo = new SorpresaCambioVehiculo();

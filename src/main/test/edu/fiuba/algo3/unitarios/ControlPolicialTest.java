@@ -1,12 +1,10 @@
 package edu.fiuba.algo3.unitarios;
 
-import edu.fiuba.algo3.modelo.Chocables.Chocable;
 import edu.fiuba.algo3.modelo.Chocables.ControlPolicial;
 import edu.fiuba.algo3.modelo.Puntaje;
 import edu.fiuba.algo3.modelo.Vehiculos.Auto;
 import edu.fiuba.algo3.modelo.Vehiculos.Moto;
 import edu.fiuba.algo3.modelo.Vehiculos.Todoterreno;
-import edu.fiuba.algo3.modelo.Vehiculos.Vehiculo;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -15,6 +13,9 @@ import static org.mockito.Mockito.*;
 
 public class ControlPolicialTest {
 
+
+
+
     @Test
     public void laPenalizacionSeObtieneDeManeraRandomCorrectamente(){
         ControlPolicial control = new ControlPolicial();
@@ -22,6 +23,9 @@ public class ControlPolicialTest {
         assertTrue(control.esPenalizado(-1.0));
         assertFalse(control.esPenalizado(2));
     }
+
+
+
 
     @Test
     public void puedoObtenerLosPuntosDePenalizacionCorrectosPorCadaVehiculo(){
@@ -51,4 +55,8 @@ public class ControlPolicialTest {
         controlMock.aplicarPenalizacion(todoterreno, puntaje);
         assertEquals(9, puntaje.verMovimientos());
     }
+
+
+
+    
 }

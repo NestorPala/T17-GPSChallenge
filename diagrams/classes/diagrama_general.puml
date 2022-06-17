@@ -34,7 +34,9 @@ class Escenario {
     - alto : int
     - ancho : int
     - chocables : Chocable
-    + Escenario(alturaInicial, anchuraInicial)
+    - {static} instance : Escenario
+    - Escenario(alturaInicial, anchuraInicial)
+    + {static} getInstance(alturaInicial, anchuraInicial) : Escenario
     + insertarChocable(chocable, posicion)
     + obtenerChocable(posicion) : Chocable
     + estaDentroDelEscenario(posicion) : Bool

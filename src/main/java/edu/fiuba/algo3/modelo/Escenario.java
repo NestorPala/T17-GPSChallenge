@@ -8,7 +8,9 @@ public class Escenario {
     private final int ancho;
     private final Chocable[][] chocables;
 
-    public Escenario(int alturaInicial, int anchuraInicial) 
+    private static Escenario instance;
+
+    private Escenario(int alturaInicial, int anchuraInicial) 
     throws TamañoDelEscenarioInvalido
     {
         if (alturaInicial < 0 || anchuraInicial < 0) {
@@ -23,6 +25,15 @@ public class Escenario {
                 chocables[i][j] = new Vacio();
             }
         }
+    }
+
+    public static Escenario getInstance(int alturaInicial, int anchuraInicial) 
+    throws TamañoDelEscenarioInvalido
+    {
+        if (instance == null) {
+            instance = new Escenario(alturaInicial, anchuraInicial);
+        }
+        return instance;
     }
 
     public boolean estaDentroDelEscenario(Posicion posicion) {
