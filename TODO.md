@@ -11,7 +11,7 @@
 - [ ] Buscar como arreglar excepciones
 - [ ] Agregar detalles de implementacion al informe
 
-- [ ] Convertir clase Escenario a patrón Singleton
+- [x] Convertir clase Escenario a patrón Singleton
 - [ ] Refactorizar Penalización a Efecto utilizando el patrón Decorator
 - [ ] Eliminar todos los assertNotEquals("es tipo de vehículo")
 - [ ] Mockear Random, no ControlPolicial entero
