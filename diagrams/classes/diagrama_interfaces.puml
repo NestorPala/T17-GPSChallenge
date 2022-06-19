@@ -69,18 +69,26 @@ class Todoterreno {
 
 
 
-Pozo --|> Chocable
-ControlPolicial --|> Chocable
-Piquete ..|> Chocable
-Vacio ..|> Chocable
+interface IEfecto {
+    + aplicarEfecto(jugador)
+}
 
-Chocable <|-- SorpresaFavorable 
-Chocable <|-- SorpresaDesfavorable
-Chocable <|-- SorpresaCambioVehiculo
+
+Pozo ---|> Chocable
+ControlPolicial --|> Chocable
+Piquete --|> Chocable
+Vacio --|> Chocable
+
+IEfecto <|-- SorpresaFavorable 
+IEfecto <|-- SorpresaDesfavorable
+IEfecto <|-- SorpresaCambioVehiculo
 
 Vehiculo .> Chocable
 
 Todoterreno --|> Vehiculo
 Auto --|> Vehiculo
 Moto -|> Vehiculo
+
+Chocable .> IEfecto
+
 @enduml
