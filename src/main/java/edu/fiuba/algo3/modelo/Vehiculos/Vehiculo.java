@@ -11,5 +11,5 @@ public abstract class Vehiculo {
         return nuevaPosicion;
     }
 
-    abstract public IEfecto chocar(Chocable chocable);
+    public abstract IEfecto chocar(Chocable chocable);
 }
