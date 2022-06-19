@@ -16,13 +16,13 @@ public class PiqueteTest {
         Chocable piquete = new Piquete();
         Puntaje puntaje = new Puntaje();
 
-        piquete.aplicarPenalizacion(new Auto(), puntaje);
+        piquete.devolverEfecto(new Auto());
         assertEquals(puntaje.verMovimientos(), 0);
 
-        piquete.aplicarPenalizacion(new Moto(), puntaje);
+        piquete.devolverEfecto(new Moto());
         assertEquals(puntaje.verMovimientos(),2);
 
-        piquete.aplicarPenalizacion(new Todoterreno(), puntaje);
+        piquete.devolverEfecto(new Todoterreno());
         assertEquals(puntaje.verMovimientos(), 2);
     }
 }

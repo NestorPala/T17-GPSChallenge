@@ -1,24 +1,24 @@
 package edu.fiuba.algo3.modelo.Chocables;
 
-import edu.fiuba.algo3.modelo.Vehiculos.Vehiculo;
+import edu.fiuba.algo3.modelo.Efectos.Efecto;
+import edu.fiuba.algo3.modelo.Efectos.EfectoCambioDeVehiculo;
 import edu.fiuba.algo3.modelo.Vehiculos.Auto;
 import edu.fiuba.algo3.modelo.Vehiculos.Moto;
 import edu.fiuba.algo3.modelo.Vehiculos.Todoterreno;
-import edu.fiuba.algo3.modelo.Puntaje;
 
 public class SorpresaCambioVehiculo implements Chocable {
     @Override
-    public Vehiculo aplicarPenalizacion(Moto moto, Puntaje puntaje) {
-        return new Auto();
+    public Efecto devolverEfecto(Moto moto) {
+        return new EfectoCambioDeVehiculo(new Auto());
     }
 
     @Override
-    public Vehiculo aplicarPenalizacion(Auto auto, Puntaje puntaje) {
-        return new Todoterreno();
+    public Efecto devolverEfecto(Auto auto) {
+        return new EfectoCambioDeVehiculo(new Todoterreno());
     }
 
     @Override
-    public Vehiculo aplicarPenalizacion(Todoterreno todoterreno, Puntaje puntaje) {
-        return new Moto();
+    public Efecto devolverEfecto(Todoterreno todoterreno) {
+        return new EfectoCambioDeVehiculo(new Moto());
     }
 }

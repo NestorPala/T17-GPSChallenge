@@ -17,13 +17,13 @@ public class PozoTest {
         Chocable pozo = new Pozo();
         Puntaje puntaje = new Puntaje();
 
-        pozo.aplicarPenalizacion(new Auto(), puntaje);
+        pozo.devolverEfecto(new Auto());
         assertEquals(puntaje.verMovimientos(), 3);
 
-        pozo.aplicarPenalizacion(new Moto(), puntaje);
+        pozo.devolverEfecto(new Moto());
         assertEquals(puntaje.verMovimientos(),6);
 
-        pozo.aplicarPenalizacion(new Todoterreno(), puntaje);
+        pozo.devolverEfecto(new Todoterreno());
         assertEquals(puntaje.verMovimientos(), 6);
     }
 }

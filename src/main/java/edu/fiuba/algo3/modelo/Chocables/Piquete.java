@@ -1,27 +1,24 @@
 package edu.fiuba.algo3.modelo.Chocables;
 
-import edu.fiuba.algo3.modelo.Vehiculos.Vehiculo;
+import edu.fiuba.algo3.modelo.Efectos.Efecto;
+import edu.fiuba.algo3.modelo.Efectos.EfectoPenalizacion;
 import edu.fiuba.algo3.modelo.Vehiculos.Auto;
 import edu.fiuba.algo3.modelo.Vehiculos.Moto;
 import edu.fiuba.algo3.modelo.Vehiculos.Todoterreno;
-import edu.fiuba.algo3.modelo.Puntaje;
 
 public class Piquete implements Chocable {
     @Override
-    public Vehiculo aplicarPenalizacion(Moto moto, Puntaje puntaje) {
-        puntaje.sumarMovimientos(2);
-        return moto;
+    public Efecto devolverEfecto(Moto moto) {
+        return new EfectoPenalizacion(2);
     }
 
     @Override
-    public Vehiculo aplicarPenalizacion(Auto auto, Puntaje puntaje) {
-        puntaje.sumarMovimientos(0);
-        return auto;
+    public Efecto devolverEfecto(Auto auto) {
+        return new EfectoPenalizacion(0);
     }
 
     @Override
-    public Vehiculo aplicarPenalizacion(Todoterreno todoterreno, Puntaje puntaje) {
-        puntaje.sumarMovimientos(0);
-        return todoterreno;
+    public Efecto devolverEfecto(Todoterreno todoterreno) {
+        return new EfectoPenalizacion(0);
     }
 }

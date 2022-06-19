@@ -16,13 +16,13 @@ public class VacioTest {
         Chocable vacio = new Vacio();
         Puntaje puntaje = new Puntaje();
 
-        vacio.aplicarPenalizacion(new Auto(), puntaje);
+        vacio.devolverEfecto(new Auto());
         assertEquals(puntaje.verMovimientos(), 0);
 
-        vacio.aplicarPenalizacion(new Moto(), puntaje);
+        vacio.devolverEfecto(new Moto());
         assertEquals(puntaje.verMovimientos(),0);
 
-        vacio.aplicarPenalizacion(new Todoterreno(), puntaje);
+        vacio.devolverEfecto(new Todoterreno());
         assertEquals(puntaje.verMovimientos(), 0);
     }
 }

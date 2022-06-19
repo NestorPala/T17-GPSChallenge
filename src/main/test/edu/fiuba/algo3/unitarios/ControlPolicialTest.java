@@ -36,23 +36,23 @@ public class ControlPolicialTest {
         Puntaje puntaje = new Puntaje();
 
         when(controlMock.esPenalizado(anyDouble())).thenReturn(true);
-        when(controlMock.aplicarPenalizacion(moto,puntaje)).thenCallRealMethod();
-        when(controlMock.aplicarPenalizacion(auto,puntaje)).thenCallRealMethod();
-        when(controlMock.aplicarPenalizacion(todoterreno,puntaje)).thenCallRealMethod();
+        when(controlMock.devolverEfecto(moto)).thenCallRealMethod();
+        when(controlMock.devolverEfecto(auto)).thenCallRealMethod();
+        when(controlMock.devolverEfecto(todoterreno)).thenCallRealMethod();
 
-        controlMock.aplicarPenalizacion(moto, puntaje);
+        controlMock.devolverEfecto(moto);
         assertEquals(3, puntaje.verMovimientos());
-        controlMock.aplicarPenalizacion(auto,puntaje);
+        controlMock.devolverEfecto(auto);
         assertEquals(6, puntaje.verMovimientos());
-        controlMock.aplicarPenalizacion(todoterreno, puntaje);
+        controlMock.devolverEfecto(todoterreno);
         assertEquals(9, puntaje.verMovimientos());
 
         when(controlMock.esPenalizado(anyDouble())).thenReturn(false);
-        controlMock.aplicarPenalizacion(moto, puntaje);
+        controlMock.devolverEfecto(moto);
         assertEquals(9, puntaje.verMovimientos());
-        controlMock.aplicarPenalizacion(auto,puntaje);
+        controlMock.devolverEfecto(auto);
         assertEquals(9, puntaje.verMovimientos());
-        controlMock.aplicarPenalizacion(todoterreno, puntaje);
+        controlMock.devolverEfecto(todoterreno);
         assertEquals(9, puntaje.verMovimientos());
     }
 

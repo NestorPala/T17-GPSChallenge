@@ -18,13 +18,13 @@ public class SorpresaFavorableTest {
 
         puntaje.sumarMovimientos(10);
 
-        sorpresaFavorable.aplicarPenalizacion(new Auto(), puntaje);
+        sorpresaFavorable.devolverEfecto(new Auto());
         assertEquals(puntaje.verMovimientos(), 8);
 
-        sorpresaFavorable.aplicarPenalizacion(new Moto(), puntaje);
+        sorpresaFavorable.devolverEfecto(new Moto());
         assertEquals(puntaje.verMovimientos(),6.4);
 
-        sorpresaFavorable.aplicarPenalizacion(new Todoterreno(), puntaje);
+        sorpresaFavorable.devolverEfecto(new Todoterreno());
         assertEquals(puntaje.verMovimientos(), 5.12);
     }
 }

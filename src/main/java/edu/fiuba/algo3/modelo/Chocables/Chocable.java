@@ -1,15 +1,14 @@
 package edu.fiuba.algo3.modelo.Chocables;
 
-import edu.fiuba.algo3.modelo.Vehiculos.Vehiculo;
+import edu.fiuba.algo3.modelo.Efectos.Efecto;
 import edu.fiuba.algo3.modelo.Vehiculos.Auto;
 import edu.fiuba.algo3.modelo.Vehiculos.Moto;
 import edu.fiuba.algo3.modelo.Vehiculos.Todoterreno;
-import edu.fiuba.algo3.modelo.Puntaje;
 
 public interface Chocable {
-    Vehiculo aplicarPenalizacion(Moto moto, Puntaje puntaje);
+    Efecto devolverEfecto(Moto moto);
 
-    Vehiculo aplicarPenalizacion(Auto auto, Puntaje puntaje);
+    Efecto devolverEfecto(Auto auto);
 
-    Vehiculo aplicarPenalizacion(Todoterreno todoterreno, Puntaje puntaje);
+    Efecto devolverEfecto(Todoterreno todoterreno);
 }
