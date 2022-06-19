@@ -4,7 +4,6 @@ import edu.fiuba.algo3.modelo.Chocables.Chocable;
 import edu.fiuba.algo3.modelo.Chocables.Pozo;
 import edu.fiuba.algo3.modelo.Efectos.IEfecto;
 import edu.fiuba.algo3.modelo.Jugador;
-import edu.fiuba.algo3.modelo.Puntaje;
 import edu.fiuba.algo3.modelo.Vehiculos.Auto;
 import edu.fiuba.algo3.modelo.Vehiculos.Moto;
 import edu.fiuba.algo3.modelo.Vehiculos.Todoterreno;
@@ -31,4 +30,5 @@ public class PozoTest {
         efecto3.aplicarEfecto(jugador1);
         assertEquals(jugador1.puntaje(), 6);
     }
+    
 }

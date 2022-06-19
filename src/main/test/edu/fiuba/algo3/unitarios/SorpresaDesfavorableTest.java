@@ -12,6 +12,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class SorpresaDesfavorableTest {
+
     @Test
     public void puedoObtenerLosPuntosDePenalizacionCorrectosPorCadaVehiculo(){
         Chocable sorpresaDesfavorable = new SorpresaDesfavorable();
@@ -30,4 +31,5 @@ public class SorpresaDesfavorableTest {
         efecto3.aplicarEfecto(jugador1);
         assertEquals(jugador1.puntaje(), 19.53125);
     }
+    
 }

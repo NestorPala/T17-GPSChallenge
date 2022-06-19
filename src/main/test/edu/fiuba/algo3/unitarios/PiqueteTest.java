@@ -14,6 +14,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PiqueteTest {
+
     @Test
     public void puedoObtenerLosPuntosDePenalizacionCorrectosPorCadaVehiculo(){
         Chocable piquete = new Piquete();
@@ -32,4 +33,5 @@ public class PiqueteTest {
         efecto3.aplicarEfecto(jugador1);
         assertEquals(jugador1.puntaje(), 2);
     }
+    
 }

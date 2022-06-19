@@ -6,22 +6,17 @@ public class Posicion {
     private int x;
     private int y;
 
-    public Posicion() {
-        this.x = 0;
-        this.y = 0;
-    }
-
     public Posicion(int x, int y) {
         this.x = x;
         this.y = y;
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+    public boolean equals(Object otraPosicion) {
+        if (this == otraPosicion) return true;
+        if (otraPosicion == null || getClass() != otraPosicion.getClass()) return false;
 
-        Posicion posicion = (Posicion) o;
+        Posicion posicion = (Posicion) otraPosicion;
 
         if (x != posicion.x) return false;
         return y == posicion.y;

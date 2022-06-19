@@ -9,20 +9,20 @@ public class Direccion {
         this.dirY = dirVertical;
     }
 
-    public static Direccion derecha(){
-        return new Direccion(1,0);
+    public static Direccion arriba() {
+        return new Direccion(0, 1);
     }
 
-    public static Direccion izquierda(){
-        return new Direccion(-1,0);
+    public static Direccion abajo() {
+        return new Direccion(0, -1);
     }
 
-    public static Direccion arriba(){
-        return new Direccion(0,1);
+    public static Direccion izquierda() {
+        return new Direccion(-1, 0);
     }
 
-    public static Direccion abajo(){
-        return new Direccion(0,-1);
+    public static Direccion derecha() {
+        return new Direccion(1, 0);
     }
 
     public Posicion calcularNuevaPosicion(Posicion unaPosicion) {

@@ -3,54 +3,56 @@
 class Jugador {
     - Vehiculo
     + Jugador(vehiculo)
-    + puntaje() : double
     + posicion() : Posicion
+    + puntaje() : double
     + mover(direccion)
     - chocarObstaculos()
+    + recibirPenalizacion(penalizacion: int)
+    + recibirPorcentaje(porcentaje: int)
+    + cambiarVehiculo(nuevoVehiculo)
 }
 
 class Puntaje {
     - movimientos : double
     + verMovimientos() : double
-    + sumarMovimientos(cantMovimientos)
-    + aplicarPorcentaje(porcentaje)
+    + sumarMovimientos(cantMovimientos: int)
+    + aplicarPorcentaje(porcentaje: double)
 
 }
 
-class Direccion{
+class Direccion {
     - dirX : int
     - dirY : int
     + Direccion(dirHorizontal, dirVertical)
-    + calcularNuevaPosicion(posicion) : Posicion
-    + direccionOpuesta(direccion) : Direccion
-    + derecha() : Direccion {static}
-    + izquierda() : Direccion {static}
     + arriba() : Direccion {static}
     + abajo() : Direccion {static}
+    + izquierda() : Direccion {static}
+    + derecha() : Direccion {static}
+    + calcularNuevaPosicion(unaPosicion) : Posicion
 }
 
 class Escenario {
-    - Chocable
     - alto : int
     - ancho : int
-    - chocables : Chocable
+    - chocables : Chocable[][]
     - {static} instance : Escenario
-    - Escenario(alturaInicial, anchuraInicial)
-    + {static} getInstance(alturaInicial, anchuraInicial) : Escenario
+    - Escenario()
+    + {static} getInstance() : Escenario
+    + estaDentroDelEscenario(posicion) : Bool
     + insertarChocable(chocable, posicion)
     + obtenerChocable(posicion) : Chocable
-    + estaDentroDelEscenario(posicion) : Bool
+
 }
 
 class Posicion {
     - x : int
     - y : int
-    + x() : int
-    + y() : int
     + Posicion(x, y)
     + equals(otraPosicion) : bool
-    + sumarX(x)
-    + sumarY(y)
+    + x() : int
+    + y() : int
+    + sumarX(x: int)
+    + sumarY(y: int)
 }
 
 Puntaje <-- Jugador
