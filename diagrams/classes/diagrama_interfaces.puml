@@ -1,4 +1,7 @@
 @startuml
+
+
+
 interface Chocable {
     + devolverEfecto(moto) : IEfecto
     + devolverEfecto(auto) : IEfecto
@@ -28,9 +31,6 @@ class ControlPolicial {
     +  devolverEfecto(auto) : IEfecto
     +  devolverEfecto(todoterreno) : IEfecto
 }
-
-
-
 
 class SorpresaFavorable {
     +  devolverEfecto(moto) : IEfecto
@@ -95,6 +95,7 @@ class Porcentaje {
 }
 
 
+
 Pozo ---|> Chocable
 ControlPolicial --|> Chocable
 Piquete --|> Chocable
@@ -115,5 +116,7 @@ Chocable .> IEfecto
 IEfecto <|-- CambioDeVehiculo
 IEfecto <|-- Penalizacion
 IEfecto <|-- Porcentaje
+
+
 
 @enduml
