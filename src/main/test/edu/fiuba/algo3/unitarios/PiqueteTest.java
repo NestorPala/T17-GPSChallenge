@@ -2,6 +2,8 @@ package edu.fiuba.algo3.unitarios;
 
 import edu.fiuba.algo3.modelo.Chocables.Chocable;
 import edu.fiuba.algo3.modelo.Chocables.Piquete;
+import edu.fiuba.algo3.modelo.Efectos.Efecto;
+import edu.fiuba.algo3.modelo.Jugador;
 import edu.fiuba.algo3.modelo.Puntaje;
 import edu.fiuba.algo3.modelo.Vehiculos.Auto;
 import edu.fiuba.algo3.modelo.Vehiculos.Moto;
@@ -14,15 +16,18 @@ public class PiqueteTest {
     @Test
     public void puedoObtenerLosPuntosDePenalizacionCorrectosPorCadaVehiculo(){
         Chocable piquete = new Piquete();
-        Puntaje puntaje = new Puntaje();
+        Jugador jugador1 = new Jugador(new Auto());
 
-        piquete.devolverEfecto(new Auto());
-        assertEquals(puntaje.verMovimientos(), 0);
+        Efecto efecto = piquete.devolverEfecto(new Auto());
+        efecto.aplicarEfecto(jugador1);
+        assertEquals(jugador1.puntaje(), 0);
 
-        piquete.devolverEfecto(new Moto());
-        assertEquals(puntaje.verMovimientos(),2);
+        Efecto efecto2 = piquete.devolverEfecto(new Moto());
+        efecto2.aplicarEfecto(jugador1);
+        assertEquals(jugador1.puntaje(),2);
 
-        piquete.devolverEfecto(new Todoterreno());
-        assertEquals(puntaje.verMovimientos(), 2);
+        Efecto efecto3 = piquete.devolverEfecto(new Todoterreno());
+        efecto3.aplicarEfecto(jugador1);
+        assertEquals(jugador1.puntaje(), 2);
     }
 }

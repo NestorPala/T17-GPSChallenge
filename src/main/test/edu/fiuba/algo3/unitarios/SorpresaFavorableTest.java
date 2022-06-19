@@ -2,6 +2,8 @@ package edu.fiuba.algo3.unitarios;
 
 import edu.fiuba.algo3.modelo.Chocables.Chocable;
 import edu.fiuba.algo3.modelo.Chocables.SorpresaFavorable;
+import edu.fiuba.algo3.modelo.Efectos.Efecto;
+import edu.fiuba.algo3.modelo.Jugador;
 import edu.fiuba.algo3.modelo.Puntaje;
 import edu.fiuba.algo3.modelo.Vehiculos.Auto;
 import edu.fiuba.algo3.modelo.Vehiculos.Moto;
@@ -14,17 +16,19 @@ public class SorpresaFavorableTest {
     @Test
     public void puedoObtenerLosPuntosDePenalizacionCorrectosPorCadaVehiculo(){
         Chocable sorpresaFavorable = new SorpresaFavorable();
-        Puntaje puntaje = new Puntaje();
+        Jugador jugador1 = new Jugador(new Auto());
+        jugador1.recibirPenalizacion(10);
 
-        puntaje.sumarMovimientos(10);
+        Efecto efecto = sorpresaFavorable.devolverEfecto(new Auto());
+        efecto.aplicarEfecto(jugador1);
+        assertEquals(jugador1.puntaje(), 8);
 
-        sorpresaFavorable.devolverEfecto(new Auto());
-        assertEquals(puntaje.verMovimientos(), 8);
+        Efecto efecto2 = sorpresaFavorable.devolverEfecto(new Moto());
+        efecto2.aplicarEfecto(jugador1);
+        assertEquals(jugador1.puntaje(),6.4);
 
-        sorpresaFavorable.devolverEfecto(new Moto());
-        assertEquals(puntaje.verMovimientos(),6.4);
-
-        sorpresaFavorable.devolverEfecto(new Todoterreno());
-        assertEquals(puntaje.verMovimientos(), 5.12);
+        Efecto efecto3 = sorpresaFavorable.devolverEfecto(new Todoterreno());
+        efecto3.aplicarEfecto(jugador1);
+        assertEquals(jugador1.puntaje(), 5.12);
     }
 }
