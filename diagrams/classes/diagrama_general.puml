@@ -38,7 +38,7 @@ class Escenario {
     - {static} instance : Escenario
     - Escenario()
     + {static} getInstance() : Escenario
-    + estaDentroDelEscenario(posicion) : Bool
+    + contienePosicion(posicion) : Bool
     + insertarChocable(chocable, posicion)
     + obtenerChocable(posicion) : Chocable
 
@@ -55,14 +55,13 @@ class Posicion {
     + sumarY(y: int)
 }
 
+
+Jugador --> Escenario
 Puntaje <-- Jugador
-
 Posicion <-- Jugador
-Jugador .> Escenario
-
-Direccion .> Posicion
 Direccion <. Jugador
 
+Direccion .> Posicion
 Escenario ..> Posicion
 
 

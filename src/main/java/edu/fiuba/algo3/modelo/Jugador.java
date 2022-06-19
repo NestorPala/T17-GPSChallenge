@@ -8,6 +8,7 @@ public class Jugador {
     private Vehiculo vehiculo;
     private Posicion posicion;
     private Puntaje puntaje;
+    private Escenario escenario = Escenario.getInstance();
 
     public Jugador(Vehiculo vehiculo) {
         this.posicion = new Posicion(1,1);
@@ -25,17 +26,15 @@ public class Jugador {
 
     public void mover(Direccion unaDireccion) {
         Posicion nuevaPosicion = this.vehiculo.mover(unaDireccion, this.posicion);
-        Escenario escenario = Escenario.getInstance();
         this.puntaje.sumarMovimientos(1);
-        if (escenario.estaDentroDelEscenario(nuevaPosicion)) {
+        if (this.escenario.contienePosicion(nuevaPosicion)) {
             this.posicion = nuevaPosicion;
             chocarObstaculos();
         }
     }
 
     private void chocarObstaculos() {
-        Escenario escenario = Escenario.getInstance();
-        Chocable chocable = escenario.obtenerChocable(this.posicion);
+        Chocable chocable = this.escenario.obtenerChocable(this.posicion);
         IEfecto efecto = this.vehiculo.chocar(chocable);
         efecto.aplicarEfecto(this);
     }

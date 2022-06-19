@@ -12,10 +12,10 @@ public class EscenarioTest_04 {
     public void SiChequeoUnElementoFueraDelEscenarioObtengoUnaRespuestaCorrecta(){
         Escenario escenario = Escenario.getInstance();
 
-        assertFalse(escenario.estaDentroDelEscenario(new Posicion(11,5)));
-        assertFalse(escenario.estaDentroDelEscenario(new Posicion(-5,5)));
-        assertFalse(escenario.estaDentroDelEscenario(new Posicion(5, 11)));
-        assertFalse(escenario.estaDentroDelEscenario(new Posicion(5,-5)));
+        assertFalse(escenario.contienePosicion(new Posicion(11,5)));
+        assertFalse(escenario.contienePosicion(new Posicion(-5,5)));
+        assertFalse(escenario.contienePosicion(new Posicion(5, 11)));
+        assertFalse(escenario.contienePosicion(new Posicion(5,-5)));
     }
     
 }

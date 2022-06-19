@@ -34,7 +34,7 @@ public class Escenario {
         return instance;
     }
 
-    public boolean estaDentroDelEscenario(Posicion posicion) {
+    public boolean contienePosicion(Posicion posicion) {
         int posX = posicion.x();
         int posY = posicion.y();
 
@@ -45,13 +45,13 @@ public class Escenario {
     }
 
     public void insertarChocable(Chocable chocable, Posicion posicion) {
-        if (estaDentroDelEscenario(posicion)) {
+        if (contienePosicion(posicion)) {
             chocables[posicion.x()][posicion.y()] = chocable;
         }
     }
 
     public Chocable obtenerChocable(Posicion posicion) {
-        if (estaDentroDelEscenario(posicion)) {
+        if (contienePosicion(posicion)) {
             return chocables[posicion.x()][posicion.y()];
         }
         return null;
