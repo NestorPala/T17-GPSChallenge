@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class EscenarioTest_02 {
+
     @Test
     public void noSePuedeColocarUnChocableFueraDeLosLimitesDelEscenario() 
     throws TamañoDelEscenarioInvalido
@@ -19,4 +20,5 @@ public class EscenarioTest_02 {
         escenario.insertarChocable(pozo, new Posicion(11, 11));
         assertNull(escenario.obtenerChocable(new Posicion(11, 11)));
     }
+    
 }

@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class DireccionTest {
+
     @Test
     public void lasDireccionesSeCalculanCorrectamente(){
         Direccion direccion = new Direccion(1, 1);
@@ -15,4 +16,5 @@ public class DireccionTest {
         assertEquals(2,nuevaPos.x());
         assertEquals(2,nuevaPos.y());
     }
+    
 }

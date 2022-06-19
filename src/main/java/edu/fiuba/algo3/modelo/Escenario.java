@@ -13,7 +13,7 @@ public class Escenario {
     private Escenario()
     throws TamañoDelEscenarioInvalido
     {
-        // Ahora los inicializo en 20, pero luego se pondra un valor ramdon para el juego final.
+        // Ahora los inicializo en 20, pero luego se pondra un valor random para el juego final.
         this.alto = 20;
         this.ancho = 20;
         this.chocables = new Chocable[this.ancho][this.alto];

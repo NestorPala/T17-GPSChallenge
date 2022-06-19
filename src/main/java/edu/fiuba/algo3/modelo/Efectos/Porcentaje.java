@@ -2,11 +2,11 @@ package edu.fiuba.algo3.modelo.Efectos;
 
 import edu.fiuba.algo3.modelo.Jugador;
 
-public class EfectoPocentaje implements Efecto{
+public class Porcentaje implements IEfecto{
 
     private int porcentaje;
 
-    public EfectoPocentaje(int porcentaje){
+    public Porcentaje(int porcentaje){
         this.porcentaje = porcentaje;
     }
 

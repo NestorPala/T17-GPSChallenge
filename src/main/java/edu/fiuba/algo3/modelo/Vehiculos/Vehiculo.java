@@ -2,7 +2,7 @@ package edu.fiuba.algo3.modelo.Vehiculos;
 
 import edu.fiuba.algo3.modelo.Chocables.Chocable;
 import edu.fiuba.algo3.modelo.Direccion;
-import edu.fiuba.algo3.modelo.Efectos.Efecto;
+import edu.fiuba.algo3.modelo.Efectos.IEfecto;
 import edu.fiuba.algo3.modelo.Posicion;
 
 public abstract class Vehiculo {
@@ -11,5 +11,5 @@ public abstract class Vehiculo {
         return nuevaPosicion;
     }
 
-    abstract public Efecto chocar(Chocable chocable);
+    abstract public IEfecto chocar(Chocable chocable);
 }

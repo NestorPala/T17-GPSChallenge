@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.modelo;
 
-import edu.fiuba.algo3.modelo.Efectos.Efecto;
+import edu.fiuba.algo3.modelo.Efectos.IEfecto;
 import edu.fiuba.algo3.modelo.Vehiculos.Vehiculo;
 import edu.fiuba.algo3.modelo.Chocables.Chocable;
 
@@ -36,7 +36,7 @@ public class Jugador {
     private void chocarObstaculos() {
         Escenario escenario = Escenario.getInstance();
         Chocable chocable = escenario.obtenerChocable(this.posicion);
-        Efecto efecto = this.vehiculo.chocar(chocable);
+        IEfecto efecto = this.vehiculo.chocar(chocable);
         efecto.aplicarEfecto(this);
     }
 

@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class VacioTest {
+
     @Test
     public void LosPuntosDePenalizacionPorChocarConUnVacioSonCero(){
         Chocable vacio = new Vacio();
@@ -25,4 +26,5 @@ public class VacioTest {
         vacio.devolverEfecto(new Todoterreno());
         assertEquals(puntaje.verMovimientos(), 0);
     }
+    
 }

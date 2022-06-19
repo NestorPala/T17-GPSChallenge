@@ -8,6 +8,7 @@ import org.junit.jupiter.api.function.Executable;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class EscenarioTest_01 {
+
     @Test
     public void noSePuedeCrearUnEscenarioConUnTamanioInvalido() {
         Executable tarea1 = () -> Escenario.getInstance();
@@ -16,4 +17,5 @@ public class EscenarioTest_01 {
         Executable tarea2 = () -> Escenario.getInstance();
         assertThrows(TamañoDelEscenarioInvalido.class, tarea2);
     }
+    
 }

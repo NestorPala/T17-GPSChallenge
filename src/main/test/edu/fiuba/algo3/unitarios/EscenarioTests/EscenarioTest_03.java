@@ -7,10 +7,12 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class EscenarioTest_03 {
+
     @Test
     public void noSePuedeObtenerUnChocableDeUnLugarFueraDeLosLimitesDelEscenario(){
          Escenario escenario = Escenario.getInstance();
 
         assertNull(escenario.obtenerChocable(new Posicion(11, 11)));
     }
+    
 }

@@ -3,11 +3,11 @@ package edu.fiuba.algo3.modelo.Efectos;
 import edu.fiuba.algo3.modelo.Jugador;
 import edu.fiuba.algo3.modelo.Vehiculos.Vehiculo;
 
-public class EfectoCambioDeVehiculo implements Efecto{
+public class CambioDeVehiculo implements IEfecto{
 
     private Vehiculo vehiculo;
 
-    public EfectoCambioDeVehiculo(Vehiculo nuevoVehiculo){
+    public CambioDeVehiculo(Vehiculo nuevoVehiculo){
         this.vehiculo = nuevoVehiculo;
     }
 
