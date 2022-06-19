@@ -24,7 +24,7 @@ public class Jugador {
 
     public void mover(Direccion unaDireccion) {
         Posicion nuevaPosicion = this.vehiculo.mover(unaDireccion, this.posicion);
-        Escenario escenario = Escenario.getInstance(0, 0);
+        Escenario escenario = Escenario.getInstance();
         this.puntaje.sumarMovimientos(1);
         if (escenario.estaDentroDelEscenario(nuevaPosicion)) {
             this.posicion = nuevaPosicion;
@@ -33,7 +33,7 @@ public class Jugador {
     }
 
     private void chocarObstaculos() {
-        Escenario escenario = Escenario.getInstance(0, 0);
+        Escenario escenario = Escenario.getInstance();
         Chocable chocable = escenario.obtenerChocable(this.posicion);
         this.vehiculo = this.vehiculo.chocar(chocable, this.puntaje);
     }

@@ -12,7 +12,7 @@ public class test02 {
     @Test
     public void test02_autoChocaPozoYEsPenalizadoConTresMovimientos()
     {
-        Escenario escenario = Escenario.getInstance(20, 20);
+        Escenario escenario = Escenario.getInstance();
         Vehiculo auto = new Auto();
         Jugador jugador = new Jugador(auto);
         Chocable pozo = new Pozo();

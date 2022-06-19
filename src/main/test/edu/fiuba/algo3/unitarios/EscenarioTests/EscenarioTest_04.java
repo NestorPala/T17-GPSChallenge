@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class EscenarioTest_04 {
     @Test
     public void SiChequeoUnElementoFueraDelEscenarioObtengoUnaRespuestaCorrecta(){
-        Escenario escenario = Escenario.getInstance(10,10);
+        Escenario escenario = Escenario.getInstance();
 
         assertFalse(escenario.estaDentroDelEscenario(new Posicion(11,5)));
         assertFalse(escenario.estaDentroDelEscenario(new Posicion(-5,5)));

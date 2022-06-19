@@ -12,7 +12,7 @@ public class test08 {
     @Test
     public void test08_UnVehiculoAtraviesaLaCiudadYEncuentraUnaSorpresaCambioDeVehiculo() 
     {
-        Escenario escenario = Escenario.getInstance(20, 20);
+        Escenario escenario = Escenario.getInstance();
         Vehiculo auto = new Auto();
         Jugador jugador = new Jugador(auto);
         Chocable sorpresaCambioVehiculo = new SorpresaCambioVehiculo();

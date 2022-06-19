@@ -17,7 +17,7 @@ public class JugadorTest {
     {
         Vehiculo vehiculoInicial = new Moto();
         Jugador jugador = new Jugador(vehiculoInicial);
-        Escenario escenario = Escenario.getInstance(10, 10);
+        Escenario escenario = Escenario.getInstance();
 
         jugador.mover(Direccion.derecha());
 
@@ -34,7 +34,7 @@ public class JugadorTest {
         Vehiculo vehiculoInicial = new Moto();
         Jugador jugador = new Jugador(vehiculoInicial);
         //Escenario escenario = Escenario.getInstance(10, 10);
-        Escenario escenario = Escenario.getInstance(0, 0);
+        Escenario escenario = Escenario.getInstance();
 
         jugador.mover(Direccion.derecha());
 

@@ -10,28 +10,26 @@ public class Escenario {
 
     private static Escenario instance;
 
-    private Escenario(int alturaInicial, int anchuraInicial) 
+    private Escenario()
     throws TamañoDelEscenarioInvalido
     {
-        if (alturaInicial < 0 || anchuraInicial < 0) {
-            throw new TamañoDelEscenarioInvalido();
-        }
-        this.alto = alturaInicial;
-        this.ancho = anchuraInicial;
-        this.chocables = new Chocable[anchuraInicial][alturaInicial];
+        // Ahora los inicializo en 20, pero luego se pondra un valor ramdon para el juego final.
+        this.alto = 20;
+        this.ancho = 20;
+        this.chocables = new Chocable[this.ancho][this.alto];
 
-        for (int i = 0; i < anchuraInicial; i++) {
-            for (int j = 0; j < alturaInicial; j++) {
+        for (int i = 0; i < this.ancho; i++) {
+            for (int j = 0; j < this.alto; j++) {
                 chocables[i][j] = new Vacio();
             }
         }
     }
 
-    public static Escenario getInstance(int alturaInicial, int anchuraInicial) 
+    public static Escenario getInstance()
     throws TamañoDelEscenarioInvalido
     {
         if (instance == null) {
-            instance = new Escenario(alturaInicial, anchuraInicial);
+            instance = new Escenario();
         }
         return instance;
     }

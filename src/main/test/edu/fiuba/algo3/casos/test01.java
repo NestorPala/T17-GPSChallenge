@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class test01 {    @Test
     public void test01_motoChocaPozoYEsPenalizadaConTresMovimientos()
     {
-        Escenario escenario = Escenario.getInstance(20, 20);
+        Escenario escenario = Escenario.getInstance();
         Vehiculo moto = new Moto();
         Jugador jugador = new Jugador(moto);
         Chocable pozo = new Pozo();

@@ -12,7 +12,7 @@ public class test04 {
     @Test
     public void test04_motoChocaConPiqueteYEsPenalizadoConDosMovimientos()
     {
-        Escenario escenario = Escenario.getInstance(20, 20);
+        Escenario escenario = Escenario.getInstance();
         Vehiculo moto = new Moto();
         Jugador jugador = new Jugador(moto);
         Chocable piquete = new Piquete();

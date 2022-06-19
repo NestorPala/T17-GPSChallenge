@@ -12,7 +12,7 @@ public class test03 {
     @Test
     public void test03_todoterrenoChocaPozoYNoEsPenalizado()
     {
-        Escenario escenario = Escenario.getInstance(20, 20);
+        Escenario escenario = Escenario.getInstance();
         Vehiculo todoterreno = new Todoterreno();
         Jugador jugador = new Jugador(todoterreno);
         Chocable pozo = new Pozo();

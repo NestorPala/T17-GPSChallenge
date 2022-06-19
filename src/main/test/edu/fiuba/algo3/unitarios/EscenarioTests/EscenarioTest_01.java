@@ -10,10 +10,10 @@ import static org.junit.jupiter.api.Assertions.*;
 public class EscenarioTest_01 {
     @Test
     public void noSePuedeCrearUnEscenarioConUnTamanioInvalido() {
-        Executable tarea1 = () -> Escenario.getInstance(-5, 5);
+        Executable tarea1 = () -> Escenario.getInstance();
         assertThrows(TamañoDelEscenarioInvalido.class, tarea1);
 
-        Executable tarea2 = () -> Escenario.getInstance(5, -5);
+        Executable tarea2 = () -> Escenario.getInstance();
         assertThrows(TamañoDelEscenarioInvalido.class, tarea2);
     }
 }

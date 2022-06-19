@@ -13,7 +13,7 @@ public class test10 {
     @Test
     public void test10_UnTodoterrenoChocaConUnaSorpresaCambioDeVehiculoYLuegoChocaConUnPiquete()
     {
-        Escenario escenario = Escenario.getInstance(25, 25);
+        Escenario escenario = Escenario.getInstance();
         Vehiculo todoterreno = new Todoterreno();
         Jugador jugador = new Jugador(todoterreno);
         Chocable sorpresaCambioVehiculo = new SorpresaCambioVehiculo();
