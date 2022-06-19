@@ -29,6 +29,9 @@ class ControlPolicial {
     +  devolverEfecto(todoterreno) : IEfecto
 }
 
+
+
+
 class SorpresaFavorable {
     +  devolverEfecto(moto) : IEfecto
     +  devolverEfecto(auto) : IEfecto
@@ -73,15 +76,33 @@ interface IEfecto {
     + aplicarEfecto(jugador)
 }
 
+class CambioDeVehiculo {
+    - vehiculo: Vehiculo
+    + CambioDeVehiculo(nuevoVehiculo)
+    + aplicarEfecto(jugador)
+}
+
+class Penalizacion {
+    - movimientos: int
+    + Penalizacion(penalizacion: int)
+    + aplicarEfecto(jugador)
+}
+
+class Porcentaje {
+    - porcentaje: int
+    + Porcentaje(porcentaje: int)
+    + aplicarEfecto(jugador)
+}
+
 
 Pozo ---|> Chocable
 ControlPolicial --|> Chocable
 Piquete --|> Chocable
 Vacio --|> Chocable
 
-IEfecto <|-- SorpresaFavorable 
-IEfecto <|-- SorpresaDesfavorable
-IEfecto <|-- SorpresaCambioVehiculo
+Chocable <|-- SorpresaFavorable 
+Chocable <|-- SorpresaDesfavorable
+Chocable <|-- SorpresaCambioVehiculo
 
 Vehiculo .> Chocable
 
@@ -90,5 +111,9 @@ Auto --|> Vehiculo
 Moto -|> Vehiculo
 
 Chocable .> IEfecto
+
+IEfecto <|-- CambioDeVehiculo
+IEfecto <|-- Penalizacion
+IEfecto <|-- Porcentaje
 
 @enduml
