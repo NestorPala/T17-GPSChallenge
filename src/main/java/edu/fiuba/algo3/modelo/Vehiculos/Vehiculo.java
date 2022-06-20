@@ -7,8 +7,7 @@ import edu.fiuba.algo3.modelo.Posicion;
 
 public abstract class Vehiculo {
     public Posicion mover(Direccion unaDireccion, Posicion unaPosicion) {
-        Posicion nuevaPosicion = unaDireccion.calcularNuevaPosicion(unaPosicion);
-        return nuevaPosicion;
+        return unaDireccion.calcularNuevaPosicion(unaPosicion);
     }
 
     public abstract IEfecto chocar(Chocable chocable);

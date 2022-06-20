@@ -8,8 +8,8 @@ public class Jugador {
     private Vehiculo vehiculo;
     private Posicion posicion;
     private Posicion posicionAnterior;
-    private Puntaje puntaje;
-    private Escenario escenario = Escenario.getInstance();
+    private final Puntaje puntaje;
+    private final Escenario escenario = Escenario.getInstance();
 
     public Jugador(Vehiculo vehiculo) {
         this.posicion = new Posicion(1,1);
@@ -27,7 +27,7 @@ public class Jugador {
     }
 
     public void mover(Direccion unaDireccion) {
-        Posicion nuevaPosicion = this.vehiculo.mover(unaDireccion, this.posicion);
+        Posicion nuevaPosicion = this.vehiculo.mover(unaDireccion, posicion);
         this.puntaje.sumarMovimientos(1);
         if (this.escenario.contienePosicion(nuevaPosicion)) {
             this.posicionAnterior = this.posicion;

@@ -20,9 +20,8 @@ public class EscenarioTest {
   }
 
   @Test
-  public void noSePuedeColocarUnChocableFueraDeLosLimitesDelEscenario()
-      throws TamañoDelEscenarioInvalido {
-    Escenario escenario = Escenario.getInstance();
+  public void noSePuedeColocarUnChocableFueraDeLosLimitesDelEscenario() {
+    Escenario escenario = Escenario.getInstance(10,10);
     Pozo pozo = new Pozo();
 
     escenario.insertarChocable(pozo, new Posicion(11, 11));

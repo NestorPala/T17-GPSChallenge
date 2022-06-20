@@ -26,8 +26,9 @@ public class Direccion {
     }
 
     public Posicion calcularNuevaPosicion(Posicion unaPosicion) {
-        unaPosicion.sumarX(this.dirX);
-        unaPosicion.sumarY(this.dirY);
-        return unaPosicion;
+        Posicion nuevaPosicion = new Posicion(unaPosicion.x(), unaPosicion.y());
+        nuevaPosicion.sumarX(this.dirX);
+        nuevaPosicion.sumarY(this.dirY);
+        return nuevaPosicion;
     }
 }

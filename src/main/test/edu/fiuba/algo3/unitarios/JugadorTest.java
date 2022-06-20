@@ -1,115 +1,61 @@
 package edu.fiuba.algo3.unitarios;
 
-import edu.fiuba.algo3.modelo.*;
-import edu.fiuba.algo3.modelo.Vehiculos.Vehiculo;
+import edu.fiuba.algo3.modelo.Direccion;
+import edu.fiuba.algo3.modelo.Escenario;
+import edu.fiuba.algo3.modelo.Jugador;
+import edu.fiuba.algo3.modelo.Posicion;
+import edu.fiuba.algo3.modelo.Vehiculos.Auto;
 import edu.fiuba.algo3.modelo.Vehiculos.Moto;
+import edu.fiuba.algo3.modelo.Vehiculos.Vehiculo;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class JugadorTest {
 
+  @Test
+  public void aplicarUnMovimientoAlJugadorCambiaSuPosicion() {
+    Vehiculo vehiculoInicial = new Moto();
+    Jugador jugador = new Jugador(vehiculoInicial);
+    Escenario escenario = Escenario.getInstance();
 
+    jugador.mover(Direccion.derecha());
 
+    assertEquals(new Posicion(2, 1), jugador.posicion());
+  }
 
-    @Test
-    public void aplicarUnMovimientoAlJugadorCambiaSuPosicion()
-    {
-        Vehiculo vehiculoInicial = new Moto();
-        Jugador jugador = new Jugador(vehiculoInicial);
-        Escenario escenario = Escenario.getInstance();
+  @Test
+  public void moverAlJugadorHaciaUnaPosicionInvalidaNoHaceNada() {
+    Jugador jugador = new Jugador(new Auto());
+    Escenario escenario = Escenario.getInstance();
 
-        jugador.mover(Direccion.derecha());
+    jugador.mover(Direccion.izquierda());
+    jugador.mover(Direccion.izquierda());
 
-        assertEquals(new Posicion(2, 1), jugador.posicion());
-    }
+    assertEquals(new Posicion(0,1), jugador.posicion());
+  }
 
+  @Test
+  public void noSePuedeCrearUnJugadorConPosicionInicialInvalida() {}
 
+  @Test
+  public void noSePuedeCrearUnJugadorConUnVehiculoInicialInvalido() {}
 
-    
-    @Test
-    public void moverAlJugadorHaciaUnaPosicionInvalidaNoHaceNada()
-    {
-        Posicion posicionInicial = new Posicion(2,1);
-        Vehiculo vehiculoInicial = new Moto();
-        Jugador jugador = new Jugador(vehiculoInicial);
-        //Escenario escenario = Escenario.getInstance(10, 10);
-        Escenario escenario = Escenario.getInstance();
+  @Test
+  public void laPuntuacionInicialDelJugadorEsCeroPuntos() {}
 
-        jugador.mover(Direccion.derecha());
+  @Test
+  public void alPasarPorUnaCuadraSinObstaculosLaCantidadDePuntosEsCorrecta() {}
 
-        assertEquals(posicionInicial, jugador.posicion());
-    }
+  @Test
+  public void alPasarPorUnaCuadraConObstaculosLaCantidadDePuntosEsCorrecta() {}
 
+  @Test
+  public void alPasarDeVueltaPorElMismoObstaculoLaCantidadDePuntosEsCorrecta() {}
 
+  @Test
+  public void alPasarDeVueltaPorLaMismaSorpresaLaCantidadDePuntosEsCorrecta() {}
 
-    
-    @Test
-    public void noSePuedeCrearUnJugadorConPosicionInicialInvalida()
-    {
-
-    }
-
-
-
-
-    @Test
-    public void noSePuedeCrearUnJugadorConUnVehiculoInicialInvalido()
-    {
-
-    }
-
-
-
-
-    @Test
-    public void laPuntuacionInicialDelJugadorEsCeroPuntos()
-    {
-
-    }
-
-
-
-
-    @Test
-    public void alPasarPorUnaCuadraSinObstaculosLaCantidadDePuntosEsCorrecta()
-    {
-
-    }
-
-
-
-
-    @Test
-    public void alPasarPorUnaCuadraConObstaculosLaCantidadDePuntosEsCorrecta()
-    {
-
-    }
-
-
-
-
-    @Test
-    public void alPasarDeVueltaPorElMismoObstaculoLaCantidadDePuntosEsCorrecta()
-    {
-
-    }
-
-
-
-
-    @Test
-    public void alPasarDeVueltaPorLaMismaSorpresaLaCantidadDePuntosEsCorrecta()
-    {
-
-    }
-
-
-
-
-    @Test
-    public void cuandoElJugadorLlegaALaMetaLaCantidadDePuntosEsCorrecta()
-    {
-
-    }
+  @Test
+  public void cuandoElJugadorLlegaALaMetaLaCantidadDePuntosEsCorrecta() {}
 }

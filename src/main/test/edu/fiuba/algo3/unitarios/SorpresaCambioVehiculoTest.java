@@ -1,31 +1,38 @@
 package edu.fiuba.algo3.unitarios;
 
 import edu.fiuba.algo3.modelo.Chocables.Chocable;
+import edu.fiuba.algo3.modelo.Chocables.Piquete;
 import edu.fiuba.algo3.modelo.Chocables.SorpresaCambioVehiculo;
+import edu.fiuba.algo3.modelo.Direccion;
+import edu.fiuba.algo3.modelo.Efectos.IEfecto;
+import edu.fiuba.algo3.modelo.Escenario;
+import edu.fiuba.algo3.modelo.Jugador;
+import edu.fiuba.algo3.modelo.Posicion;
 import edu.fiuba.algo3.modelo.Vehiculos.Auto;
 import edu.fiuba.algo3.modelo.Vehiculos.Moto;
 import edu.fiuba.algo3.modelo.Vehiculos.Todoterreno;
 import edu.fiuba.algo3.modelo.Vehiculos.Vehiculo;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 public class SorpresaCambioVehiculoTest {
-    /*
     @Test
     public void SeCambianLosVehiculosCorrectamente(){
+        Escenario escenario = Escenario.getInstance();
+        Moto moto = new Moto();
+        Jugador jugador = new Jugador(moto);
         Chocable sorpresaCambioVehiculo = new SorpresaCambioVehiculo();
 
-        // Tengo que usar Instanceof para pasar las pruebas del codecov
-        Vehiculo nuevoVehiculo = sorpresaCambioVehiculo.devolverEfecto(new Moto());
-        assertTrue(nuevoVehiculo instanceof Auto);
+        escenario.insertarChocable(new Piquete(), new Posicion(2,1));
 
-        nuevoVehiculo = sorpresaCambioVehiculo.devolverEfecto(new Auto());
-        assertTrue(nuevoVehiculo instanceof Todoterreno);
+        IEfecto efecto = sorpresaCambioVehiculo.devolverEfecto(moto);
+        efecto.aplicarEfecto(jugador);
 
-        nuevoVehiculo = sorpresaCambioVehiculo.devolverEfecto(new Todoterreno());
-        assertTrue(nuevoVehiculo instanceof Moto);
+        jugador.mover(Direccion.derecha());
+
+        assertEquals(1,jugador.puntaje());
     }
-    */
 }
