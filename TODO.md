@@ -1,17 +1,27 @@
 # Cosas para arreglar
 
-- [x] Corregir flecha herencia por interfaz
-- [x] Colocar a las interfaces nombres con sustantivos una I adelante (Ivehiculo)
-- [x] No usar nunca instance of
-- [x] Que no se vean numeros de las posiciones (Relacionado con posicion y IMovimiento)
-- [x] Renombrar el metodo puntaje para que no sea puntajeTotal
-- [x] Cambiar elementosdelescenario por chocables
-- [x] Cambiar la clase IMovimiento para que no maneje coordenadas
+- [x] La clase escenario deberia ser un singleton.
 
-- [ ] Buscar como arreglar excepciones
-- [ ] Agregar detalles de implementacion al informe
+- [x] El puntaje lo tiene que manejar solo el jugador.
 
-- [x] Convertir clase Escenario a patrón Singleton
-- [ ] Refactorizar Penalización a Efecto utilizando el patrón Decorator
-- [ ] Eliminar todos los assertNotEquals("es tipo de vehículo")
-- [ ] Mockear Random, no ControlPolicial entero
+- [x] Tiene que haber un efecto sobre el vehiculo (Decorator).
+
+- [x] aplicar penalizacion debe cambiar a aplicarEfecto y luego lo recibe al usuario y le dice al jugador que hacer.
+
+- [x] efecto.aplicarseSobre(this) en la clase jugador. Patron decorator.
+
+- [x] jugador.mover no debe recibir escenario.
+
+- [x] Eliminar el assertNotEquals de las pruebas.
+
+- [x] Control policial deberia recibir un randomizador(Debe ser una interfaz).
+
+- [x] Arreglar test09 para que use mock.
+
+- [ ] Crear meta.
+
+- [ ] Pruebas de piquete.
+
+- [ ] Crear historial de puntajes.
+
+- [ ] Agregar nickname de jugador.
