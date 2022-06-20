@@ -12,25 +12,27 @@ public class ControlPolicial implements Chocable{
     private static final double PROBABILIDAD_TODOTERRENO = 0.7;
     private static final int PENALIZACION = 3;
 
+    private final Randomizer randomizador;
+
+    public ControlPolicial(Randomizer randomizer) {
+        this.randomizador = randomizer;
+    }
+
     @Override
     public IEfecto devolverEfecto(Moto moto) {
-        if(this.esPenalizado(PROBABILIDAD_MOTO)) return new Penalizacion(PENALIZACION);
+        if(this.randomizador.aplicar(PROBABILIDAD_MOTO)) return new Penalizacion(PENALIZACION);
         return new Penalizacion(0);
     }
 
     @Override
     public IEfecto devolverEfecto(Auto auto) {
-        if(this.esPenalizado(PROBABILIDAD_AUTO)) return new Penalizacion(PENALIZACION);
+        if(this.randomizador.aplicar(PROBABILIDAD_AUTO)) return new Penalizacion(PENALIZACION);
         return new Penalizacion(0);
     }
 
     @Override
     public IEfecto devolverEfecto(Todoterreno todoterreno) {
-        if(this.esPenalizado(PROBABILIDAD_TODOTERRENO)) return new Penalizacion(PENALIZACION);
+        if(this.randomizador.aplicar(PROBABILIDAD_TODOTERRENO)) return new Penalizacion(PENALIZACION);
         return new Penalizacion(0);
-    }
-
-    public boolean esPenalizado(double probabilidadVehiculo){
-        return (Math.random() >= probabilidadVehiculo);
     }
 }

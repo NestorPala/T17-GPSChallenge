@@ -1,6 +1,10 @@
 package edu.fiuba.algo3.unitarios;
 
+import edu.fiuba.algo3.modelo.Chocables.Chocable;
 import edu.fiuba.algo3.modelo.Chocables.ControlPolicial;
+import edu.fiuba.algo3.modelo.Chocables.Randomizer;
+import edu.fiuba.algo3.modelo.Efectos.IEfecto;
+import edu.fiuba.algo3.modelo.Jugador;
 import edu.fiuba.algo3.modelo.Puntaje;
 import edu.fiuba.algo3.modelo.Vehiculos.Auto;
 import edu.fiuba.algo3.modelo.Vehiculos.Moto;
@@ -13,52 +17,45 @@ import static org.mockito.Mockito.*;
 
 public class ControlPolicialTest {
 
-
-
-
     @Test
-    public void laPenalizacionSeObtieneDeManeraRandomCorrectamente(){
-        ControlPolicial control = new ControlPolicial();
+    public void puedoObtenerLosPuntosDePenalizacionCorrectosSiSeAplicaLaProbabilidad(){
+        Randomizer randomMock = mock(Randomizer.class);
+        when(randomMock.aplicar(anyDouble())).thenReturn(true);
 
-        assertTrue(control.esPenalizado(-1.0));
-        assertFalse(control.esPenalizado(2));
+        Chocable controlPolicial = new ControlPolicial(randomMock);
+        Jugador jugador1 = new Jugador(new Auto());
+
+        IEfecto efecto = controlPolicial.devolverEfecto(new Auto());
+        efecto.aplicarEfecto(jugador1);
+        assertEquals(jugador1.puntaje(), 3);
+
+        IEfecto efecto2 = controlPolicial.devolverEfecto(new Moto());
+        efecto.aplicarEfecto(jugador1);
+        assertEquals(jugador1.puntaje(),6);
+
+        IEfecto efecto3 = controlPolicial.devolverEfecto(new Todoterreno());
+        efecto.aplicarEfecto(jugador1);
+        assertEquals(jugador1.puntaje(), 9);
     }
 
-
-
-
     @Test
-    public void puedoObtenerLosPuntosDePenalizacionCorrectosPorCadaVehiculo(){
-        /*
-        ControlPolicial controlMock = mock(ControlPolicial.class);
-        Moto moto = new Moto();
-        Auto auto = new Auto();
-        Todoterreno todoterreno = new Todoterreno();
-        Puntaje puntaje = new Puntaje();
+    public void puedoObtenerLosPuntosDePenalizacionCorrectosSiNoSeAplicaLaProbabilidad(){
+        Randomizer randomMock = mock(Randomizer.class);
+        when(randomMock.aplicar(anyDouble())).thenReturn(false);
 
-        when(controlMock.esPenalizado(anyDouble())).thenReturn(true);
-        when(controlMock.devolverEfecto(moto)).thenCallRealMethod();
-        when(controlMock.devolverEfecto(auto)).thenCallRealMethod();
-        when(controlMock.devolverEfecto(todoterreno)).thenCallRealMethod();
+        Chocable controlPolicial = new ControlPolicial(randomMock);
+        Jugador jugador1 = new Jugador(new Auto());
 
-        controlMock.devolverEfecto(moto);
-        assertEquals(3, puntaje.verMovimientos());
-        controlMock.devolverEfecto(auto);
-        assertEquals(6, puntaje.verMovimientos());
-        controlMock.devolverEfecto(todoterreno);
-        assertEquals(9, puntaje.verMovimientos());
+        IEfecto efecto = controlPolicial.devolverEfecto(new Auto());
+        efecto.aplicarEfecto(jugador1);
+        assertEquals(jugador1.puntaje(), 0);
 
-        when(controlMock.esPenalizado(anyDouble())).thenReturn(false);
-        controlMock.devolverEfecto(moto);
-        assertEquals(9, puntaje.verMovimientos());
-        controlMock.devolverEfecto(auto);
-        assertEquals(9, puntaje.verMovimientos());
-        controlMock.devolverEfecto(todoterreno);
-        assertEquals(9, puntaje.verMovimientos());
-        
-         */
+        IEfecto efecto2 = controlPolicial.devolverEfecto(new Moto());
+        efecto.aplicarEfecto(jugador1);
+        assertEquals(jugador1.puntaje(),0);
+
+        IEfecto efecto3 = controlPolicial.devolverEfecto(new Todoterreno());
+        efecto.aplicarEfecto(jugador1);
+        assertEquals(jugador1.puntaje(), 0);
     }
-
-
-    
 }
