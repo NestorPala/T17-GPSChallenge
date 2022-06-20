@@ -30,11 +30,11 @@ public class ControlPolicialTest {
         assertEquals(jugador1.puntaje(), 3);
 
         IEfecto efecto2 = controlPolicial.devolverEfecto(new Moto());
-        efecto.aplicarEfecto(jugador1);
+        efecto2.aplicarEfecto(jugador1);
         assertEquals(jugador1.puntaje(),6);
 
         IEfecto efecto3 = controlPolicial.devolverEfecto(new Todoterreno());
-        efecto.aplicarEfecto(jugador1);
+        efecto3.aplicarEfecto(jugador1);
         assertEquals(jugador1.puntaje(), 9);
     }
 
@@ -51,11 +51,11 @@ public class ControlPolicialTest {
         assertEquals(jugador1.puntaje(), 0);
 
         IEfecto efecto2 = controlPolicial.devolverEfecto(new Moto());
-        efecto.aplicarEfecto(jugador1);
+        efecto2.aplicarEfecto(jugador1);
         assertEquals(jugador1.puntaje(),0);
 
         IEfecto efecto3 = controlPolicial.devolverEfecto(new Todoterreno());
-        efecto.aplicarEfecto(jugador1);
+        efecto3.aplicarEfecto(jugador1);
         assertEquals(jugador1.puntaje(), 0);
     }
 }
