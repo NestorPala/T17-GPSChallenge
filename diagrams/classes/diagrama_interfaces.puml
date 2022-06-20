@@ -54,7 +54,7 @@ class SorpresaCambioVehiculo {
 
 abstract class Vehiculo {
     + mover(unaDireccion, unaPosicion) : Posicion
-    + chocar(chocable) : Vehiculo
+    + chocar(chocable) : IEfecto
 }
 
 class Auto {
