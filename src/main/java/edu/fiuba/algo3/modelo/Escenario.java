@@ -10,12 +10,11 @@ public class Escenario {
 
     private static Escenario instance;
 
-    private Escenario()
-    throws TamañoDelEscenarioInvalido
+    private Escenario(int limiteAlto, int limiteAncho)
     {
-        // Ahora los inicializo en 20, pero luego se pondra un valor random para el juego final.
-        this.alto = 20;
-        this.ancho = 20;
+
+        this.alto = limiteAlto;
+        this.ancho = limiteAncho;
         this.chocables = new Chocable[this.ancho][this.alto];
 
         for (int i = 0; i < this.ancho; i++) {
@@ -26,11 +25,22 @@ public class Escenario {
     }
 
     public static Escenario getInstance()
-    throws TamañoDelEscenarioInvalido
     {
         if (instance == null) {
-            instance = new Escenario();
+            instance = new Escenario(10,10);
         }
+        return instance;
+    }
+
+    public static Escenario getInstance(int alto,int ancho) throws TamañoDelEscenarioInvalido{
+        if(alto < 0 || ancho < 0){
+            throw new TamañoDelEscenarioInvalido();
+        }
+
+        if(instance == null){
+            instance = new Escenario(alto,ancho);
+        }
+
         return instance;
     }
 

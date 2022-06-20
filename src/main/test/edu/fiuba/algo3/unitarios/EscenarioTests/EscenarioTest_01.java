@@ -11,10 +11,10 @@ public class EscenarioTest_01 {
 
     @Test
     public void noSePuedeCrearUnEscenarioConUnTamanioInvalido() {
-        Executable tarea1 = () -> Escenario.getInstance();
+        Executable tarea1 = () -> Escenario.getInstance(-2,5);
         assertThrows(TamañoDelEscenarioInvalido.class, tarea1);
 
-        Executable tarea2 = () -> Escenario.getInstance();
+        Executable tarea2 = () -> Escenario.getInstance(5,-2);
         assertThrows(TamañoDelEscenarioInvalido.class, tarea2);
     }
     
