@@ -36,6 +36,14 @@ public class EscenarioTest {
   }
 
   @Test
+  public void soloPuedoTenerUnEscenarioDefinido(){
+    Escenario escenario1 = Escenario.getInstance(11,11);
+    Escenario escenario2 = Escenario.getInstance(12,12);
+
+    assertEquals(escenario2,escenario1);
+  }
+
+  @Test
   public void SiChequeoUnElementoFueraDelEscenarioObtengoUnaRespuestaCorrecta() {
     Escenario escenario = Escenario.getInstance();
 

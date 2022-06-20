@@ -5,7 +5,6 @@ import edu.fiuba.algo3.modelo.Chocables.ControlPolicial;
 import edu.fiuba.algo3.modelo.Chocables.Randomizer;
 import edu.fiuba.algo3.modelo.Efectos.IEfecto;
 import edu.fiuba.algo3.modelo.Jugador;
-import edu.fiuba.algo3.modelo.Puntaje;
 import edu.fiuba.algo3.modelo.Vehiculos.Auto;
 import edu.fiuba.algo3.modelo.Vehiculos.Moto;
 import edu.fiuba.algo3.modelo.Vehiculos.Todoterreno;

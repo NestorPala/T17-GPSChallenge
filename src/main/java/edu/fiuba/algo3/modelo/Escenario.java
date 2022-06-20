@@ -37,12 +37,14 @@ public class Escenario {
             throw new TamañoDelEscenarioInvalido();
         }
 
-        if(instance == null){
-            instance = new Escenario(alto,ancho);
+        if(instance == null) {
+            instance = new Escenario(alto, ancho);
         }
 
         return instance;
     }
+
+
 
     public boolean contienePosicion(Posicion posicion) {
         int posX = posicion.x();
