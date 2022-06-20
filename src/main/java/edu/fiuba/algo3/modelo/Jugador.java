@@ -7,11 +7,13 @@ import edu.fiuba.algo3.modelo.Chocables.Chocable;
 public class Jugador {
     private Vehiculo vehiculo;
     private Posicion posicion;
+    private Posicion posicionAnterior;
     private Puntaje puntaje;
     private Escenario escenario = Escenario.getInstance();
 
     public Jugador(Vehiculo vehiculo) {
         this.posicion = new Posicion(1,1);
+        this.posicionAnterior = this.posicion;
         this.vehiculo = vehiculo;
         this.puntaje = new Puntaje();
     }
@@ -28,6 +30,7 @@ public class Jugador {
         Posicion nuevaPosicion = this.vehiculo.mover(unaDireccion, this.posicion);
         this.puntaje.sumarMovimientos(1);
         if (this.escenario.contienePosicion(nuevaPosicion)) {
+            this.posicionAnterior = this.posicion;
             this.posicion = nuevaPosicion;
             chocarObstaculos();
         }
@@ -49,5 +52,9 @@ public class Jugador {
 
     public void cambiarVehiculo(Vehiculo nuevoVehiculo) {
         this.vehiculo = nuevoVehiculo;
+    }
+
+    public void retrocederPosicionAnterior() {
+        this.posicion = this.posicionAnterior;
     }
 }

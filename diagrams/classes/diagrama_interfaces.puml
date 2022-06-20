@@ -94,6 +94,10 @@ class Porcentaje {
     + aplicarEfecto(jugador)
 }
 
+class Retroceso {
+    + aplicarEfecto(jugador)
+}
+
 
 
 Pozo ---|> Chocable
@@ -116,6 +120,7 @@ Chocable .> IEfecto
 IEfecto <|-- CambioDeVehiculo
 IEfecto <|-- Penalizacion
 IEfecto <|-- Porcentaje
+Retroceso --|> IEfecto 
 
 
 
