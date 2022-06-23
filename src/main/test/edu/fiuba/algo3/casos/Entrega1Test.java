@@ -20,7 +20,7 @@ public class Entrega1Test {
   public void test01_motoChocaPozoYEsPenalizadaConTresMovimientos() {
     Escenario escenario = Escenario.getInstance();
     Vehiculo moto = new Moto();
-    Jugador jugador = new Jugador(moto);
+    Jugador jugador = new Jugador(moto, "Juan");
     Chocable pozo = new Pozo();
 
     escenario.insertarChocable(pozo, new Posicion(2, 1));
@@ -34,7 +34,7 @@ public class Entrega1Test {
   public void test02_autoChocaPozoYEsPenalizadoConTresMovimientos() {
     Escenario escenario = Escenario.getInstance();
     Vehiculo auto = new Auto();
-    Jugador jugador = new Jugador(auto);
+    Jugador jugador = new Jugador(auto, "Juan");
     Chocable pozo = new Pozo();
 
     escenario.insertarChocable(pozo, new Posicion(2, 1));
@@ -48,7 +48,7 @@ public class Entrega1Test {
   public void test03_todoterrenoChocaPozoYNoEsPenalizado() {
     Escenario escenario = Escenario.getInstance();
     Vehiculo todoterreno = new Todoterreno();
-    Jugador jugador = new Jugador(todoterreno);
+    Jugador jugador = new Jugador(todoterreno, "Juan");
     Chocable pozo = new Pozo();
 
     escenario.insertarChocable(pozo, new Posicion(2, 1));
@@ -62,7 +62,7 @@ public class Entrega1Test {
   public void test04_motoChocaConPiqueteYEsPenalizadoConDosMovimientos() {
     Escenario escenario = Escenario.getInstance();
     Vehiculo moto = new Moto();
-    Jugador jugador = new Jugador(moto);
+    Jugador jugador = new Jugador(moto, "Juan");
     Chocable piquete = new Piquete();
 
     escenario.insertarChocable(piquete, new Posicion(2, 1));
@@ -76,7 +76,7 @@ public class Entrega1Test {
   public void test05_todoterrenoChocaConTresPozosYEsPenalizadoConDosMovimientos() {
     Escenario escenario = Escenario.getInstance();
     Vehiculo todoterreno = new Todoterreno();
-    Jugador jugador = new Jugador(todoterreno);
+    Jugador jugador = new Jugador(todoterreno, "Juan");
     Chocable pozo = new Pozo();
 
     // Pongo los pozos

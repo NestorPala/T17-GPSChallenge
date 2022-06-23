@@ -21,7 +21,7 @@ public class Entrega2Test {
   public void test06_UnVehiculoAtraviesaLaCiudadYEncuentraUnaSorpresaFavorable() {
     Escenario escenario = Escenario.getInstance();
     Vehiculo moto = new Moto();
-    Jugador jugador = new Jugador(moto);
+    Jugador jugador = new Jugador(moto, "Juan");
     Chocable sorpresaFavorable = new SorpresaFavorable();
 
     escenario.insertarChocable(sorpresaFavorable, new Posicion(0, 1));
@@ -35,7 +35,7 @@ public class Entrega2Test {
   public void test07_UnVehiculoAtraviesaLaCiudadYEncuentraUnaSorpresaDesfavorable() {
     Escenario escenario = Escenario.getInstance();
     Vehiculo moto = new Moto();
-    Jugador jugador = new Jugador(moto);
+    Jugador jugador = new Jugador(moto, "Juan");
     Chocable sorpresaDesfavorable = new SorpresaDesfavorable();
 
     escenario.insertarChocable(sorpresaDesfavorable, new Posicion(1, 2));
@@ -49,7 +49,7 @@ public class Entrega2Test {
   public void test08_UnVehiculoAtraviesaLaCiudadYEncuentraUnaSorpresaCambioDeVehiculo() {
     Escenario escenario = Escenario.getInstance();
     Vehiculo auto = new Auto();
-    Jugador jugador = new Jugador(auto);
+    Jugador jugador = new Jugador(auto, "Juan");
     Chocable sorpresaCambioVehiculo = new SorpresaCambioVehiculo();
     Chocable pozo = new Pozo();
 
@@ -66,7 +66,7 @@ public class Entrega2Test {
   public void test09_UnVehiculoSeEncuentraConUnControlPolicialYRecibePenalizacion() {
     Escenario escenario = Escenario.getInstance();
     Vehiculo moto = new Moto();
-    Jugador jugador = new Jugador(moto);
+    Jugador jugador = new Jugador(moto, "Juan");
     Randomizer randomizerMock = mock(Randomizer.class);
     when(randomizerMock.aplicar(anyDouble())).thenReturn(true);
     Chocable controlPolicial = new ControlPolicial(randomizerMock);
@@ -82,7 +82,7 @@ public class Entrega2Test {
   public void test09_UnVehiculoSeEncuentraConUnControlPolicialYNoRecibePenalizacion() {
     Escenario escenario = Escenario.getInstance();
     Vehiculo moto = new Moto();
-    Jugador jugador = new Jugador(moto);
+    Jugador jugador = new Jugador(moto, "Juan");
     Randomizer randomizerMock = mock(Randomizer.class);
     when(randomizerMock.aplicar(anyDouble())).thenReturn(false);
     Chocable controlPolicial = new ControlPolicial(randomizerMock);
@@ -98,7 +98,7 @@ public class Entrega2Test {
   public void test10_UnTodoterrenoChocaConUnaSorpresaCambioDeVehiculoYLuegoChocaConUnPiquete() {
     Escenario escenario = Escenario.getInstance();
     Vehiculo todoterreno = new Todoterreno();
-    Jugador jugador = new Jugador(todoterreno);
+    Jugador jugador = new Jugador(todoterreno, "Juan");
     Chocable sorpresaCambioVehiculo = new SorpresaCambioVehiculo();
     Chocable piquete = new Piquete();
 

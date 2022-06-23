@@ -16,7 +16,7 @@ public class SorpresaFavorableTest {
     @Test
     public void puedoObtenerLosPuntosDePenalizacionCorrectosPorCadaVehiculo(){
         Chocable sorpresaFavorable = new SorpresaFavorable();
-        Jugador jugador1 = new Jugador(new Auto());
+        Jugador jugador1 = new Jugador(new Auto(), "Juan");
         jugador1.recibirPenalizacion(10);
 
         IEfecto efecto = sorpresaFavorable.devolverEfecto(new Auto());

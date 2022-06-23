@@ -16,7 +16,7 @@ public class PozoTest {
     @Test
     public void puedoObtenerLosPuntosDePenalizacionCorrectosPorCadaVehiculo(){
         Chocable pozo = new Pozo();
-        Jugador jugador1 = new Jugador(new Auto());
+        Jugador jugador1 = new Jugador(new Auto(), "Juan");
 
         IEfecto efecto = pozo.devolverEfecto(new Auto());
         efecto.aplicarEfecto(jugador1);

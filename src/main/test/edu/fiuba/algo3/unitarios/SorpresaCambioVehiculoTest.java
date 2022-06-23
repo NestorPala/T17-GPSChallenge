@@ -23,7 +23,7 @@ public class SorpresaCambioVehiculoTest {
     public void SeCambianLosVehiculosCorrectamente(){
         Escenario escenario = Escenario.getInstance();
         Moto moto = new Moto();
-        Jugador jugador = new Jugador(moto);
+        Jugador jugador = new Jugador(moto, "Juan");
         Chocable sorpresaCambioVehiculo = new SorpresaCambioVehiculo();
 
         escenario.insertarChocable(new Piquete(), new Posicion(2,1));

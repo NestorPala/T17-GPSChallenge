@@ -22,7 +22,7 @@ public class ControlPolicialTest {
         when(randomMock.aplicar(anyDouble())).thenReturn(true);
 
         Chocable controlPolicial = new ControlPolicial(randomMock);
-        Jugador jugador1 = new Jugador(new Auto());
+        Jugador jugador1 = new Jugador(new Auto(), "Juan");
 
         IEfecto efecto = controlPolicial.devolverEfecto(new Auto());
         efecto.aplicarEfecto(jugador1);
@@ -43,7 +43,7 @@ public class ControlPolicialTest {
         when(randomMock.aplicar(anyDouble())).thenReturn(false);
 
         Chocable controlPolicial = new ControlPolicial(randomMock);
-        Jugador jugador1 = new Jugador(new Auto());
+        Jugador jugador1 = new Jugador(new Auto(), "Juan");
 
         IEfecto efecto = controlPolicial.devolverEfecto(new Auto());
         efecto.aplicarEfecto(jugador1);

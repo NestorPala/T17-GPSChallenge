@@ -1,13 +1,13 @@
 package edu.fiuba.algo3.modelo.Efectos;
+
 import edu.fiuba.algo3.modelo.Jugador;
 
-public class Retroceso implements IEfecto {
+public class FinDelJuego implements IEfecto {
 
-    public Retroceso(){}
+    public FinDelJuego(){}
 
     @Override
     public void aplicarEfecto(Jugador jugador) {
-        jugador.retrocederPosicionAnterior();
+        // Efecto que le impida volver a jugar al Jugador
     }
-    
 }

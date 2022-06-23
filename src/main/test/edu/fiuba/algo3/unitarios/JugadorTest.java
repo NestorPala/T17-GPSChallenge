@@ -16,7 +16,7 @@ public class JugadorTest {
   @Test
   public void aplicarUnMovimientoAlJugadorCambiaSuPosicion() {
     Vehiculo vehiculoInicial = new Moto();
-    Jugador jugador = new Jugador(vehiculoInicial);
+    Jugador jugador = new Jugador(vehiculoInicial, "Juan");
     Escenario escenario = Escenario.getInstance();
 
     jugador.mover(Direccion.derecha());
@@ -26,7 +26,7 @@ public class JugadorTest {
 
   @Test
   public void moverAlJugadorHaciaUnaPosicionInvalidaNoHaceNada() {
-    Jugador jugador = new Jugador(new Auto());
+    Jugador jugador = new Jugador(new Auto(), "Juan");
     Escenario escenario = Escenario.getInstance();
 
     jugador.mover(Direccion.izquierda());

@@ -9,9 +9,11 @@ public class Jugador {
     private Posicion posicion;
     private Posicion posicionAnterior;
     private final Puntaje puntaje;
+    private final String nombre;
     private final Escenario escenario = Escenario.getInstance();
 
-    public Jugador(Vehiculo vehiculo) {
+    public Jugador(Vehiculo vehiculo, String nombre) {
+        this.nombre = nombre;
         this.posicion = new Posicion(1,1);
         this.posicionAnterior = this.posicion;
         this.vehiculo = vehiculo;
