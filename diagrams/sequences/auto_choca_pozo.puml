@@ -2,7 +2,7 @@
 title Un auto choca con un pozo y es penalizado con 3 movimientos
 Actor usuario
 
-"usuario" -> ":Jugador": mover(direccion, escenario)
+"usuario" -> ":Jugador": mover(direccion)
 ":Jugador" -> ":Auto": mover(direccion, posicion)
 ":Auto" -> ":Direccion": calcularNuevaPosicion(posicion)
 ":Direccion" -> ":Posicion": sumarX(dirX)
@@ -12,11 +12,13 @@ Actor usuario
 ":Jugador" -> ":Puntaje": sumarMovimientos(1)
 ":Jugador" -> ":Escenario": obtenerChocable(nuevaPosicion)
 ":Escenario" --> ":Jugador": unPozo
-":Jugador" -> ":Auto": chocar(unPozo, puntaje)
-":Auto" -> ":Pozo": aplicarPenalizacion(self, puntaje)
-":Pozo" -> ":Puntaje" : sumarMovimientos(3)
-":Pozo" --> ":Auto" : unAuto
-":Auto" --> ":Jugador" : unAuto
+":Jugador" -> ":Auto": chocar(unPozo)
+":Auto" -> ":Pozo": devolverEfecto(self)
+":Pozo" --> ":Auto" : Penalizacion
+":Auto" --> ":Jugador" : Penalizacion
+":Jugador" -> ":Penalizacion" : aplicarEfecto(self)
+":Penalizacion" -> ":Jugador" : recibirPenalizacion(3)
+":Jugador" -> ":Puntaje" : sumarMovimientos(3)
 
 "usuario" -> ":Jugador": puntaje()
 ":Jugador" -> ":Puntaje": verMovimientos()
