@@ -100,27 +100,27 @@ class Retroceso {
 
 
 
-Pozo ---|> Chocable
-ControlPolicial --|> Chocable
-Piquete --|> Chocable
-Vacio --|> Chocable
+Pozo ..|> Chocable
+ControlPolicial ..|> Chocable
+Piquete ..|> Chocable
+Vacio ..|> Chocable
 
-Chocable <|-- SorpresaFavorable 
-Chocable <|-- SorpresaDesfavorable
-Chocable <|-- SorpresaCambioVehiculo
+Chocable <|.. SorpresaFavorable
+Chocable <|.. SorpresaDesfavorable
+Chocable <|.. SorpresaCambioVehiculo
 
 Vehiculo .> Chocable
 
-Todoterreno --|> Vehiculo
+Vehiculo <|-- Todoterreno
 Auto --|> Vehiculo
 Moto -|> Vehiculo
 
 Chocable .> IEfecto
 
-IEfecto <|-- CambioDeVehiculo
-IEfecto <|-- Penalizacion
-IEfecto <|-- Porcentaje
-Retroceso --|> IEfecto 
+IEfecto <|.. CambioDeVehiculo
+IEfecto <|.. Penalizacion
+IEfecto <|.. Porcentaje
+Retroceso ..|> IEfecto
 
 
 

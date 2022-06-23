@@ -10,6 +10,7 @@ class Jugador {
     + recibirPenalizacion(penalizacion: int)
     + recibirPorcentaje(porcentaje: int)
     + cambiarVehiculo(nuevoVehiculo)
+    + retrocederPosicionAnterior()
 }
 
 class Puntaje {
@@ -36,8 +37,9 @@ class Escenario {
     - ancho : int
     - chocables : Chocable[][]
     - {static} instance : Escenario
-    - Escenario()
+    - Escenario(limiteAlto, limiteAncho)
     + {static} getInstance() : Escenario
+    + {static} getInstance(alto, ancho) : Escenario
     + contienePosicion(posicion) : Bool
     + insertarChocable(chocable, posicion)
     + obtenerChocable(posicion) : Chocable
@@ -56,7 +58,7 @@ class Posicion {
 }
 
 
-Jugador --> Escenario
+Jugador -> Escenario
 Puntaje <-- Jugador
 Posicion <-- Jugador
 Direccion <. Jugador

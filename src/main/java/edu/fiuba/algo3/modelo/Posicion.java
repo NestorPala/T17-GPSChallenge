@@ -1,6 +1,5 @@
 package edu.fiuba.algo3.modelo;
 
-//import edu.fiuba.algo3.modelo.Movimientos.IMovimiento;
 
 public class Posicion {
     private int x;
