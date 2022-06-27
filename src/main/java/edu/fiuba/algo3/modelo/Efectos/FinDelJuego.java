@@ -9,6 +9,6 @@ public class FinDelJuego implements IEfecto {
     @Override
     public void aplicarEfecto(Jugador jugador) {
         // Efecto que le impida volver a jugar al Jugador
-        jugador.dejarDeJugar()
+        jugador.dejarDeJugar();
     }
 }
