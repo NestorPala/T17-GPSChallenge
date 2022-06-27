@@ -70,4 +70,8 @@ public class Jugador {
     public void dejarDeJugar() {
         this.estado = new EstadoInactivo();
     }
+
+    public boolean puedeSeguirJugando() {
+        return estado.puedeSeguirJugando();
+    }
 }
