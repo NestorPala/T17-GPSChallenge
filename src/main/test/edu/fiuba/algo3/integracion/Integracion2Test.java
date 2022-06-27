@@ -4,10 +4,10 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class Integracion1Test {
+public class Integracion2Test {
 
     @Test
-    public void test01_PartidaCompletaConUnJugador() {
+    public void test01_PartidaCompletaConDosJugadores() {
 
     }
 }
