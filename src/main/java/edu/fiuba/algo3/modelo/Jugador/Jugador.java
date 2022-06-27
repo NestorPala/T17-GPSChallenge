@@ -1,10 +1,15 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.Jugador;
 
+import edu.fiuba.algo3.modelo.Direccion;
 import edu.fiuba.algo3.modelo.Efectos.IEfecto;
+import edu.fiuba.algo3.modelo.Escenario;
+import edu.fiuba.algo3.modelo.Posicion;
+import edu.fiuba.algo3.modelo.Puntaje;
 import edu.fiuba.algo3.modelo.Vehiculos.Vehiculo;
 import edu.fiuba.algo3.modelo.Chocables.Chocable;
 
 public class Jugador {
+    private IEstado estado;
     private Vehiculo vehiculo;
     private Posicion posicion;
     private Posicion posicionAnterior;
@@ -13,6 +18,7 @@ public class Jugador {
     private final Escenario escenario = Escenario.getInstance();
 
     public Jugador(Vehiculo vehiculo, String nombre) {
+        this.estado = new EstadoActivo();
         this.nombre = nombre;
         this.posicion = new Posicion(1,1);
         this.posicionAnterior = this.posicion;
@@ -39,6 +45,7 @@ public class Jugador {
     }
 
     private void chocarObstaculos() {
+        //logger.
         Chocable chocable = this.escenario.obtenerChocable(this.posicion);
         IEfecto efecto = this.vehiculo.chocar(chocable);
         efecto.aplicarEfecto(this);
@@ -58,5 +65,9 @@ public class Jugador {
 
     public void retrocederPosicionAnterior() {
         this.posicion = this.posicionAnterior;
+    }
+
+    public void dejarDeJugar() {
+        this.estado = new EstadoInactivo();
     }
 }

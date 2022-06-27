@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.modelo.Efectos;
 
-import edu.fiuba.algo3.modelo.Jugador;
+import edu.fiuba.algo3.modelo.Jugador.Jugador;
 
 public class FinDelJuego implements IEfecto {
 
@@ -9,5 +9,6 @@ public class FinDelJuego implements IEfecto {
     @Override
     public void aplicarEfecto(Jugador jugador) {
         // Efecto que le impida volver a jugar al Jugador
+        jugador.dejarDeJugar()
     }
 }

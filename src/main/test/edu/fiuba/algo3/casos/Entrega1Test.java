@@ -5,7 +5,7 @@ import edu.fiuba.algo3.modelo.Chocables.Piquete;
 import edu.fiuba.algo3.modelo.Chocables.Pozo;
 import edu.fiuba.algo3.modelo.Direccion;
 import edu.fiuba.algo3.modelo.Escenario;
-import edu.fiuba.algo3.modelo.Jugador;
+import edu.fiuba.algo3.modelo.Jugador.Jugador;
 import edu.fiuba.algo3.modelo.Posicion;
 import edu.fiuba.algo3.modelo.Vehiculos.Auto;
 import edu.fiuba.algo3.modelo.Vehiculos.Moto;

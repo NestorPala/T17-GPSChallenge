@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.modelo.Efectos;
 
-import edu.fiuba.algo3.modelo.Jugador;
+import edu.fiuba.algo3.modelo.Jugador.Jugador;
 import edu.fiuba.algo3.modelo.Vehiculos.Vehiculo;
 
 public class CambioDeVehiculo implements IEfecto{
