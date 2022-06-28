@@ -2,6 +2,7 @@ package edu.fiuba.algo3.modelo.Chocables;
 
 import edu.fiuba.algo3.modelo.Efectos.IEfecto;
 import edu.fiuba.algo3.modelo.Efectos.Penalizacion;
+import edu.fiuba.algo3.modelo.Randomizador.Randomizer;
 import edu.fiuba.algo3.modelo.Vehiculos.Auto;
 import edu.fiuba.algo3.modelo.Vehiculos.Moto;
 import edu.fiuba.algo3.modelo.Vehiculos.Todoterreno;
@@ -20,19 +21,19 @@ public class ControlPolicial implements Chocable{
 
     @Override
     public IEfecto devolverEfecto(Moto moto) {
-        if(this.randomizador.aplicar(PROBABILIDAD_MOTO)) return new Penalizacion(PENALIZACION);
+        if(this.randomizador.random(PROBABILIDAD_MOTO)) return new Penalizacion(PENALIZACION);
         return new Penalizacion(0);
     }
 
     @Override
     public IEfecto devolverEfecto(Auto auto) {
-        if(this.randomizador.aplicar(PROBABILIDAD_AUTO)) return new Penalizacion(PENALIZACION);
+        if(this.randomizador.random(PROBABILIDAD_AUTO)) return new Penalizacion(PENALIZACION);
         return new Penalizacion(0);
     }
 
     @Override
     public IEfecto devolverEfecto(Todoterreno todoterreno) {
-        if(this.randomizador.aplicar(PROBABILIDAD_TODOTERRENO)) return new Penalizacion(PENALIZACION);
+        if(this.randomizador.random(PROBABILIDAD_TODOTERRENO)) return new Penalizacion(PENALIZACION);
         return new Penalizacion(0);
     }
 }

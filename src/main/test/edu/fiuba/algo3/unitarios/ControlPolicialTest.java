@@ -2,7 +2,7 @@ package edu.fiuba.algo3.unitarios;
 
 import edu.fiuba.algo3.modelo.Chocables.Chocable;
 import edu.fiuba.algo3.modelo.Chocables.ControlPolicial;
-import edu.fiuba.algo3.modelo.Chocables.Randomizer;
+import edu.fiuba.algo3.modelo.Randomizador.Randomizer;
 import edu.fiuba.algo3.modelo.Efectos.IEfecto;
 import edu.fiuba.algo3.modelo.Jugador.Jugador;
 import edu.fiuba.algo3.modelo.Vehiculos.Auto;
@@ -19,7 +19,7 @@ public class ControlPolicialTest {
     @Test
     public void puedoObtenerLosPuntosDePenalizacionCorrectosSiSeAplicaLaProbabilidad(){
         Randomizer randomMock = mock(Randomizer.class);
-        when(randomMock.aplicar(anyDouble())).thenReturn(true);
+        when(randomMock.random(anyDouble())).thenReturn(true);
 
         Chocable controlPolicial = new ControlPolicial(randomMock);
         Jugador jugador1 = new Jugador(new Auto(), "Juan");
@@ -40,7 +40,7 @@ public class ControlPolicialTest {
     @Test
     public void puedoObtenerLosPuntosDePenalizacionCorrectosSiNoSeAplicaLaProbabilidad(){
         Randomizer randomMock = mock(Randomizer.class);
-        when(randomMock.aplicar(anyDouble())).thenReturn(false);
+        when(randomMock.random(anyDouble())).thenReturn(false);
 
         Chocable controlPolicial = new ControlPolicial(randomMock);
         Jugador jugador1 = new Jugador(new Auto(), "Juan");

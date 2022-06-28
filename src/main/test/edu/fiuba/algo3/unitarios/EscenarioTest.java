@@ -31,7 +31,6 @@ public class EscenarioTest {
   @Test
   public void noSePuedeObtenerUnChocableDeUnLugarFueraDeLosLimitesDelEscenario() {
     Escenario escenario = Escenario.getInstance();
-
     assertNull(escenario.obtenerChocable(new Posicion(11, 11)));
   }
 

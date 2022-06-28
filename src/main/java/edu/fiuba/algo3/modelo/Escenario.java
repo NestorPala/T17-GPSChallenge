@@ -44,8 +44,6 @@ public class Escenario {
         return instance;
     }
 
-
-
     public boolean contienePosicion(Posicion posicion) {
         int posX = posicion.x();
         int posY = posicion.y();

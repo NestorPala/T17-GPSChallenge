@@ -5,6 +5,7 @@ import edu.fiuba.algo3.modelo.Direccion;
 import edu.fiuba.algo3.modelo.Escenario;
 import edu.fiuba.algo3.modelo.Jugador.Jugador;
 import edu.fiuba.algo3.modelo.Posicion;
+import edu.fiuba.algo3.modelo.Randomizador.Randomizer;
 import edu.fiuba.algo3.modelo.Vehiculos.Auto;
 import edu.fiuba.algo3.modelo.Vehiculos.Moto;
 import edu.fiuba.algo3.modelo.Vehiculos.Todoterreno;
@@ -68,7 +69,7 @@ public class Entrega2Test {
     Vehiculo moto = new Moto();
     Jugador jugador = new Jugador(moto, "Juan");
     Randomizer randomizerMock = mock(Randomizer.class);
-    when(randomizerMock.aplicar(anyDouble())).thenReturn(true);
+    when(randomizerMock.random(anyDouble())).thenReturn(true);
     Chocable controlPolicial = new ControlPolicial(randomizerMock);
 
     escenario.insertarChocable(controlPolicial, new Posicion(1, 2));
@@ -84,7 +85,7 @@ public class Entrega2Test {
     Vehiculo moto = new Moto();
     Jugador jugador = new Jugador(moto, "Juan");
     Randomizer randomizerMock = mock(Randomizer.class);
-    when(randomizerMock.aplicar(anyDouble())).thenReturn(false);
+    when(randomizerMock.random(anyDouble())).thenReturn(false);
     Chocable controlPolicial = new ControlPolicial(randomizerMock);
 
     escenario.insertarChocable(controlPolicial, new Posicion(1, 2));
