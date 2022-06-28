@@ -10,8 +10,6 @@ public class CambioDeVehiculo implements IEfecto{
 
     public CambioDeVehiculo(Vehiculo nuevoVehiculo){
         this.vehiculo = nuevoVehiculo;
-        Logger logger = Logger.getInstance();
-        logger.log("El jugador cambio de vehiculo");
     }
 
     @Override

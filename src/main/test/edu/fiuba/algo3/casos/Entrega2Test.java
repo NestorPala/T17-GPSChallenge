@@ -4,6 +4,7 @@ import edu.fiuba.algo3.modelo.Chocables.*;
 import edu.fiuba.algo3.modelo.Direccion;
 import edu.fiuba.algo3.modelo.Escenario;
 import edu.fiuba.algo3.modelo.Jugador.Jugador;
+import edu.fiuba.algo3.modelo.Logger;
 import edu.fiuba.algo3.modelo.Posicion;
 import edu.fiuba.algo3.modelo.Randomizador.Randomizer;
 import edu.fiuba.algo3.modelo.Vehiculos.Auto;
@@ -34,6 +35,8 @@ public class Entrega2Test {
 
   @Test
   public void test07_UnVehiculoAtraviesaLaCiudadYEncuentraUnaSorpresaDesfavorable() {
+    Logger logger = Logger.getInstance();
+    logger.activar();
     Escenario escenario = Escenario.getInstance();
     Vehiculo moto = new Moto();
     Jugador jugador = new Jugador(moto, "Juan");

@@ -6,6 +6,7 @@ import edu.fiuba.algo3.modelo.Chocables.Pozo;
 import edu.fiuba.algo3.modelo.Direccion;
 import edu.fiuba.algo3.modelo.Escenario;
 import edu.fiuba.algo3.modelo.Jugador.Jugador;
+import edu.fiuba.algo3.modelo.Logger;
 import edu.fiuba.algo3.modelo.Posicion;
 import edu.fiuba.algo3.modelo.Vehiculos.Auto;
 import edu.fiuba.algo3.modelo.Vehiculos.Moto;
@@ -16,6 +17,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Entrega1Test {
+
   @Test
   public void test01_motoChocaPozoYEsPenalizadaConTresMovimientos() {
     Escenario escenario = Escenario.getInstance();
@@ -74,6 +76,8 @@ public class Entrega1Test {
 
   @Test
   public void test05_todoterrenoChocaConTresPozosYEsPenalizadoConDosMovimientos() {
+    Logger log = Logger.getInstance();
+    log.activar();
     Escenario escenario = Escenario.getInstance();
     Vehiculo todoterreno = new Todoterreno();
     Jugador jugador = new Jugador(todoterreno, "Juan");

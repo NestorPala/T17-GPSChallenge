@@ -1,11 +1,14 @@
 package edu.fiuba.algo3.modelo.Vehiculos;
 import edu.fiuba.algo3.modelo.Chocables.Chocable;
 import edu.fiuba.algo3.modelo.Efectos.IEfecto;
+import edu.fiuba.algo3.modelo.Logger;
 
 public class Todoterreno extends Vehiculo {
     private int pozosEncontrados;
 
     public Todoterreno() {
+        Logger logger = Logger.getInstance();
+        logger.log("El jugador tiene como vehiculo una 4x4");
         this.pozosEncontrados = 0;
     }
 
