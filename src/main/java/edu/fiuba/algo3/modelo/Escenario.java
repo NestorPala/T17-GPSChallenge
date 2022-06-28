@@ -66,4 +66,8 @@ public class Escenario {
         }
         return null;
     }
+    public Escenario reset() {
+        instance = new Escenario(this.alto, this.ancho);
+        return instance;
+    }
 }

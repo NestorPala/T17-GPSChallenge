@@ -6,7 +6,6 @@ import edu.fiuba.algo3.modelo.Chocables.Pozo;
 import edu.fiuba.algo3.modelo.Direccion;
 import edu.fiuba.algo3.modelo.Escenario;
 import edu.fiuba.algo3.modelo.Jugador.Jugador;
-import edu.fiuba.algo3.modelo.Logger;
 import edu.fiuba.algo3.modelo.Posicion;
 import edu.fiuba.algo3.modelo.Vehiculos.Auto;
 import edu.fiuba.algo3.modelo.Vehiculos.Moto;
@@ -19,10 +18,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class Entrega1Test {
   @Test
   public void test01_motoChocaPozoYEsPenalizadaConTresMovimientos() {
-
-    Logger logger = Logger.getInstance();
-    logger.activar();
-
     Escenario escenario = Escenario.getInstance();
     Vehiculo moto = new Moto();
     Jugador jugador = new Jugador(moto, "Juan");

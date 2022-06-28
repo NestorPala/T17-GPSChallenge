@@ -23,6 +23,7 @@ public class Integracion2Test {
         GPSChallenge juego = new GPSChallenge();
 
         Escenario escenario = Escenario.getInstance();
+        escenario = escenario.reset(); // VER SI SE PUEDE HACER DE OTRA FORMA,NO CREO.
         escenario.insertarChocable(new Pozo(), new Posicion(1, 2));
         escenario.insertarChocable(new Piquete(), new Posicion(1, 3));
         Randomizer randomMock = mock(Randomizer.class);

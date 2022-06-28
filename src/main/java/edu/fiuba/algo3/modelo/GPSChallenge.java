@@ -6,17 +6,19 @@ import java.util.ArrayDeque;
 import java.util.Queue;
 
 public class GPSChallenge {
-    private Queue<Jugador> jugadores;
+    private final Queue<Jugador> jugadores;
     private Jugador jugadorActual;
-    private Ranking ranking;
-    private Escenario escenario;
+    private final Ranking ranking;
+    private final Escenario escenario;
+
+    private final Logger logger = Logger.getInstance();
 
     public GPSChallenge() {
         jugadores = new ArrayDeque<Jugador>();
         jugadorActual = null;
         ranking = new Ranking();
         escenario = Escenario.getInstance();
-        System.out.println("Nueva partida de GPSChallenge");
+        logger.log("Nueva partida de GPSChallenge");
     }
 
     public GPSChallenge(int alto, int ancho) {
@@ -24,7 +26,7 @@ public class GPSChallenge {
         jugadorActual = null;
         ranking = new Ranking();
         escenario = Escenario.getInstance(alto, ancho);
-        System.out.println("Nueva partida de GPSChallenge");
+        logger.log("Nueva partida de GPSChallenge");
     }
 
     public void agregarJugador(Jugador unJugador) {
@@ -32,7 +34,7 @@ public class GPSChallenge {
         if (jugadorActual == null) {
             jugadorActual = jugadores.poll();
         }
-        System.out.println("Jugador agregado al juego");
+        logger.log("Jugador agregado al juego");
     }
 
     /*
@@ -49,10 +51,10 @@ public class GPSChallenge {
     */
 
     public void mover(Direccion unaDireccion) {
-        System.out.println("Mover al jugador");
+        logger.log("Mover al jugador");
         jugadorActual.mover(unaDireccion);
         if (!jugadorActual.puedeSeguirJugando()) {
-            System.out.println("El jugador llego a la meta");
+            logger.log("El jugador llego a la meta");
             ranking.agregar(jugadorActual);
             if (hayJugadoresPorJugar()) {
                 jugadorActual = jugadores.poll();
