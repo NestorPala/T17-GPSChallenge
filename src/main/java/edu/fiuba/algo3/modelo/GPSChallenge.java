@@ -21,10 +21,17 @@ public class GPSChallenge {
     }
 
     public void jugar() {
-        while (jugadorActual.puedeSeguirJugando()) {
-            // selector comandos
-        }
-        ranking.agregar(jugadorActual);
         jugadorActual = jugadores.poll();
+        while (hayJugadoresPorJugar()) {
+            while (jugadorActual.puedeSeguirJugando()) {
+                // selector comandos
+            }
+            ranking.agregar(jugadorActual);
+            jugadorActual = jugadores.poll();
+        }
+    }
+
+    private boolean hayJugadoresPorJugar() {
+        return jugadores.size() > 0;
     }
 }

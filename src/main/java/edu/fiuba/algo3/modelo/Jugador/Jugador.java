@@ -35,8 +35,15 @@ public class Jugador {
     }
 
     public void mover(Direccion unaDireccion) {
+        /*
         Posicion nuevaPosicion = this.vehiculo.mover(unaDireccion, posicion);
         this.puntaje.sumarMovimientos(1);
+        if (this.escenario.contienePosicion(nuevaPosicion)) {
+            this.posicionAnterior = this.posicion;
+            this.posicion = nuevaPosicion;
+            chocarObstaculos();
+        */
+        Posicion nuevaPosicion = this.estado.mover(unaDireccion, vehiculo, posicion, puntaje);
         if (this.escenario.contienePosicion(nuevaPosicion)) {
             this.posicionAnterior = this.posicion;
             this.posicion = nuevaPosicion;
