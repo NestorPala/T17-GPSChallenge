@@ -12,9 +12,4 @@ public class EstadoInactivo implements IEstado {
     public boolean puedeSeguirJugando() {
         return false;
     }
-
-    @Override
-    public Posicion mover(Direccion unaDireccion, Vehiculo vehiculo, Posicion posicion, Puntaje puntaje) {
-        return posicion;
-    }
 }

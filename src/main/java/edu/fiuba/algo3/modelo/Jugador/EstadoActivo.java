@@ -12,11 +12,4 @@ public class EstadoActivo implements IEstado {
     public boolean puedeSeguirJugando() {
         return true;
     }
-
-    @Override
-    public Posicion mover(Direccion unaDireccion, Vehiculo vehiculo, Posicion posicion, Puntaje puntaje) {
-        Posicion nuevaPosicion = vehiculo.mover(unaDireccion, posicion);
-        puntaje.sumarMovimientos(1);
-        return nuevaPosicion;
-    }
 }

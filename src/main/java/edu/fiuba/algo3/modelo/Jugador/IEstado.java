@@ -7,5 +7,4 @@ import edu.fiuba.algo3.modelo.Vehiculos.Vehiculo;
 
 public interface IEstado {
     boolean puedeSeguirJugando();
-    Posicion mover(Direccion unaDireccion, Vehiculo vehiculo, Posicion posicion, Puntaje puntaje);
 }

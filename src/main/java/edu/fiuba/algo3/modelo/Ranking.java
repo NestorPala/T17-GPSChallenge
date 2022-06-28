@@ -20,6 +20,11 @@ public class Ranking {
 
     public void obtenerTop10() {
         // devolver el top 10 de jugadores con su nombre y puntaje
+        System.out.println(jugadores.get(0).nombre());
+        System.out.println(jugadores.get(0).puntaje());
     }
 
+    public Jugador obtenerMejorJugador() {
+        return jugadores.get(0);
+    }
 }
