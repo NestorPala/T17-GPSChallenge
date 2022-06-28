@@ -1,10 +1,7 @@
 package edu.fiuba.algo3.modelo.Jugador;
 
-import edu.fiuba.algo3.modelo.Direccion;
+import edu.fiuba.algo3.modelo.*;
 import edu.fiuba.algo3.modelo.Efectos.IEfecto;
-import edu.fiuba.algo3.modelo.Escenario;
-import edu.fiuba.algo3.modelo.Posicion;
-import edu.fiuba.algo3.modelo.Puntaje;
 import edu.fiuba.algo3.modelo.Vehiculos.Vehiculo;
 import edu.fiuba.algo3.modelo.Chocables.Chocable;
 
@@ -16,6 +13,7 @@ public class Jugador {
     private final Puntaje puntaje;
     private final String nombre;
     private final Escenario escenario = Escenario.getInstance();
+    private final Logger logger = Logger.getInstance();
 
     public Jugador(Vehiculo vehiculo, String nombre) {
         this.estado = new EstadoActivo();
@@ -24,6 +22,7 @@ public class Jugador {
         this.posicionAnterior = this.posicion;
         this.vehiculo = vehiculo;
         this.puntaje = new Puntaje();
+        logger.log("Se creó el usuario " + this.nombre);
     }
 
     public Posicion posicion() {
@@ -45,7 +44,6 @@ public class Jugador {
     }
 
     private void chocarObstaculos() {
-        //logger.
         Chocable chocable = this.escenario.obtenerChocable(this.posicion);
         IEfecto efecto = this.vehiculo.chocar(chocable);
         efecto.aplicarEfecto(this);
@@ -53,6 +51,7 @@ public class Jugador {
 
     public void recibirPenalizacion(int penalizacion){
         this.puntaje.sumarMovimientos(penalizacion);
+
     }
 
     public void recibirPorcentaje(int porcentaje){
@@ -61,14 +60,17 @@ public class Jugador {
 
     public void cambiarVehiculo(Vehiculo nuevoVehiculo) {
         this.vehiculo = nuevoVehiculo;
+        logger.log("El jugador cambio de vehiculo");
     }
 
     public void retrocederPosicionAnterior() {
         this.posicion = this.posicionAnterior;
+        logger.log("El jugador retrocedió una posición");
     }
 
     public void dejarDeJugar() {
         this.estado = new EstadoInactivo();
+        logger.log("Se termino el juego");
     }
 
     public boolean puedeSeguirJugando() {
