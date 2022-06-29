@@ -4,6 +4,7 @@ import edu.fiuba.algo3.interfazGrafica.Manejadores.BotonAbajoEventHandler;
 import edu.fiuba.algo3.interfazGrafica.Manejadores.BotonArribaEventHandler;
 import edu.fiuba.algo3.interfazGrafica.Manejadores.BotonDerechaEventHandler;
 import edu.fiuba.algo3.interfazGrafica.Manejadores.BotonIzquierdaEventHandler;
+import edu.fiuba.algo3.modelo.GPSChallenge;
 import edu.fiuba.algo3.modelo.Jugador.Jugador;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -23,19 +24,19 @@ public class ContenedorEscenario extends BorderPane {
 
     Label texto;
 
-    public ContenedorEscenario(Stage stage, Jugador jugador){
+    public ContenedorEscenario(Stage stage, GPSChallenge juego){
 
         this.stage = stage;
         this.texto = new Label();
-        this.setCentro(jugador);
-        this.setBotonera(jugador);
-        this.setPuntaje(jugador);
+        this.setCentro(juego);
+        this.setBotonera(juego);
+        this.setPuntaje(juego.jugadorActual());
 
     }
 
-    private void setCentro(Jugador jugador) {
+    private void setCentro(GPSChallenge juego) {
         vistaEscenario = new VistaEscenario(20, 20);
-        vistaJugador2 = new VistaJugador2(vistaEscenario, jugador);
+        vistaJugador2 = new VistaJugador2(vistaEscenario, juego);
 
         contenedorCentral = new VBox(vistaEscenario);
         contenedorCentral.setAlignment(Pos.CENTER);
@@ -45,26 +46,26 @@ public class ContenedorEscenario extends BorderPane {
         this.setCenter(contenedorCentral);
     }
 
-    private void setBotonera(Jugador jugador) {
+    private void setBotonera(GPSChallenge juego) {
 
         Button botonDerecha = new Button();
         botonDerecha.setText("Derecha");
-        BotonDerechaEventHandler botonDerechaEventHandler = new BotonDerechaEventHandler(vistaJugador2, jugador, this);
+        BotonDerechaEventHandler botonDerechaEventHandler = new BotonDerechaEventHandler(vistaJugador2, juego, this);
         botonDerecha.setOnAction(botonDerechaEventHandler);
 
         Button botonIzquierda = new Button();
         botonIzquierda.setText("Izquierda");
-        BotonIzquierdaEventHandler botonIzquierdaEventHandler = new BotonIzquierdaEventHandler(vistaJugador2, jugador, this);
+        BotonIzquierdaEventHandler botonIzquierdaEventHandler = new BotonIzquierdaEventHandler(vistaJugador2, juego, this);
         botonIzquierda.setOnAction(botonIzquierdaEventHandler);
 
         Button botonAbajo = new Button();
         botonAbajo.setText("Abajo");
-        BotonAbajoEventHandler botonAbajoEventHandler = new BotonAbajoEventHandler(vistaJugador2, jugador, this);
+        BotonAbajoEventHandler botonAbajoEventHandler = new BotonAbajoEventHandler(vistaJugador2, juego, this);
         botonAbajo.setOnAction(botonAbajoEventHandler);
 
         Button botonArriba = new Button();
         botonArriba.setText("Arriba");
-        BotonArribaEventHandler botonArribaEventHandler = new BotonArribaEventHandler(vistaJugador2, jugador, this);
+        BotonArribaEventHandler botonArribaEventHandler = new BotonArribaEventHandler(vistaJugador2, juego, this);
         botonArriba.setOnAction(botonArribaEventHandler);
 
         VBox contenedorVertical = new VBox(botonArriba, botonAbajo, botonDerecha, botonIzquierda);

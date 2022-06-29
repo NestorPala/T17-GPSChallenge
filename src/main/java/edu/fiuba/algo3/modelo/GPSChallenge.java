@@ -73,4 +73,6 @@ public class GPSChallenge {
     public Jugador obtenerMejorJugador() {
         return ranking.obtenerMejorJugador();
     }
+
+    public Jugador jugadorActual(){ return jugadorActual;}
 }

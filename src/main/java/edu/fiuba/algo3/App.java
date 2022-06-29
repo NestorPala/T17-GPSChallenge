@@ -2,15 +2,12 @@ package edu.fiuba.algo3;
 
 import edu.fiuba.algo3.interfazGrafica.ContenedorEscenario;
 import edu.fiuba.algo3.interfazGrafica.ContenedorInicio;
-import edu.fiuba.algo3.modelo.Escenario;
+import edu.fiuba.algo3.modelo.GPSChallenge;
 import edu.fiuba.algo3.modelo.Jugador.Jugador;
 import edu.fiuba.algo3.modelo.Vehiculos.Moto;
 import edu.fiuba.algo3.modelo.Vehiculos.Vehiculo;
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 /**
@@ -24,9 +21,9 @@ public class App extends Application {
 
         stage.setTitle("GPS CHALLENGE");
 
-        Jugador jugador = crearModelo();
+        GPSChallenge juego = crearModelo();
 
-        ContenedorEscenario contenedorEscenario = new ContenedorEscenario(stage, jugador);
+        ContenedorEscenario contenedorEscenario = new ContenedorEscenario(stage, juego);
         Scene escenaEscenario = new Scene(contenedorEscenario, 1080,720);
 
         ContenedorInicio contenedorInicio = new ContenedorInicio(stage, escenaEscenario);
@@ -36,11 +33,12 @@ public class App extends Application {
         stage.show();
     }
 
-    private Jugador crearModelo(){
-        Escenario escenario = Escenario.getInstance(20, 20);
+    private GPSChallenge crearModelo(){
         Vehiculo vehiculo = new Moto();
         Jugador jugador = new Jugador(vehiculo, "Pepe");
-        return jugador;
+        GPSChallenge juego = new GPSChallenge(20,20);
+        juego.agregarJugador(jugador);
+        return juego;
     }
 
     public static void main(String[] args) {
