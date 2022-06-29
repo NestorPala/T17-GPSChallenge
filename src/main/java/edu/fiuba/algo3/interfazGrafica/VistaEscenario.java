@@ -1,12 +1,15 @@
 package edu.fiuba.algo3.interfazGrafica;
 
 
+import javafx.geometry.Insets;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 
 import java.io.File;
+
 
 public class VistaEscenario extends Group {
 
@@ -30,16 +33,14 @@ public class VistaEscenario extends Group {
                 Pane v = new Pane();
                 v.setMinHeight(this.tileAlto);
                 v.setMinWidth(this.tileAncho);
+                v.setBackground(new Background(new BackgroundFill(Color.rgb(140,140,140), new CornerRadii(2.5), new Insets(-1))));
                 panes[i][j] = v;
                 tabla.add(v , i, j);
             }
         }
-        Background bi = new Background(new BackgroundImage(new Image(new File("src/main/java/edu/fiuba/algo3/interfazGrafica/fondoGris.jpg").toURI().toString()),
-                BackgroundRepeat.NO_REPEAT,
-                BackgroundRepeat.NO_REPEAT,
-                BackgroundPosition.CENTER,
-                new BackgroundSize(this.ancho, this.alto, false, false, false, false)));
-        tabla.setBackground(bi);
+
+        tabla.setVgap(5);
+        tabla.setHgap(5);
 
         this.addView(tabla);
     }
