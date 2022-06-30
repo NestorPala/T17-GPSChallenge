@@ -1,6 +1,8 @@
 package edu.fiuba.algo3.interfazGrafica;
 
 
+import edu.fiuba.algo3.modelo.Escenario;
+import edu.fiuba.algo3.modelo.Posicion;
 import javafx.geometry.Insets;
 import javafx.scene.Group;
 import javafx.scene.Node;
@@ -27,6 +29,8 @@ public class VistaEscenario extends Group {
         ancho = tileAncho * anchoEscenario;
         alto = tileAlto * altoEscenario;
         panes = new Pane[(int) ancho][(int) alto];
+        Escenario escenario = Escenario.getInstance();
+        Imagenes imagenes = new Imagenes();
 
         for (int i = 0; i < anchoEscenario; i++) {
             for (int j = 0; j < altoEscenario; j++) {
@@ -34,6 +38,7 @@ public class VistaEscenario extends Group {
                 v.setMinHeight(this.tileAlto);
                 v.setMinWidth(this.tileAncho);
                 v.setBackground(new Background(new BackgroundFill(Color.rgb(140,140,140), new CornerRadii(2.5), new Insets(-1))));
+                v.getChildren().add(0, imagenes.devolverImagenes(escenario.obtenerChocable(new Posicion(i,j))));
                 panes[i][j] = v;
                 tabla.add(v , i, j);
             }
@@ -55,7 +60,8 @@ public class VistaEscenario extends Group {
                 }
             }
         }
-        panes[x][y].getChildren().add(0, view);
+
+        panes[x][y].getChildren().add(1, view);
     }
 
     public void addView(Node view) {
