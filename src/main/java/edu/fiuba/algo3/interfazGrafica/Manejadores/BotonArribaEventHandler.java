@@ -7,6 +7,10 @@ import edu.fiuba.algo3.modelo.GPSChallenge;
 import edu.fiuba.algo3.modelo.Jugador.Jugador;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+
+import java.io.File;
 
 public class BotonArribaEventHandler implements EventHandler<ActionEvent> {
 
@@ -14,6 +18,8 @@ public class BotonArribaEventHandler implements EventHandler<ActionEvent> {
     private final GPSChallenge juego;
 
     private final ContenedorEscenario contenedor;
+
+    private final static MediaPlayer sonidoAuto = new MediaPlayer(new Media(new File("src/main/java/edu/fiuba/algo3/interfazGrafica/sonidoAuto.mp3").toURI().toString()));
 
     public BotonArribaEventHandler(VistaJugador2 vistaJugador, GPSChallenge juego, ContenedorEscenario contenedor){
         this.vistaJugador = vistaJugador;
@@ -26,5 +32,7 @@ public class BotonArribaEventHandler implements EventHandler<ActionEvent> {
         juego.mover(Direccion.arriba());
         vistaJugador.actualizar();
         contenedor.setPuntaje(juego.jugadorActual());
+        sonidoAuto.play();
+        sonidoAuto.stop();
     }
 }
