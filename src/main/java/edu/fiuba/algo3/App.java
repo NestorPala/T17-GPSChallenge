@@ -6,6 +6,7 @@ import edu.fiuba.algo3.modelo.GPSChallenge;
 import edu.fiuba.algo3.modelo.Jugador.Jugador;
 import edu.fiuba.algo3.modelo.Vehiculos.Moto;
 import edu.fiuba.algo3.modelo.Vehiculos.Vehiculo;
+import edu.fiuba.algo3.vista.ContenedorJugadores;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -22,11 +23,15 @@ public class App extends Application {
         stage.setTitle("GPS CHALLENGE");
 
         GPSChallenge juego = crearModelo();
+        //GPSChallenge juego = new GPSChallenge(20, 20);
 
         ContenedorEscenario contenedorEscenario = new ContenedorEscenario(stage, juego);
         Scene escenaEscenario = new Scene(contenedorEscenario, 1440,900);
 
-        ContenedorInicio contenedorInicio = new ContenedorInicio(stage, escenaEscenario);
+        ContenedorJugadores contenedorJugadores = new ContenedorJugadores(stage, escenaEscenario, juego);
+        Scene escenaJugadores = new Scene(contenedorJugadores, 1440, 900);
+
+        ContenedorInicio contenedorInicio = new ContenedorInicio(stage, escenaJugadores);
         Scene escenaInicial = new Scene(contenedorInicio, 1440, 900);
 
         stage.setScene(escenaInicial);

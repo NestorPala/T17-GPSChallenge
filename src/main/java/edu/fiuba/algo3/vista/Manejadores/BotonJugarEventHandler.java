@@ -16,7 +16,7 @@ public class BotonJugarEventHandler implements EventHandler<ActionEvent> {
 
     private final static MediaPlayer sonidoClickear = new MediaPlayer(new Media(new File("src/main/java/edu/fiuba/algo3/vista/sonidoClickear.mp3").toURI().toString()));
 
-    public BotonJugarEventHandler(Stage stage, Scene proximaEscena){
+    public BotonJugarEventHandler(Stage stage, Scene proximaEscena) {
         this.proximaEscena = proximaEscena;
         this.stage = stage;
     }

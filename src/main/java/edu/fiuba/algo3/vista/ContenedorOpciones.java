@@ -15,7 +15,7 @@ public class ContenedorOpciones extends VBox {
     Scene escenaAnterior;
     Stage stage;
 
-    public ContenedorOpciones(Stage stage, Scene escenaAnterior){
+    public ContenedorOpciones(Stage stage, Scene escenaAnterior) {
 
         super();
 
@@ -39,6 +39,6 @@ public class ContenedorOpciones extends VBox {
         botonAtras.setOnAction(botonAtrasEventHandler);
 
         this.getChildren().addAll(texto, botonAtras);
-    };
+    }
 
 }

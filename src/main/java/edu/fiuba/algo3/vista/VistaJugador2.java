@@ -7,7 +7,7 @@ import javafx.scene.image.ImageView;
 
 import java.io.File;
 
-public class VistaJugador2{
+public class VistaJugador2 {
 
     private double escalaJugador = 1;
     private final VistaEscenario vistaEscenario;

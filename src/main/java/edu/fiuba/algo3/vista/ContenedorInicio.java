@@ -20,7 +20,7 @@ public class ContenedorInicio extends VBox {
 
     Stage stage;
 
-    public ContenedorInicio(Stage stage, Scene proximaEscena){
+    public ContenedorInicio(Stage stage, Scene proximaEscena) {
 
         super();
 

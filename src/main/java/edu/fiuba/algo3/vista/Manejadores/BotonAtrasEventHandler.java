@@ -16,7 +16,7 @@ public class BotonAtrasEventHandler implements EventHandler<ActionEvent> {
 
     private final static MediaPlayer sonidoAtras = new MediaPlayer(new Media(new File("src/main/java/edu/fiuba/algo3/vista/sonidoAtras.mp3").toURI().toString()));
 
-    public BotonAtrasEventHandler(Stage stage, Scene escenaAnterior){
+    public BotonAtrasEventHandler(Stage stage, Scene escenaAnterior) {
         this.escenaAnterior = escenaAnterior;
         this.stage = stage;
     }
