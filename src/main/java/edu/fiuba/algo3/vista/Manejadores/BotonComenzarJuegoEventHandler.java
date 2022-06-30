@@ -1,6 +1,8 @@
 package edu.fiuba.algo3.vista.Manejadores;
 
 import edu.fiuba.algo3.modelo.GPSChallenge;
+import edu.fiuba.algo3.modelo.Jugador.Jugador;
+import edu.fiuba.algo3.modelo.Vehiculos.Auto;
 import edu.fiuba.algo3.vista.ContenedorEscenario;
 import edu.fiuba.algo3.vista.ContenedorJugadores;
 import javafx.event.ActionEvent;
@@ -28,6 +30,9 @@ public class BotonComenzarJuegoEventHandler implements EventHandler<ActionEvent>
     public void handle(ActionEvent actionEvent) {
         sonidoClickear.play();
         sonidoClickear.seek(sonidoClickear.getStartTime());
+        if (!juego.hayJugadoresPorJugar()) {
+            juego.agregarJugador(new Jugador(new Auto(), "Jugador"));
+        }
         this.contenedor.comenzarJuego(juego);
     }
 }
