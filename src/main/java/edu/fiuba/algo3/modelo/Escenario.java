@@ -1,7 +1,8 @@
 package edu.fiuba.algo3.modelo;
 
-import edu.fiuba.algo3.modelo.Chocables.Chocable;
-import edu.fiuba.algo3.modelo.Chocables.Vacio;
+import edu.fiuba.algo3.modelo.Chocables.*;
+
+import java.util.Random;
 
 public class Escenario {
     private final int alto;
@@ -22,6 +23,40 @@ public class Escenario {
                 chocables[i][j] = new Vacio();
             }
         }
+    }
+
+    public void generarObstaculos(){
+        Random random = new Random();
+        for(int i = 0; i < this.ancho; i++){
+            for(int j = 0; j < this.alto; j++){
+                int randomInt = random.nextInt(12);
+                switch (randomInt) {
+                    case 0:
+                        chocables[i][j] = new ControlPolicial(new edu.fiuba.algo3.modelo.Randomizador.Random());
+                        break;
+                    case 1:
+                        chocables[i][j] = new Piquete();
+                        break;
+                    case 2:
+                        chocables[i][j] = new Pozo();
+                        break;
+                    case 3:
+                        chocables[i][j] = new SorpresaCambioVehiculo();
+                        break;
+                    case 4:
+                        chocables[i][j] = new SorpresaFavorable();
+                        break;
+                    case 5:
+                        chocables[i][j] = new SorpresaDesfavorable();
+                        break;
+                }
+            }
+        }
+
+        int metaAlto = random.nextInt(this.alto - this.alto/2) + this.alto/2;
+        int metaAncho = random.nextInt(this.ancho - this.ancho/2) + this.ancho/2;
+
+        chocables[metaAlto][metaAncho] = new Meta();
     }
 
     public static Escenario getInstance()
