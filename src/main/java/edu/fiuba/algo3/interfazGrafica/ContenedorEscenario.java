@@ -59,12 +59,12 @@ public class ContenedorEscenario extends BorderPane {
         botonIzquierda.setOnAction(botonIzquierdaEventHandler);
 
         Button botonAbajo = new Button();
-        botonAbajo.setText("Abajo");
+        botonAbajo.setText("Arriba");
         BotonAbajoEventHandler botonAbajoEventHandler = new BotonAbajoEventHandler(vistaJugador2, juego, this);
         botonAbajo.setOnAction(botonAbajoEventHandler);
 
         Button botonArriba = new Button();
-        botonArriba.setText("Arriba");
+        botonArriba.setText("Abajo");
         BotonArribaEventHandler botonArribaEventHandler = new BotonArribaEventHandler(vistaJugador2, juego, this);
         botonArriba.setOnAction(botonArribaEventHandler);
 

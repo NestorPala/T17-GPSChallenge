@@ -23,7 +23,6 @@ public class BotonArribaEventHandler implements EventHandler<ActionEvent> {
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        System.out.println("Jugador se mueve a arriba");
         juego.mover(Direccion.arriba());
         vistaJugador.actualizar();
         contenedor.setPuntaje(juego.jugadorActual());

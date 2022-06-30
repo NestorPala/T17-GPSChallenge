@@ -35,10 +35,9 @@ public class App extends Application {
     }
 
     private GPSChallenge crearModelo(){
-        Escenario escenario = Escenario.getInstance(20,20);
+        GPSChallenge juego = new GPSChallenge(20,20);
         Vehiculo vehiculo = new Moto();
         Jugador jugador = new Jugador(vehiculo, "Pepe");
-        GPSChallenge juego = new GPSChallenge(20,20);
         juego.agregarJugador(jugador);
         return juego;
     }

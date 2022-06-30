@@ -61,10 +61,5 @@ public class VistaEscenario extends Group {
     public void addView(Node view) {
         this.getChildren().add(view);
     }
-
-    public void updateView(Node view) {
-        getChildren().remove(view);
-        getChildren().add(view);
-    }
 }
 

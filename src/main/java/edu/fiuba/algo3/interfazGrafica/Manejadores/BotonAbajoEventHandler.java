@@ -23,7 +23,6 @@ public class BotonAbajoEventHandler implements EventHandler<ActionEvent> {
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        System.out.println("Jugador se mueve a abajo");
         juego.mover(Direccion.abajo());
         vistaJugador.actualizar();
         contenedor.setPuntaje(juego.jugadorActual());

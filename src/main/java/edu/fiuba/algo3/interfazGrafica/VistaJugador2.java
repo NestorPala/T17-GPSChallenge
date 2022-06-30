@@ -31,15 +31,6 @@ public class VistaJugador2{
 
         imagenJugador.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/interfazGrafica/coche.png").toURI().toString()));
         escenario.addViewOnMap(imagenJugador, juego.jugadorActual().posicion().x(), juego.jugadorActual().posicion().y());
-
-        dibujar();
-    }
-
-    public void dibujar() {
-
-        imagenJugador.setTranslateX(0);
-        imagenJugador.setTranslateY(0);
-        vistaEscenario.updateView(imagenJugador);
     }
 
     public void actualizar() {

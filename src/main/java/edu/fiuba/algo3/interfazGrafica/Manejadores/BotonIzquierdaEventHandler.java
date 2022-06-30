@@ -23,7 +23,6 @@ public class BotonIzquierdaEventHandler implements EventHandler<ActionEvent> {
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        System.out.println("Jugador se mueve a la izquierda");
         juego.mover(Direccion.izquierda());
         vistaJugador.actualizar();
         contenedor.setPuntaje(juego.jugadorActual());
