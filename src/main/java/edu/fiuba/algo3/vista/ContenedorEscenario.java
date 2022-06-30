@@ -1,16 +1,15 @@
-package edu.fiuba.algo3.interfazGrafica;
+package edu.fiuba.algo3.vista;
 
-import edu.fiuba.algo3.interfazGrafica.Manejadores.BotonAbajoEventHandler;
-import edu.fiuba.algo3.interfazGrafica.Manejadores.BotonArribaEventHandler;
-import edu.fiuba.algo3.interfazGrafica.Manejadores.BotonDerechaEventHandler;
-import edu.fiuba.algo3.interfazGrafica.Manejadores.BotonIzquierdaEventHandler;
+import edu.fiuba.algo3.vista.Manejadores.BotonAbajoEventHandler;
+import edu.fiuba.algo3.vista.Manejadores.BotonArribaEventHandler;
+import edu.fiuba.algo3.vista.Manejadores.BotonDerechaEventHandler;
+import edu.fiuba.algo3.vista.Manejadores.BotonIzquierdaEventHandler;
 import edu.fiuba.algo3.modelo.GPSChallenge;
 import edu.fiuba.algo3.modelo.Jugador.Jugador;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.input.KeyCode;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;

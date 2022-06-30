@@ -14,5 +14,9 @@ public class LoggerTest {
 
         Jugador jugador = new Jugador(new Moto(), "Jorge");
         jugador.mover(Direccion.derecha());
+
+        logger.desactivar();
+        
+        jugador.mover(Direccion.abajo());
     }
 }

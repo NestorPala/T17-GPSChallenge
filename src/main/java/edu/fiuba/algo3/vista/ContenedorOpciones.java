@@ -1,7 +1,6 @@
-package edu.fiuba.algo3.interfazGrafica;
+package edu.fiuba.algo3.vista;
 
-import edu.fiuba.algo3.interfazGrafica.Manejadores.BotonAtrasEventHandler;
-import edu.fiuba.algo3.interfazGrafica.Manejadores.BotonJugarEventHandler;
+import edu.fiuba.algo3.vista.Manejadores.BotonAtrasEventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;

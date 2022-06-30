@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.interfazGrafica;
+package edu.fiuba.algo3.vista;
 
 import edu.fiuba.algo3.modelo.Chocables.*;
 import javafx.scene.image.Image;
@@ -8,7 +8,7 @@ import java.io.File;
 
 public class Imagenes {
 
-    public Imagenes() {};
+    public Imagenes() {}
 
     public ImageView devolverImagenes(Chocable chocable) {
         if (chocable instanceof ControlPolicial) {

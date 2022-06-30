@@ -1,9 +1,7 @@
 package edu.fiuba.algo3;
 
-import edu.fiuba.algo3.interfazGrafica.ContenedorEscenario;
-import edu.fiuba.algo3.interfazGrafica.ContenedorInicio;
-import edu.fiuba.algo3.interfazGrafica.ContenedorOpciones;
-import edu.fiuba.algo3.modelo.Escenario;
+import edu.fiuba.algo3.vista.ContenedorEscenario;
+import edu.fiuba.algo3.vista.ContenedorInicio;
 import edu.fiuba.algo3.modelo.GPSChallenge;
 import edu.fiuba.algo3.modelo.Jugador.Jugador;
 import edu.fiuba.algo3.modelo.Vehiculos.Moto;

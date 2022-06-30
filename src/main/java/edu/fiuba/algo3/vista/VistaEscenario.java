@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.interfazGrafica;
+package edu.fiuba.algo3.vista;
 
 
 import edu.fiuba.algo3.modelo.Escenario;
@@ -6,11 +6,8 @@ import edu.fiuba.algo3.modelo.Posicion;
 import javafx.geometry.Insets;
 import javafx.scene.Group;
 import javafx.scene.Node;
-import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-
-import java.io.File;
 
 
 public class VistaEscenario extends Group {
