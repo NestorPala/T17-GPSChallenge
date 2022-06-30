@@ -24,6 +24,7 @@ public class BotonAbajoEventHandler implements EventHandler<ActionEvent> {
         this.vistaJugador = vistaJugador;
         this.juego = juego;
         this.contenedor = contenedor;
+        sonidoAuto.setVolume(0.2);
     }
 
     @Override
@@ -32,6 +33,6 @@ public class BotonAbajoEventHandler implements EventHandler<ActionEvent> {
         vistaJugador.actualizar();
         contenedor.setPuntaje(juego.jugadorActual());
         sonidoAuto.play();
-        sonidoAuto.stop();
+        sonidoAuto.seek(sonidoAuto.getStartTime());
     }
 }

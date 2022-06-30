@@ -56,9 +56,8 @@ public class GPSChallenge {
         logger.log("Mover al jugador");
         if (jugadorActual.puedeSeguirJugando()) {
             jugadorActual.mover(unaDireccion);
-
         }
-        if(!jugadorActual.puedeSeguirJugando()){
+        if (!jugadorActual.puedeSeguirJugando()) {
             logger.log("El jugador llego a la meta");
             ranking.agregar(jugadorActual);
             if (hayJugadoresPorJugar()) {
