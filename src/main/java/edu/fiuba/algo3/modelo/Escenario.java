@@ -99,6 +99,7 @@ public class Escenario {
         if (contienePosicion(posicion)) {
             return chocables[posicion.x()][posicion.y()];
         }
+        // nunca deberia llegar aca
         return null;
     }
     public Escenario reset() {

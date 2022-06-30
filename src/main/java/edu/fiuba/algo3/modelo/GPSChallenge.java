@@ -18,6 +18,7 @@ public class GPSChallenge {
         jugadorActual = null;
         ranking = new Ranking();
         escenario = Escenario.getInstance();
+        escenario.generarObstaculos();
         logger.log("Nueva partida de GPSChallenge");
     }
 
@@ -26,6 +27,7 @@ public class GPSChallenge {
         jugadorActual = null;
         ranking = new Ranking();
         escenario = Escenario.getInstance(alto, ancho);
+        escenario.generarObstaculos();
         logger.log("Nueva partida de GPSChallenge");
     }
 
