@@ -40,7 +40,13 @@ public class Imagenes {
             ImageView imagen = new ImageView();
             imagen.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/interfazGrafica/gift.png").toURI().toString()));
             return imagen;
-        } else {
+        }
+        if (chocable instanceof Meta) {
+            ImageView imagen = new ImageView();
+            imagen.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/interfazGrafica/finishline.png").toURI().toString()));
+            return imagen;
+        }
+        else {
             ImageView imagen = new ImageView();
             imagen.setImage(new Image(new File("").toURI().toString()));
             return imagen;
