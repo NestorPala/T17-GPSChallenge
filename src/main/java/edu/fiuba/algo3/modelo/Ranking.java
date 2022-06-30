@@ -20,13 +20,18 @@ public class Ranking {
         jugadores.sort(Comparator.comparing(Jugador::puntaje));
     }
 
-    public void obtenerTop10() {
-        // devolver el top 10 de jugadores con su nombre y puntaje
-        logger.log(jugadores.get(0).nombre());
-        logger.log(Double.toString(jugadores.get(0).puntaje()));
+    public Jugador obtenerJugadorDelTop(int posicionDelTop){
+        if(jugadores.isEmpty() || posicionDelTop >= jugadores.size()){
+            return null;
+        }
+
+        return jugadores.get(posicionDelTop);
     }
 
     public Jugador obtenerMejorJugador() {
+        if(jugadores.isEmpty()){
+            return null;
+        }
         return jugadores.get(0);
     }
 }

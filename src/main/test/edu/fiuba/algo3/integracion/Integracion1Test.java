@@ -9,6 +9,7 @@ import edu.fiuba.algo3.modelo.Vehiculos.Moto;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.mockito.ArgumentMatchers.anyDouble;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -44,7 +45,7 @@ public class Integracion1Test {
         juego.mover(Direccion.abajo());
         juego.mover(Direccion.abajo());
 
-        juego.obtenerTop10();
+        assertEquals(jugador, juego.obtenerTop10().get(0));
 
         assertEquals(15.25, juego.obtenerMejorJugador().puntaje());
     }

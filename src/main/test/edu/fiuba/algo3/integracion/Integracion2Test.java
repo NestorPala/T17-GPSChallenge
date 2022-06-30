@@ -51,7 +51,8 @@ public class Integracion2Test {
         juego.mover(Direccion.derecha());
         juego.mover(Direccion.arriba());
 
-        juego.obtenerTop10();
+        assertEquals(jugador2, juego.obtenerTop10().get(0));
+        assertEquals(jugador1, juego.obtenerTop10().get(1));
 
         assertEquals(3, juego.obtenerMejorJugador().puntaje());
     }

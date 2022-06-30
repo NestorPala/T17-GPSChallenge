@@ -3,6 +3,8 @@ package edu.fiuba.algo3.modelo;
 import edu.fiuba.algo3.modelo.Jugador.Jugador;
 
 import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Queue;
 
 public class GPSChallenge {
@@ -10,7 +12,6 @@ public class GPSChallenge {
     private Jugador jugadorActual;
     private final Ranking ranking;
     private final Escenario escenario;
-
     private final Logger logger = Logger.getInstance();
 
     public GPSChallenge() {
@@ -39,19 +40,6 @@ public class GPSChallenge {
         logger.log("Jugador agregado al juego");
     }
 
-    /*
-    public void jugar() {
-        jugadorActual = jugadores.poll();
-        while (hayJugadoresPorJugar()) {
-            while (jugadorActual.puedeSeguirJugando()) {
-                // selector comandos
-            }
-            ranking.agregar(jugadorActual);
-            jugadorActual = jugadores.poll();
-        }
-    }
-    */
-
     public void mover(Direccion unaDireccion) {
         logger.log("Mover al jugador");
         if (jugadorActual.puedeSeguirJugando()) {
@@ -70,8 +58,13 @@ public class GPSChallenge {
         return jugadores.size() > 0;
     }
 
-    public void obtenerTop10() {
-        ranking.obtenerTop10();
+    public List<Jugador> obtenerTop10() {
+        List<Jugador> topJugadores = new ArrayList<>();
+        for(int i = 0; i < 10; i++){
+            topJugadores.add(ranking.obtenerJugadorDelTop(i));
+        }
+
+        return topJugadores;
     }
 
     public Jugador obtenerMejorJugador() {
