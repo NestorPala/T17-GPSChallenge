@@ -16,6 +16,8 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
+import java.text.DecimalFormat;
+
 public class ContenedorEscenario extends BorderPane {
 
     Stage stage;
@@ -85,7 +87,7 @@ public class ContenedorEscenario extends BorderPane {
     }
 
     public void setPuntaje(Jugador jugador){
-        this.texto.setText("Puntaje: " + jugador.puntaje());
+        this.texto.setText("Puntaje: " + new DecimalFormat("#.##").format(jugador.puntaje()));
         this.texto.setFont(Font.font("Times New Roman", 50));
 
 
