@@ -1,13 +1,8 @@
 package edu.fiuba.algo3.vista;
 
 import edu.fiuba.algo3.modelo.GPSChallenge;
-import edu.fiuba.algo3.modelo.Jugador.Jugador;
-import edu.fiuba.algo3.modelo.Vehiculos.Auto;
-import edu.fiuba.algo3.modelo.Vehiculos.Moto;
-import edu.fiuba.algo3.modelo.Vehiculos.Todoterreno;
-import edu.fiuba.algo3.modelo.Vehiculos.Vehiculo;
+import edu.fiuba.algo3.vista.Manejadores.BotonAgregarJugadorEventHandler;
 import edu.fiuba.algo3.vista.Manejadores.BotonComenzarJuegoEventHandler;
-import edu.fiuba.algo3.vista.Manejadores.BotonJugarEventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -46,14 +41,14 @@ public class ContenedorJugadores extends VBox {
         opcionesVehiculo.getItems().add("Auto");
         opcionesVehiculo.getItems().add("Moto");
         opcionesVehiculo.getItems().add("4x4");
-        opcionesVehiculo.setOnAction(e -> seleccionarVehiculo(opcionesVehiculo));
 
         Button botonAgregarJugador = new Button();
         botonAgregarJugador.setText("Agregar Jugador");
         botonAgregarJugador.setFont(Font.font("Times New Roman", 36));
         botonAgregarJugador.setPrefSize(300,100);
 
-        botonAgregarJugador.setOnAction(e -> agregarJugador(inputNombre, opcionesVehiculo, juego));
+        BotonAgregarJugadorEventHandler botonAgregarJugadorEventHandler = new BotonAgregarJugadorEventHandler(inputNombre, opcionesVehiculo, juego);
+        botonAgregarJugador.setOnAction(botonAgregarJugadorEventHandler);
 
 
         Button botonComenzarJuego = new Button();
@@ -65,31 +60,6 @@ public class ContenedorJugadores extends VBox {
         botonComenzarJuego.setOnAction(botonComenzarJuegoEventHandler);
 
         this.getChildren().addAll(texto, inputNombre, opcionesVehiculo, botonAgregarJugador, botonComenzarJuego);
-    }
-
-    private void agregarJugador(TextField inputNombre, ComboBox<String> opcionesVehiculos, GPSChallenge juego) {
-        String nombre = seleccionarNombre(inputNombre);
-        Vehiculo vehiculo = seleccionarVehiculo(opcionesVehiculos);
-        juego.agregarJugador(new Jugador(vehiculo, nombre));
-    }
-
-    private String seleccionarNombre(TextField inputNombre) {
-        String nombre = inputNombre.getText();
-        if (nombre == "") { return "Pepe"; }
-        return inputNombre.getText();
-    }
-
-    private Vehiculo seleccionarVehiculo(ComboBox<String> opcionesVehiculos) {
-        String tipoVehiculo = opcionesVehiculos.getValue();
-        if (tipoVehiculo == "Auto") {
-            return new Auto();
-        } else if (tipoVehiculo == "Moto") {
-            return new Moto();
-        } else if (tipoVehiculo == "4x4") {
-            return new Todoterreno();
-        } else {
-            return new Auto();
-        }
     }
 
     public void comenzarJuego(GPSChallenge juego){
