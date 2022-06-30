@@ -61,7 +61,7 @@ public class ContenedorInicio extends VBox {
         BotonSalirEventHandler botonSalirEventHandler = new BotonSalirEventHandler();
         botonSalir.setOnAction(botonSalirEventHandler);
 
-        stage.getIcons().add(new Image(new File("src/main/java/edu/fiuba/algo3/interfazGrafica/gps.png").toURI().toString()));
+        stage.getIcons().add(new Image(new File("src/main/java/edu/fiuba/algo3/vista/gps.png").toURI().toString()));
 
         this.getChildren().addAll(texto, botonJugar, botonOpciones, botonSalir);
     }

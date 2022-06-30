@@ -17,7 +17,7 @@ public class BotonIzquierdaEventHandler implements EventHandler<ActionEvent> {
 
     private final ContenedorEscenario contenedor;
 
-    private final static MediaPlayer sonidoAuto = new MediaPlayer(new Media(new File("src/main/java/edu/fiuba/algo3/interfazGrafica/sonidoAuto.mp3").toURI().toString()));
+    private final static MediaPlayer sonidoAuto = new MediaPlayer(new Media(new File("src/main/java/edu/fiuba/algo3/vista/sonidoAuto.mp3").toURI().toString()));
 
     public BotonIzquierdaEventHandler(VistaJugador2 vistaJugador, GPSChallenge juego, ContenedorEscenario contenedor){
         this.vistaJugador = vistaJugador;

@@ -28,7 +28,7 @@ public class VistaJugador2{
         imagenJugador.setFitHeight(32);
         imagenJugador.setFitWidth(32);
 
-        imagenJugador.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/interfazGrafica/coche.png").toURI().toString()));
+        imagenJugador.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/vista/coche.png").toURI().toString()));
         escenario.addViewOnMap(imagenJugador, juego.jugadorActual().posicion().x(), juego.jugadorActual().posicion().y());
     }
 

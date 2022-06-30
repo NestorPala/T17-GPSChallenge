@@ -13,37 +13,37 @@ public class Imagenes {
     public ImageView devolverImagenes(Chocable chocable) {
         if (chocable instanceof ControlPolicial) {
             ImageView imagen = new ImageView();
-            imagen.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/interfazGrafica/police.png").toURI().toString()));
+            imagen.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/vista/police.png").toURI().toString()));
             return imagen;
         }
         if (chocable instanceof Pozo) {
             ImageView imagen = new ImageView();
-            imagen.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/interfazGrafica/pozo.png").toURI().toString()));
+            imagen.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/vista/pozo.png").toURI().toString()));
             return imagen;
         }
         if (chocable instanceof Piquete) {
             ImageView imagen = new ImageView();
-            imagen.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/interfazGrafica/manifestation.png").toURI().toString()));
+            imagen.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/vista/manifestation.png").toURI().toString()));
             return imagen;
         }
         if (chocable instanceof SorpresaFavorable) {
             ImageView imagen = new ImageView();
-            imagen.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/interfazGrafica/gift.png").toURI().toString()));
+            imagen.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/vista/gift.png").toURI().toString()));
             return imagen;
         }
         if (chocable instanceof SorpresaDesfavorable) {
             ImageView imagen = new ImageView();
-            imagen.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/interfazGrafica/gift.png").toURI().toString()));
+            imagen.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/vista/gift.png").toURI().toString()));
             return imagen;
         }
         if (chocable instanceof SorpresaCambioVehiculo) {
             ImageView imagen = new ImageView();
-            imagen.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/interfazGrafica/gift.png").toURI().toString()));
+            imagen.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/vista/gift.png").toURI().toString()));
             return imagen;
         }
         if (chocable instanceof Meta) {
             ImageView imagen = new ImageView();
-            imagen.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/interfazGrafica/finishline.png").toURI().toString()));
+            imagen.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/vista/finishline.png").toURI().toString()));
             return imagen;
         }
         else {
