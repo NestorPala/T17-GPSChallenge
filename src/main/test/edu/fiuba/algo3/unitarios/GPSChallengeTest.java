@@ -19,6 +19,5 @@ public class GPSChallengeTest {
 
         juego.mover(Direccion.derecha());
         assertFalse(juego.hayJugadoresPorJugar());
-        assertEquals(juego.obtenerMejorJugador(), pablo);
     }
 }

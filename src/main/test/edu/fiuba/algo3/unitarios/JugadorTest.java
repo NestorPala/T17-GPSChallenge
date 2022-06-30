@@ -28,6 +28,7 @@ public class JugadorTest {
   public void moverAlJugadorHaciaUnaPosicionInvalidaNoHaceNada() {
     Jugador jugador = new Jugador(new Auto(), "Juan");
     Escenario escenario = Escenario.getInstance();
+    escenario = escenario.reset();
 
     jugador.mover(Direccion.izquierda());
     jugador.mover(Direccion.izquierda());

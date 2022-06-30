@@ -1,11 +1,8 @@
 package edu.fiuba.algo3.integracion;
 
+import edu.fiuba.algo3.modelo.*;
 import edu.fiuba.algo3.modelo.Chocables.*;
-import edu.fiuba.algo3.modelo.Direccion;
-import edu.fiuba.algo3.modelo.Escenario;
-import edu.fiuba.algo3.modelo.GPSChallenge;
 import edu.fiuba.algo3.modelo.Jugador.Jugador;
-import edu.fiuba.algo3.modelo.Posicion;
 import edu.fiuba.algo3.modelo.Randomizador.Random;
 import edu.fiuba.algo3.modelo.Randomizador.Randomizer;
 import edu.fiuba.algo3.modelo.Vehiculos.Moto;
@@ -21,6 +18,9 @@ public class Integracion1Test {
     @Test
     public void test01_PartidaCompletaConUnJugador() {
         GPSChallenge juego = new GPSChallenge();
+
+        Logger logger = Logger.getInstance();
+        logger.activar();
 
         Escenario escenario = Escenario.getInstance();
         escenario.insertarChocable(new Pozo(), new Posicion(1, 2));
