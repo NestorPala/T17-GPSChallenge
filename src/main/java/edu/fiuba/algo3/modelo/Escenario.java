@@ -48,10 +48,10 @@ public class Escenario {
         int posX = posicion.x();
         int posY = posicion.y();
 
-        if (posX < 0 || posX > ancho) {
+        if (posX < 0 || posX > ancho - 1) {
             return false;
         }
-        return posY >= 0 && posY <= alto;
+        return posY >= 0 && posY <= alto - 1;
     }
 
     public void insertarChocable(Chocable chocable, Posicion posicion) {
