@@ -23,20 +23,16 @@ public class ContenedorEscenario extends BorderPane {
     VistaEscenario vistaEscenario;
     VistaJugador2 vistaJugador2;
     VBox contenedorCentral;
-
     Label puntaje;
 
-    Label nombre;
 
     public ContenedorEscenario(Stage stage, GPSChallenge juego) {
 
         this.stage = stage;
         this.puntaje = new Label();
-        this.nombre = new Label();
         this.setCentro(juego);
         this.setBotonera(juego);
         this.setPuntaje(juego.jugadorActual());
-        this.setNombre(juego.jugadorActual());
 
     }
 
@@ -90,19 +86,9 @@ public class ContenedorEscenario extends BorderPane {
     }
 
     public void setPuntaje(Jugador jugador) {
-        this.puntaje.setText("Puntaje: " + new DecimalFormat("#.##").format(jugador.puntaje()));
+        this.puntaje.setText("Jugador: " + jugador.nombre() + "\n" + "Puntaje: " + new DecimalFormat("#.##").format(jugador.puntaje()));
         this.puntaje.setFont(Font.font("Times New Roman", 50));
 
         this.setRight(this.puntaje);
     }
-
-    public void setNombre(Jugador jugador) {
-        this.nombre.setText("Jugador: " + jugador.nombre());
-        this.nombre.setFont(Font.font("Times New Roman", 50));
-        this.nombre.setTranslateX(1);
-        this.nombre.setTranslateY(150);
-
-        this.setRight(this.nombre);
-    }
-
 }

@@ -6,6 +6,7 @@ import edu.fiuba.algo3.modelo.Vehiculos.Auto;
 import edu.fiuba.algo3.modelo.Vehiculos.Moto;
 import edu.fiuba.algo3.modelo.Vehiculos.Todoterreno;
 import edu.fiuba.algo3.modelo.Vehiculos.Vehiculo;
+import edu.fiuba.algo3.vista.Manejadores.BotonComenzarJuegoEventHandler;
 import edu.fiuba.algo3.vista.Manejadores.BotonJugarEventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -16,15 +17,13 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 public class ContenedorJugadores extends VBox {
-    Scene escenaSiguiente;
     Stage stage;
 
-    public ContenedorJugadores(Stage stage, Scene escenaSiguiente, GPSChallenge juego) {
+    public ContenedorJugadores(Stage stage, GPSChallenge juego) {
 
         super();
 
         this.stage = stage;
-        this.escenaSiguiente = escenaSiguiente;
 
         this.setAlignment(Pos.CENTER);
         this.setSpacing(20);
@@ -43,7 +42,7 @@ public class ContenedorJugadores extends VBox {
         ComboBox<String> opcionesVehiculo = new ComboBox<>();
         opcionesVehiculo.setMinWidth(300);
         opcionesVehiculo.setMinHeight(75);
-        opcionesVehiculo.setPromptText("Elija el Vehiculo");
+        opcionesVehiculo.setPromptText("Elija el vehiculo");
         opcionesVehiculo.getItems().add("Auto");
         opcionesVehiculo.getItems().add("Moto");
         opcionesVehiculo.getItems().add("4x4");
@@ -56,15 +55,16 @@ public class ContenedorJugadores extends VBox {
 
         botonAgregarJugador.setOnAction(e -> agregarJugador(inputNombre, opcionesVehiculo, juego));
 
-        Button botonJugar = new Button();
-        botonJugar.setText("Jugar");
-        botonJugar.setFont(Font.font("Times New Roman", 36));
-        botonJugar.setPrefSize(300,100);
 
-        BotonJugarEventHandler botonJugarEventHandler = new BotonJugarEventHandler(stage, escenaSiguiente);
-        botonJugar.setOnAction(botonJugarEventHandler);
+        Button botonComenzarJuego = new Button();
+        botonComenzarJuego.setText("Comenzar juego");
+        botonComenzarJuego.setFont(Font.font("Times New Roman", 36));
+        botonComenzarJuego.setPrefSize(300,100);
 
-        this.getChildren().addAll(texto, inputNombre, opcionesVehiculo, botonAgregarJugador, botonJugar);
+        BotonComenzarJuegoEventHandler botonComenzarJuegoEventHandler = new BotonComenzarJuegoEventHandler(this, juego);
+        botonComenzarJuego.setOnAction(botonComenzarJuegoEventHandler);
+
+        this.getChildren().addAll(texto, inputNombre, opcionesVehiculo, botonAgregarJugador, botonComenzarJuego);
     }
 
     private void agregarJugador(TextField inputNombre, ComboBox<String> opcionesVehiculos, GPSChallenge juego) {
@@ -90,5 +90,11 @@ public class ContenedorJugadores extends VBox {
         } else {
             return new Auto();
         }
+    }
+
+    public void comenzarJuego(GPSChallenge juego){
+        ContenedorEscenario contenedorEscenario = new ContenedorEscenario(this.stage, juego);
+        Scene escenaEscenario = new Scene(contenedorEscenario, 1440,900);
+        stage.setScene(escenaEscenario);
     }
 }

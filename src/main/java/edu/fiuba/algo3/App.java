@@ -22,13 +22,10 @@ public class App extends Application {
 
         stage.setTitle("GPS CHALLENGE");
 
-        GPSChallenge juego = crearModelo();
-        //GPSChallenge juego = new GPSChallenge(20, 20);
+        GPSChallenge juego = new GPSChallenge(20, 20);
 
-        ContenedorEscenario contenedorEscenario = new ContenedorEscenario(stage, juego);
-        Scene escenaEscenario = new Scene(contenedorEscenario, 1440,900);
 
-        ContenedorJugadores contenedorJugadores = new ContenedorJugadores(stage, escenaEscenario, juego);
+        ContenedorJugadores contenedorJugadores = new ContenedorJugadores(stage, juego);
         Scene escenaJugadores = new Scene(contenedorJugadores, 1440, 900);
 
         ContenedorInicio contenedorInicio = new ContenedorInicio(stage, escenaJugadores);
@@ -36,14 +33,6 @@ public class App extends Application {
 
         stage.setScene(escenaInicial);
         stage.show();
-    }
-
-    private GPSChallenge crearModelo(){
-        GPSChallenge juego = new GPSChallenge(20,20);
-        Vehiculo vehiculo = new Moto();
-        Jugador jugador = new Jugador(vehiculo, "Pepe");
-        juego.agregarJugador(jugador);
-        return juego;
     }
 
     public static void main(String[] args) {

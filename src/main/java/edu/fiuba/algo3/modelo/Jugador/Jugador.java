@@ -80,4 +80,6 @@ public class Jugador {
     public String nombre() {
         return nombre;
     }
+
+    public Vehiculo vehiculo(){ return this.vehiculo;}
 }
