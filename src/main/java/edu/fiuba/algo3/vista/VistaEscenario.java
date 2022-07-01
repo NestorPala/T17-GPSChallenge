@@ -50,6 +50,7 @@ public class VistaEscenario extends Group {
     public void addViewOnMap(Node view, int x, int y) {
         this.limpiarEscenario(view);
         panes[x][y].getChildren().add(1, view);
+        panes[x][y].setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
     }
 
     public void limpiarEscenario(Node view){
@@ -57,6 +58,7 @@ public class VistaEscenario extends Group {
             for (int j = 0; j < alto; j++) {
                 try {
                     panes[i][j].getChildren().remove(view);
+                    panes[i][j].setBorder(null);
                 } catch (Exception e) {
                     //TODO: handle exception
                 }
