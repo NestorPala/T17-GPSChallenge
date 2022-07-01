@@ -51,7 +51,7 @@ public class ContenedorInicio extends VBox {
         texto.setFont(Font.font("Trebuchet MS", 100));
 
         ContenedorOpciones contenedorOpciones = new ContenedorOpciones(stage, stage.getScene());
-        Scene escenaOpciones = new Scene(contenedorOpciones, 1440,900);
+        Scene escenaOpciones = new Scene(contenedorOpciones, 960,540);
 
         BotonJugarEventHandler botonJugarEventHandler = new BotonJugarEventHandler(stage, proximaEscena);
         botonJugar.setOnAction(botonJugarEventHandler);

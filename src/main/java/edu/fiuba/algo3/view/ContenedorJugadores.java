@@ -64,7 +64,7 @@ public class ContenedorJugadores extends VBox {
 
     public void comenzarJuego(GPSChallenge juego){
         ContenedorEscenario contenedorEscenario = new ContenedorEscenario(this.stage, juego);
-        Scene escenaEscenario = new Scene(contenedorEscenario, 1440,900);
+        Scene escenaEscenario = new Scene(contenedorEscenario, 960,540);
         stage.setScene(escenaEscenario);
     }
 }
