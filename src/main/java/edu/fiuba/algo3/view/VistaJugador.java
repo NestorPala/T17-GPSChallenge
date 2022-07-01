@@ -9,7 +9,7 @@ import java.io.File;
 import edu.fiuba.algo3.model.GPSChallenge;
 import edu.fiuba.algo3.model.Vehiculos.Vehiculo;
 
-public class VistaJugador2 {
+public class VistaJugador {
 
     private double escalaJugador = 1;
     private final VistaEscenario vistaEscenario;
@@ -19,7 +19,7 @@ public class VistaJugador2 {
     private Vehiculo vehiculoJugador;
 
 
-    public VistaJugador2(VistaEscenario escenario, GPSChallenge juego) {
+    public VistaJugador(VistaEscenario escenario, GPSChallenge juego) {
 
         this.vistaEscenario = escenario;
         this.juego = juego;

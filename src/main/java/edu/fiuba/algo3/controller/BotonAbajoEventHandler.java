@@ -3,7 +3,7 @@ package edu.fiuba.algo3.controller;
 import edu.fiuba.algo3.model.Direccion;
 import edu.fiuba.algo3.model.GPSChallenge;
 import edu.fiuba.algo3.view.ContenedorEscenario;
-import edu.fiuba.algo3.view.VistaJugador2;
+import edu.fiuba.algo3.view.VistaJugador;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.media.Media;
@@ -13,14 +13,14 @@ import java.io.File;
 
 public class BotonAbajoEventHandler implements EventHandler<ActionEvent> {
 
-    private final VistaJugador2 vistaJugador;
+    private final VistaJugador vistaJugador;
     private final GPSChallenge juego;
 
     private final ContenedorEscenario contenedor;
 
     private final static MediaPlayer sonidoAuto = new MediaPlayer(new Media(new File("src/main/java/edu/fiuba/algo3/view/sonidos/sonidoAuto.mp3").toURI().toString()));
 
-    public BotonAbajoEventHandler(VistaJugador2 vistaJugador, GPSChallenge juego, ContenedorEscenario contenedor) {
+    public BotonAbajoEventHandler(VistaJugador vistaJugador, GPSChallenge juego, ContenedorEscenario contenedor) {
         this.vistaJugador = vistaJugador;
         this.juego = juego;
         this.contenedor = contenedor;

@@ -21,7 +21,7 @@ public class ContenedorEscenario extends BorderPane {
 
     Stage stage;
     VistaEscenario vistaEscenario;
-    VistaJugador2 vistaJugador2;
+    VistaJugador vistaJugador2;
     VBox contenedorCentral;
     Label puntaje;
     Label coordenadas;
@@ -37,7 +37,7 @@ public class ContenedorEscenario extends BorderPane {
 
     private void setMapa(GPSChallenge juego) {
         vistaEscenario = new VistaEscenario(20, 20);
-        vistaJugador2 = new VistaJugador2(vistaEscenario, juego);
+        vistaJugador2 = new VistaJugador(vistaEscenario, juego);
 
         contenedorCentral = new VBox(vistaEscenario);
         contenedorCentral.setAlignment(Pos.CENTER);
