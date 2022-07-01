@@ -1,27 +1,31 @@
 # Cosas para arreglar
 
-- [x] La clase escenario deberia ser un singleton.
+- [X] Mostrar mejor el nombre del jugador y el puntaje
 
-- [x] El puntaje lo tiene que manejar solo el jugador.
+- [X] Podemos agregar la coordenada actual
 
-- [x] Tiene que haber un efecto sobre el vehiculo (Decorator).
+- [X] Agregar más padding a los contenedores de los chocables
 
-- [x] aplicar penalizacion debe cambiar a aplicarEfecto y luego lo recibe al usuario y le dice al jugador que hacer.
+- [X] Poner título "acciones" a los botones de los movimientos e indicar que tambien se puede jugar con las flechitas
 
-- [x] efecto.aplicarseSobre(this) en la clase jugador. Patron decorator.
+- [X] Cambiar el gris de los contenedores por un gris más claro
 
-- [x] jugador.mover no debe recibir escenario.
+- [X] Agregar fondo al menu principal
 
-- [x] Eliminar el assertNotEquals de las pruebas.
+- [ ] Agregar fondo al resto de pantallas del menu
 
-- [x] Control policial deberia recibir un randomizador(Debe ser una interfaz).
+- [ ] Notificar cuando se llega a la meta
 
-- [x] Arreglar test09 para que use mock.
+- [ ] Agregar al logger quien ganó
 
-- [ ] Crear meta.
+- [ ] Cambiar forma de devolver ranking (no devolver objeto, solo datos importantes)
 
-- [ ] Pruebas de piquete.
+- [ ] Cambiar "vehiculo selector" por iconos
 
-- [ ] Crear historial de puntajes.
+- [ ] Que se vea el punto de partida
 
-- [ ] Agregar nickname de jugador.
+- [ ] Que se vea que sorpresa hay en la posicion actual y la penalización (panel de notificaciones)
+
+- [ ] Agregar ver reglas del juego durante el juego
+
+- [ ] Agregar "Acerca de" con los nombres de los integrantes del grupo
