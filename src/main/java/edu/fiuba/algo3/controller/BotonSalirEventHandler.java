@@ -9,7 +9,7 @@ import java.io.File;
 
 public class BotonSalirEventHandler implements EventHandler<ActionEvent> {
 
-    private final static MediaPlayer sonidoSalir = new MediaPlayer(new Media(new File("src/main/java/edu/fiuba/algo3/view/sonidoAtras.mp3").toURI().toString()));
+    private final static MediaPlayer sonidoSalir = new MediaPlayer(new Media(new File("src/main/java/edu/fiuba/algo3/view/sonidos/sonidoAtras.mp3").toURI().toString()));
 
     @Override
     public void handle(ActionEvent actionEvent) {

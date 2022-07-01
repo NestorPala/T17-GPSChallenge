@@ -21,7 +21,7 @@ public class BotonAgregarJugadorEventHandler implements EventHandler<ActionEvent
     private final GPSChallenge juego;
     private final TextField inputNombre;
     private final ComboBox<String> opcionesVehiculos;
-    private final static MediaPlayer sonidoSeleccionar = new MediaPlayer(new Media(new File("src/main/java/edu/fiuba/algo3/view/sonidoSeleccionar.mp3").toURI().toString()));
+    private final static MediaPlayer sonidoSeleccionar = new MediaPlayer(new Media(new File("src/main/java/edu/fiuba/algo3/view/sonidos/sonidoSeleccionar.mp3").toURI().toString()));
 
 
     public BotonAgregarJugadorEventHandler(TextField inputNombre, ComboBox<String> opcionesVehiculos, GPSChallenge juego) {

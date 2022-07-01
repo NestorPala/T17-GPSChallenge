@@ -19,7 +19,7 @@ public class BotonComenzarJuegoEventHandler implements EventHandler<ActionEvent>
     GPSChallenge juego;
     ContenedorJugadores contenedor;
 
-    private final static MediaPlayer sonidoClickear = new MediaPlayer(new Media(new File("src/main/java/edu/fiuba/algo3/view/sonidoClickear.mp3").toURI().toString()));
+    private final static MediaPlayer sonidoClickear = new MediaPlayer(new Media(new File("src/main/java/edu/fiuba/algo3/view/sonidos/sonidoClickear.mp3").toURI().toString()));
 
     public BotonComenzarJuegoEventHandler(ContenedorJugadores contenedorJugadores, GPSChallenge juego) {
         this.juego = juego;

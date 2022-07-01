@@ -14,7 +14,7 @@ public class BotonOpcionesEventHandler implements EventHandler<ActionEvent> {
     Stage stage;
     Scene proximaEscena;
 
-    private final static MediaPlayer sonidoOpciones = new MediaPlayer(new Media(new File("src/main/java/edu/fiuba/algo3/view/sonidoSeleccionar.mp3").toURI().toString()));
+    private final static MediaPlayer sonidoOpciones = new MediaPlayer(new Media(new File("src/main/java/edu/fiuba/algo3/view/sonidos/sonidoSeleccionar.mp3").toURI().toString()));
 
     public BotonOpcionesEventHandler(Stage stage, Scene proximaEscena) {
         this.proximaEscena = proximaEscena;

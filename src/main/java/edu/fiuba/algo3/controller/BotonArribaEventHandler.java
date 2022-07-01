@@ -18,7 +18,7 @@ public class BotonArribaEventHandler implements EventHandler<ActionEvent> {
 
     private final ContenedorEscenario contenedor;
 
-    private final static MediaPlayer sonidoAuto = new MediaPlayer(new Media(new File("src/main/java/edu/fiuba/algo3/view/sonidoAuto.mp3").toURI().toString()));
+    private final static MediaPlayer sonidoAuto = new MediaPlayer(new Media(new File("src/main/java/edu/fiuba/algo3/view/sonidos/sonidoAuto.mp3").toURI().toString()));
 
     public BotonArribaEventHandler(VistaJugador2 vistaJugador, GPSChallenge juego, ContenedorEscenario contenedor) {
         this.vistaJugador = vistaJugador;
