@@ -50,6 +50,10 @@ public class ContenedorEscenario extends BorderPane {
 
     private void setBotonera(GPSChallenge juego) {
 
+        Label labelAcciones = new Label("Acciones:");
+        labelAcciones.setFont(Font.font("Trebuchet MS", 20));
+        labelAcciones.setPrefSize(120,50);
+
         Button botonDerecha = new Button();
         botonDerecha.setText("Derecha");
         botonDerecha.setFont(Font.font("Trebuchet MS", 20));
@@ -78,7 +82,7 @@ public class ContenedorEscenario extends BorderPane {
         BotonArribaEventHandler botonArribaEventHandler = new BotonArribaEventHandler(vistaJugador2, juego, this);
         botonArriba.setOnAction(botonArribaEventHandler);
 
-        VBox contenedorVertical = new VBox(botonArriba, botonAbajo, botonDerecha, botonIzquierda);
+        VBox contenedorVertical = new VBox(labelAcciones, botonArriba, botonAbajo, botonDerecha, botonIzquierda);
         contenedorVertical.setSpacing(10);
         contenedorVertical.setPadding(new Insets(15));
 
