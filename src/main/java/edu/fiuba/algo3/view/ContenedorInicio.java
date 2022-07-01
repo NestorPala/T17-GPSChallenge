@@ -7,6 +7,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundImage;
+import javafx.scene.layout.BackgroundPosition;
+import javafx.scene.layout.BackgroundRepeat;
+import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
@@ -31,6 +36,23 @@ public class ContenedorInicio extends VBox {
         this.setSpacing(20);
         this.setPadding(new Insets(25));
 
+        BackgroundSize backgroundSize = new BackgroundSize(900,700,true,true,true,false);
+
+        this.setBackground(
+            new Background(
+            new BackgroundImage(
+            new Image(
+            new File(
+                "src/main/java/edu/fiuba/algo3/view/fotos/splash.jpg")
+                .toURI()
+                .toString()
+            ), 
+            BackgroundRepeat.REPEAT, 
+            BackgroundRepeat.REPEAT, 
+            BackgroundPosition.CENTER, 
+            backgroundSize
+        )));
+
         Button botonJugar = new Button();
         botonJugar.setText("Jugar");
         botonJugar.setFont(Font.font("Trebuchet MS", 50));
@@ -49,6 +71,7 @@ public class ContenedorInicio extends VBox {
         Label texto = new Label();
         texto.setText("GPS CHALLENGE");
         texto.setFont(Font.font("Trebuchet MS", 100));
+        texto.setStyle("-fx-text-fill:WHITE;");
 
         ContenedorOpciones contenedorOpciones = new ContenedorOpciones(stage, stage.getScene());
         Scene escenaOpciones = new Scene(contenedorOpciones, 960,540);
