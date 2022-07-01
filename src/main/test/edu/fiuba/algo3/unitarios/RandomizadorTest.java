@@ -1,7 +1,8 @@
 package edu.fiuba.algo3.unitarios;
 
-import edu.fiuba.algo3.modelo.Randomizador.Random;
 import org.junit.jupiter.api.Test;
+
+import edu.fiuba.algo3.model.Randomizador.Random;
 
 import static org.junit.jupiter.api.Assertions.*;
 

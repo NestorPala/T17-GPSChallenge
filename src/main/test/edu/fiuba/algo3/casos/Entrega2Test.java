@@ -1,17 +1,18 @@
 package edu.fiuba.algo3.casos;
 
-import edu.fiuba.algo3.modelo.Chocables.*;
-import edu.fiuba.algo3.modelo.Direccion;
-import edu.fiuba.algo3.modelo.Escenario;
-import edu.fiuba.algo3.modelo.Jugador.Jugador;
-import edu.fiuba.algo3.modelo.Logger;
-import edu.fiuba.algo3.modelo.Posicion;
-import edu.fiuba.algo3.modelo.Randomizador.Randomizer;
-import edu.fiuba.algo3.modelo.Vehiculos.Auto;
-import edu.fiuba.algo3.modelo.Vehiculos.Moto;
-import edu.fiuba.algo3.modelo.Vehiculos.Todoterreno;
-import edu.fiuba.algo3.modelo.Vehiculos.Vehiculo;
 import org.junit.jupiter.api.Test;
+
+import edu.fiuba.algo3.model.Direccion;
+import edu.fiuba.algo3.model.Escenario;
+import edu.fiuba.algo3.model.Logger;
+import edu.fiuba.algo3.model.Posicion;
+import edu.fiuba.algo3.model.Chocables.*;
+import edu.fiuba.algo3.model.Jugador.Jugador;
+import edu.fiuba.algo3.model.Randomizador.Randomizer;
+import edu.fiuba.algo3.model.Vehiculos.Auto;
+import edu.fiuba.algo3.model.Vehiculos.Moto;
+import edu.fiuba.algo3.model.Vehiculos.Todoterreno;
+import edu.fiuba.algo3.model.Vehiculos.Vehiculo;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.anyDouble;

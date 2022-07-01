@@ -1,12 +1,13 @@
 package edu.fiuba.algo3.integracion;
 
-import edu.fiuba.algo3.modelo.*;
-import edu.fiuba.algo3.modelo.Chocables.*;
-import edu.fiuba.algo3.modelo.Jugador.Jugador;
-import edu.fiuba.algo3.modelo.Randomizador.Random;
-import edu.fiuba.algo3.modelo.Randomizador.Randomizer;
-import edu.fiuba.algo3.modelo.Vehiculos.Moto;
 import org.junit.jupiter.api.Test;
+
+import edu.fiuba.algo3.model.*;
+import edu.fiuba.algo3.model.Chocables.*;
+import edu.fiuba.algo3.model.Jugador.Jugador;
+import edu.fiuba.algo3.model.Randomizador.Random;
+import edu.fiuba.algo3.model.Randomizador.Randomizer;
+import edu.fiuba.algo3.model.Vehiculos.Moto;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;

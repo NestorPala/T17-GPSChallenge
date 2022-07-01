@@ -1,12 +1,12 @@
 package edu.fiuba.algo3;
 
-import edu.fiuba.algo3.vista.ContenedorEscenario;
-import edu.fiuba.algo3.vista.ContenedorInicio;
-import edu.fiuba.algo3.modelo.GPSChallenge;
-import edu.fiuba.algo3.modelo.Jugador.Jugador;
-import edu.fiuba.algo3.modelo.Vehiculos.Moto;
-import edu.fiuba.algo3.modelo.Vehiculos.Vehiculo;
-import edu.fiuba.algo3.vista.ContenedorJugadores;
+import edu.fiuba.algo3.model.GPSChallenge;
+import edu.fiuba.algo3.model.Jugador.Jugador;
+import edu.fiuba.algo3.model.Vehiculos.Moto;
+import edu.fiuba.algo3.model.Vehiculos.Vehiculo;
+import edu.fiuba.algo3.view.ContenedorEscenario;
+import edu.fiuba.algo3.view.ContenedorInicio;
+import edu.fiuba.algo3.view.ContenedorJugadores;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -26,10 +26,10 @@ public class App extends Application {
 
 
         ContenedorJugadores contenedorJugadores = new ContenedorJugadores(stage, juego);
-        Scene escenaJugadores = new Scene(contenedorJugadores, 1440, 900);
+        Scene escenaJugadores = new Scene(contenedorJugadores, 960, 540);
 
         ContenedorInicio contenedorInicio = new ContenedorInicio(stage, escenaJugadores);
-        Scene escenaInicial = new Scene(contenedorInicio, 1440, 900);
+        Scene escenaInicial = new Scene(contenedorInicio, 960, 540);
 
         stage.setScene(escenaInicial);
         stage.show();

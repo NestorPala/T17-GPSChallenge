@@ -1,8 +1,9 @@
 package edu.fiuba.algo3.unitarios;
 
-import edu.fiuba.algo3.modelo.Direccion;
-import edu.fiuba.algo3.modelo.Posicion;
 import org.junit.jupiter.api.Test;
+
+import edu.fiuba.algo3.model.Direccion;
+import edu.fiuba.algo3.model.Posicion;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

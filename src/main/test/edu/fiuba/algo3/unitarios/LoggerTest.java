@@ -1,10 +1,11 @@
 package edu.fiuba.algo3.unitarios;
 
-import edu.fiuba.algo3.modelo.Direccion;
-import edu.fiuba.algo3.modelo.Jugador.Jugador;
-import edu.fiuba.algo3.modelo.Logger;
-import edu.fiuba.algo3.modelo.Vehiculos.Moto;
 import org.junit.jupiter.api.Test;
+
+import edu.fiuba.algo3.model.Direccion;
+import edu.fiuba.algo3.model.Logger;
+import edu.fiuba.algo3.model.Jugador.Jugador;
+import edu.fiuba.algo3.model.Vehiculos.Moto;
 
 public class LoggerTest {
     @Test

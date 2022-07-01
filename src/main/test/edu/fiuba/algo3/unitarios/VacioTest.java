@@ -1,12 +1,13 @@
 package edu.fiuba.algo3.unitarios;
 
-import edu.fiuba.algo3.modelo.Chocables.Chocable;
-import edu.fiuba.algo3.modelo.Chocables.Vacio;
-import edu.fiuba.algo3.modelo.Puntaje;
-import edu.fiuba.algo3.modelo.Vehiculos.Auto;
-import edu.fiuba.algo3.modelo.Vehiculos.Moto;
-import edu.fiuba.algo3.modelo.Vehiculos.Todoterreno;
 import org.junit.jupiter.api.Test;
+
+import edu.fiuba.algo3.model.Puntaje;
+import edu.fiuba.algo3.model.Chocables.Chocable;
+import edu.fiuba.algo3.model.Chocables.Vacio;
+import edu.fiuba.algo3.model.Vehiculos.Auto;
+import edu.fiuba.algo3.model.Vehiculos.Moto;
+import edu.fiuba.algo3.model.Vehiculos.Todoterreno;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

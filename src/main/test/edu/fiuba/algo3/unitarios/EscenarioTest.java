@@ -1,11 +1,12 @@
 package edu.fiuba.algo3.unitarios;
 
-import edu.fiuba.algo3.modelo.Chocables.Pozo;
-import edu.fiuba.algo3.modelo.Escenario;
-import edu.fiuba.algo3.modelo.Posicion;
-import edu.fiuba.algo3.modelo.TamañoDelEscenarioInvalido;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;
+
+import edu.fiuba.algo3.model.Escenario;
+import edu.fiuba.algo3.model.Posicion;
+import edu.fiuba.algo3.model.TamañoDelEscenarioInvalido;
+import edu.fiuba.algo3.model.Chocables.Pozo;
 
 import static org.junit.jupiter.api.Assertions.*;
 

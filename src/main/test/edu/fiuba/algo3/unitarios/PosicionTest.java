@@ -1,8 +1,9 @@
 package edu.fiuba.algo3.unitarios;
 
-import edu.fiuba.algo3.modelo.Posicion;
-import edu.fiuba.algo3.modelo.Vehiculos.Auto;
 import org.junit.jupiter.api.Test;
+
+import edu.fiuba.algo3.model.Posicion;
+import edu.fiuba.algo3.model.Vehiculos.Auto;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;

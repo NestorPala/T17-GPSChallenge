@@ -1,15 +1,16 @@
 package edu.fiuba.algo3.unitarios;
 
-import edu.fiuba.algo3.modelo.Chocables.Chocable;
-import edu.fiuba.algo3.modelo.Chocables.Piquete;
-import edu.fiuba.algo3.modelo.Chocables.SorpresaCambioVehiculo;
-import edu.fiuba.algo3.modelo.Direccion;
-import edu.fiuba.algo3.modelo.Efectos.IEfecto;
-import edu.fiuba.algo3.modelo.Escenario;
-import edu.fiuba.algo3.modelo.Jugador.Jugador;
-import edu.fiuba.algo3.modelo.Posicion;
-import edu.fiuba.algo3.modelo.Vehiculos.Moto;
 import org.junit.jupiter.api.Test;
+
+import edu.fiuba.algo3.model.Direccion;
+import edu.fiuba.algo3.model.Escenario;
+import edu.fiuba.algo3.model.Posicion;
+import edu.fiuba.algo3.model.Chocables.Chocable;
+import edu.fiuba.algo3.model.Chocables.Piquete;
+import edu.fiuba.algo3.model.Chocables.SorpresaCambioVehiculo;
+import edu.fiuba.algo3.model.Efectos.IEfecto;
+import edu.fiuba.algo3.model.Jugador.Jugador;
+import edu.fiuba.algo3.model.Vehiculos.Moto;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;

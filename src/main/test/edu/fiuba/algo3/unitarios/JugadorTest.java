@@ -1,13 +1,14 @@
 package edu.fiuba.algo3.unitarios;
 
-import edu.fiuba.algo3.modelo.Direccion;
-import edu.fiuba.algo3.modelo.Escenario;
-import edu.fiuba.algo3.modelo.Jugador.Jugador;
-import edu.fiuba.algo3.modelo.Posicion;
-import edu.fiuba.algo3.modelo.Vehiculos.Auto;
-import edu.fiuba.algo3.modelo.Vehiculos.Moto;
-import edu.fiuba.algo3.modelo.Vehiculos.Vehiculo;
 import org.junit.jupiter.api.Test;
+
+import edu.fiuba.algo3.model.Direccion;
+import edu.fiuba.algo3.model.Escenario;
+import edu.fiuba.algo3.model.Posicion;
+import edu.fiuba.algo3.model.Jugador.Jugador;
+import edu.fiuba.algo3.model.Vehiculos.Auto;
+import edu.fiuba.algo3.model.Vehiculos.Moto;
+import edu.fiuba.algo3.model.Vehiculos.Vehiculo;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
