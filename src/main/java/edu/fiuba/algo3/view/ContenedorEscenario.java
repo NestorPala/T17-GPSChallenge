@@ -31,13 +31,11 @@ public class ContenedorEscenario extends BorderPane {
 
         this.stage = stage;
         this.puntaje = new Label();
-        this.setCentro(juego);
-        this.setBotonera(juego);
-        this.setPuntaje(juego.jugadorActual());
-
+        this.setMapa(juego);
+        this.setPanelEstado(juego);
     }
 
-    private void setCentro(GPSChallenge juego) {
+    private void setMapa(GPSChallenge juego) {
         vistaEscenario = new VistaEscenario(20, 20);
         vistaJugador2 = new VistaJugador2(vistaEscenario, juego);
 
@@ -49,57 +47,63 @@ public class ContenedorEscenario extends BorderPane {
         this.setCenter(contenedorCentral);
     }
 
-    private void setBotonera(GPSChallenge juego) {
+    private void setPanelEstado(GPSChallenge juego) {
+
+        this.puntaje = new Label();
+        puntaje.setFont(Font.font("Trebuchet MS", 20));
+        puntaje.setPrefSize(240,50);
 
         coordenadas = new Label(juego.jugadorActual().posicion().toString());
         coordenadas.setFont(Font.font("Trebuchet MS", 20));
-        coordenadas.setPrefSize(120,50);
+        coordenadas.setPrefSize(240,50);
+
+        this.updateEstado(juego.jugadorActual());
 
         Label labelAcciones = new Label("Acciones:");
         labelAcciones.setFont(Font.font("Trebuchet MS", 20));
-        labelAcciones.setPrefSize(120,50);
+        labelAcciones.setPrefSize(240,50);
 
         Button botonDerecha = new Button();
         botonDerecha.setText("Derecha");
         botonDerecha.setFont(Font.font("Trebuchet MS", 20));
-        botonDerecha.setPrefSize(120,50);
+        botonDerecha.setPrefSize(240,50);
         BotonDerechaEventHandler botonDerechaEventHandler = new BotonDerechaEventHandler(vistaJugador2, juego, this);
         botonDerecha.setOnAction(botonDerechaEventHandler);
 
         Button botonIzquierda = new Button();
         botonIzquierda.setText("Izquierda");
         botonIzquierda.setFont(Font.font("Trebuchet MS", 20));
-        botonIzquierda.setPrefSize(120,50);
+        botonIzquierda.setPrefSize(240,50);
         BotonIzquierdaEventHandler botonIzquierdaEventHandler = new BotonIzquierdaEventHandler(vistaJugador2, juego, this);
         botonIzquierda.setOnAction(botonIzquierdaEventHandler);
 
         Button botonAbajo = new Button();
         botonAbajo.setText("Arriba");
         botonAbajo.setFont(Font.font("Trebuchet MS", 20));
-        botonAbajo.setPrefSize(120,50);
+        botonAbajo.setPrefSize(240,50);
         BotonAbajoEventHandler botonAbajoEventHandler = new BotonAbajoEventHandler(vistaJugador2, juego, this);
         botonAbajo.setOnAction(botonAbajoEventHandler);
 
         Button botonArriba = new Button();
         botonArriba.setText("Abajo");
         botonArriba.setFont(Font.font("Trebuchet MS", 20));
-        botonArriba.setPrefSize(120,50);
+        botonArriba.setPrefSize(240,50);
         BotonArribaEventHandler botonArribaEventHandler = new BotonArribaEventHandler(vistaJugador2, juego, this);
         botonArriba.setOnAction(botonArribaEventHandler);
 
-        VBox contenedorVertical = new VBox(coordenadas, labelAcciones, botonArriba, botonAbajo, botonDerecha, botonIzquierda);
+        VBox contenedorVertical = new VBox(puntaje, coordenadas, labelAcciones, botonArriba, botonAbajo, botonIzquierda, botonDerecha);
         contenedorVertical.setSpacing(10);
         contenedorVertical.setPadding(new Insets(15));
 
         this.setLeft(contenedorVertical);
     }
 
-    public void setPuntaje(Jugador jugador) {
+    public void updateEstado(Jugador jugador) {
         this.puntaje.setText("Jugador: " + jugador.nombre() + "\n" + "Puntaje: " + new DecimalFormat("#.##").format(jugador.puntaje()));
-        this.puntaje.setFont(Font.font("Trebuchet MS", 50));
+        this.puntaje.setFont(Font.font("Trebuchet MS", 20));
 
-        this.setRight(this.puntaje);
+        // this.setRight(this.puntaje);
 
-        this.coordenadas.setText(jugador.posicion().toString());
+        this.coordenadas.setText("Posicion: " + jugador.posicion().toString());
     }
 }

@@ -31,7 +31,7 @@ public class BotonAbajoEventHandler implements EventHandler<ActionEvent> {
     public void handle(ActionEvent actionEvent) {
         juego.mover(Direccion.abajo());
         vistaJugador.actualizar();
-        contenedor.setPuntaje(juego.jugadorActual());
+        contenedor.updateEstado(juego.jugadorActual());
         sonidoAuto.play();
         sonidoAuto.seek(sonidoAuto.getStartTime());
     }
