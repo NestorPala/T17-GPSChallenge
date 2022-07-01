@@ -36,4 +36,9 @@ public class Posicion {
     public void sumarY(int y) {
         this.y += y;
     }
+
+    @Override
+    public String toString() {
+        return "(" + this.x + ", " + this.y + ")";
+    }
 }
