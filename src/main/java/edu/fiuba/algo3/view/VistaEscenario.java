@@ -34,7 +34,7 @@ public class VistaEscenario extends Group {
                 Pane v = new Pane();
                 v.setMinHeight(this.tileAlto);
                 v.setMinWidth(this.tileAncho);
-                v.setBackground(new Background(new BackgroundFill(Color.rgb(180,180,180), new CornerRadii(2.5), new Insets(-1))));
+                v.setBackground(new Background(new BackgroundFill(Color.rgb(227,227,227), new CornerRadii(2.5), new Insets(-1))));
                 v.getChildren().add(0, imagenes.devolverImagenes(escenario.obtenerChocable(new Posicion(i,j))));
                 panes[i][j] = v;
                 tabla.add(v , i, j);
