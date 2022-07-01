@@ -48,6 +48,11 @@ public class VistaEscenario extends Group {
     }
 
     public void addViewOnMap(Node view, int x, int y) {
+        this.limpiarEscenario(view);
+        panes[x][y].getChildren().add(1, view);
+    }
+
+    public void limpiarEscenario(Node view){
         for (int i = 0; i < ancho; i++) {
             for (int j = 0; j < alto; j++) {
                 try {
@@ -57,8 +62,6 @@ public class VistaEscenario extends Group {
                 }
             }
         }
-
-        panes[x][y].getChildren().add(1, view);
     }
 
     public void addView(Node view) {

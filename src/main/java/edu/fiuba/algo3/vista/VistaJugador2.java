@@ -2,6 +2,7 @@ package edu.fiuba.algo3.vista;
 
 
 import edu.fiuba.algo3.modelo.GPSChallenge;
+import edu.fiuba.algo3.modelo.Vehiculos.Vehiculo;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
@@ -14,6 +15,7 @@ public class VistaJugador2 {
     ImageView imagenJugador;
     private final GPSChallenge juego;
     private int ultimaPosicionX;
+    private Vehiculo vehiculoJugador;
 
 
     public VistaJugador2(VistaEscenario escenario, GPSChallenge juego) {
@@ -21,6 +23,7 @@ public class VistaJugador2 {
         this.vistaEscenario = escenario;
         this.juego = juego;
         this.ultimaPosicionX = juego.jugadorActual().posicion().x();
+        this.vehiculoJugador = juego.jugadorActual().vehiculo();
 
         Imagenes imagenes = new Imagenes();
         imagenJugador = imagenes.devolverImagenesVehiculos(juego.jugadorActual().vehiculo());
@@ -36,6 +39,21 @@ public class VistaJugador2 {
 
         int actualX = juego.jugadorActual().posicion().x();
         int actualY = juego.jugadorActual().posicion().y();
+        this.orientarVehiculo(actualX);
+
+        if(juego.jugadorActual().vehiculo() != vehiculoJugador){
+            vistaEscenario.limpiarEscenario(imagenJugador);
+            Imagenes imagenes = new Imagenes();
+            imagenJugador = imagenes.devolverImagenesVehiculos(juego.jugadorActual().vehiculo());
+            imagenJugador.setFitHeight(32);
+            imagenJugador.setFitWidth(32);
+            this.orientarVehiculo(actualX);
+        }
+        this.ultimaPosicionX = juego.jugadorActual().posicion().x();
+        vistaEscenario.addViewOnMap(this.imagenJugador, actualX, actualY);
+    }
+
+    public void orientarVehiculo(int actualX){
         if (ultimaPosicionX > actualX) {
             this.imagenJugador.setScaleX( -
                     Math.abs(imagenJugador.getScaleX()));
@@ -45,10 +63,6 @@ public class VistaJugador2 {
             this.imagenJugador.setScaleX(
                     Math.abs(imagenJugador.getScaleX()));
         }
-
-        this.ultimaPosicionX = juego.jugadorActual().posicion().x();
-        vistaEscenario.addViewOnMap(this.imagenJugador, actualX, actualY);
     }
-
 }
 
