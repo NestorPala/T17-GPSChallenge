@@ -31,11 +31,12 @@ public class VistaEscenario extends Group {
 
         for (int i = 0; i < anchoEscenario; i++) {
             for (int j = 0; j < altoEscenario; j++) {
-                Pane v = new Pane();
+                StackPane v = new StackPane();
                 v.setMinHeight(this.tileAlto);
                 v.setMinWidth(this.tileAncho);
                 v.setBackground(new Background(new BackgroundFill(Color.rgb(227,227,227), new CornerRadii(2.5), new Insets(-1))));
                 v.getChildren().add(0, imagenes.devolverImagenes(escenario.obtenerChocable(new Posicion(i,j))));
+                v.setPadding(new Insets(4));
                 panes[i][j] = v;
                 tabla.add(v , i, j);
             }
