@@ -28,11 +28,11 @@ public class ContenedorOpciones extends VBox {
 
         Label texto = new Label();
         texto.setText("OPCIONES");
-        texto.setFont(Font.font("Times New Roman", 100));
+        texto.setFont(Font.font("Trebuchet MS", 100));
 
         Button botonAtras = new Button();
         botonAtras.setText("Atras");
-        botonAtras.setFont(Font.font("Times New Roman", 50));
+        botonAtras.setFont(Font.font("Trebuchet MS", 50));
         botonAtras.setPrefSize(300,100);
 
         BotonAtrasEventHandler botonAtrasEventHandler = new BotonAtrasEventHandler(stage, escenaAnterior);

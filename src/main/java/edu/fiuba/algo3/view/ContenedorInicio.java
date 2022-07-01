@@ -33,22 +33,22 @@ public class ContenedorInicio extends VBox {
 
         Button botonJugar = new Button();
         botonJugar.setText("Jugar");
-        botonJugar.setFont(Font.font("Times New Roman", 50));
+        botonJugar.setFont(Font.font("Trebuchet MS", 50));
         botonJugar.setPrefSize(300,100);
 
         Button botonOpciones = new Button();
         botonOpciones.setText("Opciones");
-        botonOpciones.setFont(Font.font("Times New Roman", 50));
+        botonOpciones.setFont(Font.font("Trebuchet MS", 50));
         botonOpciones.setPrefSize(300,100);
 
         Button botonSalir = new Button();
         botonSalir.setText("Salir");
-        botonSalir.setFont(Font.font("Times New Roman", 50));
+        botonSalir.setFont(Font.font("Trebuchet MS", 50));
         botonSalir.setPrefSize(300,100);
 
         Label texto = new Label();
         texto.setText("GPS CHALLENGE");
-        texto.setFont(Font.font("Times New Roman", 100));
+        texto.setFont(Font.font("Trebuchet MS", 100));
 
         ContenedorOpciones contenedorOpciones = new ContenedorOpciones(stage, stage.getScene());
         Scene escenaOpciones = new Scene(contenedorOpciones, 1440,900);

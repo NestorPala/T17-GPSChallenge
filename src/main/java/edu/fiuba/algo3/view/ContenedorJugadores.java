@@ -26,13 +26,13 @@ public class ContenedorJugadores extends VBox {
 
         Label texto = new Label();
         texto.setText("ELEGIR JUGADORES");
-        texto.setFont(Font.font("Times New Roman", 70));
+        texto.setFont(Font.font("Trebuchet MS", 70));
 
         TextField inputNombre = new TextField();
         inputNombre.setMaxWidth(300);
         inputNombre.setMinHeight(75);
         inputNombre.setPromptText("Ingrese su nombre");
-        inputNombre.setFont(Font.font("Times New Roman", 24));
+        inputNombre.setFont(Font.font("Trebuchet MS", 24));
 
         ComboBox<String> opcionesVehiculo = new ComboBox<>();
         opcionesVehiculo.setMinWidth(300);
@@ -44,7 +44,7 @@ public class ContenedorJugadores extends VBox {
 
         Button botonAgregarJugador = new Button();
         botonAgregarJugador.setText("Agregar Jugador");
-        botonAgregarJugador.setFont(Font.font("Times New Roman", 36));
+        botonAgregarJugador.setFont(Font.font("Trebuchet MS", 36));
         botonAgregarJugador.setPrefSize(300,100);
 
         BotonAgregarJugadorEventHandler botonAgregarJugadorEventHandler = new BotonAgregarJugadorEventHandler(inputNombre, opcionesVehiculo, juego);
@@ -53,7 +53,7 @@ public class ContenedorJugadores extends VBox {
 
         Button botonComenzarJuego = new Button();
         botonComenzarJuego.setText("Comenzar juego");
-        botonComenzarJuego.setFont(Font.font("Times New Roman", 36));
+        botonComenzarJuego.setFont(Font.font("Trebuchet MS", 36));
         botonComenzarJuego.setPrefSize(300,100);
 
         BotonComenzarJuegoEventHandler botonComenzarJuegoEventHandler = new BotonComenzarJuegoEventHandler(this, juego);

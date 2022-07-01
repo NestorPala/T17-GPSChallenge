@@ -52,28 +52,28 @@ public class ContenedorEscenario extends BorderPane {
 
         Button botonDerecha = new Button();
         botonDerecha.setText("Derecha");
-        botonDerecha.setFont(Font.font("Times New Roman", 20));
+        botonDerecha.setFont(Font.font("Trebuchet MS", 20));
         botonDerecha.setPrefSize(120,50);
         BotonDerechaEventHandler botonDerechaEventHandler = new BotonDerechaEventHandler(vistaJugador2, juego, this);
         botonDerecha.setOnAction(botonDerechaEventHandler);
 
         Button botonIzquierda = new Button();
         botonIzquierda.setText("Izquierda");
-        botonIzquierda.setFont(Font.font("Times New Roman", 20));
+        botonIzquierda.setFont(Font.font("Trebuchet MS", 20));
         botonIzquierda.setPrefSize(120,50);
         BotonIzquierdaEventHandler botonIzquierdaEventHandler = new BotonIzquierdaEventHandler(vistaJugador2, juego, this);
         botonIzquierda.setOnAction(botonIzquierdaEventHandler);
 
         Button botonAbajo = new Button();
         botonAbajo.setText("Arriba");
-        botonAbajo.setFont(Font.font("Times New Roman", 20));
+        botonAbajo.setFont(Font.font("Trebuchet MS", 20));
         botonAbajo.setPrefSize(120,50);
         BotonAbajoEventHandler botonAbajoEventHandler = new BotonAbajoEventHandler(vistaJugador2, juego, this);
         botonAbajo.setOnAction(botonAbajoEventHandler);
 
         Button botonArriba = new Button();
         botonArriba.setText("Abajo");
-        botonArriba.setFont(Font.font("Times New Roman", 20));
+        botonArriba.setFont(Font.font("Trebuchet MS", 20));
         botonArriba.setPrefSize(120,50);
         BotonArribaEventHandler botonArribaEventHandler = new BotonArribaEventHandler(vistaJugador2, juego, this);
         botonArriba.setOnAction(botonArribaEventHandler);
@@ -87,7 +87,7 @@ public class ContenedorEscenario extends BorderPane {
 
     public void setPuntaje(Jugador jugador) {
         this.puntaje.setText("Jugador: " + jugador.nombre() + "\n" + "Puntaje: " + new DecimalFormat("#.##").format(jugador.puntaje()));
-        this.puntaje.setFont(Font.font("Times New Roman", 50));
+        this.puntaje.setFont(Font.font("Trebuchet MS", 50));
 
         this.setRight(this.puntaje);
     }
