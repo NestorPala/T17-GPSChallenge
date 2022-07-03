@@ -30,7 +30,7 @@ public class BotonComenzarJuegoEventHandler implements EventHandler<ActionEvent>
     public void handle(ActionEvent actionEvent) {
         sonidoClickear.play();
         sonidoClickear.seek(sonidoClickear.getStartTime());
-        if (!juego.hayJugadoresPorJugar()) {
+        if (!juego.hayJugadoresPorJugar() && juego.jugadorActual() == null) {
             juego.agregarJugador(new Jugador(new Auto(), "Jugador"));
         }
         this.contenedor.comenzarJuego(juego);

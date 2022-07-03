@@ -1,10 +1,6 @@
 package edu.fiuba.algo3;
 
 import edu.fiuba.algo3.model.GPSChallenge;
-import edu.fiuba.algo3.model.Jugador.Jugador;
-import edu.fiuba.algo3.model.Vehiculos.Moto;
-import edu.fiuba.algo3.model.Vehiculos.Vehiculo;
-import edu.fiuba.algo3.view.ContenedorEscenario;
 import edu.fiuba.algo3.view.ContenedorInicio;
 import edu.fiuba.algo3.view.ContenedorJugadores;
 import javafx.application.Application;

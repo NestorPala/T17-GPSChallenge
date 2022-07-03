@@ -38,6 +38,7 @@ public class ContenedorJugadores extends VBox {
         opcionesVehiculo.setMinWidth(300);
         opcionesVehiculo.setMinHeight(75);
         opcionesVehiculo.setPromptText("Elija el vehiculo");
+        opcionesVehiculo.setStyle("-fx-font: 24px \"Trebuchet MS\";");
         opcionesVehiculo.getItems().add("Auto");
         opcionesVehiculo.getItems().add("Moto");
         opcionesVehiculo.getItems().add("4x4");
