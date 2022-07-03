@@ -32,6 +32,7 @@ public class ContenedorJugadores extends VBox {
         inputNombre.setMaxWidth(300);
         inputNombre.setMinHeight(75);
         inputNombre.setPromptText("Ingrese su nombre");
+        inputNombre.setFocusTraversable(false);
         inputNombre.setFont(Font.font("Trebuchet MS", 24));
 
         ComboBox<String> opcionesVehiculo = new ComboBox<>();
@@ -63,5 +64,6 @@ public class ContenedorJugadores extends VBox {
         ContenedorEscenario contenedorEscenario = new ContenedorEscenario(this.stage, juego);
         Scene escenaEscenario = new Scene(contenedorEscenario, 960,540);
         stage.setScene(escenaEscenario);
+        contenedorEscenario.setBotones();
     }
 }

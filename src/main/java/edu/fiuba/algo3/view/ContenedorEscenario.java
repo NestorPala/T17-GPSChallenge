@@ -10,6 +10,8 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
@@ -25,6 +27,10 @@ public class ContenedorEscenario extends BorderPane {
     VBox contenedorCentral;
     Label puntaje;
     Label coordenadas;
+    private Button botonDerecha;
+    private Button botonIzquierda;
+    private Button botonAbajo;
+    private Button botonArriba;
 
 
     public ContenedorEscenario(Stage stage, GPSChallenge juego) {
@@ -63,25 +69,25 @@ public class ContenedorEscenario extends BorderPane {
         labelAcciones.setFont(Font.font("Trebuchet MS", 20));
         labelAcciones.setPrefSize(240,50);
 
-        Button botonDerecha = new Button();
+        this.botonDerecha = new Button();
         botonDerecha.setText("Derecha");
         botonDerecha.setFont(Font.font("Trebuchet MS", 20));
         botonDerecha.setPrefSize(240,50);
         botonDerecha.setOnAction(new BotonDerechaEventHandler(vistaJugador2, juego, this));
 
-        Button botonIzquierda = new Button();
+        this.botonIzquierda = new Button();
         botonIzquierda.setText("Izquierda");
         botonIzquierda.setFont(Font.font("Trebuchet MS", 20));
         botonIzquierda.setPrefSize(240,50);
         botonIzquierda.setOnAction(new BotonIzquierdaEventHandler(vistaJugador2, juego, this));
 
-        Button botonAbajo = new Button();
+        this.botonAbajo = new Button();
         botonAbajo.setText("Arriba");
         botonAbajo.setFont(Font.font("Trebuchet MS", 20));
         botonAbajo.setPrefSize(240,50);
         botonAbajo.setOnAction(new BotonAbajoEventHandler(vistaJugador2, juego, this));
 
-        Button botonArriba = new Button();
+        this.botonArriba = new Button();
         botonArriba.setText("Abajo");
         botonArriba.setFont(Font.font("Trebuchet MS", 20));
         botonArriba.setPrefSize(240,50);
@@ -101,5 +107,19 @@ public class ContenedorEscenario extends BorderPane {
         // this.setRight(this.puntaje);
 
         this.coordenadas.setText("Posicion: " + jugador.posicion().toString());
+    }
+
+    public void setBotones() {
+        this.stage.getScene().addEventFilter(KeyEvent.KEY_PRESSED, e -> {
+            if (e.getCode() == KeyCode.RIGHT) {
+                botonDerecha.fire();
+            } else if (e.getCode() == KeyCode.LEFT) {
+                botonIzquierda.fire();
+            } else if (e.getCode() == KeyCode.UP) {
+                botonAbajo.fire();
+            } else if (e.getCode() == KeyCode.DOWN) {
+                botonArriba.fire();
+            }
+        });
     }
 }
