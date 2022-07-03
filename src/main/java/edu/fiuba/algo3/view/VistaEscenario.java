@@ -59,7 +59,7 @@ public class VistaEscenario extends Group {
             for (int j = 0; j < alto; j++) {
                 try {
                     panes[i][j].getChildren().remove(view);
-                    panes[i][j].setBorder(null);
+                    panes[i][j].setBorder(new Border(new BorderStroke(Color.rgb(227,227,227), BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
                 } catch (Exception e) {
                     //TODO: handle exception
                 }

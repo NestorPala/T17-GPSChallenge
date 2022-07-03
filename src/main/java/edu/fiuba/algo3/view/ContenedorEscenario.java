@@ -56,17 +56,17 @@ public class ContenedorEscenario extends BorderPane {
     private void setPanelEstado(GPSChallenge juego) {
 
         this.puntaje = new Label();
-        puntaje.setFont(Font.font("Trebuchet MS", 20));
-        puntaje.setPrefSize(240,50);
+        puntaje.setFont(Font.font("Trebuchet MS", 30));
+        puntaje.setPrefSize(240,80);
 
         coordenadas = new Label(juego.jugadorActual().posicion().toString());
-        coordenadas.setFont(Font.font("Trebuchet MS", 20));
+        coordenadas.setFont(Font.font("Trebuchet MS", 30));
         coordenadas.setPrefSize(240,50);
 
         this.updateEstado(juego.jugadorActual());
 
         Label labelAcciones = new Label("Acciones:");
-        labelAcciones.setFont(Font.font("Trebuchet MS", 20));
+        labelAcciones.setFont(Font.font("Trebuchet MS", 30));
         labelAcciones.setPrefSize(240,50);
 
         this.botonDerecha = new Button();
@@ -102,7 +102,7 @@ public class ContenedorEscenario extends BorderPane {
 
     public void updateEstado(Jugador jugador) {
         this.puntaje.setText("Jugador: " + jugador.nombre() + "\n" + "Puntaje: " + new DecimalFormat("#.##").format(jugador.puntaje()));
-        this.puntaje.setFont(Font.font("Trebuchet MS", 20));
+        this.puntaje.setFont(Font.font("Trebuchet MS", 30));
 
         // this.setRight(this.puntaje);
 

@@ -68,16 +68,19 @@ public class Imagenes {
         if (vehiculo instanceof Auto) {
             ImageView imagen = new ImageView();
             imagen.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/view/fotos/coche.png").toURI().toString()));
+            imagen.setId("Auto");
             return imagen;
         }
         if (vehiculo instanceof Moto) {
             ImageView imagen = new ImageView();
             imagen.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/view/fotos/moto.png").toURI().toString()));
+            imagen.setId("Moto");
             return imagen;
         }
         if (vehiculo instanceof Todoterreno) {
             ImageView imagen = new ImageView();
             imagen.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/view/fotos/todoterreno.png").toURI().toString()));
+            imagen.setId("Todoterreno");
             return imagen;
         }
         else {

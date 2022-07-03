@@ -1,9 +1,12 @@
 package edu.fiuba.algo3.controller;
 
+import edu.fiuba.algo3.view.Imagenes;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
@@ -20,11 +23,11 @@ public class BotonAgregarJugadorEventHandler implements EventHandler<ActionEvent
 
     private final GPSChallenge juego;
     private final TextField inputNombre;
-    private final ComboBox<String> opcionesVehiculos;
+    private final ComboBox<ImageView> opcionesVehiculos;
     private final static MediaPlayer sonidoSeleccionar = new MediaPlayer(new Media(new File("src/main/java/edu/fiuba/algo3/view/sonidos/sonidoSeleccionar.mp3").toURI().toString()));
 
 
-    public BotonAgregarJugadorEventHandler(TextField inputNombre, ComboBox<String> opcionesVehiculos, GPSChallenge juego) {
+    public BotonAgregarJugadorEventHandler(TextField inputNombre, ComboBox<ImageView> opcionesVehiculos, GPSChallenge juego) {
         this.inputNombre = inputNombre;
         this.opcionesVehiculos = opcionesVehiculos;
         this.juego = juego;
@@ -45,13 +48,13 @@ public class BotonAgregarJugadorEventHandler implements EventHandler<ActionEvent
         return inputNombre.getText();
     }
 
-    private Vehiculo seleccionarVehiculo(ComboBox<String> opcionesVehiculos) {
-        String tipoVehiculo = opcionesVehiculos.getValue();
-        if (tipoVehiculo == "Auto") {
+    private Vehiculo seleccionarVehiculo(ComboBox<ImageView> opcionesVehiculos) {
+        String tipoVehiculo = opcionesVehiculos.getValue().getId();
+        if (tipoVehiculo == (new Imagenes().devolverImagenesVehiculos(new Auto())).getId()) {
             return new Auto();
-        } else if (tipoVehiculo == "Moto") {
+        } else if (tipoVehiculo == (new Imagenes().devolverImagenesVehiculos(new Moto())).getId()) {
             return new Moto();
-        } else if (tipoVehiculo == "4x4") {
+        } else if (tipoVehiculo == (new Imagenes().devolverImagenesVehiculos(new Todoterreno())).getId()) {
             return new Todoterreno();
         } else {
             return new Auto();
