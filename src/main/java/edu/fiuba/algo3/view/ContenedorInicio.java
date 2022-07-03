@@ -73,17 +73,9 @@ public class ContenedorInicio extends VBox {
         texto.setFont(Font.font("Trebuchet MS", 100));
         texto.setStyle("-fx-text-fill:WHITE;");
 
-        ContenedorOpciones contenedorOpciones = new ContenedorOpciones(stage, stage.getScene());
-        Scene escenaOpciones = new Scene(contenedorOpciones, 960,540);
-
-        BotonJugarEventHandler botonJugarEventHandler = new BotonJugarEventHandler(stage, proximaEscena);
-        botonJugar.setOnAction(botonJugarEventHandler);
-
-        BotonOpcionesEventHandler botonOpcionesEventHandler = new BotonOpcionesEventHandler(stage, escenaOpciones);
-        botonOpciones.setOnAction(botonOpcionesEventHandler);
-
-        BotonSalirEventHandler botonSalirEventHandler = new BotonSalirEventHandler();
-        botonSalir.setOnAction(botonSalirEventHandler);
+        botonJugar.setOnAction(new BotonJugarEventHandler(stage, proximaEscena));
+        botonOpciones.setOnAction(new BotonOpcionesEventHandler(stage));
+        botonSalir.setOnAction(new BotonSalirEventHandler());
 
         stage.getIcons().add(new Image(new File("src/main/java/edu/fiuba/algo3/view/fotos/gps.png").toURI().toString()));
 

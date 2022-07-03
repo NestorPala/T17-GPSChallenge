@@ -12,15 +12,9 @@ import javafx.stage.Stage;
 
 public class ContenedorOpciones extends VBox {
 
-    Scene escenaAnterior;
-    Stage stage;
-
     public ContenedorOpciones(Stage stage, Scene escenaAnterior) {
 
         super();
-
-        this.stage = stage;
-        this.escenaAnterior = escenaAnterior;
 
         this.setAlignment(Pos.CENTER);
         this.setSpacing(20);
@@ -34,9 +28,7 @@ public class ContenedorOpciones extends VBox {
         botonAtras.setText("Atras");
         botonAtras.setFont(Font.font("Trebuchet MS", 50));
         botonAtras.setPrefSize(300,100);
-
-        BotonAtrasEventHandler botonAtrasEventHandler = new BotonAtrasEventHandler(stage, escenaAnterior);
-        botonAtras.setOnAction(botonAtrasEventHandler);
+        botonAtras.setOnAction(new BotonAtrasEventHandler(stage, escenaAnterior));
 
         this.getChildren().addAll(texto, botonAtras);
     }

@@ -47,18 +47,14 @@ public class ContenedorJugadores extends VBox {
         botonAgregarJugador.setText("Agregar Jugador");
         botonAgregarJugador.setFont(Font.font("Trebuchet MS", 36));
         botonAgregarJugador.setPrefSize(300,100);
-
-        BotonAgregarJugadorEventHandler botonAgregarJugadorEventHandler = new BotonAgregarJugadorEventHandler(inputNombre, opcionesVehiculo, juego);
-        botonAgregarJugador.setOnAction(botonAgregarJugadorEventHandler);
+        botonAgregarJugador.setOnAction(new BotonAgregarJugadorEventHandler(inputNombre, opcionesVehiculo, juego));
 
 
         Button botonComenzarJuego = new Button();
         botonComenzarJuego.setText("Comenzar juego");
         botonComenzarJuego.setFont(Font.font("Trebuchet MS", 36));
         botonComenzarJuego.setPrefSize(300,100);
-
-        BotonComenzarJuegoEventHandler botonComenzarJuegoEventHandler = new BotonComenzarJuegoEventHandler(this, juego);
-        botonComenzarJuego.setOnAction(botonComenzarJuegoEventHandler);
+        botonComenzarJuego.setOnAction(new BotonComenzarJuegoEventHandler(this, juego));
 
         this.getChildren().addAll(texto, inputNombre, opcionesVehiculo, botonAgregarJugador, botonComenzarJuego);
     }

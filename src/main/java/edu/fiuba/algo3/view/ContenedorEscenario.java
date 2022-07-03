@@ -67,29 +67,25 @@ public class ContenedorEscenario extends BorderPane {
         botonDerecha.setText("Derecha");
         botonDerecha.setFont(Font.font("Trebuchet MS", 20));
         botonDerecha.setPrefSize(240,50);
-        BotonDerechaEventHandler botonDerechaEventHandler = new BotonDerechaEventHandler(vistaJugador2, juego, this);
-        botonDerecha.setOnAction(botonDerechaEventHandler);
+        botonDerecha.setOnAction(new BotonDerechaEventHandler(vistaJugador2, juego, this));
 
         Button botonIzquierda = new Button();
         botonIzquierda.setText("Izquierda");
         botonIzquierda.setFont(Font.font("Trebuchet MS", 20));
         botonIzquierda.setPrefSize(240,50);
-        BotonIzquierdaEventHandler botonIzquierdaEventHandler = new BotonIzquierdaEventHandler(vistaJugador2, juego, this);
-        botonIzquierda.setOnAction(botonIzquierdaEventHandler);
+        botonIzquierda.setOnAction(new BotonIzquierdaEventHandler(vistaJugador2, juego, this));
 
         Button botonAbajo = new Button();
         botonAbajo.setText("Arriba");
         botonAbajo.setFont(Font.font("Trebuchet MS", 20));
         botonAbajo.setPrefSize(240,50);
-        BotonAbajoEventHandler botonAbajoEventHandler = new BotonAbajoEventHandler(vistaJugador2, juego, this);
-        botonAbajo.setOnAction(botonAbajoEventHandler);
+        botonAbajo.setOnAction(new BotonAbajoEventHandler(vistaJugador2, juego, this));
 
         Button botonArriba = new Button();
         botonArriba.setText("Abajo");
         botonArriba.setFont(Font.font("Trebuchet MS", 20));
         botonArriba.setPrefSize(240,50);
-        BotonArribaEventHandler botonArribaEventHandler = new BotonArribaEventHandler(vistaJugador2, juego, this);
-        botonArriba.setOnAction(botonArribaEventHandler);
+        botonArriba.setOnAction(new BotonArribaEventHandler(vistaJugador2, juego, this));
 
         VBox contenedorVertical = new VBox(puntaje, coordenadas, labelAcciones, botonArriba, botonAbajo, botonIzquierda, botonDerecha);
         contenedorVertical.setSpacing(10);

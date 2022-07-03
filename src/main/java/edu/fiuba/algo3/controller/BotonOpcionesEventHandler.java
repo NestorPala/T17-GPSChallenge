@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.controller;
 
+import edu.fiuba.algo3.view.ContenedorOpciones;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -12,12 +13,10 @@ import java.io.File;
 public class BotonOpcionesEventHandler implements EventHandler<ActionEvent> {
 
     Stage stage;
-    Scene proximaEscena;
 
     private final static MediaPlayer sonidoOpciones = new MediaPlayer(new Media(new File("src/main/java/edu/fiuba/algo3/view/sonidos/sonidoSeleccionar.mp3").toURI().toString()));
 
-    public BotonOpcionesEventHandler(Stage stage, Scene proximaEscena) {
-        this.proximaEscena = proximaEscena;
+    public BotonOpcionesEventHandler(Stage stage) {
         this.stage = stage;
     }
 
@@ -25,6 +24,8 @@ public class BotonOpcionesEventHandler implements EventHandler<ActionEvent> {
     public void handle(ActionEvent actionEvent) {
         sonidoOpciones.play();
         sonidoOpciones.seek(sonidoOpciones.getStartTime());
-        this.stage.setScene(this.proximaEscena);
+        ContenedorOpciones contenedorOpciones = new ContenedorOpciones(stage, stage.getScene());
+        Scene escenaOpciones = new Scene(contenedorOpciones, 960,540);
+        this.stage.setScene(escenaOpciones);
     }
 }
