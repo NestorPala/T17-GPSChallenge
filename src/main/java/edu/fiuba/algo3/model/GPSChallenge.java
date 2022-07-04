@@ -52,10 +52,8 @@ public class GPSChallenge {
     }
 
     public void escogerSiguienteJugador() {
-        if(jugadores.size() > 0){
+        if(jugadores.size() > 0) {
             jugadorActual = jugadores.poll();
-        }else{
-            jugadorActual = null;
         }
     }
 

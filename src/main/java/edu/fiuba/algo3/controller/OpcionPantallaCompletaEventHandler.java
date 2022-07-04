@@ -20,7 +20,11 @@ public class OpcionPantallaCompletaEventHandler implements EventHandler<ActionEv
         if(!stage.isFullScreen()){
             stage.hide();
             stage.setFullScreen(true);
-            opcionPantallaCompleta.setDisable(true);
+            stage.show();
+        }
+        else{
+            stage.hide();
+            stage.setFullScreen(false);
             stage.show();
         }
     }
