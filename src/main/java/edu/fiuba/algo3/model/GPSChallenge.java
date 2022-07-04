@@ -56,16 +56,20 @@ public class GPSChallenge {
         return jugadores.size() > 0;
     }
 
-    public JSONObject obtenerTop10() {
-        JSONObject obj = new JSONObject();
+    public String[] obtenerTop10() {
 
-        for(int i = 0; i < 10; i++){
+        String[] top = new String[10];
+
+        for(int i = 0;i < 10; i++){
+            top[i] = "-;-";
             if(ranking.obtenerJugadorDelTop(i) != null){
-                obj.put(ranking.obtenerJugadorDelTop(i).nombre(),ranking.obtenerJugadorDelTop(i).puntaje());
+                String nombre = ranking.obtenerJugadorDelTop(i).nombre();
+                String puntaje = Double.toString(ranking.obtenerJugadorDelTop(i).puntaje());
+                top[i] = (nombre + ";" + puntaje);
             }
         }
 
-        return obj;
+        return top;
     }
 
     public Jugador obtenerMejorJugador() {

@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.integration;
 
+import org.json.JSONObject;
 import org.junit.jupiter.api.Test;
 
 import edu.fiuba.algo3.model.Direccion;
@@ -13,6 +14,7 @@ import edu.fiuba.algo3.model.Vehiculos.Auto;
 import edu.fiuba.algo3.model.Vehiculos.Moto;
 
 import java.io.StringWriter;
+import java.util.Iterator;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.anyDouble;
@@ -26,7 +28,7 @@ public class Integracion2Test {
         GPSChallenge juego = new GPSChallenge();
 
         Escenario escenario = Escenario.getInstance();
-        escenario = escenario.reset(); // VER SI SE PUEDE HACER DE OTRA FORMA,NO CREO.
+        escenario = escenario.reset();
         escenario.insertarChocable(new Pozo(), new Posicion(1, 2));
         escenario.insertarChocable(new Piquete(), new Posicion(1, 3));
         Randomizer randomMock = mock(Randomizer.class);
@@ -54,7 +56,15 @@ public class Integracion2Test {
         juego.mover(Direccion.derecha());
         juego.mover(Direccion.arriba());
 
-        System.out.println(juego.obtenerTop10());
+        String[] top = juego.obtenerTop10();
+
+
+
+        assertEquals("Juan", top[0].split(";")[0]);
+        assertEquals("3.0", top[0].split(";")[1]);
+
+        assertEquals("Alejo", top[1].split(";")[0]);
+        assertEquals("15.25", top[1].split(";")[1]);
 
         assertEquals(3, juego.obtenerMejorJugador().puntaje());
     }
