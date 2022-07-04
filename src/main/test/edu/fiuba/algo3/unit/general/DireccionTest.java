@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.unit;
+package edu.fiuba.algo3.unit.general;
 
 import org.junit.jupiter.api.Test;
 
@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class DireccionTest {
 
     @Test
-    public void lasDireccionesSeCalculanCorrectamente(){
+    public void test01_lasDireccionesSeCalculanCorrectamente(){
         Direccion direccion = new Direccion(1, 1);
 
         Posicion nuevaPos = direccion.calcularNuevaPosicion(new Posicion(1,1));

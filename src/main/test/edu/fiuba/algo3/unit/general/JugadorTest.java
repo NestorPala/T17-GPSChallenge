@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.unit;
+package edu.fiuba.algo3.unit.general;
 
 import edu.fiuba.algo3.model.Chocables.Meta;
 import org.junit.jupiter.api.Test;
@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class JugadorTest {
 
   @Test
-  public void aplicarUnMovimientoAlJugadorCambiaSuPosicion() {
+  public void test01_aplicarUnMovimientoAlJugadorCambiaSuPosicion() {
     Vehiculo vehiculoInicial = new Moto();
     Jugador jugador = new Jugador(vehiculoInicial, "Juan");
     Escenario escenario = Escenario.getInstance();
@@ -27,7 +27,7 @@ public class JugadorTest {
   }
 
   @Test
-  public void moverAlJugadorHaciaUnaPosicionInvalidaNoHaceNada() {
+  public void test02_moverAlJugadorHaciaUnaPosicionInvalidaNoHaceNada() {
     Escenario escenario = Escenario.getInstance().reset();
     Jugador jugador = new Jugador(new Auto(), "Juan");
 
@@ -38,7 +38,7 @@ public class JugadorTest {
   }
 
   @Test
-  public void elJugadorSeCreaConElVehiculoCorrecto(){
+  public void test03_elJugadorSeCreaConElVehiculoCorrecto(){
     Vehiculo auto = new Auto();
 
     Jugador jugador = new Jugador(auto, "Pablo");
@@ -47,7 +47,7 @@ public class JugadorTest {
   }
 
   @Test
-  public void elJugadorNoSeMoveraSiYaLlegoALaMeta(){
+  public void test04_elJugadorNoSeMoveraSiYaLlegoALaMeta(){
     Escenario escenario = Escenario.getInstance().reset();
     escenario.insertarChocable(new Meta(), new Posicion(2,1));
 
@@ -60,7 +60,7 @@ public class JugadorTest {
     assertEquals(jugador.posicion(), new Posicion(2,1));
   }
 
-  @Test
+/*  @Test
   public void noSePuedeCrearUnJugadorConPosicionInicialInvalida() {}
 
   @Test
@@ -82,5 +82,5 @@ public class JugadorTest {
   public void alPasarDeVueltaPorLaMismaSorpresaLaCantidadDePuntosEsCorrecta() {}
 
   @Test
-  public void cuandoElJugadorLlegaALaMetaLaCantidadDePuntosEsCorrecta() {}
+  public void cuandoElJugadorLlegaALaMetaLaCantidadDePuntosEsCorrecta() {}*/
 }

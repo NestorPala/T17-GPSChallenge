@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.unit;
+package edu.fiuba.algo3.unit.chocables;
 
 import edu.fiuba.algo3.model.Chocables.Chocable;
 import edu.fiuba.algo3.model.Chocables.Meta;
@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class MetaTest {
 
     @Test
-    public void SiElJugadorLlegaALaMetaFinalizaElJuego(){
+    public void test01_SiElJugadorLlegaALaMetaFinalizaElJuego(){
         Chocable meta = new Meta();
         Jugador j1 = new Jugador(new Moto(), "Pablo");
         Jugador j2 = new Jugador(new Auto(), "Roberto");

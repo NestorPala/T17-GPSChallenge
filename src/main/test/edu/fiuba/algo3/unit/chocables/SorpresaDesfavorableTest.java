@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.unit;
+package edu.fiuba.algo3.unit.chocables;
 
 import org.junit.jupiter.api.Test;
 
@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class SorpresaDesfavorableTest {
 
     @Test
-    public void puedoObtenerLosPuntosDePenalizacionCorrectosPorCadaVehiculo(){
+    public void test01_puedoObtenerLosPuntosDePenalizacionCorrectosPorCadaVehiculo(){
         Chocable sorpresaDesfavorable = new SorpresaDesfavorable();
         Jugador jugador1 = new Jugador(new Auto(), "Juan");
         jugador1.recibirPenalizacion(10);

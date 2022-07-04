@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.unit;
+package edu.fiuba.algo3.unit.general;
 
 import org.junit.jupiter.api.Test;
 
@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class GPSChallengeTest {
     @Test
-    public void sePuedeJugarCorrectamente(){
+    public void test01_sePuedeJugarCorrectamente(){
         GPSChallenge juego = new GPSChallenge(20,20);
         Jugador pablo = new Jugador(new Moto(),"Pablo");
 
@@ -27,12 +27,20 @@ public class GPSChallengeTest {
     }
 
     @Test
-    public void puedoTerminarElJuego(){
+    public void test02_sePuedenTenerVariosJugadores(){
         Escenario escenario = Escenario.getInstance().reset();
-
         GPSChallenge juego = new GPSChallenge(10,10);
         Jugador luke = new Jugador(new Auto(), "luke");
+        Jugador mariano = new Jugador(new Auto(), "mariano");
 
-        
+        juego.agregarJugador(luke);
+        assertFalse(juego.hayJugadoresPorJugar());
+
+        juego.agregarJugador(mariano);
+        assertTrue(juego.hayJugadoresPorJugar());
+
+        assertEquals(juego.jugadorActual(), luke);
+        juego.escogerSiguienteJugador();
+        assertEquals(juego.jugadorActual(), mariano);
     }
 }

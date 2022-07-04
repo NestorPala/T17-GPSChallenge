@@ -62,7 +62,7 @@ public class Escenario {
     public static Escenario getInstance()
     {
         if (instance == null) {
-            instance = new Escenario(10,10);
+            instance = Escenario.getInstance(10,10);
         }
         return instance;
     }

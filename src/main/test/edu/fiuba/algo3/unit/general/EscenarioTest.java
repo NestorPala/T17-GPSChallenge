@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.unit;
+package edu.fiuba.algo3.unit.general;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;
@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class EscenarioTest {
   @Test
-  public void noSePuedeCrearUnEscenarioConUnTamanioInvalido() {
+  public void test01_noSePuedeCrearUnEscenarioConUnTamanioInvalido() {
     Executable tarea1 = () -> Escenario.getInstance(-2, 5);
     assertThrows(TamañoDelEscenarioInvalido.class, tarea1);
 
@@ -21,7 +21,7 @@ public class EscenarioTest {
   }
 
   @Test
-  public void noSePuedeColocarUnChocableFueraDeLosLimitesDelEscenario() {
+  public void test02_noSePuedeColocarUnChocableFueraDeLosLimitesDelEscenario() {
     Escenario escenario = Escenario.getInstance(10,10);
     Pozo pozo = new Pozo();
 
@@ -30,13 +30,13 @@ public class EscenarioTest {
   }
 
   @Test
-  public void noSePuedeObtenerUnChocableDeUnLugarFueraDeLosLimitesDelEscenario() {
+  public void test03_noSePuedeObtenerUnChocableDeUnLugarFueraDeLosLimitesDelEscenario() {
     Escenario escenario = Escenario.getInstance();
     assertNull(escenario.obtenerChocable(new Posicion(11, 11)));
   }
 
   @Test
-  public void soloPuedoTenerUnEscenarioDefinido(){
+  public void test04_soloPuedoTenerUnEscenarioDefinido(){
     Escenario escenario1 = Escenario.getInstance(11,11);
     Escenario escenario2 = Escenario.getInstance(12,12);
 
@@ -44,7 +44,7 @@ public class EscenarioTest {
   }
 
   @Test
-  public void SiChequeoUnElementoFueraDelEscenarioObtengoUnaRespuestaCorrecta() {
+  public void test05_SiChequeoUnElementoFueraDelEscenarioObtengoUnaRespuestaCorrecta() {
     Escenario escenario = Escenario.getInstance();
 
     assertFalse(escenario.contienePosicion(new Posicion(11, 5)));
@@ -54,7 +54,7 @@ public class EscenarioTest {
   }
 
   @Test
-  public void sePuedeCrearUnEscenarioDefinido(){
+  public void test06_sePuedeCrearUnEscenarioDefinido(){
     Escenario escenario = Escenario.getInstance().reset();
 
     assertEquals(escenario.alto(),10);

@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.unit;
+package edu.fiuba.algo3.unit.general;
 
 import org.junit.jupiter.api.Test;
 
@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class RandomizadorTest {
 
     @Test
-    public void elTestDaValoresCorrectos(){
+    public void test01_elTestDaValoresCorrectos(){
         Random randomizador = new Random();
 
         assertFalse(randomizador.random(2));

@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.unit;
+package edu.fiuba.algo3.unit.chocables;
 
 import org.junit.jupiter.api.Test;
 
@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class PiqueteTest {
 
     @Test
-    public void puedoObtenerLosPuntosDePenalizacionCorrectosPorCadaVehiculo(){
+    public void test01_puedoObtenerLosPuntosDePenalizacionCorrectosPorCadaVehiculo(){
         Chocable piquete = new Piquete();
         Vehiculo vehiculo1 = new Auto();
         Jugador jugador1 = new Jugador(vehiculo1, "Juan");

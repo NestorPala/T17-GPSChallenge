@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.unit;
+package edu.fiuba.algo3.unit.chocables;
 
 import org.junit.jupiter.api.Test;
 
@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class VacioTest {
 
     @Test
-    public void LosPuntosDePenalizacionPorChocarConUnVacioSonCero(){
+    public void test01_LosPuntosDePenalizacionPorChocarConUnVacioSonCero(){
         Chocable vacio = new Vacio();
         Puntaje puntaje = new Puntaje();
 

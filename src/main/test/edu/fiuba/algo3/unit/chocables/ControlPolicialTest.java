@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.unit;
+package edu.fiuba.algo3.unit.chocables;
 
 import org.junit.jupiter.api.Test;
 
@@ -18,7 +18,7 @@ import static org.mockito.Mockito.*;
 public class ControlPolicialTest {
 
     @Test
-    public void puedoObtenerLosPuntosDePenalizacionCorrectosSiSeAplicaLaProbabilidad(){
+    public void test01_puedoObtenerLosPuntosDePenalizacionCorrectosSiSeAplicaLaProbabilidad(){
         Randomizer randomMock = mock(Randomizer.class);
         when(randomMock.random(anyDouble())).thenReturn(true);
 
@@ -39,7 +39,7 @@ public class ControlPolicialTest {
     }
 
     @Test
-    public void puedoObtenerLosPuntosDePenalizacionCorrectosSiNoSeAplicaLaProbabilidad(){
+    public void test02_puedoObtenerLosPuntosDePenalizacionCorrectosSiNoSeAplicaLaProbabilidad(){
         Randomizer randomMock = mock(Randomizer.class);
         when(randomMock.random(anyDouble())).thenReturn(false);
 

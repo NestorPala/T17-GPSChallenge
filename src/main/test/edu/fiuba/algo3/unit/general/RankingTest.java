@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.unit;
+package edu.fiuba.algo3.unit.general;
 
 import edu.fiuba.algo3.model.Chocables.Meta;
 import edu.fiuba.algo3.model.Direccion;

@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.unit;
+package edu.fiuba.algo3.unit.general;
 
 import org.junit.jupiter.api.Test;
 
@@ -9,7 +9,7 @@ import edu.fiuba.algo3.model.Vehiculos.Moto;
 
 public class LoggerTest {
     @Test
-    public void sePuedeLoggearCorrectamente(){
+    public void test01_sePuedeLoggearCorrectamente(){
         Logger.getInstance().activar();
 
         Jugador jugador = new Jugador(new Moto(), "Jorge");

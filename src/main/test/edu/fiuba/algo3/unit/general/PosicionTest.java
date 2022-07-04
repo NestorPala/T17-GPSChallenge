@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.unit;
+package edu.fiuba.algo3.unit.general;
 
 import org.junit.jupiter.api.Test;
 
@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class PosicionTest {
     @Test
-    public void puedoChequearSiDosPosicionesSonIguales() {
+    public void test01_puedoChequearSiDosPosicionesSonIguales() {
         Posicion p1 = new Posicion(0, 0);
         Posicion p2 = new Posicion(5, 5);
         Posicion p4 = new Posicion(5,0);

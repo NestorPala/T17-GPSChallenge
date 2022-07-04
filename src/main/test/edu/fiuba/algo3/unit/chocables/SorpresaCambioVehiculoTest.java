@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.unit;
+package edu.fiuba.algo3.unit.chocables;
 
 import org.junit.jupiter.api.Test;
 
@@ -18,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class SorpresaCambioVehiculoTest {
     @Test
-    public void SeCambianLosVehiculosCorrectamente(){
+    public void test01_SeCambianLosVehiculosCorrectamente(){
         Escenario escenario = Escenario.getInstance();
         Moto moto = new Moto();
         Jugador jugador = new Jugador(moto, "Juan");
