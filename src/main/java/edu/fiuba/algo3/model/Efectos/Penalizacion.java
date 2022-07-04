@@ -12,8 +12,7 @@ public class Penalizacion implements IEfecto{
 
     @Override
     public void aplicarEfecto(Jugador jugador) {
-        Logger logger = Logger.getInstance();
-        logger.log("El jugador recibe una penlizacion de " + this.movimientos);
+        Logger.getInstance().log("El jugador recibe una penlización de " + this.movimientos);
         jugador.recibirPenalizacion(this.movimientos);
     }
 }

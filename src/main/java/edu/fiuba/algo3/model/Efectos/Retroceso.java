@@ -10,8 +10,7 @@ public class Retroceso implements IEfecto {
 
     @Override
     public void aplicarEfecto(Jugador jugador) {
-        Logger logger = Logger.getInstance();
-        logger.log("El jugador retrocede una posición a causa de un obstáculo");
+        Logger.getInstance().log("El jugador retrocede una posición a causa de un obstáculo");
         jugador.retrocederPosicionAnterior();
     }
     

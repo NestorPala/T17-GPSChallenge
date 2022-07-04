@@ -77,8 +77,7 @@ public class Entrega1Test {
 
   @Test
   public void test05_todoterrenoChocaConTresPozosYEsPenalizadoConDosMovimientos() {
-    Logger log = Logger.getInstance();
-    log.activar();
+    Logger.getInstance().activar();
     Escenario escenario = Escenario.getInstance();
     Vehiculo todoterreno = new Todoterreno();
     Jugador jugador = new Jugador(todoterreno, "Juan");

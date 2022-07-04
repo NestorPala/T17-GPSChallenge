@@ -2,7 +2,11 @@ package edu.fiuba.algo3.model;
 
 public class Logger {
     private static Logger instance;
-    private boolean activado = false;
+    private boolean activado;
+
+    private Logger(){
+        this.activado = false;
+    }
 
     public static Logger getInstance() {
         if(instance == null){

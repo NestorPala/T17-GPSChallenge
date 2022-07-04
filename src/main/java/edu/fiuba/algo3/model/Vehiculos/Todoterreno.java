@@ -7,8 +7,7 @@ public class Todoterreno extends Vehiculo {
     private int pozosEncontrados;
 
     public Todoterreno() {
-        Logger logger = Logger.getInstance();
-        logger.log("El jugador tiene como vehiculo una 4x4");
+        Logger.getInstance().log("El jugador tiene como vehiculo una 4x4");
         this.pozosEncontrados = 0;
     }
 

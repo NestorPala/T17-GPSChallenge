@@ -7,8 +7,7 @@ import edu.fiuba.algo3.model.Efectos.IEfecto;
 public class Auto extends Vehiculo {
 
     public Auto(){
-        Logger logger = Logger.getInstance();
-        logger.log("El jugador tiene como vehiculo un auto");
+        Logger.getInstance().log("El jugador tiene como vehiculo un auto");
     }
     @Override
     public IEfecto chocar(Chocable chocable) {

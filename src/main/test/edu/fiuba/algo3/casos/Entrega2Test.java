@@ -36,8 +36,7 @@ public class Entrega2Test {
 
   @Test
   public void test07_UnVehiculoAtraviesaLaCiudadYEncuentraUnaSorpresaDesfavorable() {
-    Logger logger = Logger.getInstance();
-    logger.activar();
+    Logger.getInstance().activar();
     Escenario escenario = Escenario.getInstance();
     Vehiculo moto = new Moto();
     Jugador jugador = new Jugador(moto, "Juan");

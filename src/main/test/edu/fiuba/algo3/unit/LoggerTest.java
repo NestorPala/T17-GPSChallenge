@@ -10,13 +10,12 @@ import edu.fiuba.algo3.model.Vehiculos.Moto;
 public class LoggerTest {
     @Test
     public void sePuedeLoggearCorrectamente(){
-        Logger logger = Logger.getInstance();
-        logger.activar();
+        Logger.getInstance().activar();
 
         Jugador jugador = new Jugador(new Moto(), "Jorge");
         jugador.mover(Direccion.derecha());
 
-        logger.desactivar();
+        Logger.getInstance().desactivar();
         
         jugador.mover(Direccion.abajo());
     }

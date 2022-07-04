@@ -9,7 +9,6 @@ import edu.fiuba.algo3.model.Jugador.Jugador;
 
 public class Ranking {
     private final List<Jugador> jugadores;
-    private final Logger logger = Logger.getInstance();
 
     public Ranking() {
         jugadores = new LinkedList<Jugador>();
