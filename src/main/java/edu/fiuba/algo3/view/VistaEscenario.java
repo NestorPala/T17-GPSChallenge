@@ -44,6 +44,8 @@ public class VistaEscenario extends Group {
 
         tabla.setVgap(10);
         tabla.setHgap(10);
+        tabla.setBackground(new Background(new BackgroundFill(Color.rgb(167, 189, 217), new CornerRadii(2.5), new Insets(5))));
+        tabla.setBorder(new Border(new BorderStroke(Color.rgb(167, 189, 217), BorderStrokeStyle.SOLID, new CornerRadii(2.5), new BorderWidths(20))));
 
         this.addView(tabla);
     }

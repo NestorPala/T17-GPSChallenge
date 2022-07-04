@@ -19,31 +19,31 @@ public class Imagenes {
         if (chocable instanceof ControlPolicial) {
             ImageView imagen = new ImageView();
             imagen.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/view/fotos/police.png").toURI().toString()));
-            imagen.setOpacity(0.75);
+            imagen.setOpacity(0.625);
             return imagen;
         }
         if (chocable instanceof Pozo) {
             ImageView imagen = new ImageView();
             imagen.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/view/fotos/pozo.png").toURI().toString()));
-            imagen.setOpacity(0.75);
+            imagen.setOpacity(0.625);
             return imagen;
         }
         if (chocable instanceof Piquete) {
             ImageView imagen = new ImageView();
             imagen.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/view/fotos/manifestation.png").toURI().toString()));
-            imagen.setOpacity(0.75);
+            imagen.setOpacity(0.625);
             return imagen;
         }
         if (chocable instanceof SorpresaFavorable) {
             ImageView imagen = new ImageView();
             imagen.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/view/fotos/gift.png").toURI().toString()));
-            imagen.setOpacity(0.75);
+            imagen.setOpacity(0.625);
             return imagen;
         }
         if (chocable instanceof SorpresaDesfavorable) {
             ImageView imagen = new ImageView();
             imagen.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/view/fotos/gift.png").toURI().toString()));
-            imagen.setOpacity(0.75);
+            imagen.setOpacity(0.625);
             return imagen;
         }
         if (chocable instanceof SorpresaCambioVehiculo) {

@@ -42,6 +42,7 @@ public class ContenedorEscenario extends BorderPane {
         this.setMapa(juego);
         this.setPanelEstado(juego);
         this.setMenu(stage);
+        this.setStyle("-fx-background-color: #333333;");
     }
 
     private void setMapa(GPSChallenge juego) {
@@ -69,43 +70,64 @@ public class ContenedorEscenario extends BorderPane {
         this.puntaje = new Label();
         puntaje.setFont(Font.font("Trebuchet MS", 30));
         puntaje.setPrefSize(240,80);
+        puntaje.setStyle(
+                "-fx-background-radius: 5;" +
+                "-fx-text-fill: #010B40;" +
+                "-fx-background-color: #88AABF;"+
+                "-fx-alignment: center");
 
-        coordenadas = new Label(juego.jugadorActual().posicion().toString());
+        this.coordenadas = new Label(juego.jugadorActual().posicion().toString());
         coordenadas.setFont(Font.font("Trebuchet MS", 30));
         coordenadas.setPrefSize(240,50);
+        coordenadas.setStyle(
+                "-fx-padding: 10;" +
+                "-fx-background-radius: 5;" +
+                "-fx-text-fill: #010B40;" +
+                "-fx-background-color: #88AABF;"+
+                "-fx-alignment: center");
 
         this.updateEstado(juego.jugadorActual());
 
         Label labelAcciones = new Label("Acciones:");
         labelAcciones.setFont(Font.font("Trebuchet MS", 30));
         labelAcciones.setPrefSize(240,50);
+        labelAcciones.setStyle(
+                "-fx-padding: 10;" +
+                "-fx-background-radius: 5;" +
+                "-fx-text-fill: #010B40;" +
+                "-fx-background-color: #88AABF;"+
+                "-fx-alignment: center");
 
         this.botonDerecha = new Button();
         botonDerecha.setText("Derecha");
         botonDerecha.setFont(Font.font("Trebuchet MS", 20));
         botonDerecha.setPrefSize(240,50);
+        botonDerecha.setStyle("-fx-background-color: #BDD9F2;" + "-fx-text-fill: #010B40;");
         botonDerecha.setOnAction(new BotonDerechaEventHandler(vistaJugador2, juego, this));
 
         this.botonIzquierda = new Button();
         botonIzquierda.setText("Izquierda");
         botonIzquierda.setFont(Font.font("Trebuchet MS", 20));
         botonIzquierda.setPrefSize(240,50);
+        botonIzquierda.setStyle("-fx-background-color: #BDD9F2;" + "-fx-text-fill: #010B40;");
         botonIzquierda.setOnAction(new BotonIzquierdaEventHandler(vistaJugador2, juego, this));
 
         this.botonAbajo = new Button();
         botonAbajo.setText("Arriba");
         botonAbajo.setFont(Font.font("Trebuchet MS", 20));
         botonAbajo.setPrefSize(240,50);
+        botonAbajo.setStyle("-fx-background-color: #BDD9F2;" + "-fx-text-fill: #010B40;");
         botonAbajo.setOnAction(new BotonAbajoEventHandler(vistaJugador2, juego, this));
 
         this.botonArriba = new Button();
         botonArriba.setText("Abajo");
         botonArriba.setFont(Font.font("Trebuchet MS", 20));
         botonArriba.setPrefSize(240,50);
+        botonArriba.setStyle("-fx-background-color: #BDD9F2;" + "-fx-text-fill: #010B40;");
         botonArriba.setOnAction(new BotonArribaEventHandler(vistaJugador2, juego, this));
 
         VBox contenedorVertical = new VBox(puntaje, coordenadas, labelAcciones, botonArriba, botonAbajo, botonIzquierda, botonDerecha);
-        contenedorVertical.setSpacing(10);
+        contenedorVertical.setSpacing(20);
         contenedorVertical.setPadding(new Insets(15));
 
         this.setLeft(contenedorVertical);
@@ -114,8 +136,6 @@ public class ContenedorEscenario extends BorderPane {
     public void updateEstado(Jugador jugador) {
         this.puntaje.setText("Jugador: " + jugador.nombre() + "\n" + "Puntaje: " + new DecimalFormat("#.##").format(jugador.puntaje()));
         this.puntaje.setFont(Font.font("Trebuchet MS", 30));
-
-        // this.setRight(this.puntaje);
 
         this.coordenadas.setText("Posicion: " + jugador.posicion().toString());
     }
