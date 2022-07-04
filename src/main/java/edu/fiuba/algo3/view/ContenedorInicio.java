@@ -46,21 +46,19 @@ public class ContenedorInicio extends VBox {
         botonJugar.setText("Jugar");
         botonJugar.setFont(Font.font("SansSerif", 50));
         botonJugar.setPrefSize(300,100);
-        botonJugar.setStyle("-fx-background-color: #BDD9F2;" + "-fx-text-fill: #010B40;");
-
-        System.out.println(Font.getFontNames());
+        botonJugar.setStyle("-fx-background-color: #BDD9F2;" + "-fx-text-fill: #010B40;" + "-fx-background-radius: 10;");
 
         Button botonOpciones = new Button();
         botonOpciones.setText("Opciones");
         botonOpciones.setFont(Font.font("SansSerif", 50));
         botonOpciones.setPrefSize(300,100);
-        botonOpciones.setStyle("-fx-background-color: #BDD9F2;" + "-fx-text-fill: #010B40;");
+        botonOpciones.setStyle("-fx-background-color: #BDD9F2;" + "-fx-text-fill: #010B40;" + "-fx-background-radius: 10;");
 
         Button botonSalir = new Button();
         botonSalir.setText("Salir");
         botonSalir.setFont(Font.font("SansSerif", 50));
         botonSalir.setPrefSize(300,100);
-        botonSalir.setStyle("-fx-background-color: #BDD9F2;" + "-fx-text-fill: #010B40;");
+        botonSalir.setStyle("-fx-background-color: #BDD9F2;" + "-fx-text-fill: #010B40;" + "-fx-background-radius: 10;");
 
         Label texto = new Label();
         texto.setText("GPS CHALLENGE");

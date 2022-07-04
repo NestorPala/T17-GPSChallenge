@@ -61,7 +61,7 @@ public class ContenedorDificultad extends VBox {
         botonSeleccionar.setText("Seleccionar");
         botonSeleccionar.setFont(Font.font("SansSerif", 36));
         botonSeleccionar.setPrefSize(300,100);
-        botonSeleccionar.setStyle("-fx-background-color: #BDD9F2;" + "-fx-text-fill: #010B40;");
+        botonSeleccionar.setStyle("-fx-background-color: #BDD9F2;" + "-fx-text-fill: #010B40;" + "-fx-background-radius: 10;");
 
         botonSeleccionar.setOnAction(new BotonSeleccionarEventHandler(this.stage, 13));
 

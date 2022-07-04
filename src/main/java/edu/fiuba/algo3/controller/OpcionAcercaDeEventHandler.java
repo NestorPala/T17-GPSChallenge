@@ -10,8 +10,8 @@ public class OpcionAcercaDeEventHandler implements EventHandler<ActionEvent> {
     public void handle(ActionEvent actionEvent) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Acerca de...");
-        alert.setHeaderText("Trabajo practico de algoritmos y programacion III");
-        alert.setContentText("Integrantes: \n\nMatias Vallejos\nAlejo Fabregas\nNestor Palavecino\nLorenzo Ahumada");
+        alert.setHeaderText("Trabajo Práctico de Algoritmos y Programación III");
+        alert.setContentText("Integrantes: \n\nMatías Vallejos\nAlejo Fábregas\nNéstor Palavecino\nLorenzo Ahumada");
         alert.show();
     }
 }

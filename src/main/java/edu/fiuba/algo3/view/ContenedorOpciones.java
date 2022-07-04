@@ -22,55 +22,27 @@ public class ContenedorOpciones extends VBox {
         this.setAlignment(Pos.CENTER);
         this.setSpacing(50);
         this.setPadding(new Insets(50));
+        this.setStyle("-fx-background-color: #333333;");
 
         Label textoOpciones = new Label();
         textoOpciones.setText("OPCIONES");
-        textoOpciones.setFont(Font.font("Trebuchet MS", 100));
-
-        Label textoDificultad = new Label();
-        textoDificultad.setText("Elegir dificultad");
-        textoDificultad.setFont(Font.font("Trebuchet MS", 36));
-
-        ToggleGroup grupoBotones = new ToggleGroup();
-
-        RadioButton botonFacil = new RadioButton("Fácil");
-        botonFacil.setFont(Font.font("Trebuchet MS", 24));
-        botonFacil.setToggleGroup(grupoBotones);
-
-        RadioButton botonNormal = new RadioButton("Normal");
-        botonNormal.setFont(Font.font("Trebuchet MS", 24));
-        botonNormal.setToggleGroup(grupoBotones);
-        botonNormal.setSelected(true);
-
-        RadioButton botonDificil = new RadioButton("Difícil");
-        botonDificil.setFont(Font.font("Trebuchet MS", 24));
-        botonDificil.setToggleGroup(grupoBotones);
-
-        botonFacil.selectedProperty().addListener((observable, wasSelected, isSelected) -> {
-            if (isSelected) {
-                System.out.println("FACIL");
-            }
-        });
-
-        botonNormal.selectedProperty().addListener((observable, wasSelected, isSelected) -> {
-            if (isSelected) {
-                System.out.println("NORMAL");
-            }
-        });
-
-        botonDificil.selectedProperty().addListener((observable, wasSelected, isSelected) -> {
-            if (isSelected) {
-                System.out.println("DIFICIL");
-            }
-        });
+        textoOpciones.setFont(Font.font("Trebuchet MS", 78));
+        textoOpciones.setStyle(
+                "-fx-padding: 10;" +
+                        "-fx-background-radius: 5;" +
+                        "-fx-font-weight: bold;" +
+                        "-fx-text-fill: #010B40;" +
+                        "-fx-background-color: #88AABF;"+
+                        "-fx-alignment: center");
 
         Button botonAtras = new Button();
         botonAtras.setText("Atrás");
-        botonAtras.setFont(Font.font("Trebuchet MS", 50));
+        botonAtras.setFont(Font.font("SansSerif", 36));
         botonAtras.setPrefSize(300,100);
+        botonAtras.setStyle("-fx-background-color: #BDD9F2;" + "-fx-text-fill: #010B40;" + "-fx-background-radius: 10;");
         botonAtras.setOnAction(new BotonAtrasEventHandler(stage, escenaAnterior));
 
-        this.getChildren().addAll(textoOpciones, textoDificultad, botonFacil, botonNormal, botonDificil, botonAtras);
+        this.getChildren().addAll(textoOpciones, botonAtras);
     }
 
 }

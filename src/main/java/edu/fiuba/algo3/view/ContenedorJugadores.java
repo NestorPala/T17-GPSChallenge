@@ -61,7 +61,7 @@ public class ContenedorJugadores extends VBox {
         botonAgregarJugador.setText("Agregar Jugador");
         botonAgregarJugador.setFont(Font.font("SansSerif", 36));
         botonAgregarJugador.setPrefSize(350,100);
-        botonAgregarJugador.setStyle("-fx-background-color: #BDD9F2;" + "-fx-text-fill: #010B40;");
+        botonAgregarJugador.setStyle("-fx-background-color: #BDD9F2;" + "-fx-text-fill: #010B40;" + "-fx-background-radius: 10;");
         botonAgregarJugador.setOnAction(new BotonAgregarJugadorEventHandler(inputNombre, opcionesVehiculo, juego));
 
 
@@ -69,7 +69,7 @@ public class ContenedorJugadores extends VBox {
         botonComenzarJuego.setText("Comenzar juego");
         botonComenzarJuego.setFont(Font.font("SansSerif", 36));
         botonComenzarJuego.setPrefSize(350,100);
-        botonComenzarJuego.setStyle("-fx-background-color: #BDD9F2;" + "-fx-text-fill: #010B40;");
+        botonComenzarJuego.setStyle("-fx-background-color: #BDD9F2;" + "-fx-text-fill: #010B40;" + "-fx-background-radius: 10;");
         botonComenzarJuego.setOnAction(new BotonComenzarJuegoEventHandler(this, juego));
 
         this.getChildren().addAll(texto, inputNombre, opcionesVehiculo, botonAgregarJugador, botonComenzarJuego);
