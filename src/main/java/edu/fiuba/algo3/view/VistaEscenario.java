@@ -14,8 +14,8 @@ public class VistaEscenario extends Group {
 
     public double ancho;
     public double alto;
-    private double tileAncho = 32;
-    private double tileAlto = 32;
+    private double tileAncho = 36;
+    private double tileAlto = 36;
 
     private GridPane tabla;
 
@@ -36,7 +36,7 @@ public class VistaEscenario extends Group {
                 v.setMinWidth(this.tileAncho);
                 v.setBackground(new Background(new BackgroundFill(Color.rgb(227,227,227), new CornerRadii(2.5), new Insets(-1))));
                 v.getChildren().add(0, imagenes.devolverImagenes(escenario.obtenerChocable(new Posicion(i,j))));
-                v.setPadding(new Insets(4));
+                v.setPadding(new Insets(2));
                 panes[i][j] = v;
                 tabla.add(v , i, j);
             }
