@@ -2,8 +2,6 @@ package edu.fiuba.algo3.model;
 
 import java.util.ArrayDeque;
 import java.util.Queue;
-import org.json.JSONObject;
-
 import edu.fiuba.algo3.model.Jugador.Jugador;
 
 public class GPSChallenge {
@@ -40,20 +38,25 @@ public class GPSChallenge {
 
     public void mover(Direccion unaDireccion) {
         Logger.getInstance().log("Mover al jugador " + jugadorActual.nombre());
-        if (jugadorActual.puedeSeguirJugando()) {
-            jugadorActual.mover(unaDireccion);
-        }
+        jugadorActual.mover(unaDireccion);
+
         if (!jugadorActual.puedeSeguirJugando()) {
             Logger.getInstance().log("El jugador " + jugadorActual.nombre() + " llego a la meta");
             ranking.agregar(jugadorActual);
-            if (hayJugadoresPorJugar()) {
-                jugadorActual = jugadores.poll();
-            }
+            escogerSiguienteJugador();
         }
     }
 
-    public boolean hayJugadoresPorJugar() {
+    public boolean hayJugadoresPorJugar(){
         return jugadores.size() > 0;
+    }
+
+    public void escogerSiguienteJugador() {
+        if(jugadores.size() > 0){
+            jugadorActual = jugadores.poll();
+        }else{
+            jugadorActual = null;
+        }
     }
 
     public String[] obtenerTop10() {
