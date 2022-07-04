@@ -11,6 +11,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuBar;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
@@ -26,6 +27,7 @@ public class ContenedorEscenario extends BorderPane {
     VistaEscenario vistaEscenario;
     VistaJugador vistaJugador2;
     VBox contenedorCentral;
+    BarraDeMenu menuBar;
     Label puntaje;
     Label coordenadas;
     private Button botonDerecha;
@@ -40,6 +42,7 @@ public class ContenedorEscenario extends BorderPane {
         this.puntaje = new Label();
         this.setMapa(juego);
         this.setPanelEstado(juego);
+        this.setMenu(stage);
     }
 
     private void setMapa(GPSChallenge juego) {
@@ -55,6 +58,11 @@ public class ContenedorEscenario extends BorderPane {
         contenedorCentral.setPadding(new Insets(25));
 
         this.setCenter(contenedorCentral);
+    }
+
+    private void setMenu(Stage stage){
+        this.menuBar = new BarraDeMenu(stage);
+        this.setTop(menuBar);
     }
 
     private void setPanelEstado(GPSChallenge juego) {
