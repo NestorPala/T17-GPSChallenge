@@ -14,27 +14,27 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class MetaTest {
 
-    @Test
-    public void test01_SiElJugadorLlegaALaMetaFinalizaElJuego(){
-        Chocable meta = new Meta();
-        Jugador j1 = new Jugador(new Moto(), "Pablo");
-        Jugador j2 = new Jugador(new Auto(), "Roberto");
-        Jugador j3 = new Jugador(new Todoterreno(), "Nestor");
+  @Test
+  public void test01_SiElJugadorLlegaALaMetaFinalizaElJuego() {
+    Chocable meta = new Meta();
+    Jugador j1 = new Jugador(new Moto(), "Pablo");
+    Jugador j2 = new Jugador(new Auto(), "Roberto");
+    Jugador j3 = new Jugador(new Todoterreno(), "Nestor");
 
-        assertTrue(j1.puedeSeguirJugando());
-        assertTrue(j2.puedeSeguirJugando());
-        assertTrue(j3.puedeSeguirJugando());
+    assertTrue(j1.puedeSeguirJugando());
+    assertTrue(j2.puedeSeguirJugando());
+    assertTrue(j3.puedeSeguirJugando());
 
-        IEfecto e1 = meta.devolverEfecto(new Moto());
-        IEfecto e2 = meta.devolverEfecto(new Auto());
-        IEfecto e3 = meta.devolverEfecto(new Todoterreno());
+    IEfecto e1 = meta.devolverEfecto(new Moto());
+    IEfecto e2 = meta.devolverEfecto(new Auto());
+    IEfecto e3 = meta.devolverEfecto(new Todoterreno());
 
-        e1.aplicarEfecto(j1);
-        e2.aplicarEfecto(j2);
-        e3.aplicarEfecto(j3);
+    e1.aplicarEfecto(j1);
+    e2.aplicarEfecto(j2);
+    e3.aplicarEfecto(j3);
 
-        assertFalse(j1.puedeSeguirJugando());
-        assertFalse(j2.puedeSeguirJugando());
-        assertFalse(j3.puedeSeguirJugando());
-    }
+    assertFalse(j1.puedeSeguirJugando());
+    assertFalse(j2.puedeSeguirJugando());
+    assertFalse(j3.puedeSeguirJugando());
+  }
 }

@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.controller;
 
-import edu.fiuba.algo3.model.GPSChallenge;
+import edu.fiuba.algo3.model.General.GPSChallenge;
 import edu.fiuba.algo3.view.ContenedorJugadores;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;

@@ -1,16 +1,10 @@
 package edu.fiuba.algo3.view;
 
 
-import javafx.animation.Animation;
-import javafx.animation.TranslateTransition;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
-import java.io.File;
-
-import edu.fiuba.algo3.model.GPSChallenge;
+import edu.fiuba.algo3.model.General.GPSChallenge;
 import edu.fiuba.algo3.model.Vehiculos.Vehiculo;
-import javafx.util.Duration;
 
 public class VistaJugador {
 

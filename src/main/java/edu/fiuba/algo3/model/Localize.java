@@ -1,20 +1,19 @@
 package edu.fiuba.algo3.model;
 
 public class Localize {
-    protected final String esContent;
-    protected final String usContent;
+  protected final String esContent;
+  protected final String usContent;
 
-    public Localize(String esContent, String usContent) {
-        this.esContent = esContent;
-        this.usContent = usContent;
+  public Localize(String esContent, String usContent) {
+    this.esContent = esContent;
+    this.usContent = usContent;
+  }
+
+  public String greet(String lang) {
+    if (lang.equals("us")) {
+      return usContent;
     }
 
-    public String greet(String lang) {
-        if (lang.equals("us")) {
-            return usContent;
-        }
-
-        return esContent;
-    }
-
+    return esContent;
+  }
 }

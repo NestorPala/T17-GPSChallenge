@@ -1,12 +1,11 @@
 package edu.fiuba.algo3.unit.general;
 
+import edu.fiuba.algo3.model.Chocables.Pozo;
+import edu.fiuba.algo3.model.General.Escenario;
+import edu.fiuba.algo3.model.General.Posicion;
+import edu.fiuba.algo3.model.Exceptions.TamanioDelEscenarioInvalido;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;
-
-import edu.fiuba.algo3.model.Escenario;
-import edu.fiuba.algo3.model.Posicion;
-import edu.fiuba.algo3.model.TamañoDelEscenarioInvalido;
-import edu.fiuba.algo3.model.Chocables.Pozo;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -14,15 +13,15 @@ public class EscenarioTest {
   @Test
   public void test01_noSePuedeCrearUnEscenarioConUnTamanioInvalido() {
     Executable tarea1 = () -> Escenario.getInstance(-2, 5);
-    assertThrows(TamañoDelEscenarioInvalido.class, tarea1);
+    assertThrows(TamanioDelEscenarioInvalido.class, tarea1);
 
     Executable tarea2 = () -> Escenario.getInstance(5, -2);
-    assertThrows(TamañoDelEscenarioInvalido.class, tarea2);
+    assertThrows(TamanioDelEscenarioInvalido.class, tarea2);
   }
 
   @Test
   public void test02_noSePuedeColocarUnChocableFueraDeLosLimitesDelEscenario() {
-    Escenario escenario = Escenario.getInstance(10,10);
+    Escenario escenario = Escenario.getInstance(10, 10);
     Pozo pozo = new Pozo();
 
     escenario.insertarChocable(pozo, new Posicion(11, 11));
@@ -36,11 +35,11 @@ public class EscenarioTest {
   }
 
   @Test
-  public void test04_soloPuedoTenerUnEscenarioDefinido(){
-    Escenario escenario1 = Escenario.getInstance(11,11);
-    Escenario escenario2 = Escenario.getInstance(12,12);
+  public void test04_soloPuedoTenerUnEscenarioDefinido() {
+    Escenario escenario1 = Escenario.getInstance(11, 11);
+    Escenario escenario2 = Escenario.getInstance(12, 12);
 
-    assertEquals(escenario2,escenario1);
+    assertEquals(escenario2, escenario1);
   }
 
   @Test
@@ -54,10 +53,10 @@ public class EscenarioTest {
   }
 
   @Test
-  public void test06_sePuedeCrearUnEscenarioDefinido(){
+  public void test06_sePuedeCrearUnEscenarioDefinido() {
     Escenario escenario = Escenario.getInstance().reset();
 
-    assertEquals(escenario.alto(),10);
-    assertEquals(escenario.ancho(),10);
+    assertEquals(escenario.alto(), 10);
+    assertEquals(escenario.ancho(), 10);
   }
 }

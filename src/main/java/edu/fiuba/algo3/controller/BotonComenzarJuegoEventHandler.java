@@ -1,16 +1,13 @@
 package edu.fiuba.algo3.controller;
 
-import edu.fiuba.algo3.model.GPSChallenge;
+import edu.fiuba.algo3.model.General.GPSChallenge;
 import edu.fiuba.algo3.model.Jugador.Jugador;
 import edu.fiuba.algo3.model.Vehiculos.Auto;
-import edu.fiuba.algo3.view.ContenedorEscenario;
 import edu.fiuba.algo3.view.ContenedorJugadores;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.Scene;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-import javafx.stage.Stage;
 
 import java.io.File;
 

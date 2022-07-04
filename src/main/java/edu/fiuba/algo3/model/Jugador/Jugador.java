@@ -1,92 +1,93 @@
 package edu.fiuba.algo3.model.Jugador;
 
-import edu.fiuba.algo3.model.*;
 import edu.fiuba.algo3.model.Chocables.Chocable;
 import edu.fiuba.algo3.model.Efectos.IEfecto;
+import edu.fiuba.algo3.model.General.*;
 import edu.fiuba.algo3.model.Vehiculos.Vehiculo;
 
 public class Jugador {
-    private IEstado estado;
-    private Vehiculo vehiculo;
-    private Posicion posicion;
-    private Posicion posicionAnterior;
-    private final Puntaje puntaje;
-    private final String nombre;
-    private final Escenario escenario = Escenario.getInstance();
+  private IEstado estado;
+  private Vehiculo vehiculo;
+  private Posicion posicion;
+  private Posicion posicionAnterior;
+  private final Puntaje puntaje;
+  private final String nombre;
+  private final Escenario escenario = Escenario.getInstance();
 
-    public Jugador(Vehiculo vehiculo, String nombre) {
-        this.estado = new EstadoActivo();
-        this.nombre = nombre;
-        this.posicion = new Posicion(1,1);
-        this.posicionAnterior = this.posicion;
-        this.vehiculo = vehiculo;
-        this.puntaje = new Puntaje();
-        Logger.getInstance().log("Se creó el usuario " + this.nombre);
+  public Jugador(Vehiculo vehiculo, String nombre) {
+    this.estado = new EstadoActivo();
+    this.nombre = nombre;
+    this.posicion = new Posicion(1, 1);
+    this.posicionAnterior = this.posicion;
+    this.vehiculo = vehiculo;
+    this.puntaje = new Puntaje();
+    Logger.getInstance().log("Se creó el usuario " + this.nombre);
+  }
+
+  public Posicion posicion() {
+    return this.posicion;
+  }
+
+  public double puntaje() {
+    return this.puntaje.verMovimientos();
+  }
+
+  public void mover(Direccion unaDireccion) {
+    if (!puedeSeguirJugando()) {
+      return;
     }
 
-    public Posicion posicion() {
-        return this.posicion;
+    Posicion nuevaPosicion = this.vehiculo.mover(unaDireccion, posicion);
+    this.puntaje.sumarMovimientos(1);
+    if (this.escenario.contienePosicion(nuevaPosicion)) {
+      this.posicionAnterior = this.posicion;
+      this.posicion = nuevaPosicion;
+      chocarObstaculos();
     }
+  }
 
-    public double puntaje() {
-        return this.puntaje.verMovimientos();
-    }
+  private void chocarObstaculos() {
+    Chocable chocable = this.escenario.obtenerChocable(this.posicion);
+    IEfecto efecto = this.vehiculo.chocar(chocable);
+    efecto.aplicarEfecto(this);
+  }
 
-    public void mover(Direccion unaDireccion) {
-        if(!puedeSeguirJugando()){
-            return;
-        }
+  public void recibirPenalizacion(int penalizacion) {
+    this.puntaje.sumarMovimientos(penalizacion);
+  }
 
-        Posicion nuevaPosicion = this.vehiculo.mover(unaDireccion, posicion);
-        this.puntaje.sumarMovimientos(1);
-        if (this.escenario.contienePosicion(nuevaPosicion)) {
-            this.posicionAnterior = this.posicion;
-            this.posicion = nuevaPosicion;
-            chocarObstaculos();
-        }
-    }
+  public void recibirPorcentaje(int porcentaje) {
+    this.puntaje.aplicarPorcentaje(porcentaje);
+  }
 
-    private void chocarObstaculos() {
-        Chocable chocable = this.escenario.obtenerChocable(this.posicion);
-        IEfecto efecto = this.vehiculo.chocar(chocable);
-        efecto.aplicarEfecto(this);
-    }
+  public void cambiarVehiculo(Vehiculo nuevoVehiculo) {
+    this.vehiculo = nuevoVehiculo;
+    Logger.getInstance().log("El jugador " + this.nombre() + " cambio de vehiculo");
+  }
 
-    public void recibirPenalizacion(int penalizacion){
-        this.puntaje.sumarMovimientos(penalizacion);
+  public void retrocederPosicionAnterior() {
+    this.posicion = this.posicionAnterior;
+    Logger.getInstance().log("El jugador " + this.nombre() + " retrocedió una posición");
+  }
 
-    }
+  public void dejarDeJugar() {
+    this.estado = new EstadoInactivo();
+    Logger.getInstance().log("El jugador " + this.nombre() + " dejo de jugar");
+  }
 
-    public void recibirPorcentaje(int porcentaje){
-        this.puntaje.aplicarPorcentaje(porcentaje);
-    }
+  public boolean puedeSeguirJugando() {
+    return estado.puedeSeguirJugando();
+  }
 
-    public void cambiarVehiculo(Vehiculo nuevoVehiculo) {
-        this.vehiculo = nuevoVehiculo;
-        Logger.getInstance().log("El jugador " + this.nombre() + " cambio de vehiculo");
-    }
+  public String nombre() {
+    return nombre;
+  }
 
-    public void retrocederPosicionAnterior() {
-        this.posicion = this.posicionAnterior;
-        Logger.getInstance().log("El jugador " + this.nombre() + " retrocedió una posición");
-    }
+  public Vehiculo vehiculo() {
+    return this.vehiculo;
+  }
 
-    public void dejarDeJugar() {
-        this.estado = new EstadoInactivo();
-        Logger.getInstance().log("El jugador " + this.nombre() + " dejo de jugar" );
-    }
-
-    public boolean puedeSeguirJugando() {
-        return estado.puedeSeguirJugando();
-    }
-
-    public String nombre() {
-        return nombre;
-    }
-
-    public Vehiculo vehiculo(){ return this.vehiculo;}
-
-    /*public Posicion posicionAnterior() {
-        return this.posicionAnterior;
-    }*/
+  /*public Posicion posicionAnterior() {
+      return this.posicionAnterior;
+  }*/
 }

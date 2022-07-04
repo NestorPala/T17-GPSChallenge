@@ -1,8 +1,8 @@
 package edu.fiuba.algo3.view;
 
 
-import edu.fiuba.algo3.model.Escenario;
-import edu.fiuba.algo3.model.Posicion;
+import edu.fiuba.algo3.model.General.Escenario;
+import edu.fiuba.algo3.model.General.Posicion;
 import javafx.geometry.Insets;
 import javafx.scene.Group;
 import javafx.scene.Node;
