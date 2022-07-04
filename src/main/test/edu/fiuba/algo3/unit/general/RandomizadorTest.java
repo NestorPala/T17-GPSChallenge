@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.unit.general;
 
-import edu.fiuba.algo3.model.Randomizador.Random;
+import edu.fiuba.algo3.model.Randomizador.Randomizador;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -10,7 +10,7 @@ public class RandomizadorTest {
 
   @Test
   public void test01_elTestDaValoresCorrectos() {
-    Random randomizador = new Random();
+    Randomizador randomizador = new Randomizador();
 
     assertFalse(randomizador.random(2));
     assertTrue(randomizador.random(0));

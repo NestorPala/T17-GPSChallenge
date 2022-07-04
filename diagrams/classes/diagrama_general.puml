@@ -1,16 +1,26 @@
 @startuml
 
 class Jugador {
+    - IEstado
     - Vehiculo
-    + Jugador(vehiculo)
+    - Posicion
+    - posicionAnterior : Posicion
+    - Puntaje
+    - nombre : string
+    - Escenario
+    + Jugador(vehiculo, nombre)
     + posicion() : Posicion
     + puntaje() : double
     + mover(direccion)
     - chocarObstaculos()
     + recibirPenalizacion(penalizacion: int)
     + recibirPorcentaje(porcentaje: int)
-    + cambiarVehiculo(nuevoVehiculo)
+    + cambiarVehiculo(nuevoVehiculo : Vehiculo)
     + retrocederPosicionAnterior()
+    + dejarDeJugar()
+    + puedeSeguirJugando()
+    + nombre() : string
+    + vehiculo() : Vehiculo
 }
 
 class Puntaje {
@@ -18,7 +28,6 @@ class Puntaje {
     + verMovimientos() : double
     + sumarMovimientos(cantMovimientos: int)
     + aplicarPorcentaje(porcentaje: double)
-
 }
 
 class Direccion {
@@ -38,12 +47,15 @@ class Escenario {
     - chocables : Chocable[][]
     - {static} instance : Escenario
     - Escenario(limiteAlto, limiteAncho)
+    + generarObstaculos()
     + {static} getInstance() : Escenario
     + {static} getInstance(alto, ancho) : Escenario
     + contienePosicion(posicion) : Bool
     + insertarChocable(chocable, posicion)
     + obtenerChocable(posicion) : Chocable
-
+    + reset() : Escenario
+    + alto() : int
+    + ancho() : int
 }
 
 class Posicion {
@@ -55,8 +67,54 @@ class Posicion {
     + y() : int
     + sumarX(x: int)
     + sumarY(y: int)
+    + toString() : string
 }
 
+class GPSChallenge {
+    - jugadores : Queue<Jugador>
+    - jugadorActual : Jugador
+    - Ranking
+    - Escenario
+    + GPSChallenge()
+    + GPSChallenge(alto : int, ancho: int)
+    + agregarJugador(Jugador)
+    + mover(Direccion)
+    + hayJugadoresPorJugar() : bool
+    + escogerSiguienteJugador()
+    + obtenerTop10() : string[]
+    + obtenerMejorJugador() : string
+    + jugadorActual() : Jugador
+}
+
+class Ranking {
+    - jugadores : List<Jugador>
+    + Ranking()
+    + agregar(Jugador)
+    + obtenerJugadorDelTop(posicionDelTop : int) : Jugador
+    + obtenerMejorJugador() : Jugador
+}
+
+class Logger {
+    - {static} instance : Logger
+    - activado : bool
+    - Logger()
+    + {static} getInstance() : Logger
+    + activar()
+    + desactivar()
+    + log(string)
+}
+
+interface IEstado {
+    + puedeSeguirJugando() : bool
+}
+
+class EstadoActivo {
+    + puedeSeguirJugando() : bool
+}
+
+class EstadoInactivo {
+    + puedeSeguirJugando() : bool
+}
 
 Jugador -> Escenario
 Puntaje <-- Jugador
@@ -66,5 +124,13 @@ Direccion <. Jugador
 Direccion .> Posicion
 Escenario ..> Posicion
 
+EstadoActivo ..|> IEstado
+EstadoInactivo ..|> IEstado
+
+IEstado <.. Jugador
+
+GPSChallenge .> Ranking
+GPSChallenge ..> Jugador
+Escenario <. GPSChallenge
 
 @enduml

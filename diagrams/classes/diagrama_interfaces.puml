@@ -1,7 +1,4 @@
 @startuml
-
-
-
 interface Chocable {
     + devolverEfecto(moto) : IEfecto
     + devolverEfecto(auto) : IEfecto
@@ -27,6 +24,12 @@ class Piquete {
 }
 
 class ControlPolicial {
+    -  PROBABILIDAD_MOTO : Double
+    -  PROBABILIDAD_AUTO : Double
+    -  PROBABILIDAD_TODOTERRENO : Double
+    -  PENALIZACION : int
+    -  randomizador : Randomizer
+    +  ControlPolicial(randomizer)
     +  devolverEfecto(moto) : IEfecto
     +  devolverEfecto(auto) : IEfecto
     +  devolverEfecto(todoterreno) : IEfecto
@@ -50,7 +53,11 @@ class SorpresaCambioVehiculo {
     +  devolverEfecto(todoterreno) : IEfecto
 }
 
-
+class Meta {
+    +  devolverEfecto(moto) : IEfecto
+    +  devolverEfecto(auto) : IEfecto
+    +  devolverEfecto(todoterreno) : IEfecto
+}
 
 abstract class Vehiculo {
     + mover(unaDireccion, unaPosicion) : Posicion
@@ -69,8 +76,6 @@ class Todoterreno {
     - pozosEncontrados : int
     + chocar(chocable) : Vehiculo
 }
-
-
 
 interface IEfecto {
     + aplicarEfecto(jugador)
@@ -98,12 +103,24 @@ class Retroceso {
     + aplicarEfecto(jugador)
 }
 
+class FinDelJuego {
+    + aplicarEfecto(jugador)
+}
 
+interface Randomizer {
+    + random(probabilidad) : bool
+}
+
+class Randomizador {
+    + random(probabilidad) : bool
+}
 
 Pozo ..|> Chocable
 ControlPolicial ..|> Chocable
 Piquete ..|> Chocable
 Vacio ..|> Chocable
+Chocable <|.. Meta
+
 
 Chocable <|.. SorpresaFavorable
 Chocable <|.. SorpresaDesfavorable
@@ -112,16 +129,18 @@ Chocable <|.. SorpresaCambioVehiculo
 Vehiculo .> Chocable
 
 Vehiculo <|-- Todoterreno
-Auto --|> Vehiculo
+Vehiculo <|-- Auto
 Moto -|> Vehiculo
 
 Chocable .> IEfecto
 
 IEfecto <|.. CambioDeVehiculo
 IEfecto <|.. Penalizacion
-IEfecto <|.. Porcentaje
+IEfecto <|. Porcentaje
 Retroceso ..|> IEfecto
+FinDelJuego ..|> IEfecto
 
-
+Randomizador .|> Randomizer
+Randomizer <. ControlPolicial
 
 @enduml

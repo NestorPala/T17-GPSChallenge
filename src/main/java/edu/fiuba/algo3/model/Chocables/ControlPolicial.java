@@ -9,10 +9,10 @@ import edu.fiuba.algo3.model.Vehiculos.Moto;
 import edu.fiuba.algo3.model.Vehiculos.Todoterreno;
 
 public class ControlPolicial implements Chocable {
-  private static final double PROBABILIDAD_MOTO = 0.2;
-  private static final double PROBABILIDAD_AUTO = 0.5;
-  private static final double PROBABILIDAD_TODOTERRENO = 0.7;
-  private static final int PENALIZACION = 3;
+  private final double PROBABILIDAD_MOTO = 0.2;
+  private final double PROBABILIDAD_AUTO = 0.5;
+  private final double PROBABILIDAD_TODOTERRENO = 0.7;
+  private final int PENALIZACION = 3;
 
   private final Randomizer randomizador;
 

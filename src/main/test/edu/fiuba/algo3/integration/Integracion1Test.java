@@ -42,6 +42,7 @@ public class Integracion1Test {
     juego.mover(Direccion.abajo());
     juego.mover(Direccion.abajo());
 
-    assertEquals(15.25, juego.obtenerMejorJugador().puntaje());
+    assertEquals("Alejo", juego.obtenerMejorJugador().split(";")[0]);
+    assertEquals("15.25", juego.obtenerMejorJugador().split(";")[1]);
   }
 }

@@ -66,7 +66,7 @@ public class GPSChallenge {
       top[i] = "-;-";
       if (ranking.obtenerJugadorDelTop(i) != null) {
         String nombre = ranking.obtenerJugadorDelTop(i).nombre();
-        String puntaje = Double.toString(ranking.obtenerJugadorDelTop(i).puntaje());
+        double puntaje = ranking.obtenerJugadorDelTop(i).puntaje();
         top[i] = (nombre + ";" + puntaje);
       }
     }
@@ -74,8 +74,8 @@ public class GPSChallenge {
     return top;
   }
 
-  public Jugador obtenerMejorJugador() {
-    return ranking.obtenerMejorJugador();
+  public String obtenerMejorJugador() {
+    return ranking.obtenerMejorJugador().nombre() + ";" + ranking.obtenerMejorJugador().puntaje();
   }
 
   public Jugador jugadorActual() {

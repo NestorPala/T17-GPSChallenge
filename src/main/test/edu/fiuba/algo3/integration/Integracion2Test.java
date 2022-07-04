@@ -59,6 +59,7 @@ public class Integracion2Test {
     assertEquals("Alejo", top[1].split(";")[0]);
     assertEquals("15.25", top[1].split(";")[1]);
 
-    assertEquals(3, juego.obtenerMejorJugador().puntaje());
+    assertEquals("Juan", juego.obtenerMejorJugador().split(";")[0]);
+    assertEquals("3.0", juego.obtenerMejorJugador().split(";")[1]);
   }
 }

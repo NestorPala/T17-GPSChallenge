@@ -2,6 +2,7 @@ package edu.fiuba.algo3.model.General;
 
 import edu.fiuba.algo3.model.Chocables.*;
 import edu.fiuba.algo3.model.Exceptions.TamanioDelEscenarioInvalido;
+import edu.fiuba.algo3.model.Randomizador.Randomizador;
 
 import java.util.Random;
 
@@ -32,7 +33,7 @@ public class Escenario {
         int randomInt = random.nextInt(12);
         switch (randomInt) {
           case 0:
-            chocables[i][j] = new ControlPolicial(new edu.fiuba.algo3.model.Randomizador.Random());
+            chocables[i][j] = new ControlPolicial(new Randomizador());
             break;
           case 1:
             chocables[i][j] = new Piquete();
