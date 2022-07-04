@@ -20,7 +20,7 @@
 
 - [ ] Cambiar forma de devolver ranking (no devolver objeto, solo datos importantes)
 
-- [ ] Cambiar "vehiculo selector" por iconos
+- [X] Cambiar "vehiculo selector" por iconos
 
 - [ ] Que se vea el punto de partida
 
