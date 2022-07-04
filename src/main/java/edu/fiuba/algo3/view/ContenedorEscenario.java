@@ -4,6 +4,7 @@ import edu.fiuba.algo3.controller.BotonAbajoEventHandler;
 import edu.fiuba.algo3.controller.BotonArribaEventHandler;
 import edu.fiuba.algo3.controller.BotonDerechaEventHandler;
 import edu.fiuba.algo3.controller.BotonIzquierdaEventHandler;
+import edu.fiuba.algo3.model.Escenario;
 import edu.fiuba.algo3.model.GPSChallenge;
 import edu.fiuba.algo3.model.Jugador.Jugador;
 import javafx.geometry.Insets;
@@ -42,7 +43,10 @@ public class ContenedorEscenario extends BorderPane {
     }
 
     private void setMapa(GPSChallenge juego) {
-        vistaEscenario = new VistaEscenario(20, 20);
+        int anchoEscenario = Escenario.getInstance().ancho();
+        int altoEscenario = Escenario.getInstance().alto();
+
+        vistaEscenario = new VistaEscenario(anchoEscenario, altoEscenario);
         vistaJugador2 = new VistaJugador(vistaEscenario, juego);
 
         contenedorCentral = new VBox(vistaEscenario);

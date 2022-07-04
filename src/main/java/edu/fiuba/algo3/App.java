@@ -18,7 +18,7 @@ public class App extends Application {
 
         stage.setTitle("GPS CHALLENGE");
 
-        GPSChallenge juego = new GPSChallenge(20, 20);
+        GPSChallenge juego = new GPSChallenge(12, 12);
 
 
         ContenedorJugadores contenedorJugadores = new ContenedorJugadores(stage, juego);

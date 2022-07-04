@@ -106,4 +106,10 @@ public class Escenario {
         instance = new Escenario(this.alto, this.ancho);
         return instance;
     }
+    public int alto() {
+        return this.alto;
+    }
+    public int ancho() {
+        return this.ancho;
+    }
 }
