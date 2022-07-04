@@ -49,15 +49,16 @@ public class BotonAgregarJugadorEventHandler implements EventHandler<ActionEvent
     }
 
     private Vehiculo seleccionarVehiculo(ComboBox<ImageView> opcionesVehiculos) {
+        if (opcionesVehiculos.getValue() == null) {
+            return new Auto();
+        }
         String tipoVehiculo = opcionesVehiculos.getValue().getId();
         if (tipoVehiculo == (new Imagenes().devolverImagenesVehiculos(new Auto())).getId()) {
             return new Auto();
         } else if (tipoVehiculo == (new Imagenes().devolverImagenesVehiculos(new Moto())).getId()) {
             return new Moto();
-        } else if (tipoVehiculo == (new Imagenes().devolverImagenesVehiculos(new Todoterreno())).getId()) {
-            return new Todoterreno();
         } else {
-            return new Auto();
+            return new Todoterreno();
         }
     }
 }
