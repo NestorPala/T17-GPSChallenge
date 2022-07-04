@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.unit;
 
+import edu.fiuba.algo3.model.Chocables.Meta;
 import org.junit.jupiter.api.Test;
 
 import edu.fiuba.algo3.model.Direccion;
@@ -34,6 +35,29 @@ public class JugadorTest {
     jugador.mover(Direccion.izquierda());
 
     assertEquals(new Posicion(0,1), jugador.posicion());
+  }
+
+  @Test
+  public void elJugadorSeCreaConElVehiculoCorrecto(){
+    Vehiculo auto = new Auto();
+
+    Jugador jugador = new Jugador(auto, "Pablo");
+
+    assertEquals(jugador.vehiculo(),auto);
+  }
+
+  @Test
+  public void elJugadorNoSeMoveraSiYaLlegoALaMeta(){
+    Escenario escenario = Escenario.getInstance().reset();
+    escenario.insertarChocable(new Meta(), new Posicion(2,1));
+
+    Jugador jugador = new Jugador(new Moto(), "Pablo");
+
+    assertEquals(jugador.posicion(), new Posicion(1,1));
+    jugador.mover(Direccion.derecha());
+    assertEquals(jugador.posicion(), new Posicion(2,1));
+    jugador.mover(Direccion.derecha());
+    assertEquals(jugador.posicion(), new Posicion(2,1));
   }
 
   @Test

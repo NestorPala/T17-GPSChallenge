@@ -52,4 +52,12 @@ public class EscenarioTest {
     assertFalse(escenario.contienePosicion(new Posicion(5, 11)));
     assertFalse(escenario.contienePosicion(new Posicion(5, -5)));
   }
+
+  @Test
+  public void sePuedeCrearUnEscenarioDefinido(){
+    Escenario escenario = Escenario.getInstance().reset();
+
+    assertEquals(escenario.alto(),10);
+    assertEquals(escenario.ancho(),10);
+  }
 }

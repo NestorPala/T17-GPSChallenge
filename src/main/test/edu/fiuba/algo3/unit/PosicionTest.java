@@ -20,5 +20,7 @@ public class PosicionTest {
         assertNotEquals(p4,p2);
         assertNotEquals(p2, null);
         assertNotEquals(p2, new Auto());
+        assertEquals(p1.toString(), "(0, 0)");
+        assertEquals(p4.toString(),"(5, 0)");
     }
 }

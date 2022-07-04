@@ -17,6 +17,8 @@ public class GPSChallengeTest {
         GPSChallenge juego = new GPSChallenge(20,20);
         Jugador pablo = new Jugador(new Moto(),"Pablo");
 
+        assertFalse(juego.hayJugadoresPorJugar());
+
         juego.agregarJugador(pablo);
         assertEquals(juego.jugadorActual(),pablo);
 
@@ -26,8 +28,7 @@ public class GPSChallengeTest {
 
     @Test
     public void puedoTerminarElJuego(){
-        Escenario escenario = Escenario.getInstance();
-        escenario = escenario.reset();
+        Escenario escenario = Escenario.getInstance().reset();
 
         GPSChallenge juego = new GPSChallenge(10,10);
         Jugador luke = new Jugador(new Auto(), "luke");
