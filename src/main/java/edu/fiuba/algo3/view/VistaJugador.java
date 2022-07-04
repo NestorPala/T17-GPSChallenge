@@ -61,10 +61,10 @@ public class VistaJugador {
         animacion.setDuration(Duration.seconds(1));
         animacion.setFromX(juego.jugadorActual().posicionAnterior().x());
         animacion.setFromY(juego.jugadorActual().posicionAnterior().y());
-        //animacion.setToX(actualX);
-        //animacion.setToY(actualY);
-        animacion.setToX(200);
-        animacion.setToY(200);
+        animacion.setToX(actualX * 36);
+        animacion.setToY(actualY * 36);
+        //animacion.setToX(200);
+        //animacion.setToY(200);
         animacion.play();*/
     }
 
