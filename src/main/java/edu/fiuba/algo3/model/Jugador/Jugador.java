@@ -59,17 +59,17 @@ public class Jugador {
 
     public void cambiarVehiculo(Vehiculo nuevoVehiculo) {
         this.vehiculo = nuevoVehiculo;
-        Logger.getInstance().log("El jugador cambio de vehiculo");
+        Logger.getInstance().log("El jugador " + this.nombre() + " cambio de vehiculo");
     }
 
     public void retrocederPosicionAnterior() {
         this.posicion = this.posicionAnterior;
-        Logger.getInstance().log("El jugador retrocedió una posición");
+        Logger.getInstance().log("El jugador " + this.nombre() + " retrocedió una posición");
     }
 
     public void dejarDeJugar() {
         this.estado = new EstadoInactivo();
-        Logger.getInstance().log("Se termino el juego");
+        Logger.getInstance().log("El jugador " + this.nombre() + " dejo de jugar" );
     }
 
     public boolean puedeSeguirJugando() {
@@ -82,7 +82,7 @@ public class Jugador {
 
     public Vehiculo vehiculo(){ return this.vehiculo;}
 
-    public Posicion posicionAnterior() {
+    /*public Posicion posicionAnterior() {
         return this.posicionAnterior;
-    }
+    }*/
 }

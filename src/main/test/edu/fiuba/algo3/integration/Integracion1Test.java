@@ -44,8 +44,6 @@ public class Integracion1Test {
         juego.mover(Direccion.abajo());
         juego.mover(Direccion.abajo());
 
-        assertEquals(jugador, juego.obtenerTop10().get(0));
-
         assertEquals(15.25, juego.obtenerMejorJugador().puntaje());
     }
 }
