@@ -15,9 +15,12 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.text.DecimalFormat;
 
 public class ContenedorEscenario extends BorderPane {
@@ -34,6 +37,8 @@ public class ContenedorEscenario extends BorderPane {
     private Button botonAbajo;
     private Button botonArriba;
 
+    private final static MediaPlayer musica = new MediaPlayer(new Media(new File("src/main/java/edu/fiuba/algo3/view/sonidos/musica.mp3").toURI().toString()));
+
 
     public ContenedorEscenario(Stage stage, GPSChallenge juego) {
 
@@ -43,6 +48,9 @@ public class ContenedorEscenario extends BorderPane {
         this.setPanelEstado(juego);
         this.setMenu(stage);
         this.setStyle("-fx-background-color: #333333;");
+        musica.setVolume(0.3);
+        musica.play();
+        musica.seek(musica.getStartTime());
     }
 
     private void setMapa(GPSChallenge juego) {
