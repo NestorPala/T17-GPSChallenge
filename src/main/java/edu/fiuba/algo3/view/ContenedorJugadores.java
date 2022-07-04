@@ -13,6 +13,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 public class ContenedorJugadores extends VBox {
@@ -66,7 +67,9 @@ public class ContenedorJugadores extends VBox {
 
     public void comenzarJuego(GPSChallenge juego){
         ContenedorEscenario contenedorEscenario = new ContenedorEscenario(this.stage, juego);
-        Scene escenaEscenario = new Scene(contenedorEscenario, 960,540);
+        int resAncho = (int) Screen.getPrimary().getBounds().getWidth();
+        int resAlto = (int) Screen.getPrimary().getBounds().getHeight();
+        Scene escenaEscenario = new Scene(contenedorEscenario, resAncho,resAlto);
         stage.setScene(escenaEscenario);
         contenedorEscenario.setBotones();
     }

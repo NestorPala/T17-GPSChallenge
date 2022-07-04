@@ -6,6 +6,7 @@ import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -25,7 +26,9 @@ public class BotonOpcionesEventHandler implements EventHandler<ActionEvent> {
         sonidoOpciones.play();
         sonidoOpciones.seek(sonidoOpciones.getStartTime());
         ContenedorOpciones contenedorOpciones = new ContenedorOpciones(stage, stage.getScene());
-        Scene escenaOpciones = new Scene(contenedorOpciones, 960,540);
+        int resAncho = (int) Screen.getPrimary().getBounds().getWidth();
+        int resAlto = (int) Screen.getPrimary().getBounds().getHeight();
+        Scene escenaOpciones = new Scene(contenedorOpciones, resAncho,resAlto);
         this.stage.setScene(escenaOpciones);
     }
 }
