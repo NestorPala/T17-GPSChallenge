@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.unitarios;
+package edu.fiuba.algo3.unit;
 
 import org.junit.jupiter.api.Test;
 
@@ -28,8 +28,7 @@ public class JugadorTest {
   @Test
   public void moverAlJugadorHaciaUnaPosicionInvalidaNoHaceNada() {
     Jugador jugador = new Jugador(new Auto(), "Juan");
-    Escenario escenario = Escenario.getInstance();
-    escenario = escenario.reset();
+    Escenario escenario = Escenario.getInstance().reset();
 
     jugador.mover(Direccion.izquierda());
     jugador.mover(Direccion.izquierda());

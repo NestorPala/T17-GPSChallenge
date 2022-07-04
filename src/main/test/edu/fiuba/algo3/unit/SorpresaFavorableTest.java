@@ -1,9 +1,9 @@
-package edu.fiuba.algo3.unitarios;
+package edu.fiuba.algo3.unit;
 
 import org.junit.jupiter.api.Test;
 
 import edu.fiuba.algo3.model.Chocables.Chocable;
-import edu.fiuba.algo3.model.Chocables.SorpresaDesfavorable;
+import edu.fiuba.algo3.model.Chocables.SorpresaFavorable;
 import edu.fiuba.algo3.model.Efectos.IEfecto;
 import edu.fiuba.algo3.model.Jugador.Jugador;
 import edu.fiuba.algo3.model.Vehiculos.Auto;
@@ -12,25 +12,25 @@ import edu.fiuba.algo3.model.Vehiculos.Todoterreno;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class SorpresaDesfavorableTest {
+public class SorpresaFavorableTest {
 
     @Test
     public void puedoObtenerLosPuntosDePenalizacionCorrectosPorCadaVehiculo(){
-        Chocable sorpresaDesfavorable = new SorpresaDesfavorable();
+        Chocable sorpresaFavorable = new SorpresaFavorable();
         Jugador jugador1 = new Jugador(new Auto(), "Juan");
         jugador1.recibirPenalizacion(10);
 
-        IEfecto efecto = sorpresaDesfavorable.devolverEfecto(new Auto());
+        IEfecto efecto = sorpresaFavorable.devolverEfecto(new Auto());
         efecto.aplicarEfecto(jugador1);
-        assertEquals(jugador1.puntaje(), 12.5);
+        assertEquals(jugador1.puntaje(), 8);
 
-        IEfecto efecto2 = sorpresaDesfavorable.devolverEfecto(new Moto());
+        IEfecto efecto2 = sorpresaFavorable.devolverEfecto(new Moto());
         efecto2.aplicarEfecto(jugador1);
-        assertEquals(jugador1.puntaje(),15.625);
+        assertEquals(jugador1.puntaje(), 6.4);
 
-        IEfecto efecto3 = sorpresaDesfavorable.devolverEfecto(new Todoterreno());
+        IEfecto efecto3 = sorpresaFavorable.devolverEfecto(new Todoterreno());
         efecto3.aplicarEfecto(jugador1);
-        assertEquals(jugador1.puntaje(), 19.53125);
+        assertEquals(jugador1.puntaje(), 5.12);
     }
     
 }
