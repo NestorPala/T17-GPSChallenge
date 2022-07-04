@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.unitarios;
+package edu.fiuba.algo3.unit;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;

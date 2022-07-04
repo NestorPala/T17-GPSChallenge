@@ -1,11 +1,11 @@
 package edu.fiuba.algo3.casos;
 
-import org.junit.jupiter.api.Test;
-
 import edu.fiuba.algo3.model.Direccion;
 import edu.fiuba.algo3.model.Escenario;
 import edu.fiuba.algo3.model.Logger;
 import edu.fiuba.algo3.model.Posicion;
+import org.junit.jupiter.api.Test;
+
 import edu.fiuba.algo3.model.Chocables.Chocable;
 import edu.fiuba.algo3.model.Chocables.Piquete;
 import edu.fiuba.algo3.model.Chocables.Pozo;
