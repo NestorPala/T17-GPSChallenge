@@ -12,9 +12,9 @@
 
 - [X] Agregar fondo al menu principal
 
-- [ ] Agregar fondo al resto de pantallas del menu
+- [X] Agregar fondo al resto de pantallas del menu
 
-- [ ] Notificar cuando se llega a la meta
+- [X] Notificar cuando se llega a la meta
 
 - [ ] Agregar al logger quien ganó
 
@@ -22,10 +22,10 @@
 
 - [X] Cambiar "vehiculo selector" por iconos
 
-- [ ] Que se vea el punto de partida
+- [X] Que se vea el punto de partida
 
-- [ ] Que se vea que sorpresa hay en la posicion actual y la penalización (panel de notificaciones)
+- [X] Que se vea que sorpresa hay en la posicion actual y la penalización (panel de notificaciones)
 
-- [ ] Agregar ver reglas del juego durante el juego
+- [X] Agregar ver reglas del juego durante el juego
 
-- [ ] Agregar "Acerca de" con los nombres de los integrantes del grupo
+- [X] Agregar "Acerca de" con los nombres de los integrantes del grupo
