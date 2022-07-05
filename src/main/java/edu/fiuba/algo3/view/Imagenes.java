@@ -55,6 +55,7 @@ public class Imagenes {
         if (chocable instanceof Meta) {
             ImageView imagen = new ImageView();
             imagen.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/view/fotos/finishline.png").toURI().toString()));
+            imagen.setId("Meta");
             return imagen;
         }
         else {

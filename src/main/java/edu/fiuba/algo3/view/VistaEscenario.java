@@ -8,10 +8,6 @@ import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
-import javafx.scene.shape.Path;
-import javafx.scene.shape.Rectangle;
-import javafx.scene.shape.Shape;
 
 
 public class VistaEscenario extends Group {
@@ -51,17 +47,55 @@ public class VistaEscenario extends Group {
         tabla.setBackground(new Background(new BackgroundFill(Color.rgb(167, 189, 217), new CornerRadii(2.5), new Insets(5))));
         tabla.setBorder(new Border(new BorderStroke(Color.rgb(167, 189, 217), BorderStrokeStyle.SOLID, new CornerRadii(2.5), new BorderWidths(20))));
 
-        //Shape shape = Path.subtract(new Rectangle(ancho * 1.5, alto * 1.5), new Circle(10 * 100 + 50, 10 * 100 + 50, 50));
-        //shape = Path.subtract(shape, new Circle(2 * 100, 2 * 100, 100));
-
         this.addView(tabla);
-        //this.addView(shape);
     }
 
     public void addViewOnMap(Node view, int x, int y) {
         this.limpiarEscenario(view);
         panes[x][y].getChildren().add(1, view);
         panes[x][y].setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
+        panes[x][y].setVisible(true);
+        this.mostrarArea(x,y);
+        this.mostrarMeta();
+    }
+
+    public void mostrarArea(int x, int y){
+        for (int i = 1; i < 2; i++){
+            if(x+i < ancho && panes[x+i][y] != null){
+                panes[x+i][y].setVisible(true);
+            }
+            if(y+i < alto && panes[x][y+i] != null){
+                panes[x][y+i].setVisible(true);
+            }
+            if(x+i < ancho && y+i < alto && panes[x+i][y+i] != null){
+                panes[x+i][y+i].setVisible(true);
+            }
+            if(x-i >= 0 && panes[x-i][y] != null){
+                panes[x-i][y].setVisible(true);
+            }
+            if(y-i >= 0 && panes[x][y-i] != null){
+                panes[x][y-i].setVisible(true);
+            }
+            if(x-i >= 0 && y-i >= 0 && panes[x-i][y-i] != null){
+                panes[x-i][y-i].setVisible(true);
+            }
+            if(x+i < ancho && y-i >= 0 && panes[x+i][y-i] != null){
+                panes[x+i][y-i].setVisible(true);
+            }
+            if(x-i >= 0 && y+i < alto && panes[x-i][y+i] != null){
+                panes[x-i][y+i].setVisible(true);
+            }
+        }
+    }
+
+    public void mostrarMeta(){
+        for (int i = 0; i < ancho; i++) {
+            for (int j = 0; j < alto; j++) {
+                if(panes[i][j].getChildren().get(0).getId() == "Meta") {
+                    panes[i][j].setVisible(true);
+                }
+            }
+        }
     }
 
     public void limpiarEscenario(Node view){
@@ -70,6 +104,7 @@ public class VistaEscenario extends Group {
                 try {
                     panes[i][j].getChildren().remove(view);
                     panes[i][j].setBorder(new Border(new BorderStroke(Color.rgb(227,227,227), BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
+                    panes[i][j].setVisible(false);
                 } catch (Exception e) {
                     //TODO: handle exception
                 }
