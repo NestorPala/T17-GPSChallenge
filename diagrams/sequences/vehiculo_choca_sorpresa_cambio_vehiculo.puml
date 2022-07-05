@@ -10,12 +10,19 @@ Actor usuario
 ":Direccion" --> "Vehiculo": nuevaPosicion
 "Vehiculo" --> ":Jugador": nuevaPosicion
 ":Jugador" -> ":Puntaje": sumarMovimientos(1)
+":Jugador" -> ":Jugador": chocarObstaculos()
 ":Jugador" -> ":Escenario": obtenerChocable(nuevaPosicion)
 ":Escenario" --> ":Jugador": unaSorpresaCambioVehiculo
-":Jugador" -> "Vehiculo": chocar(unaSorpresaCambioVehiculo, puntaje)
-"Vehiculo" -> ":SorpresaCambioVehiculo": aplicarPenalizacion(self, puntaje)
-":SorpresaCambioVehiculo" --> "Vehiculo" : otroVehiculo
-"Vehiculo" --> ":Jugador" : otroVehiculo
+":Jugador" -> "Vehiculo": chocar(unaSorpresaCambioVehiculo)
+"Vehiculo" -> ":SopresaCambioVehiculo": devolverEfecto(self)
+create ":CambioDeVehiculo"
+":SopresaCambioVehiculo" --> ":CambioDeVehiculo": <<create>>
+":SopresaCambioVehiculo" --> "Vehiculo" : unCambioDeVehiculo
+"Vehiculo" --> ":Jugador" : unCambioDeVehiculo
+":Jugador" -> ":CambioDeVehiculo" : aplicarEfecto(self)
+create ":OtroVehiculo"
+":CambioDeVehiculo" --> ":OtroVehiculo": <<create>>
+":CambioDeVehiculo" -> ":Jugador" : cambiarVehiculo(otroVehiculo)
 
 "usuario" -> ":Jugador": puntaje()
 ":Jugador" -> ":Puntaje": verMovimientos()

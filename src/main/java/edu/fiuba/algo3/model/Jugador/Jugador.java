@@ -86,8 +86,4 @@ public class Jugador {
   public Vehiculo vehiculo() {
     return this.vehiculo;
   }
-
-  /*public Posicion posicionAnterior() {
-      return this.posicionAnterior;
-  }*/
 }

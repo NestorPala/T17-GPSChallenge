@@ -10,12 +10,15 @@ Actor usuario
 ":Direccion" --> ":Auto": nuevaPosicion
 ":Auto" --> ":Jugador": nuevaPosicion
 ":Jugador" -> ":Puntaje": sumarMovimientos(1)
+":Jugador" -> ":Jugador": chocarObstaculos()
 ":Jugador" -> ":Escenario": obtenerChocable(nuevaPosicion)
 ":Escenario" --> ":Jugador": unPozo
 ":Jugador" -> ":Auto": chocar(unPozo)
 ":Auto" -> ":Pozo": devolverEfecto(self)
-":Pozo" --> ":Auto" : Penalizacion
-":Auto" --> ":Jugador" : Penalizacion
+create ":Penalizacion"
+":Pozo" --> ":Penalizacion": <<create>>
+":Pozo" --> ":Auto" : unaPenalizacion
+":Auto" --> ":Jugador" : unaPenalizacion
 ":Jugador" -> ":Penalizacion" : aplicarEfecto(self)
 ":Penalizacion" -> ":Jugador" : recibirPenalizacion(3)
 ":Jugador" -> ":Puntaje" : sumarMovimientos(3)

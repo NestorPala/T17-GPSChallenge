@@ -10,13 +10,18 @@ Actor usuario
 ":Direccion" --> "Vehiculo": nuevaPosicion
 "Vehiculo" --> ":Jugador": nuevaPosicion
 ":Jugador" -> ":Puntaje": sumarMovimientos(1)
+":Jugador" -> ":Jugador": chocarObstaculos()
 ":Jugador" -> ":Escenario": obtenerChocable(nuevaPosicion)
 ":Escenario" --> ":Jugador": unaSorpresaDesfavorable
-":Jugador" -> "Vehiculo": chocar(unaSorpresaDesfavorable, puntaje)
-"Vehiculo" -> ":SorpresaDesfavorable": aplicarPenalizacion(self, puntaje)
-":SorpresaDesfavorable" -> ":Puntaje" : sumarPorcentaje(25)
-":SorpresaDesfavorable" --> "Vehiculo" : unVehiculo
-"Vehiculo" --> ":Jugador" : unVehiculo
+":Jugador" -> "Vehiculo": chocar(unaSorpresaDesfavorable)
+"Vehiculo" -> ":SorpresaDesfavorable": devolverEfecto(self)
+create ":Porcentaje"
+":SorpresaDesfavorable" --> ":Porcentaje": <<create>>
+":SorpresaDesfavorable" --> "Vehiculo" : unPorcentaje
+"Vehiculo" --> ":Jugador" : unPorcentaje
+":Jugador" -> ":Porcentaje" : aplicarEfecto(self)
+":Porcentaje" -> ":Jugador" : recibirPorcentaje(25)
+":Jugador" -> ":Puntaje" : aplicarPorcentaje(25)
 
 "usuario" -> ":Jugador": puntaje()
 ":Jugador" -> ":Puntaje": verMovimientos()

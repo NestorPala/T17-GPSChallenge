@@ -10,12 +10,15 @@ Actor usuario
 ":Direccion" --> ":Moto": nuevaPosicion
 ":Moto" --> ":Jugador": nuevaPosicion
 ":Jugador" -> ":Puntaje": sumarMovimientos(1)
+":Jugador" -> ":Jugador": chocarObstaculos()
 ":Jugador" -> ":Escenario": obtenerChocable(nuevaPosicion)
 ":Escenario" --> ":Jugador": unPozo
 ":Jugador" -> ":Moto": chocar(unPozo)
 ":Moto" -> ":Pozo": devolverEfecto(self)
-":Pozo" --> ":Moto" : Penalizacion
-":Moto" --> ":Jugador" : Penalizacion
+create ":Penalizacion"
+":Pozo" --> ":Penalizacion": <<create>>
+":Pozo" --> ":Moto" : unaPenalizacion
+":Moto" --> ":Jugador" : unaPenalizacion
 ":Jugador" -> ":Penalizacion" : aplicarEfecto(self)
 ":Penalizacion" -> ":Jugador" : recibirPenalizacion(3)
 ":Jugador" -> ":Puntaje" : sumarMovimientos(3)

@@ -10,13 +10,18 @@ Actor usuario
 ":Direccion" --> ":Todoterreno": nuevaPosicion
 ":Todoterreno" --> ":Jugador": nuevaPosicion
 ":Jugador" -> ":Puntaje": sumarMovimientos(1)
+":Jugador" -> ":Jugador": chocarObstaculos()
 ":Jugador" -> ":Escenario": obtenerChocable(nuevaPosicion)
 ":Escenario" --> ":Jugador": unPozo
-":Jugador" -> ":Todoterreno": chocar(unPozo, puntaje)
-":Todoterreno" -> ":Pozo": aplicarPenalizacion(self, puntaje)
-":Pozo" -> ":Todoterreno" : sumarPozo()
-":Pozo" --> ":Todoterreno" : unTodoterreno
-":Todoterreno" --> ":Jugador" : unTodoterreno
+":Jugador" -> ":Todoterreno": chocar(unPozo)
+":Todoterreno" -> ":Pozo": devolverEfecto(self)
+create ":Penalizacion"
+":Pozo" --> ":Penalizacion": <<create>>
+":Pozo" --> ":Todoterreno" : unaPenalizacion
+":Todoterreno" --> ":Jugador" : unaPenalizacion
+":Jugador" -> ":Penalizacion" : aplicarEfecto(self)
+":Penalizacion" -> ":Jugador" : recibirPenalizacion(0)
+":Jugador" -> ":Puntaje" : sumarMovimientos(0)
 
 "usuario" -> ":Jugador": puntaje()
 ":Jugador" -> ":Puntaje": verMovimientos()
