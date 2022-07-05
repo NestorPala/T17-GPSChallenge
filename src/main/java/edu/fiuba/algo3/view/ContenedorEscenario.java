@@ -11,10 +11,11 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.text.Font;
@@ -107,38 +108,52 @@ public class ContenedorEscenario extends BorderPane {
                 "-fx-alignment: center");
 
         this.botonDerecha = new Button();
-        botonDerecha.setText("Derecha");
-        botonDerecha.setFont(Font.font("Trebuchet MS", 20));
-        botonDerecha.setPrefSize(240,50);
-        botonDerecha.setStyle("-fx-background-color: #BDD9F2;" + "-fx-text-fill: #010B40;");
+        ImageView flechaDerecha = new ImageView();
+        flechaDerecha.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/view/fotos/flechaDerecha.png").toURI().toString()));
+        botonDerecha.setGraphic(flechaDerecha);
+        botonDerecha.setStyle("-fx-background-color: transparent;");
+        botonDerecha.setFocusTraversable(false);
         botonDerecha.setOnAction(new BotonDerechaEventHandler(vistaJugador2, juego, this));
 
         this.botonIzquierda = new Button();
-        botonIzquierda.setText("Izquierda");
-        botonIzquierda.setFont(Font.font("Trebuchet MS", 20));
-        botonIzquierda.setPrefSize(240,50);
-        botonIzquierda.setStyle("-fx-background-color: #BDD9F2;" + "-fx-text-fill: #010B40;");
+        ImageView flechaIzquierda = new ImageView();
+        flechaIzquierda.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/view/fotos/flechaIzquierda.png").toURI().toString()));
+        botonIzquierda.setGraphic(flechaIzquierda);
+        botonIzquierda.setStyle("-fx-background-color: transparent;");
+        botonIzquierda.setFocusTraversable(false);
         botonIzquierda.setOnAction(new BotonIzquierdaEventHandler(vistaJugador2, juego, this));
 
         this.botonAbajo = new Button();
-        botonAbajo.setText("Arriba");
-        botonAbajo.setFont(Font.font("Trebuchet MS", 20));
-        botonAbajo.setPrefSize(240,50);
-        botonAbajo.setStyle("-fx-background-color: #BDD9F2;" + "-fx-text-fill: #010B40;");
+        ImageView flechaArriba = new ImageView();
+        flechaArriba.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/view/fotos/flechaArriba.png").toURI().toString()));
+        botonAbajo.setGraphic(flechaArriba);
+        botonAbajo.setStyle("-fx-background-color: transparent;");
+        botonAbajo.setFocusTraversable(false);
         botonAbajo.setOnAction(new BotonAbajoEventHandler(vistaJugador2, juego, this));
 
         this.botonArriba = new Button();
-        botonArriba.setText("Abajo");
-        botonArriba.setFont(Font.font("Trebuchet MS", 20));
-        botonArriba.setPrefSize(240,50);
-        botonArriba.setStyle("-fx-background-color: #BDD9F2;" + "-fx-text-fill: #010B40;");
+        ImageView flechaAbajo = new ImageView();
+        flechaAbajo.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/view/fotos/flechaAbajo.png").toURI().toString()));
+        botonArriba.setGraphic(flechaAbajo);
+        botonArriba.setStyle("-fx-background-color: transparent;");
+        botonArriba.setFocusTraversable(false);
         botonArriba.setOnAction(new BotonArribaEventHandler(vistaJugador2, juego, this));
 
-        VBox contenedorVertical = new VBox(puntaje, coordenadas, labelAcciones, botonArriba, botonAbajo, botonIzquierda, botonDerecha);
+        VBox contenedorVertical = new VBox(puntaje, coordenadas, labelAcciones);
         contenedorVertical.setSpacing(20);
         contenedorVertical.setPadding(new Insets(15));
 
+        HBox contenedorBotonesHorizontal = new HBox(botonIzquierda, botonArriba, botonDerecha);
+        contenedorBotonesHorizontal.setSpacing(2);
+        contenedorBotonesHorizontal.setPadding(new Insets(2));
+
+        VBox contenedorBotonesVertical = new VBox(botonAbajo, contenedorBotonesHorizontal);
+        contenedorBotonesVertical.setAlignment(Pos.CENTER);
+        contenedorBotonesVertical.setSpacing(2);
+        contenedorBotonesVertical.setPadding(new Insets(2));
+
         this.setLeft(contenedorVertical);
+        this.setRight(contenedorBotonesVertical);
     }
 
     public void updateEstado(Jugador jugador) {

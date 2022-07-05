@@ -37,7 +37,7 @@ public class ContenedorInicio extends VBox {
         this.setSpacing(50);
         this.setPadding(new Insets(50));
 
-        BackgroundImage fondoPantalla= new BackgroundImage(new Image(new File("src/main/java/edu/fiuba/algo3/view/fotos/fondoPantalla.gif").toURI().toString(),2000,1334,false,true),
+        BackgroundImage fondoPantalla = new BackgroundImage(new Image(new File("src/main/java/edu/fiuba/algo3/view/fotos/fondoPantalla.gif").toURI().toString(),2000,1334,false,true),
         BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
         BackgroundSize.DEFAULT);
         this.setBackground(new Background(fondoPantalla));

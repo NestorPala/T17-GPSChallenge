@@ -38,7 +38,7 @@ public class VistaEscenario extends Group {
                 v.getChildren().add(0, imagenes.devolverImagenes(escenario.obtenerChocable(new Posicion(i,j))));
                 v.setPadding(new Insets(2));
                 panes[i][j] = v;
-                tabla.add(v , i, j);
+                tabla.add(v, i, j);
             }
         }
 
@@ -46,7 +46,7 @@ public class VistaEscenario extends Group {
         tabla.setHgap(10);
         tabla.setBackground(new Background(new BackgroundFill(Color.rgb(167, 189, 217), new CornerRadii(2.5), new Insets(5))));
         tabla.setBorder(new Border(new BorderStroke(Color.rgb(167, 189, 217), BorderStrokeStyle.SOLID, new CornerRadii(2.5), new BorderWidths(20))));
-
+        
         this.addView(tabla);
     }
 
