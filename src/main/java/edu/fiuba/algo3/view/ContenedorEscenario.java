@@ -128,9 +128,9 @@ public class ContenedorEscenario extends BorderPane {
 
         Button botonRanking = setRanking(juego);
 
-        VBox contenedorVertical = new VBox(puntaje, coordenadas, botonRanking);
-        contenedorVertical.setSpacing(20);
-        contenedorVertical.setPadding(new Insets(15));
+        VBox contenedorInfo = new VBox(puntaje, coordenadas);
+        contenedorInfo.setSpacing(20);
+        contenedorInfo.setPadding(new Insets(15));
 
         HBox contenedorBotonesHorizontal = new HBox(botonIzquierda, botonArriba, botonDerecha);
         contenedorBotonesHorizontal.setSpacing(2);
@@ -141,8 +141,12 @@ public class ContenedorEscenario extends BorderPane {
         contenedorBotonesVertical.setSpacing(2);
         contenedorBotonesVertical.setPadding(new Insets(2));
 
-        this.setLeft(contenedorVertical);
-        this.setRight(contenedorBotonesVertical);
+        VBox contenedorTodosLosBotones = new VBox(botonRanking, contenedorBotonesVertical);
+        contenedorTodosLosBotones.setAlignment(Pos.CENTER);
+        contenedorTodosLosBotones.setSpacing(550);
+
+        this.setLeft(contenedorInfo);
+        this.setRight(contenedorTodosLosBotones);
     }
 
     public void updateEstado(Jugador jugador) {
@@ -169,8 +173,8 @@ public class ContenedorEscenario extends BorderPane {
     public Button setRanking(GPSChallenge juego) {
         Button botonRanking = new Button();
         botonRanking.setText("Ranking");
-        botonRanking.setFont(Font.font("SansSerif", 20));
-        botonRanking.setPrefSize(240,50);
+        botonRanking.setFont(Font.font("SansSerif", 36));
+        botonRanking.setPrefSize(300,100);
         botonRanking.setStyle("-fx-background-color: #BDD9F2;" + "-fx-text-fill: #010B40;");
         botonRanking.setOnAction(new BotonRankingEventHandler(stage, juego));
         return botonRanking;
