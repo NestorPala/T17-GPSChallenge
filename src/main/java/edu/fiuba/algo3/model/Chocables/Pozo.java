@@ -26,6 +26,7 @@ public class Pozo implements Chocable {
     Logger.getInstance().log("El jugador iba con una 4x4 y se choco con un pozo");
     todoterreno.sumarPozo();
     if (todoterreno.obtenerPozos() >= 3) {
+      todoterreno.reiniciarPozos();
       return new Penalizacion(2);
     }
     return new Penalizacion(0);
