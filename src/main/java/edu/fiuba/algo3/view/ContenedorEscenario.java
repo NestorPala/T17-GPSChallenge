@@ -187,10 +187,6 @@ public class ContenedorEscenario extends BorderPane {
         ImageView fotoRanking = new ImageView();
         fotoRanking.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/view/fotos/ranking.png").toURI().toString()));
         botonRanking.setGraphic(fotoRanking);
-        //botonRanking.setText("Ranking");
-        //botonRanking.setFont(Font.font("SansSerif", 36));
-        //botonRanking.setPrefSize(300,100);
-        //botonRanking.setStyle("-fx-background-color: #BDD9F2;" + "-fx-text-fill: #010B40;");
         botonRanking.setStyle("-fx-background-color: transparent;");
         botonRanking.setFocusTraversable(false);
         botonRanking.setOnAction(new BotonRankingEventHandler(stage, juego));
