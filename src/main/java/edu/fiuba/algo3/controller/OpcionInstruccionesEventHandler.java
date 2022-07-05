@@ -10,7 +10,7 @@ public class OpcionInstruccionesEventHandler implements EventHandler<ActionEvent
     public void handle(ActionEvent actionEvent) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Instrucciones");
-        alert.setHeaderText("Reglas de juego");
+        alert.setHeaderText("Reglas del juego");
         alert.setContentText("El objetivo del juego es lograr que el vehículo llegue a la meta con la menor cantidad de movimientos posibles.\n\n" +
                 "Cada movimiento realizado le sumará un punto al puntaje del jugador.\n\n" +
                 "El escenario que debe atravesar el jugador está repleto de obstaculos que pueden aumentar o disminuir su puntaje.\n\n" +
