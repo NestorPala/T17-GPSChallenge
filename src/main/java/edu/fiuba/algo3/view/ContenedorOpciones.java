@@ -29,11 +29,11 @@ public class ContenedorOpciones extends VBox {
         textoOpciones.setFont(Font.font("Trebuchet MS", 78));
         textoOpciones.setStyle(
                 "-fx-padding: 10;" +
-                        "-fx-background-radius: 5;" +
-                        "-fx-font-weight: bold;" +
-                        "-fx-text-fill: #010B40;" +
-                        "-fx-background-color: #88AABF;"+
-                        "-fx-alignment: center");
+                "-fx-background-radius: 5;" +
+                "-fx-font-weight: bold;" +
+                "-fx-text-fill: #010B40;" +
+                "-fx-background-color: #88AABF;"+
+                "-fx-alignment: center");
 
         Button botonAtras = new Button();
         botonAtras.setText("Atrás");

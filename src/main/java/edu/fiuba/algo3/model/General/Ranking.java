@@ -14,8 +14,10 @@ public class Ranking {
   }
 
   public void agregar(Jugador unJugador) {
-    jugadores.add(unJugador);
-    jugadores.sort(Comparator.comparing(Jugador::puntaje));
+    if (!jugadores.contains(unJugador)) {
+      jugadores.add(unJugador);
+      jugadores.sort(Comparator.comparing(Jugador::puntaje));
+    }
   }
 
   public Jugador obtenerJugadorDelTop(int posicionDelTop) {

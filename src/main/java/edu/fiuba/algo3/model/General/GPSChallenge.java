@@ -2,6 +2,8 @@ package edu.fiuba.algo3.model.General;
 
 import edu.fiuba.algo3.model.Jugador.Jugador;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayDeque;
 import java.util.Queue;
 
@@ -63,10 +65,10 @@ public class GPSChallenge {
     String[] top = new String[10];
 
     for (int i = 0; i < 10; i++) {
-      top[i] = "-;-";
+      top[i] = "----;----";
       if (ranking.obtenerJugadorDelTop(i) != null) {
         String nombre = ranking.obtenerJugadorDelTop(i).nombre();
-        double puntaje = ranking.obtenerJugadorDelTop(i).puntaje();
+        double puntaje = new BigDecimal(ranking.obtenerJugadorDelTop(i).puntaje()).setScale(2, RoundingMode.HALF_UP).doubleValue();
         top[i] = (nombre + ";" + puntaje);
       }
     }

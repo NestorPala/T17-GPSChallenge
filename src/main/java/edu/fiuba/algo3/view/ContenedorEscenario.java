@@ -1,9 +1,6 @@
 package edu.fiuba.algo3.view;
 
-import edu.fiuba.algo3.controller.BotonAbajoEventHandler;
-import edu.fiuba.algo3.controller.BotonArribaEventHandler;
-import edu.fiuba.algo3.controller.BotonDerechaEventHandler;
-import edu.fiuba.algo3.controller.BotonIzquierdaEventHandler;
+import edu.fiuba.algo3.controller.*;
 import edu.fiuba.algo3.model.General.Escenario;
 import edu.fiuba.algo3.model.General.GPSChallenge;
 import edu.fiuba.algo3.model.Jugador.Jugador;
@@ -77,8 +74,8 @@ public class ContenedorEscenario extends BorderPane {
     private void setPanelEstado(GPSChallenge juego) {
 
         this.puntaje = new Label();
-        puntaje.setFont(Font.font("Trebuchet MS", 30));
-        puntaje.setPrefSize(240,80);
+        puntaje.setFont(Font.font("SansSerif", 30));
+        puntaje.setPrefSize(300,80);
         puntaje.setStyle(
                 "-fx-background-radius: 5;" +
                 "-fx-text-fill: #010B40;" +
@@ -86,8 +83,8 @@ public class ContenedorEscenario extends BorderPane {
                 "-fx-alignment: center");
 
         this.coordenadas = new Label(juego.jugadorActual().posicion().toString());
-        coordenadas.setFont(Font.font("Trebuchet MS", 30));
-        coordenadas.setPrefSize(240,50);
+        coordenadas.setFont(Font.font("SansSerif", 30));
+        coordenadas.setPrefSize(300,50);
         coordenadas.setStyle(
                 "-fx-padding: 10;" +
                 "-fx-background-radius: 5;" +
@@ -96,16 +93,6 @@ public class ContenedorEscenario extends BorderPane {
                 "-fx-alignment: center");
 
         this.updateEstado(juego.jugadorActual());
-
-        Label labelAcciones = new Label("Acciones:");
-        labelAcciones.setFont(Font.font("Trebuchet MS", 30));
-        labelAcciones.setPrefSize(240,50);
-        labelAcciones.setStyle(
-                "-fx-padding: 10;" +
-                "-fx-background-radius: 5;" +
-                "-fx-text-fill: #010B40;" +
-                "-fx-background-color: #88AABF;"+
-                "-fx-alignment: center");
 
         this.botonDerecha = new Button();
         ImageView flechaDerecha = new ImageView();
@@ -139,7 +126,9 @@ public class ContenedorEscenario extends BorderPane {
         botonArriba.setFocusTraversable(false);
         botonArriba.setOnAction(new BotonArribaEventHandler(vistaJugador2, juego, this));
 
-        VBox contenedorVertical = new VBox(puntaje, coordenadas, labelAcciones);
+        Button botonRanking = setRanking(juego);
+
+        VBox contenedorVertical = new VBox(puntaje, coordenadas, botonRanking);
         contenedorVertical.setSpacing(20);
         contenedorVertical.setPadding(new Insets(15));
 
@@ -158,7 +147,7 @@ public class ContenedorEscenario extends BorderPane {
 
     public void updateEstado(Jugador jugador) {
         this.puntaje.setText("Jugador: " + jugador.nombre() + "\n" + "Puntaje: " + new DecimalFormat("#.##").format(jugador.puntaje()));
-        this.puntaje.setFont(Font.font("Trebuchet MS", 30));
+        this.puntaje.setFont(Font.font("SansSerif", 30));
 
         this.coordenadas.setText("Posicion: " + jugador.posicion().toString());
     }
@@ -175,5 +164,15 @@ public class ContenedorEscenario extends BorderPane {
                 botonArriba.fire();
             }
         });
+    }
+
+    public Button setRanking(GPSChallenge juego) {
+        Button botonRanking = new Button();
+        botonRanking.setText("Ranking");
+        botonRanking.setFont(Font.font("SansSerif", 20));
+        botonRanking.setPrefSize(240,50);
+        botonRanking.setStyle("-fx-background-color: #BDD9F2;" + "-fx-text-fill: #010B40;");
+        botonRanking.setOnAction(new BotonRankingEventHandler(stage, juego));
+        return botonRanking;
     }
 }
