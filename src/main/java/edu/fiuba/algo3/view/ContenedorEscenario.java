@@ -143,7 +143,7 @@ public class ContenedorEscenario extends BorderPane {
 
         VBox contenedorTodosLosBotones = new VBox(botonRanking, contenedorBotonesVertical);
         contenedorTodosLosBotones.setAlignment(Pos.CENTER);
-        contenedorTodosLosBotones.setSpacing(550);
+        contenedorTodosLosBotones.setSpacing(450);
 
         this.setLeft(contenedorInfo);
         this.setRight(contenedorTodosLosBotones);
@@ -184,10 +184,15 @@ public class ContenedorEscenario extends BorderPane {
 
     public Button setRanking(GPSChallenge juego) {
         Button botonRanking = new Button();
-        botonRanking.setText("Ranking");
-        botonRanking.setFont(Font.font("SansSerif", 36));
-        botonRanking.setPrefSize(300,100);
-        botonRanking.setStyle("-fx-background-color: #BDD9F2;" + "-fx-text-fill: #010B40;");
+        ImageView fotoRanking = new ImageView();
+        fotoRanking.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/view/fotos/ranking.png").toURI().toString()));
+        botonRanking.setGraphic(fotoRanking);
+        //botonRanking.setText("Ranking");
+        //botonRanking.setFont(Font.font("SansSerif", 36));
+        //botonRanking.setPrefSize(300,100);
+        //botonRanking.setStyle("-fx-background-color: #BDD9F2;" + "-fx-text-fill: #010B40;");
+        botonRanking.setStyle("-fx-background-color: transparent;");
+        botonRanking.setFocusTraversable(false);
         botonRanking.setOnAction(new BotonRankingEventHandler(stage, juego));
         return botonRanking;
     }
