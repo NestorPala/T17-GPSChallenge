@@ -32,6 +32,7 @@ public class BotonArribaEventHandler implements EventHandler<ActionEvent> {
         juego.mover(Direccion.arriba());
         vistaJugador.actualizar();
         contenedor.updateEstado(juego.jugadorActual());
+        contenedor.notificarChoque(juego.jugadorActual());
         sonidoAuto.play();
         sonidoAuto.seek(sonidoAuto.getStartTime());
     }

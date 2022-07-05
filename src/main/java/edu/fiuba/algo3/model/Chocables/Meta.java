@@ -26,4 +26,9 @@ public class Meta implements Chocable {
     Logger.getInstance().log("El jugador iba con una moto y se choco con la meta");
     return new FinDelJuego();
   }
+
+  @Override
+  public String toString() {
+    return "meta";
+  }
 }

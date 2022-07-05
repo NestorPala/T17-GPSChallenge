@@ -21,4 +21,9 @@ public class Vacio implements Chocable {
   public IEfecto devolverEfecto(Todoterreno todoterreno) {
     return new Penalizacion(0);
   }
+
+  @Override
+  public String toString() {
+    return "vacio";
+  }
 }

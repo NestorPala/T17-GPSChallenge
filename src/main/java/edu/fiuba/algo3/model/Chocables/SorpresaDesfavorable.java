@@ -27,4 +27,9 @@ public class SorpresaDesfavorable implements Chocable {
     Logger.getInstance().log("El jugador iba con una 4x4 y se choco con una sorpresa desfavorable");
     return new Porcentaje(25);
   }
+
+  @Override
+  public String toString() {
+    return "sorpresa desfavorable";
+  }
 }

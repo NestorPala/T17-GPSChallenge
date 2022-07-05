@@ -40,4 +40,9 @@ public class ControlPolicial implements Chocable {
     if (this.randomizador.random(PROBABILIDAD_TODOTERRENO)) return new Penalizacion(PENALIZACION);
     return new Penalizacion(0);
   }
+
+  @Override
+  public String toString() {
+    return "control policial";
+  }
 }

@@ -30,4 +30,9 @@ public class Pozo implements Chocable {
     }
     return new Penalizacion(0);
   }
+
+  @Override
+  public String toString() {
+    return "pozo";
+  }
 }

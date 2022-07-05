@@ -27,4 +27,9 @@ public class Piquete implements Chocable {
     Logger.getInstance().log("El jugador iba con un todoterreno y se chocó con un piquete");
     return new Retroceso();
   }
+
+  @Override
+  public String toString() {
+    return "piquete";
+  }
 }

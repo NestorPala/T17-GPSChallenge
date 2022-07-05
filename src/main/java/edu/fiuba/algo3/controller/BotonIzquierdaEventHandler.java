@@ -31,6 +31,7 @@ public class BotonIzquierdaEventHandler implements EventHandler<ActionEvent> {
         juego.mover(Direccion.izquierda());
         vistaJugador.actualizar();
         contenedor.updateEstado(juego.jugadorActual());
+        contenedor.notificarChoque(juego.jugadorActual());
         sonidoAuto.play();
         sonidoAuto.seek(sonidoAuto.getStartTime());
     }

@@ -156,6 +156,18 @@ public class ContenedorEscenario extends BorderPane {
         this.coordenadas.setText("Posicion: " + jugador.posicion().toString());
     }
 
+    public void notificarChoque(Jugador jugador){
+        String obstaculo = Escenario.getInstance().obtenerChocable(jugador.posicion()).toString();
+
+        if(obstaculo == "vacio"){
+            return;
+        }else if(obstaculo == "meta"){
+            Toast.makeText(stage,"Felicidades!! Llegaste a la meta",1000,500,500);
+        }else {
+            Toast.makeText(stage,"Te chocaste con " + obstaculo,1000,500,500);
+        }
+    }
+
     public void setBotones() {
         this.stage.getScene().addEventFilter(KeyEvent.KEY_PRESSED, e -> {
             if (e.getCode() == KeyCode.RIGHT) {

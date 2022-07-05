@@ -28,4 +28,9 @@ public class SorpresaCambioVehiculo implements Chocable {
         .log("El jugador iba con una 4x4 y se choco con una sorpresa de cambio de vehiculo");
     return new CambioDeVehiculo(new Moto());
   }
+
+  @Override
+  public String toString() {
+    return "sorpresa de cambio de vehiculo";
+  }
 }
