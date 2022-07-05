@@ -30,7 +30,7 @@ public class Escenario {
     Random random = new Random();
     for (int i = 0; i < this.ancho; i++) {
       for (int j = 0; j < this.alto; j++) {
-        int randomInt = random.nextInt(12);
+        int randomInt = random.nextInt(14);
         switch (randomInt) {
           case 0:
             chocables[i][j] = new ControlPolicial(new Randomizador());
@@ -49,6 +49,9 @@ public class Escenario {
             break;
           case 5:
             chocables[i][j] = new SorpresaDesfavorable();
+            break;
+          case 6:
+            chocables[i][j] = new Sorpresata();
             break;
         }
       }

@@ -49,13 +49,19 @@ public class Imagenes {
         if (chocable instanceof SorpresaCambioVehiculo) {
             ImageView imagen = new ImageView();
             imagen.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/view/fotos/gift.png").toURI().toString()));
-            imagen.setOpacity(0.75);
+            imagen.setOpacity(0.625);
             return imagen;
         }
         if (chocable instanceof Meta) {
             ImageView imagen = new ImageView();
             imagen.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/view/fotos/finishline.png").toURI().toString()));
             imagen.setId("Meta");
+            return imagen;
+        }
+        if (chocable instanceof Sorpresata) {
+            ImageView imagen = new ImageView();
+            imagen.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/view/fotos/gift.png").toURI().toString()));
+            imagen.setOpacity(0.625);
             return imagen;
         }
         else {

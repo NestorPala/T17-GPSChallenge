@@ -162,9 +162,9 @@ public class ContenedorEscenario extends BorderPane {
         if(obstaculo == "vacio"){
             return;
         }else if(obstaculo == "meta"){
-            Toast.makeText(stage,"Felicidades!! Llegaste a la meta",1000,500,500);
+            Toast.makeText(stage,"Felicidades!! Llegaste a la meta",500,500,500);
         }else {
-            Toast.makeText(stage,"Te chocaste con " + obstaculo,1000,500,500);
+            Toast.makeText(stage,"Te chocaste con " + obstaculo,500,500,500);
         }
     }
 
