@@ -8,6 +8,10 @@ import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
+import javafx.scene.shape.Path;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.shape.Shape;
 
 
 public class VistaEscenario extends Group {
@@ -23,9 +27,9 @@ public class VistaEscenario extends Group {
 
     public VistaEscenario(int altoEscenario, int anchoEscenario) {
         tabla = new GridPane();
-        ancho = tileAncho * anchoEscenario;
-        alto = tileAlto * altoEscenario;
-        panes = new Pane[(int) ancho][(int) alto];
+        ancho = anchoEscenario;
+        alto = altoEscenario;
+        panes = new Pane[anchoEscenario][altoEscenario];
         Escenario escenario = Escenario.getInstance();
         Imagenes imagenes = new Imagenes();
 
@@ -46,8 +50,12 @@ public class VistaEscenario extends Group {
         tabla.setHgap(10);
         tabla.setBackground(new Background(new BackgroundFill(Color.rgb(167, 189, 217), new CornerRadii(2.5), new Insets(5))));
         tabla.setBorder(new Border(new BorderStroke(Color.rgb(167, 189, 217), BorderStrokeStyle.SOLID, new CornerRadii(2.5), new BorderWidths(20))));
-        
+
+        //Shape shape = Path.subtract(new Rectangle(ancho * 1.5, alto * 1.5), new Circle(10 * 100 + 50, 10 * 100 + 50, 50));
+        //shape = Path.subtract(shape, new Circle(2 * 100, 2 * 100, 100));
+
         this.addView(tabla);
+        //this.addView(shape);
     }
 
     public void addViewOnMap(Node view, int x, int y) {
