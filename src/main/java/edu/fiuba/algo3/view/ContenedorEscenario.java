@@ -6,8 +6,8 @@ import edu.fiuba.algo3.model.General.GPSChallenge;
 import edu.fiuba.algo3.model.Jugador.Jugador;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
@@ -16,10 +16,12 @@ import javafx.scene.layout.*;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.text.Font;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.io.File;
 import java.text.DecimalFormat;
+import java.util.Optional;
 
 public class ContenedorEscenario extends BorderPane {
 
@@ -47,6 +49,7 @@ public class ContenedorEscenario extends BorderPane {
         this.setMenu(stage);
         this.setStyle("-fx-background-color: #333333;");
         musica.setVolume(0.3);
+        musica.setCycleCount(MediaPlayer.INDEFINITE);
         musica.play();
         musica.seek(musica.getStartTime());
     }
@@ -179,10 +182,11 @@ public class ContenedorEscenario extends BorderPane {
     public void notificarChoque(Jugador jugador){
         String obstaculo = Escenario.getInstance().obtenerChocable(jugador.posicion()).toString();
 
-        if(obstaculo == "vacio"){
+        if (obstaculo == "vacio") {
             return;
-        } else if (obstaculo == "meta"){
+        } else if (obstaculo == "meta") {
             Toast.makeText(stage,"Felicidades!! Llegaste a la meta",250,500,500);
+            popUpFinDelJuego();
         } else {
             Toast.makeText(stage,"Te chocaste con " + obstaculo,250,500,500);
         }
@@ -211,5 +215,39 @@ public class ContenedorEscenario extends BorderPane {
         botonRanking.setFocusTraversable(false);
         botonRanking.setOnAction(new BotonRankingEventHandler(stage, juego));
         return botonRanking;
+    }
+
+    public void popUpFinDelJuego() {
+        Alert popup = new Alert(Alert.AlertType.INFORMATION);
+        popup.setTitle("Juego finalizado");
+        popup.setHeaderText("La partida terminó");
+        popup.setContentText("Todos los jugadores terminaron su turno y no quedan jugadores por jugar.\n" +
+                "Puede volver al menú e iniciar una nueva partida, aceptar y ver el ranking o salir.");
+
+        ButtonType botonMenu = new ButtonType("Menú principal");
+        ButtonType botonSalir = new ButtonType("Salir");
+        ButtonType botonAceptar = new ButtonType("Aceptar", ButtonBar.ButtonData.OK_DONE);
+        popup.getButtonTypes().setAll(botonMenu, botonSalir, botonAceptar);
+
+        Optional<ButtonType> botonPresionado = popup.showAndWait();
+        if (botonPresionado.get() == botonMenu) {
+                Escenario.getInstance().reset();
+                reiniciarJuego(stage);
+        } else if (botonPresionado.get() == botonSalir) {
+                System.exit(0);
+        }
+    }
+
+    private void reiniciarJuego(Stage stage) {
+        int resAncho = (int) Screen.getPrimary().getBounds().getWidth();
+        int resAlto = (int) Screen.getPrimary().getBounds().getHeight();
+
+        ContenedorDificultad contenedorDificultad = new ContenedorDificultad(stage);
+        Scene escenaDificultad = new Scene(contenedorDificultad, resAncho, resAlto);
+
+        ContenedorInicio contenedorInicio = new ContenedorInicio(stage, escenaDificultad);
+        Scene escenaInicial = new Scene(contenedorInicio, resAncho, resAlto);
+
+        stage.setScene(escenaInicial);
     }
 }
