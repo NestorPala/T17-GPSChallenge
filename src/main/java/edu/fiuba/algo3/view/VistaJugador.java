@@ -8,12 +8,12 @@ import edu.fiuba.algo3.model.Vehiculos.Vehiculo;
 
 public class VistaJugador {
 
-    private double escalaJugador = 1;
+    private final double escalaJugador = 1;
     private final VistaEscenario vistaEscenario;
     ImageView imagenJugador;
     private final GPSChallenge juego;
     private int ultimaPosicionX;
-    private Vehiculo vehiculoJugador;
+    private final Vehiculo vehiculoJugador;
 
 
     public VistaJugador(VistaEscenario escenario, GPSChallenge juego) {
@@ -49,17 +49,6 @@ public class VistaJugador {
         }
         this.ultimaPosicionX = juego.jugadorActual().posicion().x();
         vistaEscenario.addViewOnMap(this.imagenJugador, actualX, actualY);
-
-        /*TranslateTransition animacion = new TranslateTransition();
-        animacion.setNode(imagenJugador);
-        animacion.setDuration(Duration.seconds(1));
-        animacion.setFromX(juego.jugadorActual().posicionAnterior().x());
-        animacion.setFromY(juego.jugadorActual().posicionAnterior().y());
-        animacion.setToX(actualX * 36);
-        animacion.setToY(actualY * 36);
-        //animacion.setToX(200);
-        //animacion.setToY(200);
-        animacion.play();*/
     }
 
     public void orientarVehiculo(int actualX){

@@ -20,7 +20,9 @@ public class Todoterreno extends Vehiculo {
     return this.pozosEncontrados;
   }
 
-  public void reiniciarPozos() {this.pozosEncontrados = 0;}
+  public void reiniciarPozos() {
+    this.pozosEncontrados = 0;
+  }
 
   @Override
   public IEfecto chocar(Chocable chocable) {

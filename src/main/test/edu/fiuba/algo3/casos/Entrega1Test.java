@@ -5,9 +5,9 @@ import edu.fiuba.algo3.model.Chocables.Piquete;
 import edu.fiuba.algo3.model.Chocables.Pozo;
 import edu.fiuba.algo3.model.General.Direccion;
 import edu.fiuba.algo3.model.General.Escenario;
-import edu.fiuba.algo3.model.Jugador.Jugador;
 import edu.fiuba.algo3.model.General.Logger;
 import edu.fiuba.algo3.model.General.Posicion;
+import edu.fiuba.algo3.model.Jugador.Jugador;
 import edu.fiuba.algo3.model.Vehiculos.Auto;
 import edu.fiuba.algo3.model.Vehiculos.Moto;
 import edu.fiuba.algo3.model.Vehiculos.Todoterreno;
@@ -82,12 +82,10 @@ public class Entrega1Test {
     Jugador jugador = new Jugador(todoterreno, "Juan");
     Chocable pozo = new Pozo();
 
-    // Pongo los pozos
     escenario.insertarChocable(pozo, new Posicion(2, 1));
     escenario.insertarChocable(pozo, new Posicion(3, 1));
     escenario.insertarChocable(pozo, new Posicion(4, 1));
 
-    // Muevo tres veces al jugador
     jugador.mover(Direccion.derecha());
     jugador.mover(Direccion.derecha());
     jugador.mover(Direccion.derecha());

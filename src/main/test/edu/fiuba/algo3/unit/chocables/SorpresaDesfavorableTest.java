@@ -31,6 +31,6 @@ public class SorpresaDesfavorableTest {
     efecto3.aplicarEfecto(jugador1);
     assertEquals(jugador1.puntaje(), 19.53125);
 
-    assertEquals(sorpresaDesfavorable.toString(),"sorpresa desfavorable");
+    assertEquals(sorpresaDesfavorable.toString(), "sorpresa desfavorable");
   }
 }

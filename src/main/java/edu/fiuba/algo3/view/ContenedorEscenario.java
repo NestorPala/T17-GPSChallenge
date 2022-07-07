@@ -182,12 +182,16 @@ public class ContenedorEscenario extends BorderPane {
     public void notificarChoque(Jugador jugador){
         String obstaculo = Escenario.getInstance().obtenerChocable(jugador.posicion()).toString();
 
-        if (obstaculo == "vacio") {
+        if(obstaculo.equals("vacio")){
             return;
-        } else if (obstaculo == "meta") {
-            Toast.makeText(stage,"Felicidades!! Llegaste a la meta",250,500,500);
+        }
+
+        if(obstaculo.equals("meta")){
+            Toast.makeText(stage,"Felicidades!! Llegaste a la meta",500,500,500);
             popUpFinDelJuego();
-        } else {
+        }else if(obstaculo.equals("sorpresa de cambio de vehiculo")){
+            Toast.makeText(stage,"Te chocaste con " + obstaculo + "\nTu nuevo vehiculo es: " + jugador.vehiculo().toString(),250,500,500);
+        }else{
             Toast.makeText(stage,"Te chocaste con " + obstaculo,250,500,500);
         }
     }

@@ -37,6 +37,5 @@ public class MetaTest {
     assertFalse(j3.puedeSeguirJugando());
 
     assertEquals(meta.toString(), "meta");
-
   }
 }

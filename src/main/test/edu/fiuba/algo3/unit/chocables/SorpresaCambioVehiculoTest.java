@@ -3,11 +3,11 @@ package edu.fiuba.algo3.unit.chocables;
 import edu.fiuba.algo3.model.Chocables.Chocable;
 import edu.fiuba.algo3.model.Chocables.Piquete;
 import edu.fiuba.algo3.model.Chocables.SorpresaCambioVehiculo;
-import edu.fiuba.algo3.model.General.Direccion;
 import edu.fiuba.algo3.model.Efectos.IEfecto;
+import edu.fiuba.algo3.model.General.Direccion;
 import edu.fiuba.algo3.model.General.Escenario;
-import edu.fiuba.algo3.model.Jugador.Jugador;
 import edu.fiuba.algo3.model.General.Posicion;
+import edu.fiuba.algo3.model.Jugador.Jugador;
 import edu.fiuba.algo3.model.Vehiculos.Moto;
 import org.junit.jupiter.api.Test;
 
@@ -30,6 +30,6 @@ public class SorpresaCambioVehiculoTest {
 
     assertEquals(1, jugador.puntaje());
 
-    assertEquals(sorpresaCambioVehiculo.toString(),"sorpresa de cambio de vehiculo");
+    assertEquals(sorpresaCambioVehiculo.toString(), "sorpresa de cambio de vehiculo");
   }
 }
