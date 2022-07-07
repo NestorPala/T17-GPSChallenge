@@ -10,7 +10,6 @@ Trabajo Práctico número 2 de la materia Algoritmos y Programación III de FIUB
 * **Integrante 2** - [Matias Vallejos](https://github.com/MatiasTK)
 * **Integrante 3** - [Alejo Fabregas](https://github.com/alejofabregas)
 * **Integrante 4** - [Lorenzo Ahumada](https://github.com/lorenzoahumada)
-* **Integrante 5** - [Gonzalo Olmos](https://github.com/gonzalo912)
 
 Corrector: **Pablo Rodríguez Massuh**
 
@@ -26,9 +25,6 @@ $ java -jar <archivo.jar>
 
 Aquellos que deseen colaborar con el proyecto pueden consultar la [guía de desarrollo](./docs/Desarrollo.md).
 
-[Enunciado (Temporal)](https://docs.google.com/document/d/1Xu0btDnuNElhbiPMilFlYDhMnu7PMRnFV2Yui9o5rY0/edit#heading=h.m1x5u3gsbjts).
-
-[Informe (Temporal)](https://docs.google.com/document/d/1zPsQaoCeR5HKFEnH4NerEDbEDrKDHYY7fT2Zl77yEKg/)
 ## Licencia
 
 Este repositorio se encuentra bajo la Licencia MIT.
