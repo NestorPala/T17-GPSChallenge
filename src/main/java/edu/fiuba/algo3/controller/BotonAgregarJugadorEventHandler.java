@@ -52,9 +52,9 @@ public class BotonAgregarJugadorEventHandler implements EventHandler<ActionEvent
             return new Auto();
         }
         String tipoVehiculo = opcionesVehiculos.getValue().getId();
-        if (tipoVehiculo == (new Imagenes().devolverImagenesVehiculos(new Auto())).getId()) {
+        if (tipoVehiculo == "auto") {
             return new Auto();
-        } else if (tipoVehiculo == (new Imagenes().devolverImagenesVehiculos(new Moto())).getId()) {
+        } else if (tipoVehiculo == "moto") {
             return new Moto();
         } else {
             return new Todoterreno();
