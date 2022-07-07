@@ -7,8 +7,8 @@ import javafx.stage.Stage;
 
 public class OpcionPantallaCompletaEventHandler implements EventHandler<ActionEvent> {
 
-    Stage stage;
-    MenuItem opcionPantallaCompleta;
+    final Stage stage;
+    final MenuItem opcionPantallaCompleta;
 
     public OpcionPantallaCompletaEventHandler(Stage stage, MenuItem opcionPantallaCompleta){
         this.stage = stage;

@@ -25,7 +25,7 @@ import java.util.Optional;
 
 public class ContenedorEscenario extends BorderPane {
 
-    Stage stage;
+    final Stage stage;
     VistaEscenario vistaEscenario;
     VistaJugador vistaJugador2;
     VBox contenedorCentral;
@@ -190,7 +190,7 @@ public class ContenedorEscenario extends BorderPane {
             Toast.makeText(stage,"Felicidades!! Llegaste a la meta",500,500,500);
             popUpFinDelJuego();
         }else if(obstaculo.equals("sorpresa de cambio de vehiculo")){
-            Toast.makeText(stage,"Te chocaste con " + obstaculo + "\nTu nuevo vehiculo es: " + jugador.vehiculo().toString(),250,500,500);
+            Toast.makeText(stage,"Te chocaste con " + obstaculo + "\nTu nuevo vehiculo es: " + jugador.vehiculo().toString(),500,500,500);
         }else{
             Toast.makeText(stage,"Te chocaste con " + obstaculo,250,500,500);
         }

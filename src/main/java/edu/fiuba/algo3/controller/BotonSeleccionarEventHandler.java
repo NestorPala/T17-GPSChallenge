@@ -13,8 +13,8 @@ import javafx.stage.Stage;
 import java.io.File;
 
 public class BotonSeleccionarEventHandler implements EventHandler<ActionEvent> {
-    Stage stage;
-    private int tamañoDelJuego;
+    final Stage stage;
+    private final int tamañoDelJuego;
     private final static MediaPlayer sonidoClickear = new MediaPlayer(new Media(new File("src/main/java/edu/fiuba/algo3/view/sonidos/sonidoClickear.mp3").toURI().toString()));
 
     public BotonSeleccionarEventHandler(Stage stage, int tamañoDelJuego) {

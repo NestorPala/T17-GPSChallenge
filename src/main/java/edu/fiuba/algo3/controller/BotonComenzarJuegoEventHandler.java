@@ -13,8 +13,8 @@ import java.io.File;
 
 public class BotonComenzarJuegoEventHandler implements EventHandler<ActionEvent> {
 
-    GPSChallenge juego;
-    ContenedorJugadores contenedor;
+    final GPSChallenge juego;
+    final ContenedorJugadores contenedor;
 
     private final static MediaPlayer sonidoClickear = new MediaPlayer(new Media(new File("src/main/java/edu/fiuba/algo3/view/sonidos/sonidoClickear.mp3").toURI().toString()));
 

@@ -14,8 +14,7 @@ import javafx.stage.Stage;
 
 public class ContenedorOpciones extends VBox {
 
-    Stage stage;
-    MenuItem opcionPantallaCompleta = new MenuItem("Pantalla completa");
+    final MenuItem opcionPantallaCompleta = new MenuItem("Pantalla completa");
     public ContenedorOpciones(Stage stage, Scene escenaAnterior) {
 
         super();

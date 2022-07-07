@@ -5,8 +5,8 @@ import javafx.scene.image.ImageView;
 
 public class ContenedorVehiculo {
 
-    Label tipo;
-    ImageView imagen;
+    final Label tipo;
+    final ImageView imagen;
 
     public ContenedorVehiculo(Label unTipo, ImageView unaImagen) {
         this.tipo = unTipo;

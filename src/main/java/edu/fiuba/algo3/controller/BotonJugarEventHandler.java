@@ -11,8 +11,8 @@ import java.io.File;
 
 public class BotonJugarEventHandler implements EventHandler<ActionEvent> {
 
-    Stage stage;
-    Scene proximaEscena;
+    final Stage stage;
+    final Scene proximaEscena;
 
     private final static MediaPlayer sonidoClickear = new MediaPlayer(new Media(new File("src/main/java/edu/fiuba/algo3/view/sonidos/sonidoClickear.mp3").toURI().toString()));
 

@@ -17,7 +17,7 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 public class ContenedorJugadores extends VBox {
-    Stage stage;
+    final Stage stage;
 
     public ContenedorJugadores(Stage stage, GPSChallenge juego) {
 
@@ -122,7 +122,7 @@ public class ContenedorJugadores extends VBox {
                     setGraphic(imagenSeleccionada);
                 }
             }
-        };
+        }
 
         opcionesVehiculo.setButtonCell(new CeldaIconoTexto());
 

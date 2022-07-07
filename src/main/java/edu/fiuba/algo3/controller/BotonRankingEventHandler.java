@@ -1,7 +1,6 @@
 package edu.fiuba.algo3.controller;
 
 import edu.fiuba.algo3.model.General.GPSChallenge;
-import edu.fiuba.algo3.view.ContenedorOpciones;
 import edu.fiuba.algo3.view.ContenedorRanking;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -15,8 +14,8 @@ import java.io.File;
 
 public class BotonRankingEventHandler implements EventHandler<ActionEvent> {
 
-    Stage stage;
-    GPSChallenge juego;
+    final Stage stage;
+    final GPSChallenge juego;
 
     private final static MediaPlayer sonidoRanking = new MediaPlayer(new Media(new File("src/main/java/edu/fiuba/algo3/view/sonidos/sonidoSeleccionar.mp3").toURI().toString()));
 

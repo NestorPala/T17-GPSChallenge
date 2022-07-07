@@ -14,7 +14,6 @@ import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -25,7 +24,7 @@ import edu.fiuba.algo3.controller.BotonSalirEventHandler;
 
 public class ContenedorInicio extends VBox {
 
-    Stage stage;
+    final Stage stage;
 
     public ContenedorInicio(Stage stage, Scene proximaEscena) {
 

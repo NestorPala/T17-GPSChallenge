@@ -6,9 +6,6 @@ import javafx.scene.image.ImageView;
 import java.io.File;
 
 import edu.fiuba.algo3.model.Chocables.*;
-import edu.fiuba.algo3.model.Vehiculos.Auto;
-import edu.fiuba.algo3.model.Vehiculos.Moto;
-import edu.fiuba.algo3.model.Vehiculos.Todoterreno;
 import edu.fiuba.algo3.model.Vehiculos.Vehiculo;
 
 public class Imagenes {

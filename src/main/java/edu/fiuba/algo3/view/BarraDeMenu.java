@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 
 public class BarraDeMenu extends MenuBar {
 
-    MenuItem opcionPantallaCompleta = new MenuItem("Pantalla completa");
+    final MenuItem opcionPantallaCompleta = new MenuItem("Pantalla completa");
 
     public BarraDeMenu(Stage stage){
 

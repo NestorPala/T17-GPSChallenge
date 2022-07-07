@@ -12,8 +12,8 @@ import javafx.scene.paint.Color;
 
 public class VistaEscenario extends Group {
 
-    public double ancho;
-    public double alto;
+    public final double ancho;
+    public final double alto;
     private final double tileAncho = 36;
     private final double tileAlto = 36;
 

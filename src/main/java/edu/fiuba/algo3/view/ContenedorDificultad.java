@@ -16,7 +16,7 @@ import javafx.stage.Stage;
 import java.io.File;
 
 public class ContenedorDificultad extends VBox {
-    Stage stage;
+    final Stage stage;
     private final static MediaPlayer sonidoSeleccionar = new MediaPlayer(new Media(new File("src/main/java/edu/fiuba/algo3/view/sonidos/sonidoSeleccionar.mp3").toURI().toString()));
 
     public ContenedorDificultad(Stage stage) {
