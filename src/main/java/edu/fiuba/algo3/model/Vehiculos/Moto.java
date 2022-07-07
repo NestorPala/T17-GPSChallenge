@@ -14,4 +14,9 @@ public class Moto extends Vehiculo {
   public IEfecto chocar(Chocable chocable) {
     return chocable.devolverEfecto(this);
   }
+
+  @Override
+  public String toString() {
+    return "moto";
+  }
 }

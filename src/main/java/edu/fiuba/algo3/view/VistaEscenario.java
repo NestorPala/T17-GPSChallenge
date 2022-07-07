@@ -14,10 +14,10 @@ public class VistaEscenario extends Group {
 
     public double ancho;
     public double alto;
-    private double tileAncho = 36;
-    private double tileAlto = 36;
+    private final double tileAncho = 36;
+    private final double tileAlto = 36;
 
-    private GridPane tabla;
+    private final GridPane tabla;
 
     private final Pane[][] panes;
 
@@ -101,13 +101,9 @@ public class VistaEscenario extends Group {
     public void limpiarEscenario(Node view){
         for (int i = 0; i < ancho; i++) {
             for (int j = 0; j < alto; j++) {
-                try {
-                    panes[i][j].getChildren().remove(view);
-                    panes[i][j].setBorder(new Border(new BorderStroke(Color.rgb(227,227,227), BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
-                    panes[i][j].setVisible(false);
-                } catch (Exception e) {
-                    //TODO: handle exception
-                }
+                panes[i][j].getChildren().remove(view);
+                panes[i][j].setBorder(new Border(new BorderStroke(Color.rgb(227,227,227), BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
+                panes[i][j].setVisible(false);
             }
         }
     }

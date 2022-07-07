@@ -16,7 +16,7 @@ public class Imagenes {
     public Imagenes() {}
 
     public ImageView devolverImagenes(Chocable chocable) {
-        if (chocable instanceof ControlPolicial) {
+        /*if (chocable instanceof ControlPolicial) {
             ImageView imagen = new ImageView();
             imagen.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/view/fotos/police.png").toURI().toString()));
             imagen.setOpacity(0.625);
@@ -62,11 +62,19 @@ public class Imagenes {
             ImageView imagen = new ImageView();
             imagen.setImage(new Image(new File("").toURI().toString()));
             return imagen;
+        }*/
+        ImageView imagen = new ImageView();
+        imagen.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/view/fotos/" + chocable.toString() + ".png").toURI().toString()));
+        imagen.setOpacity(0.625);
+        if(chocable.toString().equals("meta")){
+            imagen.setId("Meta");
+            imagen.setOpacity(1);
         }
+        return imagen;
     }
 
     public ImageView devolverImagenesVehiculos(Vehiculo vehiculo){
-        if (vehiculo instanceof Auto) {
+        /*if (vehiculo instanceof Auto) {
             ImageView imagen = new ImageView();
             imagen.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/view/fotos/coche.png").toURI().toString()));
             imagen.setId("Auto");
@@ -88,6 +96,10 @@ public class Imagenes {
             ImageView imagen = new ImageView();
             imagen.setImage(new Image(new File("").toURI().toString()));
             return imagen;
-        }
+        }*/
+        ImageView imagen = new ImageView();
+        imagen.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/view/fotos/" + vehiculo.toString() + ".png").toURI().toString()));
+        imagen.setId(vehiculo.toString().substring(0,1).toUpperCase() + vehiculo.toString().substring(1).toLowerCase()); // Para poner en mayusculas la primer letra.
+        return imagen;
     }
 }
