@@ -141,9 +141,29 @@ public class ContenedorEscenario extends BorderPane {
         contenedorBotonesVertical.setSpacing(2);
         contenedorBotonesVertical.setPadding(new Insets(2));
 
-        VBox contenedorTodosLosBotones = new VBox(botonRanking, contenedorBotonesVertical);
+        Label labelRanking = new Label();
+        labelRanking.setFont(Font.font("SansSerif", 30));
+        labelRanking.setPrefSize(300,80);
+        labelRanking.setStyle(
+                "-fx-background-radius: 5;" +
+                        "-fx-text-fill: #010B40;" +
+                        "-fx-background-color: #88AABF;"+
+                        "-fx-alignment: center");
+        labelRanking.setText("Ranking:");
+
+        Label labelAcciones = new Label();
+        labelAcciones.setFont(Font.font("SansSerif", 30));
+        labelAcciones.setPrefSize(300,80);
+        labelAcciones.setStyle(
+                "-fx-background-radius: 5;" +
+                        "-fx-text-fill: #010B40;" +
+                        "-fx-background-color: #88AABF;"+
+                        "-fx-alignment: center");
+        labelAcciones.setText("Acciones:");
+
+        VBox contenedorTodosLosBotones = new VBox(labelRanking, botonRanking, labelAcciones, contenedorBotonesVertical);
         contenedorTodosLosBotones.setAlignment(Pos.CENTER);
-        contenedorTodosLosBotones.setSpacing(450);
+        contenedorTodosLosBotones.setSpacing(75);
 
         this.setLeft(contenedorInfo);
         this.setRight(contenedorTodosLosBotones);
