@@ -94,16 +94,6 @@ class Ranking {
     + obtenerMejorJugador() : Jugador
 }
 
-class Logger {
-    - {static} instance : Logger
-    - activado : bool
-    - Logger()
-    + {static} getInstance() : Logger
-    + activar()
-    + desactivar()
-    + log(string)
-}
-
 interface IEstado {
     + puedeSeguirJugando() : bool
 }
