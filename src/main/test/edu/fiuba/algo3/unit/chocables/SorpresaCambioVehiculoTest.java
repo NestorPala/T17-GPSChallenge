@@ -29,5 +29,7 @@ public class SorpresaCambioVehiculoTest {
     jugador.mover(Direccion.derecha());
 
     assertEquals(1, jugador.puntaje());
+
+    assertEquals(sorpresaCambioVehiculo.toString(),"sorpresa de cambio de vehiculo");
   }
 }

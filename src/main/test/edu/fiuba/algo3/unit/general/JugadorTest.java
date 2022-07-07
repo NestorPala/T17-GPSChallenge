@@ -7,6 +7,7 @@ import edu.fiuba.algo3.model.Jugador.Jugador;
 import edu.fiuba.algo3.model.General.Posicion;
 import edu.fiuba.algo3.model.Vehiculos.Auto;
 import edu.fiuba.algo3.model.Vehiculos.Moto;
+import edu.fiuba.algo3.model.Vehiculos.Todoterreno;
 import edu.fiuba.algo3.model.Vehiculos.Vehiculo;
 import org.junit.jupiter.api.Test;
 
@@ -22,6 +23,7 @@ public class JugadorTest {
 
     jugador.mover(Direccion.derecha());
 
+    assertEquals(jugador.vehiculo().toString(), "moto");
     assertEquals(new Posicion(2, 1), jugador.posicion());
   }
 
@@ -33,16 +35,18 @@ public class JugadorTest {
     jugador.mover(Direccion.izquierda());
     jugador.mover(Direccion.izquierda());
 
+    assertEquals(jugador.vehiculo().toString(), "auto");
     assertEquals(new Posicion(0, 1), jugador.posicion());
   }
 
   @Test
   public void test03_elJugadorSeCreaConElVehiculoCorrecto() {
-    Vehiculo auto = new Auto();
+    Vehiculo todoterreno = new Todoterreno();
 
-    Jugador jugador = new Jugador(auto, "Pablo");
+    Jugador jugador = new Jugador(todoterreno, "Pablo");
 
-    assertEquals(jugador.vehiculo(), auto);
+    assertEquals(jugador.vehiculo().toString(), "todoterreno");
+    assertEquals(jugador.vehiculo(), todoterreno);
   }
 
   @Test

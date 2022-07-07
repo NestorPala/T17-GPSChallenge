@@ -29,5 +29,7 @@ public class PozoTest {
     IEfecto efecto3 = pozo.devolverEfecto(new Todoterreno());
     efecto3.aplicarEfecto(jugador1);
     assertEquals(jugador1.puntaje(), 6);
+
+    assertEquals(pozo.toString(), "pozo");
   }
 }

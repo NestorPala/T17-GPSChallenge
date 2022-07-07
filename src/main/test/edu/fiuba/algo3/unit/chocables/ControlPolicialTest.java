@@ -36,6 +36,8 @@ public class ControlPolicialTest {
     IEfecto efecto3 = controlPolicial.devolverEfecto(new Todoterreno());
     efecto3.aplicarEfecto(jugador1);
     assertEquals(jugador1.puntaje(), 9);
+
+    assertEquals(controlPolicial.toString(), "control policial");
   }
 
   @Test

@@ -25,5 +25,7 @@ public class VacioTest {
 
     vacio.devolverEfecto(new Todoterreno());
     assertEquals(puntaje.verMovimientos(), 0);
+
+    assertEquals(vacio.toString(),"vacio");
   }
 }

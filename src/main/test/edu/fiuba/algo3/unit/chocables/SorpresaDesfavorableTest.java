@@ -30,5 +30,7 @@ public class SorpresaDesfavorableTest {
     IEfecto efecto3 = sorpresaDesfavorable.devolverEfecto(new Todoterreno());
     efecto3.aplicarEfecto(jugador1);
     assertEquals(jugador1.puntaje(), 19.53125);
+
+    assertEquals(sorpresaDesfavorable.toString(),"sorpresa desfavorable");
   }
 }

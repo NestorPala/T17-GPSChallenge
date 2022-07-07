@@ -31,5 +31,7 @@ public class PiqueteTest {
     IEfecto efecto3 = piquete.devolverEfecto(new Todoterreno());
     efecto3.aplicarEfecto(jugador1);
     assertEquals(jugador1.puntaje(), 2);
+
+    assertEquals(piquete.toString(), "piquete");
   }
 }
