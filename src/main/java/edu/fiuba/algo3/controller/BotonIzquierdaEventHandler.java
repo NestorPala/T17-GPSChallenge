@@ -28,11 +28,13 @@ public class BotonIzquierdaEventHandler implements EventHandler<ActionEvent> {
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        juego.mover(Direccion.izquierda());
+        if (juego.jugadorActual().puedeSeguirJugando()) {
+            juego.mover(Direccion.izquierda());
+            sonidoAuto.play();
+            sonidoAuto.seek(sonidoAuto.getStartTime());
+        }
         vistaJugador.actualizar();
         contenedor.updateEstado(juego.jugadorActual());
         contenedor.notificarChoque(juego.jugadorActual());
-        sonidoAuto.play();
-        sonidoAuto.seek(sonidoAuto.getStartTime());
     }
 }

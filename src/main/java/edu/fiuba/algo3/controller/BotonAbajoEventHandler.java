@@ -29,11 +29,13 @@ public class BotonAbajoEventHandler implements EventHandler<ActionEvent> {
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        juego.mover(Direccion.abajo());
+        if (juego.jugadorActual().puedeSeguirJugando()) {
+            juego.mover(Direccion.abajo());
+            sonidoAuto.play();
+            sonidoAuto.seek(sonidoAuto.getStartTime());
+        }
         vistaJugador.actualizar();
         contenedor.updateEstado(juego.jugadorActual());
         contenedor.notificarChoque(juego.jugadorActual());
-        sonidoAuto.play();
-        sonidoAuto.seek(sonidoAuto.getStartTime());
     }
 }
