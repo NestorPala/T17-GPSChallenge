@@ -46,9 +46,7 @@ public class GPSChallenge {
     if (!jugadorActual.puedeSeguirJugando()) {
       Logger.getInstance().log("El jugador " + jugadorActual.nombre() + " llego a la meta");
       ranking.agregar(jugadorActual);
-      if (!escogerSiguienteJugador()) {
-        Logger.getInstance().log("Ya terminaron de jugar todos los jugadores");
-      }
+      escogerSiguienteJugador();
     }
   }
 
@@ -56,12 +54,10 @@ public class GPSChallenge {
     return jugadores.size() > 0;
   }
 
-  public boolean escogerSiguienteJugador() {
-    if (hayJugadoresPorJugar()) {
+  public void escogerSiguienteJugador() {
+    if (jugadores.size() > 0) {
       jugadorActual = jugadores.poll();
-      return true;
     }
-    return false;
   }
 
   public String[] obtenerTop10() {

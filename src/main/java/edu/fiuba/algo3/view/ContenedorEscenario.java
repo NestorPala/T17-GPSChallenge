@@ -75,7 +75,7 @@ public class ContenedorEscenario extends BorderPane {
 
         this.puntaje = new Label();
         puntaje.setFont(Font.font("SansSerif", 30));
-        puntaje.setPrefSize(300,80);
+        puntaje.setPrefSize(300,100);
         puntaje.setStyle(
                 "-fx-background-radius: 5;" +
                 "-fx-text-fill: #010B40;" +
@@ -84,7 +84,7 @@ public class ContenedorEscenario extends BorderPane {
 
         this.coordenadas = new Label(juego.jugadorActual().posicion().toString());
         coordenadas.setFont(Font.font("SansSerif", 30));
-        coordenadas.setPrefSize(300,50);
+        coordenadas.setPrefSize(300,60);
         coordenadas.setStyle(
                 "-fx-padding: 10;" +
                 "-fx-background-radius: 5;" +
@@ -161,10 +161,10 @@ public class ContenedorEscenario extends BorderPane {
 
         if(obstaculo == "vacio"){
             return;
-        }else if(obstaculo == "meta"){
-            Toast.makeText(stage,"Felicidades!! Llegaste a la meta",1000,500,500);
-        }else {
-            Toast.makeText(stage,"Te chocaste con " + obstaculo,1000,500,500);
+        } else if (obstaculo == "meta"){
+            Toast.makeText(stage,"Felicidades!! Llegaste a la meta",250,500,500);
+        } else {
+            Toast.makeText(stage,"Te chocaste con " + obstaculo,250,500,500);
         }
     }
 

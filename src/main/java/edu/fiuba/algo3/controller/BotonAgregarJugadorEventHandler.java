@@ -1,11 +1,10 @@
 package edu.fiuba.algo3.controller;
 
-import edu.fiuba.algo3.view.Imagenes;
+import edu.fiuba.algo3.view.ContenedorVehiculo;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
-import javafx.scene.image.ImageView;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
@@ -22,11 +21,11 @@ public class BotonAgregarJugadorEventHandler implements EventHandler<ActionEvent
 
     private final GPSChallenge juego;
     private final TextField inputNombre;
-    private final ComboBox<ImageView> opcionesVehiculos;
+    private final ComboBox<ContenedorVehiculo> opcionesVehiculos;
     private final static MediaPlayer sonidoSeleccionar = new MediaPlayer(new Media(new File("src/main/java/edu/fiuba/algo3/view/sonidos/sonidoSeleccionar.mp3").toURI().toString()));
 
 
-    public BotonAgregarJugadorEventHandler(TextField inputNombre, ComboBox<ImageView> opcionesVehiculos, GPSChallenge juego) {
+    public BotonAgregarJugadorEventHandler(TextField inputNombre, ComboBox<ContenedorVehiculo> opcionesVehiculos, GPSChallenge juego) {
         this.inputNombre = inputNombre;
         this.opcionesVehiculos = opcionesVehiculos;
         this.juego = juego;
@@ -42,19 +41,20 @@ public class BotonAgregarJugadorEventHandler implements EventHandler<ActionEvent
     }
 
     private String seleccionarNombre(TextField inputNombre) {
-        String nombre = inputNombre.getText();
-        if (nombre == "") { return "Pepe"; }
+        if (inputNombre.getText() == null || inputNombre.getText().trim().isEmpty()) {
+            return "Pepe";
+        }
         return inputNombre.getText();
     }
 
-    private Vehiculo seleccionarVehiculo(ComboBox<ImageView> opcionesVehiculos) {
+    private Vehiculo seleccionarVehiculo(ComboBox<ContenedorVehiculo> opcionesVehiculos) {
         if (opcionesVehiculos.getValue() == null) {
             return new Auto();
         }
-        String tipoVehiculo = opcionesVehiculos.getValue().getId();
-        if (tipoVehiculo == "auto") {
+        String tipoVehiculo = opcionesVehiculos.getValue().obtenerTipo().getText();
+        if (tipoVehiculo == "Auto") {
             return new Auto();
-        } else if (tipoVehiculo == "moto") {
+        } else if (tipoVehiculo == "Moto") {
             return new Moto();
         } else {
             return new Todoterreno();

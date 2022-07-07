@@ -48,14 +48,23 @@ public class ContenedorJugadores extends VBox {
         inputNombre.setFocusTraversable(false);
         inputNombre.setFont(Font.font("SansSerif", 28));
 
-        ComboBox<ImageView> opcionesVehiculo = new ComboBox<>();
-        opcionesVehiculo.setMinWidth(350);
-        opcionesVehiculo.setMinHeight(75);
-        opcionesVehiculo.setPromptText("Elija el vehiculo");
-        opcionesVehiculo.setStyle("-fx-font: 28px \"SansSerif\";");
-        opcionesVehiculo.getItems().add(new Imagenes().devolverImagenesVehiculos(new Auto()));
-        opcionesVehiculo.getItems().add(new Imagenes().devolverImagenesVehiculos(new Moto()));
-        opcionesVehiculo.getItems().add(new Imagenes().devolverImagenesVehiculos(new Todoterreno()));
+        Imagenes imagenes = new Imagenes();
+        ImageView imagenAuto = imagenes.devolverImagenesVehiculos(new Auto());
+        ImageView imagenMoto = imagenes.devolverImagenesVehiculos(new Moto());
+        ImageView imagenTodoterreno = imagenes.devolverImagenesVehiculos(new Todoterreno());
+
+        Label labelAuto = new Label("Auto");
+        labelAuto.setFont(Font.font("SansSerif", 28));
+        Label labelMoto = new Label("Moto");
+        labelMoto.setFont(Font.font("SansSerif", 28));
+        Label labelTodoterreno = new Label("Todoterreno");
+        labelTodoterreno.setFont(Font.font("SansSerif", 28));
+
+        ContenedorVehiculo contenedorAuto = new ContenedorVehiculo(labelAuto, imagenAuto);
+        ContenedorVehiculo contenedorMoto = new ContenedorVehiculo(labelMoto, imagenMoto);
+        ContenedorVehiculo contenedorTodoterreno = new ContenedorVehiculo(labelTodoterreno, imagenTodoterreno);
+
+        ComboBox<ContenedorVehiculo> opcionesVehiculo = crearSeleccionadorVehiculos(contenedorAuto, contenedorMoto, contenedorTodoterreno);
 
         Button botonAgregarJugador = new Button();
         botonAgregarJugador.setText("Agregar Jugador");
@@ -66,13 +75,58 @@ public class ContenedorJugadores extends VBox {
 
 
         Button botonComenzarJuego = new Button();
-        botonComenzarJuego.setText("Comenzar juego");
+        botonComenzarJuego.setText("Comenzar Juego");
         botonComenzarJuego.setFont(Font.font("SansSerif", 36));
         botonComenzarJuego.setPrefSize(350,100);
         botonComenzarJuego.setStyle("-fx-background-color: #BDD9F2;" + "-fx-text-fill: #010B40;" + "-fx-background-radius: 10;");
         botonComenzarJuego.setOnAction(new BotonComenzarJuegoEventHandler(this, juego));
 
         this.getChildren().addAll(texto, inputNombre, opcionesVehiculo, botonAgregarJugador, botonComenzarJuego);
+    }
+
+    public ComboBox<ContenedorVehiculo> crearSeleccionadorVehiculos(ContenedorVehiculo cAuto, ContenedorVehiculo cMoto, ContenedorVehiculo cTodoterreno) {
+        ComboBox<ContenedorVehiculo> opcionesVehiculo = new ComboBox<>();
+        opcionesVehiculo.setMinWidth(350);
+        opcionesVehiculo.setMinHeight(75);
+        opcionesVehiculo.setPromptText("Elija el vehículo");
+        opcionesVehiculo.setStyle("-fx-font: 28px \"SansSerif\";");
+        opcionesVehiculo.getItems().addAll(cAuto, cMoto, cTodoterreno);
+
+        opcionesVehiculo.setCellFactory(param -> new ListCell<>() {
+            final ImageView imagenASeleccionar = new ImageView();
+
+            @Override
+            protected void updateItem(ContenedorVehiculo contenedor, boolean vacio) {
+                super.updateItem(contenedor, vacio);
+                if (contenedor == null || vacio) {
+                    setText(null);
+                    setGraphic(null);
+                    imagenASeleccionar.setImage(null);
+                } else {
+                    setText(contenedor.obtenerTipo().getText());
+                    imagenASeleccionar.setImage(contenedor.obtenerImagen().getImage());
+                    setGraphic(imagenASeleccionar);
+                }
+            }
+        });
+
+        class CeldaIconoTexto extends ListCell<ContenedorVehiculo> {
+            final ImageView imagenSeleccionada = new ImageView();
+
+            @Override
+            protected void updateItem(ContenedorVehiculo contenedor, boolean vacio) {
+                super.updateItem(contenedor, vacio);
+                if (contenedor != null) {
+                    setText(contenedor.obtenerTipo().getText());
+                    imagenSeleccionada.setImage(contenedor.obtenerImagen().getImage());
+                    setGraphic(imagenSeleccionada);
+                }
+            }
+        };
+
+        opcionesVehiculo.setButtonCell(new CeldaIconoTexto());
+
+        return opcionesVehiculo;
     }
 
     public void comenzarJuego(GPSChallenge juego){

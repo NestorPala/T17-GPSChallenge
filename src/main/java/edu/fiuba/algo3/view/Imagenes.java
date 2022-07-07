@@ -16,7 +16,6 @@ public class Imagenes {
     public Imagenes() {}
 
     public ImageView devolverImagenes(Chocable chocable) {
-
         ImageView imagen = new ImageView();
         imagen.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/view/fotos/" + chocable.toString() + ".png").toURI().toString()));
         imagen.setOpacity(0.625);
@@ -28,7 +27,6 @@ public class Imagenes {
     }
 
     public ImageView devolverImagenesVehiculos(Vehiculo vehiculo){
-
         ImageView imagen = new ImageView();
         imagen.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/view/fotos/" + vehiculo.toString() + ".png").toURI().toString()));
         imagen.setId(vehiculo.toString()); // Con la mayuscula no se comparaba bien en AgregarJugador :(.
