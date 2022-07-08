@@ -3,6 +3,9 @@ package edu.fiuba.algo3.model.Jugador;
 import edu.fiuba.algo3.model.Chocables.Chocable;
 import edu.fiuba.algo3.model.Efectos.IEfecto;
 import edu.fiuba.algo3.model.General.*;
+import edu.fiuba.algo3.model.Movimiento.Direccion;
+import edu.fiuba.algo3.model.Movimiento.Posicion;
+import edu.fiuba.algo3.model.Puntaje.Puntaje;
 import edu.fiuba.algo3.model.Vehiculos.Vehiculo;
 
 public class Jugador {

@@ -3,6 +3,8 @@ package edu.fiuba.algo3.integration;
 import edu.fiuba.algo3.model.Chocables.*;
 import edu.fiuba.algo3.model.General.*;
 import edu.fiuba.algo3.model.Jugador.Jugador;
+import edu.fiuba.algo3.model.Movimiento.Direccion;
+import edu.fiuba.algo3.model.Movimiento.Posicion;
 import edu.fiuba.algo3.model.Randomizador.Randomizer;
 import edu.fiuba.algo3.model.Vehiculos.Moto;
 import org.junit.jupiter.api.Test;

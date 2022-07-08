@@ -2,7 +2,7 @@ package edu.fiuba.algo3.unit.chocables;
 
 import edu.fiuba.algo3.model.Chocables.Chocable;
 import edu.fiuba.algo3.model.Chocables.Vacio;
-import edu.fiuba.algo3.model.General.Puntaje;
+import edu.fiuba.algo3.model.Puntaje.Puntaje;
 import edu.fiuba.algo3.model.Vehiculos.Auto;
 import edu.fiuba.algo3.model.Vehiculos.Moto;
 import edu.fiuba.algo3.model.Vehiculos.Todoterreno;

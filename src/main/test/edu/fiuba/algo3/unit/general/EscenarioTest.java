@@ -3,7 +3,8 @@ package edu.fiuba.algo3.unit.general;
 import edu.fiuba.algo3.model.Chocables.Pozo;
 import edu.fiuba.algo3.model.Exceptions.TamanioDelEscenarioInvalido;
 import edu.fiuba.algo3.model.General.Escenario;
-import edu.fiuba.algo3.model.General.Posicion;
+import edu.fiuba.algo3.model.Movimiento.Posicion;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;
 

@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.model.General;
+package edu.fiuba.algo3.model.Movimiento;
 
 public class Posicion {
   private int x;

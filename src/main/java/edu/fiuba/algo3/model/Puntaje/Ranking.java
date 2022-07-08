@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.model.General;
+package edu.fiuba.algo3.model.Puntaje;
 
 import edu.fiuba.algo3.model.Jugador.Jugador;
 

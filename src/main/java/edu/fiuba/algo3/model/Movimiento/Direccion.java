@@ -1,4 +1,6 @@
-package edu.fiuba.algo3.model.General;
+package edu.fiuba.algo3.model.Movimiento;
+
+import edu.fiuba.algo3.model.General.Logger;
 
 public class Direccion {
   private final int dirX;

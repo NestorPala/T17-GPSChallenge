@@ -1,7 +1,8 @@
 package edu.fiuba.algo3.unit.general;
 
-import edu.fiuba.algo3.model.General.Direccion;
-import edu.fiuba.algo3.model.General.Posicion;
+import edu.fiuba.algo3.model.Movimiento.Direccion;
+import edu.fiuba.algo3.model.Movimiento.Posicion;
+
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

@@ -1,10 +1,10 @@
 package edu.fiuba.algo3.unit.general;
 
 import edu.fiuba.algo3.model.Chocables.Meta;
-import edu.fiuba.algo3.model.General.Direccion;
 import edu.fiuba.algo3.model.General.Escenario;
-import edu.fiuba.algo3.model.General.Posicion;
 import edu.fiuba.algo3.model.Jugador.Jugador;
+import edu.fiuba.algo3.model.Movimiento.Direccion;
+import edu.fiuba.algo3.model.Movimiento.Posicion;
 import edu.fiuba.algo3.model.Vehiculos.Auto;
 import edu.fiuba.algo3.model.Vehiculos.Moto;
 import edu.fiuba.algo3.model.Vehiculos.Todoterreno;

@@ -1,8 +1,8 @@
 package edu.fiuba.algo3.unit.general;
 
-import edu.fiuba.algo3.model.General.Direccion;
 import edu.fiuba.algo3.model.General.Logger;
 import edu.fiuba.algo3.model.Jugador.Jugador;
+import edu.fiuba.algo3.model.Movimiento.Direccion;
 import edu.fiuba.algo3.model.Vehiculos.Moto;
 import org.junit.jupiter.api.Test;
 

@@ -1,6 +1,8 @@
 package edu.fiuba.algo3.model.General;
 
 import edu.fiuba.algo3.model.Jugador.Jugador;
+import edu.fiuba.algo3.model.Movimiento.Direccion;
+import edu.fiuba.algo3.model.Puntaje.Ranking;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

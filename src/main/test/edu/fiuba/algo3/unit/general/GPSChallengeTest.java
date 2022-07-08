@@ -1,9 +1,9 @@
 package edu.fiuba.algo3.unit.general;
 
-import edu.fiuba.algo3.model.General.Direccion;
 import edu.fiuba.algo3.model.General.Escenario;
 import edu.fiuba.algo3.model.General.GPSChallenge;
 import edu.fiuba.algo3.model.Jugador.Jugador;
+import edu.fiuba.algo3.model.Movimiento.Direccion;
 import edu.fiuba.algo3.model.Vehiculos.Auto;
 import edu.fiuba.algo3.model.Vehiculos.Moto;
 import org.junit.jupiter.api.Test;
