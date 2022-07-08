@@ -2,8 +2,8 @@ package edu.fiuba.algo3.controller.BotonesMovimiento;
 
 import edu.fiuba.algo3.model.General.Direccion;
 import edu.fiuba.algo3.model.General.GPSChallenge;
-import edu.fiuba.algo3.view.ContenedorEscenario;
-import edu.fiuba.algo3.view.VistaJugador;
+import edu.fiuba.algo3.view.scenes.Contenedores.ContenedorEscenario;
+import edu.fiuba.algo3.view.scenes.Vistas.VistaJugador;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.media.*;

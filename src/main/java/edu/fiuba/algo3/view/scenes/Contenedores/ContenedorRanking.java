@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.view;
+package edu.fiuba.algo3.view.scenes.Contenedores;
 
 import edu.fiuba.algo3.controller.BotonesMenus.BotonAtrasEventHandler;
 import edu.fiuba.algo3.model.General.GPSChallenge;

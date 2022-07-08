@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.view;
+package edu.fiuba.algo3.view.scenes.Contenedores;
 
 import edu.fiuba.algo3.controller.BotonesMenus.BotonRankingEventHandler;
 import edu.fiuba.algo3.controller.BotonesMovimiento.BotonAbajoEventHandler;
@@ -8,6 +8,10 @@ import edu.fiuba.algo3.controller.BotonesMovimiento.BotonIzquierdaEventHandler;
 import edu.fiuba.algo3.model.General.Escenario;
 import edu.fiuba.algo3.model.General.GPSChallenge;
 import edu.fiuba.algo3.model.Jugador.Jugador;
+import edu.fiuba.algo3.view.BarraDeMenu;
+import edu.fiuba.algo3.view.Toast;
+import edu.fiuba.algo3.view.scenes.Vistas.VistaEscenario;
+import edu.fiuba.algo3.view.scenes.Vistas.VistaJugador;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;

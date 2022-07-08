@@ -1,7 +1,7 @@
 package edu.fiuba.algo3.controller.BotonesMenus;
 
 import edu.fiuba.algo3.model.General.GPSChallenge;
-import edu.fiuba.algo3.view.ContenedorRanking;
+import edu.fiuba.algo3.view.scenes.Contenedores.ContenedorRanking;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;

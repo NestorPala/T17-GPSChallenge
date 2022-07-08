@@ -1,7 +1,7 @@
 package edu.fiuba.algo3;
 
-import edu.fiuba.algo3.view.ContenedorDificultad;
-import edu.fiuba.algo3.view.ContenedorInicio;
+import edu.fiuba.algo3.view.scenes.Contenedores.ContenedorDificultad;
+import edu.fiuba.algo3.view.scenes.Contenedores.ContenedorInicio;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Screen;

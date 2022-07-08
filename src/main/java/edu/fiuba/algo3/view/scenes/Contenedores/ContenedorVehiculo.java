@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.view;
+package edu.fiuba.algo3.view.scenes.Contenedores;
 
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;

@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.view;
+package edu.fiuba.algo3.view.scenes.Contenedores;
 
 import edu.fiuba.algo3.controller.BotonesMenus.BotonAgregarJugadorEventHandler;
 import edu.fiuba.algo3.controller.BotonesMenus.BotonComenzarJuegoEventHandler;
@@ -6,6 +6,7 @@ import edu.fiuba.algo3.model.General.GPSChallenge;
 import edu.fiuba.algo3.model.Vehiculos.Auto;
 import edu.fiuba.algo3.model.Vehiculos.Moto;
 import edu.fiuba.algo3.model.Vehiculos.Todoterreno;
+import edu.fiuba.algo3.view.Imagenes;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;

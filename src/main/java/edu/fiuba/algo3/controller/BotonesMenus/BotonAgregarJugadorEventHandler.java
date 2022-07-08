@@ -1,6 +1,5 @@
 package edu.fiuba.algo3.controller.BotonesMenus;
 
-import edu.fiuba.algo3.view.ContenedorVehiculo;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.ComboBox;
@@ -16,6 +15,7 @@ import edu.fiuba.algo3.model.Vehiculos.Auto;
 import edu.fiuba.algo3.model.Vehiculos.Moto;
 import edu.fiuba.algo3.model.Vehiculos.Todoterreno;
 import edu.fiuba.algo3.model.Vehiculos.Vehiculo;
+import edu.fiuba.algo3.view.scenes.Contenedores.ContenedorVehiculo;
 
 public class BotonAgregarJugadorEventHandler implements EventHandler<ActionEvent> {
 

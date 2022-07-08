@@ -1,10 +1,11 @@
-package edu.fiuba.algo3.view;
+package edu.fiuba.algo3.view.scenes.Vistas;
 
 
 import javafx.scene.image.ImageView;
 
 import edu.fiuba.algo3.model.General.GPSChallenge;
 import edu.fiuba.algo3.model.Vehiculos.Vehiculo;
+import edu.fiuba.algo3.view.Imagenes;
 
 public class VistaJugador {
 

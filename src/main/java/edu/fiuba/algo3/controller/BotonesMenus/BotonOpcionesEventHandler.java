@@ -1,6 +1,5 @@
 package edu.fiuba.algo3.controller.BotonesMenus;
 
-import edu.fiuba.algo3.view.ContenedorOpciones;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -10,6 +9,8 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.io.File;
+
+import edu.fiuba.algo3.view.scenes.Contenedores.ContenedorOpciones;
 
 public class BotonOpcionesEventHandler implements EventHandler<ActionEvent> {
 
