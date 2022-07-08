@@ -6,7 +6,7 @@ import edu.fiuba.algo3.model.General.GPSChallenge;
 import edu.fiuba.algo3.model.Vehiculos.Auto;
 import edu.fiuba.algo3.model.Vehiculos.Moto;
 import edu.fiuba.algo3.model.Vehiculos.Todoterreno;
-import edu.fiuba.algo3.view.Imagenes;
+import edu.fiuba.algo3.view.resources.Imagenes;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;

@@ -5,7 +5,7 @@ import javafx.scene.image.ImageView;
 
 import edu.fiuba.algo3.model.General.GPSChallenge;
 import edu.fiuba.algo3.model.Vehiculos.Vehiculo;
-import edu.fiuba.algo3.view.Imagenes;
+import edu.fiuba.algo3.view.resources.Imagenes;
 
 public class VistaJugador {
 

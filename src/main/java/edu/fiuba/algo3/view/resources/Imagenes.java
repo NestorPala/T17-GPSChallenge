@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.view;
+package edu.fiuba.algo3.view.resources;
 
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;

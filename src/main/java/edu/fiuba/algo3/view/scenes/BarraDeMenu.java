@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.view;
+package edu.fiuba.algo3.view.scenes;
 
 import edu.fiuba.algo3.controller.BotonesMenus.BotonSalirEventHandler;
 import edu.fiuba.algo3.controller.OpcionesMenus.OpcionAcercaDeEventHandler;

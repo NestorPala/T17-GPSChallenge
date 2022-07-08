@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.view;
+package edu.fiuba.algo3.view.scenes;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
