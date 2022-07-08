@@ -18,7 +18,7 @@ public class BotonAbajoEventHandler implements EventHandler<ActionEvent> {
 
     private final ContenedorEscenario contenedor;
 
-    private final static MediaPlayer sonidoAuto = new MediaPlayer(new Media(new File("src/main/java/edu/fiuba/algo3/view/sonidos/sonidoAuto.mp3").toURI().toString()));
+    private final static MediaPlayer sonidoAuto = new MediaPlayer(new Media(new File("src/main/java/edu/fiuba/algo3/view/resources/sounds/sonidoAuto.mp3").toURI().toString()));
 
     public BotonAbajoEventHandler(VistaJugador vistaJugador, GPSChallenge juego, ContenedorEscenario contenedor) {
         this.vistaJugador = vistaJugador;

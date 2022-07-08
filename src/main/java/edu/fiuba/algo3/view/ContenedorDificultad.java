@@ -18,7 +18,7 @@ import edu.fiuba.algo3.controller.BotonesMenus.BotonSeleccionarEventHandler;
 
 public class ContenedorDificultad extends VBox {
     final Stage stage;
-    private final static MediaPlayer sonidoSeleccionar = new MediaPlayer(new Media(new File("src/main/java/edu/fiuba/algo3/view/sonidos/sonidoSeleccionar.mp3").toURI().toString()));
+    private final static MediaPlayer sonidoSeleccionar = new MediaPlayer(new Media(new File("src/main/java/edu/fiuba/algo3/view/resources/sounds/sonidoSeleccionar.mp3").toURI().toString()));
 
     public ContenedorDificultad(Stage stage) {
         super();

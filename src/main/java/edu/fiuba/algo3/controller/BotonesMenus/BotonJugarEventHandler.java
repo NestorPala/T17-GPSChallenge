@@ -14,7 +14,7 @@ public class BotonJugarEventHandler implements EventHandler<ActionEvent> {
     final Stage stage;
     final Scene proximaEscena;
 
-    private final static MediaPlayer sonidoClickear = new MediaPlayer(new Media(new File("src/main/java/edu/fiuba/algo3/view/sonidos/sonidoClickear.mp3").toURI().toString()));
+    private final static MediaPlayer sonidoClickear = new MediaPlayer(new Media(new File("src/main/java/edu/fiuba/algo3/view/resources/sounds/sonidoClickear.mp3").toURI().toString()));
 
     public BotonJugarEventHandler(Stage stage, Scene proximaEscena) {
         this.proximaEscena = proximaEscena;

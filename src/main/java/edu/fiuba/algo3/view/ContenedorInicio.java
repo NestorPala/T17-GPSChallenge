@@ -36,7 +36,7 @@ public class ContenedorInicio extends VBox {
         this.setSpacing(50);
         this.setPadding(new Insets(50));
 
-        BackgroundImage fondoPantalla = new BackgroundImage(new Image(new File("src/main/java/edu/fiuba/algo3/view/fotos/fondoPantalla.gif").toURI().toString(),2000,1334,false,true),
+        BackgroundImage fondoPantalla = new BackgroundImage(new Image(new File("src/main/java/edu/fiuba/algo3/view/resources/images/fondoPantalla.gif").toURI().toString(),2000,1334,false,true),
         BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
         BackgroundSize.DEFAULT);
         this.setBackground(new Background(fondoPantalla));
@@ -74,7 +74,7 @@ public class ContenedorInicio extends VBox {
         botonOpciones.setOnAction(new BotonOpcionesEventHandler(stage));
         botonSalir.setOnAction(new BotonSalirEventHandler());
 
-        stage.getIcons().add(new Image(new File("src/main/java/edu/fiuba/algo3/view/fotos/gps.png").toURI().toString()));
+        stage.getIcons().add(new Image(new File("src/main/java/edu/fiuba/algo3/view/resources/images/gps.png").toURI().toString()));
 
         this.getChildren().addAll(texto, botonJugar, botonOpciones, botonSalir);
     }

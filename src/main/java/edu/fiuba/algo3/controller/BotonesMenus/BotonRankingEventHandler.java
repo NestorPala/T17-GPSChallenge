@@ -17,7 +17,7 @@ public class BotonRankingEventHandler implements EventHandler<ActionEvent> {
     final Stage stage;
     final GPSChallenge juego;
 
-    private final static MediaPlayer sonidoRanking = new MediaPlayer(new Media(new File("src/main/java/edu/fiuba/algo3/view/sonidos/sonidoSeleccionar.mp3").toURI().toString()));
+    private final static MediaPlayer sonidoRanking = new MediaPlayer(new Media(new File("src/main/java/edu/fiuba/algo3/view/resources/sounds/sonidoSeleccionar.mp3").toURI().toString()));
 
     public BotonRankingEventHandler(Stage stage, GPSChallenge juego) {
         this.stage = stage;

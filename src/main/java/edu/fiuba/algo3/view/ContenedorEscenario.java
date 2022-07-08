@@ -42,7 +42,7 @@ public class ContenedorEscenario extends BorderPane {
     private Button botonAbajo;
     private Button botonArriba;
 
-    private final static MediaPlayer musica = new MediaPlayer(new Media(new File("src/main/java/edu/fiuba/algo3/view/sonidos/musica.mp3").toURI().toString()));
+    private final static MediaPlayer musica = new MediaPlayer(new Media(new File("src/main/java/edu/fiuba/algo3/view/resources/sounds/musica.mp3").toURI().toString()));
 
 
     public ContenedorEscenario(Stage stage, GPSChallenge juego) {
@@ -104,7 +104,7 @@ public class ContenedorEscenario extends BorderPane {
 
         this.botonDerecha = new Button();
         ImageView flechaDerecha = new ImageView();
-        flechaDerecha.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/view/fotos/flechaDerecha.png").toURI().toString()));
+        flechaDerecha.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/view/resources/images/flechaDerecha.png").toURI().toString()));
         botonDerecha.setGraphic(flechaDerecha);
         botonDerecha.setStyle("-fx-background-color: transparent;");
         botonDerecha.setFocusTraversable(false);
@@ -112,7 +112,7 @@ public class ContenedorEscenario extends BorderPane {
 
         this.botonIzquierda = new Button();
         ImageView flechaIzquierda = new ImageView();
-        flechaIzquierda.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/view/fotos/flechaIzquierda.png").toURI().toString()));
+        flechaIzquierda.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/view/resources/images/flechaIzquierda.png").toURI().toString()));
         botonIzquierda.setGraphic(flechaIzquierda);
         botonIzquierda.setStyle("-fx-background-color: transparent;");
         botonIzquierda.setFocusTraversable(false);
@@ -120,7 +120,7 @@ public class ContenedorEscenario extends BorderPane {
 
         this.botonAbajo = new Button();
         ImageView flechaArriba = new ImageView();
-        flechaArriba.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/view/fotos/flechaArriba.png").toURI().toString()));
+        flechaArriba.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/view/resources/images/flechaArriba.png").toURI().toString()));
         botonAbajo.setGraphic(flechaArriba);
         botonAbajo.setStyle("-fx-background-color: transparent;");
         botonAbajo.setFocusTraversable(false);
@@ -128,7 +128,7 @@ public class ContenedorEscenario extends BorderPane {
 
         this.botonArriba = new Button();
         ImageView flechaAbajo = new ImageView();
-        flechaAbajo.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/view/fotos/flechaAbajo.png").toURI().toString()));
+        flechaAbajo.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/view/resources/images/flechaAbajo.png").toURI().toString()));
         botonArriba.setGraphic(flechaAbajo);
         botonArriba.setStyle("-fx-background-color: transparent;");
         botonArriba.setFocusTraversable(false);
@@ -218,7 +218,7 @@ public class ContenedorEscenario extends BorderPane {
     public Button setRanking(GPSChallenge juego) {
         Button botonRanking = new Button();
         ImageView fotoRanking = new ImageView();
-        fotoRanking.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/view/fotos/ranking.png").toURI().toString()));
+        fotoRanking.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/view/resources/images/ranking.png").toURI().toString()));
         botonRanking.setGraphic(fotoRanking);
         botonRanking.setStyle("-fx-background-color: transparent;");
         botonRanking.setFocusTraversable(false);

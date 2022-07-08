@@ -14,7 +14,7 @@ public class Imagenes {
 
     public ImageView devolverImagenes(Chocable chocable) {
         ImageView imagen = new ImageView();
-        imagen.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/view/fotos/" + chocable.toString() + ".png").toURI().toString()));
+        imagen.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/view/resources/images/" + chocable.toString() + ".png").toURI().toString()));
         imagen.setOpacity(0.625);
         if(chocable.toString().equals("meta")){
             imagen.setId("Meta");
@@ -25,7 +25,7 @@ public class Imagenes {
 
     public ImageView devolverImagenesVehiculos(Vehiculo vehiculo){
         ImageView imagen = new ImageView();
-        imagen.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/view/fotos/" + vehiculo.toString() + ".png").toURI().toString()));
+        imagen.setImage(new Image(new File("src/main/java/edu/fiuba/algo3/view/resources/images/" + vehiculo.toString() + ".png").toURI().toString()));
         imagen.setId(vehiculo.toString());
         return imagen;
     }
