@@ -33,7 +33,7 @@ public class ContenedorJugadores extends VBox {
 
         Label texto = new Label();
         texto.setText("ELEGIR JUGADORES");
-        texto.setFont(Font.font("Trebuchet MS", 70));
+        texto.setFont(Font.loadFont("file:src/main/java/edu/fiuba/algo3/view/resources/fonts/main.ttf", 70));
         texto.setStyle(
                 "-fx-padding: 10;" +
                 "-fx-background-radius: 5;" +
@@ -47,7 +47,7 @@ public class ContenedorJugadores extends VBox {
         inputNombre.setMinHeight(75);
         inputNombre.setPromptText("Ingrese su nombre");
         inputNombre.setFocusTraversable(false);
-        inputNombre.setFont(Font.font("SansSerif", 28));
+        inputNombre.setFont(Font.loadFont("file:src/main/java/edu/fiuba/algo3/view/resources/fonts/main.ttf", 28));
 
         Imagenes imagenes = new Imagenes();
         ImageView imagenAuto = imagenes.devolverImagenesVehiculos(new Auto());
@@ -55,11 +55,11 @@ public class ContenedorJugadores extends VBox {
         ImageView imagenTodoterreno = imagenes.devolverImagenesVehiculos(new Todoterreno());
 
         Label labelAuto = new Label("Auto");
-        labelAuto.setFont(Font.font("SansSerif", 28));
+        labelAuto.setFont(Font.loadFont("file:src/main/java/edu/fiuba/algo3/view/resources/fonts/main.ttf", 28));
         Label labelMoto = new Label("Moto");
-        labelMoto.setFont(Font.font("SansSerif", 28));
+        labelMoto.setFont(Font.loadFont("file:src/main/java/edu/fiuba/algo3/view/resources/fonts/main.ttf", 28));
         Label labelTodoterreno = new Label("Todoterreno");
-        labelTodoterreno.setFont(Font.font("SansSerif", 28));
+        labelTodoterreno.setFont(Font.loadFont("file:src/main/java/edu/fiuba/algo3/view/resources/fonts/main.ttf", 28));
 
         ContenedorVehiculo contenedorAuto = new ContenedorVehiculo(labelAuto, imagenAuto);
         ContenedorVehiculo contenedorMoto = new ContenedorVehiculo(labelMoto, imagenMoto);
@@ -69,7 +69,7 @@ public class ContenedorJugadores extends VBox {
 
         Button botonAgregarJugador = new Button();
         botonAgregarJugador.setText("Agregar Jugador");
-        botonAgregarJugador.setFont(Font.font("SansSerif", 36));
+        botonAgregarJugador.setFont(Font.loadFont("file:src/main/java/edu/fiuba/algo3/view/resources/fonts/main.ttf", 36));
         botonAgregarJugador.setPrefSize(350,100);
         botonAgregarJugador.setStyle("-fx-background-color: #F0F2F2;" + "-fx-text-fill: #010B40;" + "-fx-background-radius: 10;");
         botonAgregarJugador.setOnAction(new BotonAgregarJugadorEventHandler(inputNombre, opcionesVehiculo, juego));
@@ -77,7 +77,7 @@ public class ContenedorJugadores extends VBox {
 
         Button botonComenzarJuego = new Button();
         botonComenzarJuego.setText("Comenzar Juego");
-        botonComenzarJuego.setFont(Font.font("SansSerif", 40));
+        botonComenzarJuego.setFont(Font.loadFont("file:src/main/java/edu/fiuba/algo3/view/resources/fonts/main.ttf", 40));
         botonComenzarJuego.setPrefSize(400,120);
         botonComenzarJuego.setStyle("-fx-background-color: #BDD9F2;" + "-fx-text-fill: #010B40;" + "-fx-background-radius: 10;");
         botonComenzarJuego.setOnAction(new BotonComenzarJuegoEventHandler(this, juego));

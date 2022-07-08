@@ -24,7 +24,7 @@ public class ContenedorRanking extends VBox {
 
         Label ranking = new Label();
         ranking.setText("TOP 10 JUGADORES");
-        ranking.setFont(Font.font("Trebuchet MS", 78));
+        ranking.setFont(Font.loadFont("file:src/main/java/edu/fiuba/algo3/view/resources/fonts/main.ttf", 78));
         ranking.setStyle(
                 "-fx-padding: 10;" +
                 "-fx-background-radius: 5;" +
@@ -36,7 +36,7 @@ public class ContenedorRanking extends VBox {
 
         Label columnaRank = new Label();
         columnaRank.setText("RANK\n\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10");
-        columnaRank.setFont(Font.font("SansSerif", 28));
+        columnaRank.setFont(Font.loadFont("file:src/main/java/edu/fiuba/algo3/view/resources/fonts/main.ttf", 28));
         columnaRank.setStyle(
                 "-fx-padding: 10;" +
                 "-fx-text-fill: #010B40;" +
@@ -47,7 +47,7 @@ public class ContenedorRanking extends VBox {
         columnaJugadores.setText("JUGADOR\n\n" + top10[0].split(";")[0] + "\n" + top10[1].split(";")[0] + "\n" + top10[2].split(";")[0] +
                 "\n" + top10[3].split(";")[0] + "\n" + top10[4].split(";")[0] + "\n" + top10[5].split(";")[0] + "\n" + top10[6].split(";")[0] +
                 "\n" + top10[7].split(";")[0] + "\n" + top10[8].split(";")[0] + "\n" + top10[9].split(";")[0]);
-        columnaJugadores.setFont(Font.font("SansSerif", 28));
+        columnaJugadores.setFont(Font.loadFont("file:src/main/java/edu/fiuba/algo3/view/resources/fonts/main.ttf", 28));
         columnaJugadores.setStyle(
                 "-fx-padding: 10;" +
                 "-fx-text-fill: #010B40;" +
@@ -58,7 +58,7 @@ public class ContenedorRanking extends VBox {
         columnaPuntajes.setText("PUNTAJE\n\n" + top10[0].split(";")[1] + "\n" + top10[1].split(";")[1] + "\n" + top10[2].split(";")[1] +
                 "\n" + top10[3].split(";")[1] + "\n" + top10[4].split(";")[1] + "\n" + top10[5].split(";")[1] + "\n" + top10[6].split(";")[1] +
                 "\n" + top10[7].split(";")[1] + "\n" + top10[8].split(";")[1] + "\n" + top10[9].split(";")[1]);
-        columnaPuntajes.setFont(Font.font("SansSerif", 28));
+        columnaPuntajes.setFont(Font.loadFont("file:src/main/java/edu/fiuba/algo3/view/resources/fonts/main.ttf", 28));
         columnaPuntajes.setStyle(
                 "-fx-padding: 10;" +
                 "-fx-text-fill: #010B40;" +
@@ -71,7 +71,7 @@ public class ContenedorRanking extends VBox {
 
         Button botonAtras = new Button();
         botonAtras.setText("Atrás");
-        botonAtras.setFont(Font.font("SansSerif", 36));
+        botonAtras.setFont(Font.loadFont("file:src/main/java/edu/fiuba/algo3/view/resources/fonts/main.ttf", 36));
         botonAtras.setPrefSize(300,100);
         botonAtras.setStyle("-fx-background-color: #BDD9F2;" + "-fx-text-fill: #010B40;" + "-fx-background-radius: 10;");
         botonAtras.setOnAction(new BotonAtrasEventHandler(stage, escenaAnterior));

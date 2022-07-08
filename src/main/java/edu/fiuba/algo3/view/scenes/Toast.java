@@ -24,7 +24,7 @@ public class Toast
         toastStage.setY(ownerStage.getHeight() - 200);
 
         Text text = new Text(toastMsg);
-        text.setFont(Font.font("Verdana", 20));
+        text.setFont(Font.loadFont("file:src/main/java/edu/fiuba/algo3/view/resources/fonts/main.ttf", 20));
         text.setFill(Color.rgb(255,255,255));
 
         StackPane root = new StackPane(text);

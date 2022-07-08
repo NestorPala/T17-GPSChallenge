@@ -85,7 +85,7 @@ public class ContenedorEscenario extends BorderPane {
     private void setPanelEstado(GPSChallenge juego) {
 
         this.puntaje = new Label();
-        puntaje.setFont(Font.font("SansSerif", 30));
+        puntaje.setFont(Font.loadFont("file:src/main/java/edu/fiuba/algo3/view/resources/fonts/main.ttf", 30));
         puntaje.setPrefSize(300,100);
         puntaje.setStyle(
                 "-fx-background-radius: 5;" +
@@ -94,7 +94,7 @@ public class ContenedorEscenario extends BorderPane {
                 "-fx-alignment: center");
 
         this.coordenadas = new Label(juego.jugadorActual().posicion().toString());
-        coordenadas.setFont(Font.font("SansSerif", 30));
+        coordenadas.setFont(Font.loadFont("file:src/main/java/edu/fiuba/algo3/view/resources/fonts/main.ttf", 30));
         coordenadas.setPrefSize(300,60);
         coordenadas.setStyle(
                 "-fx-padding: 10;" +
@@ -153,7 +153,7 @@ public class ContenedorEscenario extends BorderPane {
         contenedorBotonesVertical.setPadding(new Insets(2));
 
         Label labelRanking = new Label();
-        labelRanking.setFont(Font.font("SansSerif", 30));
+        labelRanking.setFont(Font.loadFont("file:src/main/java/edu/fiuba/algo3/view/resources/fonts/main.ttf", 30));
         labelRanking.setPrefSize(300,80);
         labelRanking.setStyle(
                 "-fx-background-radius: 5;" +
@@ -163,7 +163,7 @@ public class ContenedorEscenario extends BorderPane {
         labelRanking.setText("Ranking:");
 
         Label labelAcciones = new Label();
-        labelAcciones.setFont(Font.font("SansSerif", 30));
+        labelAcciones.setFont(Font.loadFont("file:src/main/java/edu/fiuba/algo3/view/resources/fonts/main.ttf", 30));
         labelAcciones.setPrefSize(300,80);
         labelAcciones.setStyle(
                 "-fx-background-radius: 5;" +
@@ -182,7 +182,7 @@ public class ContenedorEscenario extends BorderPane {
 
     public void updateEstado(Jugador jugador) {
         this.puntaje.setText("Jugador: " + jugador.nombre() + "\n" + "Puntaje: " + new DecimalFormat("#.##").format(jugador.puntaje()));
-        this.puntaje.setFont(Font.font("SansSerif", 30));
+        this.puntaje.setFont(Font.loadFont("file:src/main/java/edu/fiuba/algo3/view/resources/fonts/main.ttf", 30));
 
         this.coordenadas.setText("Posicion: " + jugador.posicion().toString());
     }

@@ -43,25 +43,25 @@ public class ContenedorInicio extends VBox {
 
         Button botonJugar = new Button();
         botonJugar.setText("Jugar");
-        botonJugar.setFont(Font.font("SansSerif", 50));
+        botonJugar.setFont(Font.loadFont("file:src/main/java/edu/fiuba/algo3/view/resources/fonts/main.ttf", 50));
         botonJugar.setPrefSize(300,100);
         botonJugar.setStyle("-fx-background-color: #BDD9F2;" + "-fx-text-fill: #010B40;" + "-fx-background-radius: 10;");
 
         Button botonOpciones = new Button();
         botonOpciones.setText("Opciones");
-        botonOpciones.setFont(Font.font("SansSerif", 50));
+        botonOpciones.setFont(Font.loadFont("file:src/main/java/edu/fiuba/algo3/view/resources/fonts/main.ttf", 50));
         botonOpciones.setPrefSize(300,100);
         botonOpciones.setStyle("-fx-background-color: #BDD9F2;" + "-fx-text-fill: #010B40;" + "-fx-background-radius: 10;");
 
         Button botonSalir = new Button();
         botonSalir.setText("Salir");
-        botonSalir.setFont(Font.font("SansSerif", 50));
+        botonSalir.setFont(Font.loadFont("file:src/main/java/edu/fiuba/algo3/view/resources/fonts/main.ttf", 50));
         botonSalir.setPrefSize(300,100);
         botonSalir.setStyle("-fx-background-color: #BDD9F2;" + "-fx-text-fill: #010B40;" + "-fx-background-radius: 10;");
 
         Label texto = new Label();
         texto.setText("GPS CHALLENGE");
-        texto.setFont(Font.font("Trebuchet MS", 100));
+        texto.setFont(Font.loadFont("file:src/main/java/edu/fiuba/algo3/view/resources/fonts/main.ttf", 100));
         texto.setStyle(
                 "-fx-padding: 10;" +
                 "-fx-background-radius: 5;" +

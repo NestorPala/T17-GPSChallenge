@@ -31,7 +31,7 @@ public class ContenedorDificultad extends VBox {
 
         Label textoDificultad = new Label();
         textoDificultad.setText("ELEGIR DIFICULTAD");
-        textoDificultad.setFont(Font.font("Trebuchet MS", 78));
+        textoDificultad.setFont(Font.loadFont("file:src/main/java/edu/fiuba/algo3/view/resources/fonts/main.ttf", 78));
         textoDificultad.setStyle(
                 "-fx-padding: 10;" +
                 "-fx-background-radius: 5;" +
@@ -43,24 +43,24 @@ public class ContenedorDificultad extends VBox {
         ToggleGroup grupoBotones = new ToggleGroup();
 
         RadioButton botonFacil = new RadioButton("Fácil");
-        botonFacil.setFont(Font.font("SansSerif", 28));
+        botonFacil.setFont(Font.loadFont("file:src/main/java/edu/fiuba/algo3/view/resources/fonts/main.ttf", 28));
         botonFacil.setStyle("-fx-text-fill: #F2F2F2");
         botonFacil.setToggleGroup(grupoBotones);
 
         RadioButton botonNormal = new RadioButton("Normal");
-        botonNormal.setFont(Font.font("SansSerif", 28));
+        botonNormal.setFont(Font.loadFont("file:src/main/java/edu/fiuba/algo3/view/resources/fonts/main.ttf", 28));
         botonNormal.setStyle("-fx-text-fill: #F2F2F2");
         botonNormal.setToggleGroup(grupoBotones);
         botonNormal.setSelected(true);
 
         RadioButton botonDificil = new RadioButton("Difícil");
-        botonDificil.setFont(Font.font("SansSerif", 28));
+        botonDificil.setFont(Font.loadFont("file:src/main/java/edu/fiuba/algo3/view/resources/fonts/main.ttf", 28));
         botonDificil.setStyle("-fx-text-fill: #F2F2F2");
         botonDificil.setToggleGroup(grupoBotones);
 
         Button botonSeleccionar = new Button();
         botonSeleccionar.setText("Seleccionar");
-        botonSeleccionar.setFont(Font.font("SansSerif", 36));
+        botonSeleccionar.setFont(Font.loadFont("file:src/main/java/edu/fiuba/algo3/view/resources/fonts/main.ttf", 36));
         botonSeleccionar.setPrefSize(300,100);
         botonSeleccionar.setStyle("-fx-background-color: #BDD9F2;" + "-fx-text-fill: #010B40;" + "-fx-background-radius: 10;");
 
