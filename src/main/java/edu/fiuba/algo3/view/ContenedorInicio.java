@@ -18,9 +18,9 @@ import javafx.stage.Stage;
 
 import java.io.File;
 
-import edu.fiuba.algo3.controller.BotonJugarEventHandler;
-import edu.fiuba.algo3.controller.BotonOpcionesEventHandler;
-import edu.fiuba.algo3.controller.BotonSalirEventHandler;
+import edu.fiuba.algo3.controller.BotonesMenus.BotonJugarEventHandler;
+import edu.fiuba.algo3.controller.BotonesMenus.BotonOpcionesEventHandler;
+import edu.fiuba.algo3.controller.BotonesMenus.BotonSalirEventHandler;
 
 public class ContenedorInicio extends VBox {
 

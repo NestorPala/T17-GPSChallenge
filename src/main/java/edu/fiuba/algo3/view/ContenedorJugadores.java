@@ -1,7 +1,7 @@
 package edu.fiuba.algo3.view;
 
-import edu.fiuba.algo3.controller.BotonAgregarJugadorEventHandler;
-import edu.fiuba.algo3.controller.BotonComenzarJuegoEventHandler;
+import edu.fiuba.algo3.controller.BotonesMenus.BotonAgregarJugadorEventHandler;
+import edu.fiuba.algo3.controller.BotonesMenus.BotonComenzarJuegoEventHandler;
 import edu.fiuba.algo3.model.General.GPSChallenge;
 import edu.fiuba.algo3.model.Vehiculos.Auto;
 import edu.fiuba.algo3.model.Vehiculos.Moto;

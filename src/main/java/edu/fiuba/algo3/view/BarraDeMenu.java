@@ -1,9 +1,9 @@
 package edu.fiuba.algo3.view;
 
-import edu.fiuba.algo3.controller.BotonSalirEventHandler;
-import edu.fiuba.algo3.controller.OpcionAcercaDeEventHandler;
-import edu.fiuba.algo3.controller.OpcionInstruccionesEventHandler;
-import edu.fiuba.algo3.controller.OpcionPantallaCompletaEventHandler;
+import edu.fiuba.algo3.controller.BotonesMenus.BotonSalirEventHandler;
+import edu.fiuba.algo3.controller.OpcionesMenus.OpcionAcercaDeEventHandler;
+import edu.fiuba.algo3.controller.OpcionesMenus.OpcionInstruccionesEventHandler;
+import edu.fiuba.algo3.controller.OpcionesMenus.OpcionPantallaCompletaEventHandler;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;

@@ -1,6 +1,11 @@
 package edu.fiuba.algo3.view;
 
 import edu.fiuba.algo3.controller.*;
+import edu.fiuba.algo3.controller.BotonesMenus.BotonRankingEventHandler;
+import edu.fiuba.algo3.controller.BotonesMovimiento.BotonAbajoEventHandler;
+import edu.fiuba.algo3.controller.BotonesMovimiento.BotonArribaEventHandler;
+import edu.fiuba.algo3.controller.BotonesMovimiento.BotonDerechaEventHandler;
+import edu.fiuba.algo3.controller.BotonesMovimiento.BotonIzquierdaEventHandler;
 import edu.fiuba.algo3.model.General.Escenario;
 import edu.fiuba.algo3.model.General.GPSChallenge;
 import edu.fiuba.algo3.model.Jugador.Jugador;

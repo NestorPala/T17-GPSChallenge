@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.controller;
+package edu.fiuba.algo3.controller.BotonesMenus;
 
 import edu.fiuba.algo3.model.General.GPSChallenge;
 import edu.fiuba.algo3.model.Jugador.Jugador;

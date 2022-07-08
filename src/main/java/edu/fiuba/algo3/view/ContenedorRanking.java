@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.view;
 
-import edu.fiuba.algo3.controller.BotonAtrasEventHandler;
+import edu.fiuba.algo3.controller.BotonesMenus.BotonAtrasEventHandler;
 import edu.fiuba.algo3.model.General.GPSChallenge;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;

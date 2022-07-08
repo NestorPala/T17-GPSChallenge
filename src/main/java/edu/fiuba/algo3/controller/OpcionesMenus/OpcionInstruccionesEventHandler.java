@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.controller;
+package edu.fiuba.algo3.controller.OpcionesMenus;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;

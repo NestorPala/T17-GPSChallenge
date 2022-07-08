@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.controller;
+package edu.fiuba.algo3.controller.BotonesMovimiento;
 
 import edu.fiuba.algo3.model.General.Direccion;
 import edu.fiuba.algo3.model.General.GPSChallenge;
@@ -11,7 +11,7 @@ import javafx.scene.media.MediaPlayer;
 
 import java.io.File;
 
-public class BotonDerechaEventHandler implements EventHandler<ActionEvent> {
+public class BotonArribaEventHandler implements EventHandler<ActionEvent> {
 
     private final VistaJugador vistaJugador;
     private final GPSChallenge juego;
@@ -20,7 +20,7 @@ public class BotonDerechaEventHandler implements EventHandler<ActionEvent> {
 
     private final static MediaPlayer sonidoAuto = new MediaPlayer(new Media(new File("src/main/java/edu/fiuba/algo3/view/sonidos/sonidoAuto.mp3").toURI().toString()));
 
-    public BotonDerechaEventHandler(VistaJugador vistaJugador, GPSChallenge juego, ContenedorEscenario contenedor) {
+    public BotonArribaEventHandler(VistaJugador vistaJugador, GPSChallenge juego, ContenedorEscenario contenedor) {
         this.vistaJugador = vistaJugador;
         this.juego = juego;
         this.contenedor = contenedor;
@@ -30,7 +30,7 @@ public class BotonDerechaEventHandler implements EventHandler<ActionEvent> {
     @Override
     public void handle(ActionEvent actionEvent) {
         if (juego.jugadorActual().puedeSeguirJugando()) {
-            juego.mover(Direccion.derecha());
+            juego.mover(Direccion.arriba());
             sonidoAuto.play();
             sonidoAuto.seek(sonidoAuto.getStartTime());
         }

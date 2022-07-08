@@ -1,6 +1,5 @@
 package edu.fiuba.algo3.view;
 
-import edu.fiuba.algo3.controller.BotonSeleccionarEventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -14,6 +13,8 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 import java.io.File;
+
+import edu.fiuba.algo3.controller.BotonesMenus.BotonSeleccionarEventHandler;
 
 public class ContenedorDificultad extends VBox {
     final Stage stage;
