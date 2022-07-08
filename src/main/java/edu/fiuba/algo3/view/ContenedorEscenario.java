@@ -1,6 +1,5 @@
 package edu.fiuba.algo3.view;
 
-import edu.fiuba.algo3.controller.*;
 import edu.fiuba.algo3.controller.BotonesMenus.BotonRankingEventHandler;
 import edu.fiuba.algo3.controller.BotonesMovimiento.BotonAbajoEventHandler;
 import edu.fiuba.algo3.controller.BotonesMovimiento.BotonArribaEventHandler;
