@@ -1,5 +1,4 @@
 @startuml
-'https://plantuml.com/class-diagram
 
 class Escenario {
     - alto : int
@@ -16,26 +15,13 @@ class Escenario {
     + reset() : Escenario
 }
 
-class Posicion {
-    - x : int
-    - y : int
-    + Posicion(x, y)
-    + equals(otraPosicion) : bool
-    + x() : int
-    + y() : int
-    + sumarX(x: int)
-    + sumarY(y: int)
-    + toString() : string
+class TamanioDelEscenarioInvalido {
 }
 
-interface Chocable {
-    + devolverEfecto(moto) : IEfecto
-    + devolverEfecto(auto) : IEfecto
-    + devolverEfecto(todoterreno) : IEfecto
+class RuntimeException {
 }
 
-Escenario ..> Posicion
-Escenario "1" --> "*" Chocable
-
+Escenario ..> TamanioDelEscenarioInvalido : <<lanza>>
+TamanioDelEscenarioInvalido --|> RuntimeException
 
 @enduml
