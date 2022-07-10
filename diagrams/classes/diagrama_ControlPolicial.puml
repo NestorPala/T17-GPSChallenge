@@ -1,0 +1,23 @@
+@startuml
+
+class ControlPolicial {
+    -  PROBABILIDAD_MOTO : Double
+    -  PROBABILIDAD_AUTO : Double
+    -  PROBABILIDAD_TODOTERRENO : Double
+    -  PENALIZACION : int
+    +  ControlPolicial(randomizer)
+    +  devolverEfecto(moto) : IEfecto
+    +  devolverEfecto(auto) : IEfecto
+    +  devolverEfecto(todoterreno) : IEfecto
+}
+
+interface Randomizer {
+    + random(probabilidad) : bool
+}
+
+class Randomizador {
+    + random(probabilidad) : bool
+}
+
+ControlPolicial .> Randomizer
+Randomizer <|.. Randomizador

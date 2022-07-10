@@ -61,13 +61,7 @@ class Meta {
     +  devolverEfecto(todoterreno) : IEfecto
 }
 
-interface Randomizer {
-    + random(probabilidad) : bool
-}
 
-class Randomizador {
-    + random(probabilidad) : bool
-}
 
 Chocable <|.up. Pozo
 Chocable <|.. Piquete
@@ -77,8 +71,7 @@ Chocable <|.. SorpresaFavorable
 Chocable <|.. SorpresaDesfavorable
 Chocable <|.. SorpresaCambioVehiculo
 Chocable <|.up. Meta
-ControlPolicial .> Randomizer
-Randomizer <|.. Randomizador
+
 
 
 @enduml
