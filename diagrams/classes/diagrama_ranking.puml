@@ -1,0 +1,26 @@
+@startuml
+
+class GPSChallenge {
+    - jugadores : Queue<Jugador>
+    - jugadorActual : Jugador
+    + GPSChallenge(alto : int, ancho: int)
+    + agregarJugador(Jugador)
+    + mover(Direccion)
+    + hayJugadoresPorJugar() : bool
+    + escogerSiguienteJugador()
+    + obtenerTop10() : string[]
+    + obtenerMejorJugador() : string
+    + jugadorActual() : Jugador
+}
+
+class Ranking {
+    - jugadores : List<Jugador>
+    + Ranking()
+    + agregar(Jugador)
+    + obtenerJugadorDelTop(posicionDelTop : int) : Jugador
+    + obtenerMejorJugador() : Jugador
+}
+
+GPSChallenge --> Ranking
+
+@enduml

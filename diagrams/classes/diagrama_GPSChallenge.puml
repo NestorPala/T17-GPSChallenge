@@ -4,6 +4,7 @@
 class GPSChallenge {
     - jugadores : Queue<Jugador>
     - jugadorActual : Jugador
+    - ranking : Ranking
     + GPSChallenge(alto : int, ancho: int)
     + agregarJugador(Jugador)
     + mover(Direccion)
@@ -12,14 +13,6 @@ class GPSChallenge {
     + obtenerTop10() : string[]
     + obtenerMejorJugador() : string
     + jugadorActual() : Jugador
-}
-
-class Ranking {
-    - jugadores : List<Jugador>
-    + Ranking()
-    + agregar(Jugador)
-    + obtenerJugadorDelTop(posicionDelTop : int) : Jugador
-    + obtenerMejorJugador() : Jugador
 }
 
 class Escenario {
@@ -51,7 +44,6 @@ class Jugador {
     + puedeSeguirJugando()
 }
 
-GPSChallenge --> Ranking
 GPSChallenge "1" --> "*" Jugador
 GPSChallenge --> Escenario
 Jugador .> Escenario
