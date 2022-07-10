@@ -34,7 +34,15 @@ interface Chocable {
     + devolverEfecto(todoterreno) : IEfecto
 }
 
+class TamanioDelEscenarioInvalido {
+}
+
+class RuntimeException {
+}
+
 Escenario ..> Posicion
 Escenario "1" --> "*" Chocable
+Escenario ..> TamanioDelEscenarioInvalido : <<lanza>>
+TamanioDelEscenarioInvalido --|> RuntimeException
 
 @enduml
