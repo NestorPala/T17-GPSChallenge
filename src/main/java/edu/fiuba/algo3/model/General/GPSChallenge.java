@@ -6,7 +6,6 @@ import edu.fiuba.algo3.model.Puntaje.Ranking;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.text.DecimalFormat;
 import java.util.ArrayDeque;
 import java.util.Queue;
 
@@ -71,7 +70,7 @@ public class GPSChallenge {
       top[i] = "----;----";
       if (ranking.obtenerJugadorDelTop(i) != null) {
         String nombre = ranking.obtenerJugadorDelTop(i).nombre();
-        String puntaje = new DecimalFormat("#.##").format(jugadorActual.puntaje());
+        double puntaje = new BigDecimal(ranking.obtenerJugadorDelTop(i).puntaje()).setScale(2, RoundingMode.HALF_UP).doubleValue();
         top[i] = (nombre + ";" + puntaje);
       }
     }

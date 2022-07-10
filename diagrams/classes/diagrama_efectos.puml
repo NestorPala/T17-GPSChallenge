@@ -1,0 +1,47 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface IEfecto {
+    + aplicarEfecto(jugador)
+}
+
+class CambioDeVehiculo {
+    - vehiculo: Vehiculo
+    + CambioDeVehiculo(nuevoVehiculo)
+    + aplicarEfecto(jugador)
+}
+
+class Penalizacion {
+    - movimientos: int
+    + Penalizacion(penalizacion: int)
+    + aplicarEfecto(jugador)
+}
+
+class Porcentaje {
+    - porcentaje: int
+    + Porcentaje(porcentaje: int)
+    + aplicarEfecto(jugador)
+}
+
+class Retroceso {
+    + aplicarEfecto(jugador)
+}
+
+class FinDelJuego {
+    + aplicarEfecto(jugador)
+}
+
+interface Chocable {
+    + devolverEfecto(moto) : IEfecto
+    + devolverEfecto(auto) : IEfecto
+    + devolverEfecto(todoterreno) : IEfecto
+}
+
+Chocable ..> IEfecto
+IEfecto ..|> Penalizacion
+IEfecto ..|> Porcentaje
+IEfecto ..|> Retroceso
+IEfecto ..|> CambioDeVehiculo
+IEfecto ..|> FinDelJuego
+
+@enduml

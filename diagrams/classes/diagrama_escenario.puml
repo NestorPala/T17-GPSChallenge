@@ -1,0 +1,40 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Escenario {
+    - alto : int
+    - ancho : int
+    - chocables : Chocable[][]
+    - {static} instance : Escenario
+    - Escenario(limiteAlto, limiteAncho)
+    + generarObstaculos()
+    + {static} getInstance() : Escenario
+    + {static} getInstance(alto, ancho) : Escenario
+    + contienePosicion(posicion) : Bool
+    + insertarChocable(chocable, posicion)
+    + obtenerChocable(posicion) : Chocable
+    + reset() : Escenario
+}
+
+class Posicion {
+    - x : int
+    - y : int
+    + Posicion(x, y)
+    + equals(otraPosicion) : bool
+    + x() : int
+    + y() : int
+    + sumarX(x: int)
+    + sumarY(y: int)
+    + toString() : string
+}
+
+interface Chocable {
+    + devolverEfecto(moto) : IEfecto
+    + devolverEfecto(auto) : IEfecto
+    + devolverEfecto(todoterreno) : IEfecto
+}
+
+Escenario ..> Posicion
+Escenario "1" --> "*" Chocable
+
+@enduml

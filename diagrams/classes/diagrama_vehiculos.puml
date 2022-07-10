@@ -1,0 +1,33 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class Vehiculo {
+    + mover(unaDireccion, unaPosicion) : Posicion
+    + chocar(chocable) : IEfecto
+}
+
+class Auto {
+    + chocar(chocable) : Vehiculo
+}
+
+class Moto {
+    + chocar(chocable) : Vehiculo
+}
+
+class Todoterreno {
+    - pozosEncontrados : int
+    + chocar(chocable) : Vehiculo
+}
+
+interface Chocable {
+    + devolverEfecto(moto) : IEfecto
+    + devolverEfecto(auto) : IEfecto
+    + devolverEfecto(todoterreno) : IEfecto
+}
+
+Vehiculo .> Chocable
+Vehiculo <|-- Auto
+Vehiculo <|-- Moto
+Vehiculo <|-- Todoterreno
+
+@enduml

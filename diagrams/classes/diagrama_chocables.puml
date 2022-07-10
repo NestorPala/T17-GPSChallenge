@@ -1,4 +1,6 @@
 @startuml
+'https://plantuml.com/class-diagram
+
 interface Chocable {
     + devolverEfecto(moto) : IEfecto
     + devolverEfecto(auto) : IEfecto
@@ -17,7 +19,7 @@ class Vacio {
     +  devolverEfecto(todoterreno) : IEfecto
 }
 
-class Piquete { 
+class Piquete {
     +  devolverEfecto(moto) : IEfecto
     +  devolverEfecto(auto) : IEfecto
     +  devolverEfecto(todoterreno) : IEfecto
@@ -59,54 +61,6 @@ class Meta {
     +  devolverEfecto(todoterreno) : IEfecto
 }
 
-abstract class Vehiculo {
-    + mover(unaDireccion, unaPosicion) : Posicion
-    + chocar(chocable) : IEfecto
-}
-
-class Auto {
-    + chocar(chocable) : Vehiculo
-}
-
-class Moto {
-    + chocar(chocable) : Vehiculo
-}
-
-class Todoterreno {
-    - pozosEncontrados : int
-    + chocar(chocable) : Vehiculo
-}
-
-interface IEfecto {
-    + aplicarEfecto(jugador)
-}
-
-class CambioDeVehiculo {
-    - vehiculo: Vehiculo
-    + CambioDeVehiculo(nuevoVehiculo)
-    + aplicarEfecto(jugador)
-}
-
-class Penalizacion {
-    - movimientos: int
-    + Penalizacion(penalizacion: int)
-    + aplicarEfecto(jugador)
-}
-
-class Porcentaje {
-    - porcentaje: int
-    + Porcentaje(porcentaje: int)
-    + aplicarEfecto(jugador)
-}
-
-class Retroceso {
-    + aplicarEfecto(jugador)
-}
-
-class FinDelJuego {
-    + aplicarEfecto(jugador)
-}
-
 interface Randomizer {
     + random(probabilidad) : bool
 }
@@ -115,32 +69,16 @@ class Randomizador {
     + random(probabilidad) : bool
 }
 
-Pozo ..|> Chocable
+Chocable <|.up. Pozo
+Chocable <|.. Piquete
+Chocable <|.up. Vacio
 ControlPolicial ..|> Chocable
-Piquete ..|> Chocable
-Vacio ..|> Chocable
-Chocable <|.. Meta
-
-
 Chocable <|.. SorpresaFavorable
 Chocable <|.. SorpresaDesfavorable
 Chocable <|.. SorpresaCambioVehiculo
+Chocable <|.up. Meta
+ControlPolicial .> Randomizer
+Randomizer <|.. Randomizador
 
-Vehiculo .> Chocable
-
-Vehiculo <|-- Todoterreno
-Vehiculo <|-- Auto
-Moto -|> Vehiculo
-
-Chocable .> IEfecto
-
-IEfecto <|.. CambioDeVehiculo
-IEfecto <|.. Penalizacion
-IEfecto <|. Porcentaje
-Retroceso ..|> IEfecto
-FinDelJuego ..|> IEfecto
-
-Randomizador .|> Randomizer
-Randomizer <. ControlPolicial
 
 @enduml
