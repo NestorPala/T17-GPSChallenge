@@ -75,6 +75,7 @@ public class Escenario {
 
     if (instance == null) {
       instance = new Escenario(alto, ancho);
+      Logger.getInstance().log("Se creó un nuevo escenario");
     }
 
     return instance;

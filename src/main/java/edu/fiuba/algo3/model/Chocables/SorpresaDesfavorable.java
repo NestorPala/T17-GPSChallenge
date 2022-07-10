@@ -11,20 +11,16 @@ public class SorpresaDesfavorable implements Chocable {
 
   @Override
   public IEfecto devolverEfecto(Moto moto) {
-    Logger.getInstance()
-        .log("El jugador iba con una moto y se choco con una sorpresa desfavorable");
     return new Porcentaje(25);
   }
 
   @Override
   public IEfecto devolverEfecto(Auto auto) {
-    Logger.getInstance().log("El jugador iba con un auto y se choco con una sorpresa desfavorable");
     return new Porcentaje(25);
   }
 
   @Override
   public IEfecto devolverEfecto(Todoterreno todoterreno) {
-    Logger.getInstance().log("El jugador iba con una 4x4 y se choco con una sorpresa desfavorable");
     return new Porcentaje(25);
   }
 

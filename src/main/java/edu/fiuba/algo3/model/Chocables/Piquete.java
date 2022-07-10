@@ -12,19 +12,16 @@ public class Piquete implements Chocable {
 
   @Override
   public IEfecto devolverEfecto(Moto moto) {
-    Logger.getInstance().log("El jugador iba con una moto y se chocó con un piquete");
     return new Penalizacion(2);
   }
 
   @Override
   public IEfecto devolverEfecto(Auto auto) {
-    Logger.getInstance().log("El jugador iba con un auto y se chocó con un piquete");
     return new Retroceso();
   }
 
   @Override
   public IEfecto devolverEfecto(Todoterreno todoterreno) {
-    Logger.getInstance().log("El jugador iba con un todoterreno y se chocó con un piquete");
     return new Retroceso();
   }
 

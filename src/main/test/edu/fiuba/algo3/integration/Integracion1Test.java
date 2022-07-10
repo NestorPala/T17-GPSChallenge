@@ -18,9 +18,9 @@ public class Integracion1Test {
 
   @Test
   public void test01_PartidaCompletaConUnJugador() {
-    GPSChallenge juego = new GPSChallenge();
-
     Logger.getInstance().activar();
+
+    GPSChallenge juego = new GPSChallenge();
 
     Escenario escenario = Escenario.getInstance();
     escenario.insertarChocable(new Pozo(), new Posicion(1, 2));

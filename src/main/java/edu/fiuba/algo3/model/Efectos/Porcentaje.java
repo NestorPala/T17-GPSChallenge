@@ -13,8 +13,6 @@ public class Porcentaje implements IEfecto {
 
   @Override
   public void aplicarEfecto(Jugador jugador) {
-    Logger.getInstance()
-        .log("El jugador recibe un porcentaje del " + this.porcentaje + "% a sus puntos");
     jugador.recibirPorcentaje(this.porcentaje);
   }
 }

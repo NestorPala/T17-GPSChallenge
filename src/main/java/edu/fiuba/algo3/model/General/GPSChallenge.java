@@ -16,12 +16,12 @@ public class GPSChallenge {
   private final Escenario escenario;
 
   public GPSChallenge() {
+    Logger.getInstance().log("Se creó una nueva partida");
     jugadores = new ArrayDeque<Jugador>();
     jugadorActual = null;
     ranking = new Ranking();
     escenario = Escenario.getInstance();
     escenario.generarObstaculos();
-    Logger.getInstance().log("Nueva partida de GPSChallenge");
   }
 
   public GPSChallenge(int alto, int ancho) {
@@ -30,23 +30,21 @@ public class GPSChallenge {
     ranking = new Ranking();
     escenario = Escenario.getInstance(alto, ancho);
     escenario.generarObstaculos();
-    Logger.getInstance().log("Nueva partida de GPSChallenge");
+    Logger.getInstance().log("Se creó una nueva partida");
   }
 
   public void agregarJugador(Jugador unJugador) {
     jugadores.add(unJugador);
-    if (jugadorActual == null) {
-      jugadorActual = jugadores.poll();
-    }
     Logger.getInstance().log("Jugador " + unJugador.nombre() + " agregado al juego");
+    if (jugadorActual == null) {
+      escogerSiguienteJugador();
+    }
   }
 
   public void mover(Direccion unaDireccion) {
-    Logger.getInstance().log("Mover al jugador " + jugadorActual.nombre());
     jugadorActual.mover(unaDireccion);
 
     if (!jugadorActual.puedeSeguirJugando()) {
-      Logger.getInstance().log("El jugador " + jugadorActual.nombre() + " llego a la meta");
       ranking.agregar(jugadorActual);
       escogerSiguienteJugador();
     }
@@ -59,6 +57,7 @@ public class GPSChallenge {
   public void escogerSiguienteJugador() {
     if (jugadores.size() > 0) {
       jugadorActual = jugadores.poll();
+      Logger.getInstance().log("El jugador actual es: " + jugadorActual.nombre());
     }
   }
 

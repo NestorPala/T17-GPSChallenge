@@ -25,6 +25,7 @@ public class Jugador {
     this.vehiculo = vehiculo;
     this.puntaje = new Puntaje();
     Logger.getInstance().log("Se creó el usuario " + this.nombre);
+    Logger.getInstance().log(this.nombre + " Tiene como vehiculo " + vehiculo.toString());
   }
 
   public Posicion posicion() {
@@ -51,30 +52,34 @@ public class Jugador {
 
   private void chocarObstaculos() {
     Chocable chocable = this.escenario.obtenerChocable(this.posicion);
+    Logger.getInstance().log(this.nombre + " iba con " + this.vehiculo.toString() + " y se chocó con " + chocable.toString());
     IEfecto efecto = this.vehiculo.chocar(chocable);
     efecto.aplicarEfecto(this);
   }
 
   public void recibirPenalizacion(int penalizacion) {
+    Logger.getInstance().log(this.nombre + " recibe una penalización de: " + penalizacion + " puntos");
     this.puntaje.sumarMovimientos(penalizacion);
   }
 
   public void recibirPorcentaje(int porcentaje) {
+    Logger.getInstance().log(this.nombre + " recibe un porcentaje de: " + porcentaje + "% a sus puntos");
     this.puntaje.aplicarPorcentaje(porcentaje);
   }
 
   public void cambiarVehiculo(Vehiculo nuevoVehiculo) {
     this.vehiculo = nuevoVehiculo;
-    Logger.getInstance().log("El jugador " + this.nombre() + " cambio de vehiculo");
+    Logger.getInstance().log( this.nombre() + " cambio de vehiculo, nuevo vehiculo: " + this.vehiculo.toString());
   }
 
   public void retrocederPosicionAnterior() {
     this.posicion = this.posicionAnterior;
-    Logger.getInstance().log("El jugador " + this.nombre() + " retrocedió una posición");
+    Logger.getInstance().log("El jugador " + this.nombre() + " retrocedió una posición a causa de un choque");
   }
 
   public void dejarDeJugar() {
     this.estado = new EstadoInactivo();
+    Logger.getInstance().log("El jugador " + this.nombre() + " llego a la meta");
     Logger.getInstance().log("El jugador " + this.nombre() + " dejo de jugar");
   }
 

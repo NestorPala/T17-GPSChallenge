@@ -22,21 +22,18 @@ public class ControlPolicial implements Chocable {
 
   @Override
   public IEfecto devolverEfecto(Moto moto) {
-    Logger.getInstance().log("El jugador iba con una moto y se choco con un control policial");
     if (this.randomizador.random(PROBABILIDAD_MOTO)) return new Penalizacion(PENALIZACION);
     return new Penalizacion(0);
   }
 
   @Override
   public IEfecto devolverEfecto(Auto auto) {
-    Logger.getInstance().log("El jugador iba con un auto y se choco con un control policial");
     if (this.randomizador.random(PROBABILIDAD_AUTO)) return new Penalizacion(PENALIZACION);
     return new Penalizacion(0);
   }
 
   @Override
   public IEfecto devolverEfecto(Todoterreno todoterreno) {
-    Logger.getInstance().log("El jugador iba con una 4x4 y se choco con un control policial");
     if (this.randomizador.random(PROBABILIDAD_TODOTERRENO)) return new Penalizacion(PENALIZACION);
     return new Penalizacion(0);
   }
