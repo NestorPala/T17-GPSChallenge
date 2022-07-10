@@ -11,11 +11,6 @@ interface Chocable {
     + devolverEfecto(todoterreno) : IEfecto
 }
 
-interface IEfecto {
-    + aplicarEfecto(jugador)
-}
-
 Vehiculo .> Chocable
-Chocable ..> IEfecto
 
 @enduml
