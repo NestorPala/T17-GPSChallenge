@@ -2,6 +2,7 @@
 'https://plantuml.com/class-diagram
 
 class Jugador {
+    - estado : IEstado
     - nombre : string
     - posicionAnterior : Posicion
     - Escenario
@@ -51,26 +52,10 @@ class Direccion {
     + calcularNuevaPosicion(unaPosicion) : Posicion
 }
 
-interface IEstado {
-    + puedeSeguirJugando() : bool
-}
-
-class EstadoActivo {
-    + puedeSeguirJugando() : bool
-}
-
-class EstadoInactivo {
-    + puedeSeguirJugando() : bool
-}
-
 Vehiculo <-- Jugador
 Jugador -> Posicion
 Jugador ..> Direccion
 Direccion .> Posicion
 Puntaje <- Jugador
-Jugador -> IEstado
-IEstado <|.. EstadoActivo
-IEstado <|.. EstadoInactivo
-
 
 @enduml
