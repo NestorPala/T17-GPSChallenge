@@ -1,6 +1,5 @@
 package edu.fiuba.algo3.model.Efectos;
 
-import edu.fiuba.algo3.model.General.Logger;
 import edu.fiuba.algo3.model.Jugador.Jugador;
 
 public class Penalizacion implements IEfecto {

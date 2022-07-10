@@ -2,7 +2,6 @@ package edu.fiuba.algo3.model.Chocables;
 
 import edu.fiuba.algo3.model.Efectos.IEfecto;
 import edu.fiuba.algo3.model.Efectos.Penalizacion;
-import edu.fiuba.algo3.model.General.Logger;
 import edu.fiuba.algo3.model.Randomizador.Randomizer;
 import edu.fiuba.algo3.model.Vehiculos.Auto;
 import edu.fiuba.algo3.model.Vehiculos.Moto;

@@ -69,7 +69,7 @@ public class GPSChallenge {
       top[i] = "----;----";
       if (ranking.obtenerJugadorDelTop(i) != null) {
         String nombre = ranking.obtenerJugadorDelTop(i).nombre();
-        double puntaje = new BigDecimal(ranking.obtenerJugadorDelTop(i).puntaje()).setScale(2, RoundingMode.HALF_UP).doubleValue();
+        double puntaje = BigDecimal.valueOf(ranking.obtenerJugadorDelTop(i).puntaje()).setScale(2, RoundingMode.HALF_UP).doubleValue();
         top[i] = (nombre + ";" + puntaje);
       }
     }

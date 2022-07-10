@@ -2,7 +2,8 @@ package edu.fiuba.algo3.model.Jugador;
 
 import edu.fiuba.algo3.model.Chocables.Chocable;
 import edu.fiuba.algo3.model.Efectos.IEfecto;
-import edu.fiuba.algo3.model.General.*;
+import edu.fiuba.algo3.model.General.Escenario;
+import edu.fiuba.algo3.model.General.Logger;
 import edu.fiuba.algo3.model.Movimiento.Direccion;
 import edu.fiuba.algo3.model.Movimiento.Posicion;
 import edu.fiuba.algo3.model.Puntaje.Puntaje;
@@ -52,29 +53,39 @@ public class Jugador {
 
   private void chocarObstaculos() {
     Chocable chocable = this.escenario.obtenerChocable(this.posicion);
-    Logger.getInstance().log(this.nombre + " iba con " + this.vehiculo.toString() + " y se chocó con " + chocable.toString());
+    Logger.getInstance()
+        .log(
+            this.nombre
+                + " iba con "
+                + this.vehiculo.toString()
+                + " y se chocó con "
+                + chocable.toString());
     IEfecto efecto = this.vehiculo.chocar(chocable);
     efecto.aplicarEfecto(this);
   }
 
   public void recibirPenalizacion(int penalizacion) {
-    Logger.getInstance().log(this.nombre + " recibe una penalización de: " + penalizacion + " puntos");
+    Logger.getInstance()
+        .log(this.nombre + " recibe una penalización de: " + penalizacion + " puntos");
     this.puntaje.sumarMovimientos(penalizacion);
   }
 
   public void recibirPorcentaje(int porcentaje) {
-    Logger.getInstance().log(this.nombre + " recibe un porcentaje de: " + porcentaje + "% a sus puntos");
+    Logger.getInstance()
+        .log(this.nombre + " recibe un porcentaje de: " + porcentaje + "% a sus puntos");
     this.puntaje.aplicarPorcentaje(porcentaje);
   }
 
   public void cambiarVehiculo(Vehiculo nuevoVehiculo) {
     this.vehiculo = nuevoVehiculo;
-    Logger.getInstance().log( this.nombre() + " cambio de vehiculo, nuevo vehiculo: " + this.vehiculo.toString());
+    Logger.getInstance()
+        .log(this.nombre() + " cambio de vehiculo, nuevo vehiculo: " + this.vehiculo.toString());
   }
 
   public void retrocederPosicionAnterior() {
     this.posicion = this.posicionAnterior;
-    Logger.getInstance().log("El jugador " + this.nombre() + " retrocedió una posición a causa de un choque");
+    Logger.getInstance()
+        .log("El jugador " + this.nombre() + " retrocedió una posición a causa de un choque");
   }
 
   public void dejarDeJugar() {
