@@ -119,8 +119,8 @@ EstadoInactivo ..|> IEstado
 
 IEstado <.. Jugador
 
-GPSChallenge .> Ranking
-GPSChallenge ..> Jugador
-Escenario <. GPSChallenge
+GPSChallenge -> Ranking
+GPSChallenge "1" --> "*" Jugador
+Escenario <- GPSChallenge
 
 @enduml

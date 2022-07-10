@@ -61,14 +61,14 @@ public class VistaEscenario extends Group {
     }
 
     public void mostrarArea(int x, int y){
-        for (int i = 1; i < 2; i++){
+        for (int i = 1; i < 3; i++){
             if(x+i < ancho && panes[x+i][y] != null){
                 panes[x+i][y].setVisible(true);
             }
             if(y+i < alto && panes[x][y+i] != null){
                 panes[x][y+i].setVisible(true);
             }
-            if(x+i < ancho && y+i < alto && panes[x+i][y+i] != null){
+            if(x+i < ancho && y+i < alto && i < 2 && panes[x+i][y+i] != null){
                 panes[x+i][y+i].setVisible(true);
             }
             if(x-i >= 0 && panes[x-i][y] != null){
@@ -77,13 +77,13 @@ public class VistaEscenario extends Group {
             if(y-i >= 0 && panes[x][y-i] != null){
                 panes[x][y-i].setVisible(true);
             }
-            if(x-i >= 0 && y-i >= 0 && panes[x-i][y-i] != null){
+            if(x-i >= 0 && y-i >= 0 && i < 2 && panes[x-i][y-i] != null){
                 panes[x-i][y-i].setVisible(true);
             }
-            if(x+i < ancho && y-i >= 0 && panes[x+i][y-i] != null){
+            if(x+i < ancho && y-i >= 0 && i < 2 && panes[x+i][y-i] != null){
                 panes[x+i][y-i].setVisible(true);
             }
-            if(x-i >= 0 && y+i < alto && panes[x-i][y+i] != null){
+            if(x-i >= 0 && y+i < alto && i < 2 && panes[x-i][y+i] != null){
                 panes[x-i][y+i].setVisible(true);
             }
         }
