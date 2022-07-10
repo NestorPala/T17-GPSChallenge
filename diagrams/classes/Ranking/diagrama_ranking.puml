@@ -16,11 +16,11 @@ class GPSChallenge {
 class Ranking {
     - jugadores : List<Jugador>
     + Ranking()
-    + agregar(Jugador)
+    + agregar(jugador: Jugador)
     + obtenerJugadorDelTop(posicionDelTop : int) : Jugador
     + obtenerMejorJugador() : Jugador
 }
 
-GPSChallenge --> Ranking
+GPSChallenge -> Ranking
 
 @enduml

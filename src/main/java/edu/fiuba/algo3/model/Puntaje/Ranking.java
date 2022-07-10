@@ -13,9 +13,9 @@ public class Ranking {
     jugadores = new LinkedList<Jugador>();
   }
 
-  public void agregar(Jugador unJugador) {
-    if (!jugadores.contains(unJugador)) {
-      jugadores.add(unJugador);
+  public void agregar(Jugador jugador) {
+    if (!jugadores.contains(jugador)) {
+      jugadores.add(jugador);
       jugadores.sort(Comparator.comparing(Jugador::puntaje));
     }
   }
