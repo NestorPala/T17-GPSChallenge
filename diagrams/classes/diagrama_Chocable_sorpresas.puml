@@ -1,0 +1,31 @@
+@startuml
+
+interface Chocable {
+    + devolverEfecto(moto) : IEfecto
+    + devolverEfecto(auto) : IEfecto
+    + devolverEfecto(todoterreno) : IEfecto
+}
+
+class SorpresaFavorable {
+    +  devolverEfecto(moto) : IEfecto
+    +  devolverEfecto(auto) : IEfecto
+    +  devolverEfecto(todoterreno) : IEfecto
+}
+
+class SorpresaDesfavorable {
+    +  devolverEfecto(moto) : IEfecto
+    +  devolverEfecto(auto) : IEfecto
+    +  devolverEfecto(todoterreno) : IEfecto
+}
+
+class SorpresaCambioVehiculo {
+    +  devolverEfecto(moto) : IEfecto
+    +  devolverEfecto(auto) : IEfecto
+    +  devolverEfecto(todoterreno) : IEfecto
+}
+
+Chocable <|.. SorpresaFavorable
+Chocable <|.. SorpresaDesfavorable
+Chocable <|.. SorpresaCambioVehiculo
+
+@enduml

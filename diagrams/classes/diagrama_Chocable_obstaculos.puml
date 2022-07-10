@@ -1,5 +1,4 @@
 @startuml
-'https://plantuml.com/class-diagram
 
 interface Chocable {
     + devolverEfecto(moto) : IEfecto
@@ -37,41 +36,9 @@ class ControlPolicial {
     +  devolverEfecto(todoterreno) : IEfecto
 }
 
-class SorpresaFavorable {
-    +  devolverEfecto(moto) : IEfecto
-    +  devolverEfecto(auto) : IEfecto
-    +  devolverEfecto(todoterreno) : IEfecto
-}
-
-class SorpresaDesfavorable {
-    +  devolverEfecto(moto) : IEfecto
-    +  devolverEfecto(auto) : IEfecto
-    +  devolverEfecto(todoterreno) : IEfecto
-}
-
-class SorpresaCambioVehiculo {
-    +  devolverEfecto(moto) : IEfecto
-    +  devolverEfecto(auto) : IEfecto
-    +  devolverEfecto(todoterreno) : IEfecto
-}
-
-class Meta {
-    +  devolverEfecto(moto) : IEfecto
-    +  devolverEfecto(auto) : IEfecto
-    +  devolverEfecto(todoterreno) : IEfecto
-}
-
-
-
-Chocable <|.up. Pozo
+Chocable <|.. Pozo
 Chocable <|.. Piquete
-Chocable <|.up. Vacio
-ControlPolicial ..|> Chocable
-Chocable <|.. SorpresaFavorable
-Chocable <|.. SorpresaDesfavorable
-Chocable <|.. SorpresaCambioVehiculo
-Chocable <|.up. Meta
-
-
+Chocable .up.|> Vacio
+ControlPolicial <|.. Chocable
 
 @enduml

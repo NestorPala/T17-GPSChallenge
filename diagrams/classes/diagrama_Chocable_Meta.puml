@@ -1,0 +1,17 @@
+@startuml
+
+interface Chocable {
+    + devolverEfecto(moto) : IEfecto
+    + devolverEfecto(auto) : IEfecto
+    + devolverEfecto(todoterreno) : IEfecto
+}
+
+class Meta {
+    +  devolverEfecto(moto) : IEfecto
+    +  devolverEfecto(auto) : IEfecto
+    +  devolverEfecto(todoterreno) : IEfecto
+}
+
+Chocable <|.. Meta
+
+@enduml
