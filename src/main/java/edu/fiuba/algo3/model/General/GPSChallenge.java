@@ -58,7 +58,9 @@ public class GPSChallenge {
     if (jugadores.size() > 0) {
       jugadorActual = jugadores.poll();
       Logger.getInstance().log("El jugador actual es: " + jugadorActual.nombre());
+      return;
     }
+    Logger.getInstance().log("Finalizó la partida");
   }
 
   public String[] obtenerTop10() {
