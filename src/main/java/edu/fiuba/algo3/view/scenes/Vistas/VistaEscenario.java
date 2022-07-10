@@ -10,6 +10,8 @@ import javafx.scene.Node;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 
+import java.util.Stack;
+
 
 public class VistaEscenario extends Group {
 
@@ -61,31 +63,23 @@ public class VistaEscenario extends Group {
     }
 
     public void mostrarArea(int x, int y){
-        for (int i = 1; i < 3; i++){
-            if(x+i < ancho && panes[x+i][y] != null){
-                panes[x+i][y].setVisible(true);
-            }
-            if(y+i < alto && panes[x][y+i] != null){
-                panes[x][y+i].setVisible(true);
-            }
-            if(x+i < ancho && y+i < alto && i < 2 && panes[x+i][y+i] != null){
-                panes[x+i][y+i].setVisible(true);
-            }
-            if(x-i >= 0 && panes[x-i][y] != null){
-                panes[x-i][y].setVisible(true);
-            }
-            if(y-i >= 0 && panes[x][y-i] != null){
-                panes[x][y-i].setVisible(true);
-            }
-            if(x-i >= 0 && y-i >= 0 && i < 2 && panes[x-i][y-i] != null){
-                panes[x-i][y-i].setVisible(true);
-            }
-            if(x+i < ancho && y-i >= 0 && i < 2 && panes[x+i][y-i] != null){
-                panes[x+i][y-i].setVisible(true);
-            }
-            if(x-i >= 0 && y+i < alto && i < 2 && panes[x-i][y+i] != null){
-                panes[x-i][y+i].setVisible(true);
-            }
+        for (int i = 1; i < 3; i++) {
+            comprobarIndex(x+i, y);
+            comprobarIndex(x, y+i);
+            comprobarIndex(x-i, y);
+            comprobarIndex(x, y-i);
+        }
+        for (int i = 1; i < 2; i++){
+            comprobarIndex(x+i, y+i);
+            comprobarIndex(x-i, y-i);
+            comprobarIndex(x-i, y+i);
+            comprobarIndex(x+i, y-i);
+        }
+    }
+
+    public void comprobarIndex(int x, int y){
+        if(x < ancho && y < alto && x >= 0 && y >= 0) {
+            panes[x][y].setVisible(true);
         }
     }
 
