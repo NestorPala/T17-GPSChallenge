@@ -38,7 +38,7 @@ class ControlPolicial {
 
 Chocable <|.. Pozo
 Chocable <|.. Piquete
-Chocable .up.|> Vacio
-ControlPolicial <|.. Chocable
+Chocable <|.up. Vacio
+ControlPolicial ..|> Chocable
 
 @enduml

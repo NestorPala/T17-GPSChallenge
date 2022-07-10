@@ -31,11 +31,11 @@ class FinDelJuego {
     + aplicarEfecto(jugador)
 }
 
-CambioDeVehiculo <|.. IEfecto 
-Penalizacion <|.. IEfecto
+CambioDeVehiculo ..|> IEfecto 
+Penalizacion ..|> IEfecto
 
-IEfecto ..|> FinDelJuego
-IEfecto ..|> Porcentaje
-IEfecto ..|> Retroceso
+IEfecto <|.. FinDelJuego
+IEfecto <|.. Porcentaje
+IEfecto <|.. Retroceso
 
 @enduml
