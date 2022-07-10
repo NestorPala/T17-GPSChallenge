@@ -19,13 +19,6 @@ class Todoterreno {
     + chocar(chocable) : Vehiculo
 }
 
-interface Chocable {
-    + devolverEfecto(moto) : IEfecto
-    + devolverEfecto(auto) : IEfecto
-    + devolverEfecto(todoterreno) : IEfecto
-}
-
-Vehiculo .> Chocable
 Vehiculo <|-- Auto
 Vehiculo <|-- Moto
 Vehiculo <|-- Todoterreno

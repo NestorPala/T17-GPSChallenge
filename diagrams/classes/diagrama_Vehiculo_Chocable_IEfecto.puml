@@ -1,5 +1,10 @@
 @startuml
 
+abstract class Vehiculo {
+    + mover(unaDireccion, unaPosicion) : Posicion
+    + chocar(chocable) : IEfecto
+}
+
 interface Chocable {
     + devolverEfecto(moto) : IEfecto
     + devolverEfecto(auto) : IEfecto
@@ -10,6 +15,7 @@ interface IEfecto {
     + aplicarEfecto(jugador)
 }
 
+Vehiculo .> Chocable
 Chocable ..> IEfecto
 
 @enduml
