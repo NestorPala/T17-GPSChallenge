@@ -19,5 +19,5 @@ class Randomizador {
     + random(probabilidad) : bool
 }
 
-ControlPolicial .> Randomizer
+ControlPolicial ..> Randomizer
 Randomizer <|.. Randomizador

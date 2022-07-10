@@ -42,7 +42,7 @@ class Direccion {
 }
 
 Jugador -> Posicion
-Jugador ..> Direccion
-Direccion .> Posicion
+Jugador .> Direccion
+Direccion ..> Posicion
 
 @enduml

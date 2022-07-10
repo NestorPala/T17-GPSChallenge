@@ -2,7 +2,10 @@
 
 class Jugador {
     - nombre : string
+    - posicion : Posicion
     - posicionAnterior : Posicion
+    - puntaje : Puntaje
+    - vehiculo : Vehiculo
     - Escenario
     + Jugador(vehiculo, nombre)
     + mover(direccion)

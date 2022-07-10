@@ -30,7 +30,7 @@ class Puntaje {
     + aplicarPorcentaje(porcentaje: double)
 }
 
-Jugador -> Vehiculo
-Puntaje <- Jugador
+Jugador -> Puntaje 
+Jugador --> Vehiculo
 
 @enduml

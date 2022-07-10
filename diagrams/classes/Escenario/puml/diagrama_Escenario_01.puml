@@ -34,7 +34,7 @@ interface Chocable {
     + devolverEfecto(todoterreno) : IEfecto
 }
 
-Escenario ..> Posicion
+Escenario .> Posicion
 Escenario "1" --> "*" Chocable
 
 
