@@ -31,17 +31,11 @@ class FinDelJuego {
     + aplicarEfecto(jugador)
 }
 
-interface Chocable {
-    + devolverEfecto(moto) : IEfecto
-    + devolverEfecto(auto) : IEfecto
-    + devolverEfecto(todoterreno) : IEfecto
-}
+CambioDeVehiculo <|.. IEfecto 
+Penalizacion <|.. IEfecto
 
-Chocable ..> IEfecto
-IEfecto ..|> Penalizacion
+IEfecto ..|> FinDelJuego
 IEfecto ..|> Porcentaje
 IEfecto ..|> Retroceso
-IEfecto ..|> CambioDeVehiculo
-IEfecto ..|> FinDelJuego
 
 @enduml

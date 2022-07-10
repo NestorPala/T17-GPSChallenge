@@ -1,0 +1,15 @@
+@startuml
+
+interface Chocable {
+    + devolverEfecto(moto) : IEfecto
+    + devolverEfecto(auto) : IEfecto
+    + devolverEfecto(todoterreno) : IEfecto
+}
+
+interface IEfecto {
+    + aplicarEfecto(jugador)
+}
+
+Chocable ..> IEfecto
+
+@enduml
