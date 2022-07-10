@@ -1,0 +1,48 @@
+@startuml
+
+class Jugador {
+    - estado : IEstado
+    - nombre : string
+    - posicionAnterior : Posicion
+    - puntaje : Puntaje
+    - vehiculo : Vehiculo
+    - Escenario
+    + Jugador(vehiculo, nombre)
+    + mover(direccion)
+    - chocarObstaculos()
+    + recibirPenalizacion(penalizacion: int)
+    + recibirPorcentaje(porcentaje: int)
+    + cambiarVehiculo(nuevoVehiculo : Vehiculo)
+    + retrocederPosicionAnterior()
+    + dejarDeJugar()
+    + puedeSeguirJugando()
+}
+
+class Posicion {
+    - x : int
+    - y : int
+    + Posicion(x, y)
+    + equals(otraPosicion) : bool
+    + x() : int
+    + y() : int
+    + sumarX(x: int)
+    + sumarY(y: int)
+    + toString() : string
+}
+
+class Direccion {
+    - dirX : int
+    - dirY : int
+    + Direccion(dirHorizontal, dirVertical)
+    + arriba() : Direccion {static}
+    + abajo() : Direccion {static}
+    + izquierda() : Direccion {static}
+    + derecha() : Direccion {static}
+    + calcularNuevaPosicion(unaPosicion) : Posicion
+}
+
+Jugador -> Posicion
+Jugador ..> Direccion
+Direccion .> Posicion
+
+@enduml

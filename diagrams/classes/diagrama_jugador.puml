@@ -4,6 +4,7 @@
 class Jugador {
     - estado : IEstado
     - nombre : string
+    - posicion : Posicion
     - posicionAnterior : Posicion
     - Escenario
     + Jugador(vehiculo, nombre)
@@ -29,33 +30,7 @@ class Puntaje {
     + aplicarPorcentaje(porcentaje: double)
 }
 
-class Posicion {
-    - x : int
-    - y : int
-    + Posicion(x, y)
-    + equals(otraPosicion) : bool
-    + x() : int
-    + y() : int
-    + sumarX(x: int)
-    + sumarY(y: int)
-    + toString() : string
-}
-
-class Direccion {
-    - dirX : int
-    - dirY : int
-    + Direccion(dirHorizontal, dirVertical)
-    + arriba() : Direccion {static}
-    + abajo() : Direccion {static}
-    + izquierda() : Direccion {static}
-    + derecha() : Direccion {static}
-    + calcularNuevaPosicion(unaPosicion) : Posicion
-}
-
 Vehiculo <-- Jugador
-Jugador -> Posicion
-Jugador ..> Direccion
-Direccion .> Posicion
 Puntaje <- Jugador
 
 @enduml
